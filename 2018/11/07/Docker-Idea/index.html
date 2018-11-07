@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="###Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网址的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-07T08:01:15.996Z">
+<meta property="og:updated_time" content="2018-11-07T10:01:06.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker-Idea">
 <meta name="twitter:description" content="###Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网址的">
@@ -380,13 +380,24 @@
 <p><a href="https://yeasy.gitbooks.io/docker_practice/content/compose/install.html" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/content/compose/install.html</a></p>
 <p>2。官方文档（为主）</p>
 <p><a href="https://docs.docker.com/machine/install-machine/" target="_blank" rel="noopener">https://docs.docker.com/machine/install-machine/</a> ⭐️</p>
+</blockquote>
+<blockquote>
+<p>Docker-machine env 不能执行二进制文件 首先要 重新下载Dockermachihe</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;</span><br><span class="line">  curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/usr/local/bin/docker-machine &amp;&amp;</span><br><span class="line">  chmod +x /usr/local/bin/docker-machine</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>3.Github</p>
 <p><a href="https://github.com/docker/machine/releases" target="_blank" rel="noopener">https://github.com/docker/machine/releases</a></p>
 <p><a href="https://github.com/docker/machine" target="_blank" rel="noopener">https://github.com/docker/machine</a></p>
 </blockquote>
 <h1 id="有些东西放在了云收藏里面"><a href="#有些东西放在了云收藏里面" class="headerlink" title="有些东西放在了云收藏里面"></a>有些东西放在了云收藏里面</h1><h6 id="Docker的用户名是2018112"><a href="#Docker的用户名是2018112" class="headerlink" title="Docker的用户名是2018112"></a>Docker的用户名是2018112</h6><p>#####安装Docker插件要开VPN 还有访问Gitbub也要开VPN wiredes的</p>
-<h6 id="安装Docker要安装DookerTooles"><a href="#安装Docker要安装DookerTooles" class="headerlink" title="安装Docker要安装DookerTooles"></a>安装Docker要安装DookerTooles</h6></li>
+<h6 id="安装Docker要安装DookerToolBox"><a href="#安装Docker要安装DookerToolBox" class="headerlink" title="安装Docker要安装DookerToolBox"></a>安装Docker要安装DookerToolBox</h6></li>
 </ul>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>  ！！Docker真是一个恐怖的东西</p>
+<p>  ######Docker的学习资源GitBook里面的Docker的附录部分</p>
+<blockquote>
+<p><a href="https://blog.lab99.org/post/docker-2016-07-14-faq.html" target="_blank" rel="noopener">https://blog.lab99.org/post/docker-2016-07-14-faq.html</a></p>
+</blockquote>
 <h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
       
     </div>
@@ -426,6 +437,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/07/Docker-SpringBoot/" rel="prev" title="Docker SpringBoot">
+                Docker SpringBoot <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -502,7 +517,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -513,7 +528,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -524,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -557,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#有些东西放在了云收藏里面"><span class="nav-number">1.</span> <span class="nav-text">有些东西放在了云收藏里面</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Docker的用户名是2018112"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">Docker的用户名是2018112</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装Docker要安装DookerTooles"><span class="nav-number">1.0.0.0.0.2.</span> <span class="nav-text">安装Docker要安装DookerTooles</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text"> </span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#有些东西放在了云收藏里面"><span class="nav-number">1.</span> <span class="nav-text">有些东西放在了云收藏里面</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Docker的用户名是2018112"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">Docker的用户名是2018112</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装Docker要安装DookerToolBox"><span class="nav-number">1.0.0.0.0.2.</span> <span class="nav-text">安装Docker要安装DookerToolBox</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">2.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text"> </span></a></li></ol></li></div>
             
 
           </div>
