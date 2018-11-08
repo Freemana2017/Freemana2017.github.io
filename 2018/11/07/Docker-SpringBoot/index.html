@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107193051806.png">
 <meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107193402453.png">
 <meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107184402451.png">
-<meta property="og:updated_time" content="2018-11-07T13:18:54.942Z">
+<meta property="og:updated_time" content="2018-11-08T02:21:15.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker SpringBoot">
 <meta name="twitter:description" content="DockerMachine应用注意整个过程要等待一下 参考https://study.163.com/course/courseLearn.htm?courseId=1002892012#/learn/video?lessonId=1003309140&amp;amp;courseId=1002892012 网易云课堂 动手玩Docker   安装DockerMachine docker-machine">
@@ -388,7 +388,7 @@
 </ul>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107181833492.png" alt="image-20181107181833492"></p>
 <ul>
-<li><p>docker-machinecreate –drivervirtualbox cloudcomb </p>
+<li><p>docker-machine create –driver virtualbox cloudcomb </p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107181903652.png" alt="image-20181107181903652"></p>
 </li>
 <li><p>Docker-machine env cloudcomb</p>
@@ -402,7 +402,7 @@
 </li>
 <li><p>使用网易蜂巢</p>
 </li>
-<li><p>Docker run hub.c163.com/library/busybox:latest echon hello world</p>
+<li><p>Docker run hub.c163.com/library/busybox:latest echon hello world （unable。。这个过程要等待啊）⭐️</p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107182746194.png" alt="image-20181107182746194"></p>
 </li>
 <li><p>docker-machine rm cloudcomb 删除docker-machine</p>
@@ -435,10 +435,15 @@
 <h3 id="3-cd到文件下-ls一下"><a href="#3-cd到文件下-ls一下" class="headerlink" title="3.cd到文件下 ls一下"></a>3.cd到文件下 ls一下</h3><h3 id="4-执行-˛docker-version"><a href="#4-执行-˛docker-version" class="headerlink" title="4.执行  ˛docker version"></a>4.执行  ˛docker version</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191444666.png" alt="image-20181107191444666"></p>
 <h3 id="5-执行-docker-machine-env"><a href="#5-执行-docker-machine-env" class="headerlink" title="5.执行 docker-machine env"></a>5.执行 docker-machine env</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191515590.png" alt="image-20181107191515590"></p>
 <h3 id="6-执行eval-docker-machine-env-（复制后面的第四条）"><a href="#6-执行eval-docker-machine-env-（复制后面的第四条）" class="headerlink" title="6.执行eval $(docker-machine env)（复制后面的第四条）"></a>6.执行eval $(docker-machine env)（复制后面的第四条）</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191547911.png" alt="image-20181107191547911"></p>
+<p>tcp://192.168.99.100:2376192.168.99.100</p>
+<p> tcp://127.0.0.1:2376 tcp://127.0.0.1:2376</p>
 <p>###7.docker version（没有-）</p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191658043.png" alt="image-20181107191658043"></p>
 <h3 id="8-ls一下目录"><a href="#8-ls一下目录" class="headerlink" title="8.ls一下目录"></a>8.ls一下目录</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191730046.png" alt="image-20181107191730046"></p>
-<h3 id="9-docker-build-t-cloudcomb-sun-1-0"><a href="#9-docker-build-t-cloudcomb-sun-1-0" class="headerlink" title="9.docker build -t cloudcomb/sun:1.0 ."></a>9.docker build -t cloudcomb/sun:1.0 .</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191826890.png" alt="image-20181107191826890"></p>
+<h3 id="9-docker-build-t-cloudcomb-sun-1-0"><a href="#9-docker-build-t-cloudcomb-sun-1-0" class="headerlink" title="9.docker build -t cloudcomb/sun:1.0 ."></a>9.docker build -t cloudcomb/sun:1.0 .</h3><blockquote>
+<p> （桌面上要有jar包和dockerfilede 文件）</p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191826890.png" alt="image-20181107191826890"></p>
 <blockquote>
 <p>此时报错 没有gs-spring-boot-docker.jar文件 其实ls的时候就应该是gs-spring-boot-docker.jar 这儿是个bug。</p>
 <p>解决办法 改jar包名 添加gs前缀</p>
@@ -452,9 +457,11 @@
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192857396.png" alt="image-20181107192857396"></p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107193127019.png" alt="image-20181107193127019"></p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107193051806.png" alt="image-20181107193051806"></p>
-<p>DockerFile</p>
+<p>DockerFile：</p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107193402453.png" alt="image-20181107193402453"></p>
-<p>》Docker就是给一名字 gs-spring-bbot</p>
+<blockquote>
+<p>Docker就是给一名字 gs-spring-bbot</p>
+</blockquote>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107184402451.png" alt="image-20181107184402451"></p>
 
       
