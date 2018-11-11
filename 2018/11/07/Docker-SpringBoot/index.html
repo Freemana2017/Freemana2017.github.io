@@ -112,7 +112,8 @@
 <meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107193051806.png">
 <meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107193402453.png">
 <meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107184402451.png">
-<meta property="og:updated_time" content="2018-11-08T02:21:15.897Z">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181110214317827.png">
+<meta property="og:updated_time" content="2018-11-10T13:43:22.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker SpringBoot">
 <meta name="twitter:description" content="DockerMachine应用注意整个过程要等待一下 参考https://study.163.com/course/courseLearn.htm?courseId=1002892012#/learn/video?lessonId=1003309140&amp;amp;courseId=1002892012 网易云课堂 动手玩Docker   安装DockerMachine docker-machine">
@@ -427,6 +428,7 @@
 <li><p>运行一下项目（访问一下 测试一下）</p>
 <h2 id="Docker-SpringBoot部署项目"><a href="#Docker-SpringBoot部署项目" class="headerlink" title="Docker SpringBoot部署项目"></a>Docker SpringBoot部署项目</h2></li>
 </ul>
+<p>⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
 <h3 id="1-install项目"><a href="#1-install项目" class="headerlink" title="1.install项目"></a>1.install项目</h3><p>  <img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107185602118.png" alt="image-20181107185602118"></p>
 <blockquote>
 <p>找到这两个文件 放到桌面上</p>
@@ -448,11 +450,18 @@
 <p>此时报错 没有gs-spring-boot-docker.jar文件 其实ls的时候就应该是gs-spring-boot-docker.jar 这儿是个bug。</p>
 <p>解决办法 改jar包名 添加gs前缀</p>
 </blockquote>
-<h3 id="10。docker-build-t-cloudcomb-sun-1-0-（改名后重新执行命令）"><a href="#10。docker-build-t-cloudcomb-sun-1-0-（改名后重新执行命令）" class="headerlink" title="10。docker build -t cloudcomb/sun:1.0 .（改名后重新执行命令）"></a>10。docker build -t cloudcomb/sun:1.0 .（改名后重新执行命令）</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192039326.png" alt="image-20181107192039326"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docker.mirrors.ustc.edu.cn</span><br></pre></td></tr></table></figure>
+<h3 id="10。docker-build-t-cloudcomb-sun-1-0-（大佬说这一步是拉取镜像。用加速器-改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像"><a href="#10。docker-build-t-cloudcomb-sun-1-0-（大佬说这一步是拉取镜像。用加速器-改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像" class="headerlink" title="10。docker build -t cloudcomb/sun:1.0 .（大佬说这一步是拉取镜像。用加速器 改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像"></a>10。docker build -t cloudcomb/sun:1.0 .（大佬说这一步是拉取镜像。用加速器 改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192039326.png" alt="image-20181107192039326"></p>
 <h3 id="11-docker-images-a"><a href="#11-docker-images-a" class="headerlink" title="11. docker images -a"></a>11. docker images -a</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192154611.png" alt="image-20181107192154611"></p>
 <h3 id="12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0"><a href="#12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0" class="headerlink" title="12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 ."></a>12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 .</h3><blockquote>
 <p>注意 cloudcomb和前面的cloudcomb要一一对应</p>
 <p>1024 与8080是一一对应的关系</p>
+<p>Error: Unable to access jarfile /app.jar</p>
+<p>⭐️ ADD user-server-0.0.1-SNAPSHOT.jar app.jar 要和pom的<artifactid>user-server</artifactid></p>
+<p>保持名字一样，不然maven打出来的包，docker找不到。</p>
+<ul>
+<li>最终的结局办法 好像是将copy去掉了 注意看控制台打印的信息 兄dei</li>
+</ul>
 </blockquote>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192857396.png" alt="image-20181107192857396"></p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107193127019.png" alt="image-20181107193127019"></p>
@@ -462,7 +471,40 @@
 <blockquote>
 <p>Docker就是给一名字 gs-spring-bbot</p>
 </blockquote>
+<p>贴一个Dockerfilr。</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">FROM hub.c.163.com/xbingo/jdk8:latest</span><br><span class="line"></span><br><span class="line">from hub.c.163.com/library/tomcat</span><br><span class="line"></span><br><span class="line">MAINTAINER Freemana2017 1047629166@qq.com</span><br><span class="line"></span><br><span class="line">ADD  atcrodfunding3_ssm-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line"></span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line">COPY atcrod.war /usr/local/tomcat/webapps</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">#FROM openjdk:8-jdk-alpine</span><br><span class="line">#VOLUME /tmp</span><br><span class="line">#ADD  atcrodfunding3_ssm-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd=file:/dev/./urandom&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line">#</span><br><span class="line"> </span><br><span class="line">#FROM hub.c.163.com/xbingo/jdk8:latest</span><br><span class="line">#</span><br><span class="line">#ADD gs-spring-boot-docker-0.1.0.jar app.jar</span><br><span class="line">#</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">#这个 Dockerfile 文件很简单，构建 Jdk 基础环境，添加 Spring Boot Jar 到镜像中，简单解释一下:</span><br><span class="line">#</span><br><span class="line">#FROM ，表示使用 Jdk8 环境 为基础镜像，如果镜像不是本地的会从 DockerHub 进行下载</span><br><span class="line">#VOLUME ，VOLUME 指向了一个/tmp的目录，由于 Spring Boot 使用内置的Tomcat容器，Tomcat 默认使用/tmp作为工作目录。这个命令的效果是：</span><br><span class="line">#在宿主机的/var/lib/docker目录下创建一个临时文件并把它链接到容器中的/tmp目录</span><br><span class="line">#ADD ，拷贝文件并且重命名</span><br><span class="line">#ENTRYPOINT ，为了缩短 Tomcat 的启动时间，添加java.security.egd的系统属性指向/dev/urandom作为 ENTRYPOINT</span><br><span class="line">#这样 Spring Boot 项目添加 Docker 依赖就完成了。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p>Dockerfile 用的war要有Tomcat </p>
+<p>自己理解吧 多看一些视频笔记什么的 反正很难,,,</p>
 <p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107184402451.png" alt="image-20181107184402451"></p>
+<hr>
+<hr>
+<hr>
+<h1 id="以上的文件是从github上拉的-现在自己构建SpringBoot-jar的应用"><a href="#以上的文件是从github上拉的-现在自己构建SpringBoot-jar的应用" class="headerlink" title="以上的文件是从github上拉的 现在自己构建SpringBoot -jar的应用"></a>以上的文件是从github上拉的 现在自己构建SpringBoot -jar的应用</h1><blockquote>
+<p>通过群里的指导 估计jar打包和war打包区别不大吧</p>
+<p>下面通过SpringBoot构建Docker部署一下试试</p>
+<p><a href="https://waylau.com/docker-spring-boot/" target="_blank" rel="noopener">https://waylau.com/docker-spring-boot/</a></p>
+<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a></p>
+<p><a href="https://lw900925.github.io/docker/docker-springboot.html" target="_blank" rel="noopener">https://lw900925.github.io/docker/docker-springboot.html</a></p>
+<p><a href="https://www.tianmaying.com/tutorial/spring-boot-docker" target="_blank" rel="noopener">https://www.tianmaying.com/tutorial/spring-boot-docker</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://bingohuang.com/spring-boot-docker/" target="_blank" rel="noopener">https://bingohuang.com/spring-boot-docker/</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.imooc.com/search/?words=docker" target="_blank" rel="noopener">https://www.imooc.com/search/?words=docker</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://www.ityouknow.com/docker/2018/03/30/docker-machine.html" target="_blank" rel="noopener">http://www.ityouknow.com/docker/2018/03/30/docker-machine.html</a></p>
+<p><a href="https://spring.io/guides/gs/spring-boot-docker/" target="_blank" rel="noopener">https://spring.io/guides/gs/spring-boot-docker/</a></p>
+</blockquote>
+<h2 id="SpringBoot-Docker"><a href="#SpringBoot-Docker" class="headerlink" title="SpringBoot Docker"></a>SpringBoot Docker</h2><blockquote>
+<p><a href="https://lw900925.github.io/docker/docker-springboot.html" target="_blank" rel="noopener">https://lw900925.github.io/docker/docker-springboot.html</a></p>
+</blockquote>
+<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a> 主要环节</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181110214317827.png" alt="image-20181110214317827"></p>
 
       
     </div>
@@ -504,6 +546,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/09/常见问题总结/" rel="prev" title="常见问题总结">
+                常见问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -580,7 +626,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -635,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DockerMachine应用"><span class="nav-number">1.</span> <span class="nav-text">DockerMachine应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意整个过程要等待一下"><span class="nav-number">1.0.1.</span> <span class="nav-text">注意整个过程要等待一下</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot整合Docker"><span class="nav-number"></span> <span class="nav-text">SpringBoot整合Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-SpringBoot部署项目"><span class="nav-number">1.</span> <span class="nav-text">Docker SpringBoot部署项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-install项目"><span class="nav-number">1.1.</span> <span class="nav-text">1.install项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0-0-1-jar"><span class="nav-number">1.2.</span> <span class="nav-text">2.将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0.0.1.jar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-cd到文件下-ls一下"><span class="nav-number">1.3.</span> <span class="nav-text">3.cd到文件下 ls一下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-执行-˛docker-version"><span class="nav-number">1.4.</span> <span class="nav-text">4.执行  ˛docker version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-执行-docker-machine-env"><span class="nav-number">1.5.</span> <span class="nav-text">5.执行 docker-machine env</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-执行eval-docker-machine-env-（复制后面的第四条）"><span class="nav-number">1.6.</span> <span class="nav-text">6.执行eval $(docker-machine env)（复制后面的第四条）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-ls一下目录"><span class="nav-number">1.7.</span> <span class="nav-text">8.ls一下目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-docker-build-t-cloudcomb-sun-1-0"><span class="nav-number">1.8.</span> <span class="nav-text">9.docker build -t cloudcomb/sun:1.0 .</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10。docker-build-t-cloudcomb-sun-1-0-（改名后重新执行命令）"><span class="nav-number">1.9.</span> <span class="nav-text">10。docker build -t cloudcomb/sun:1.0 .（改名后重新执行命令）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-docker-images-a"><span class="nav-number">1.10.</span> <span class="nav-text">11. docker images -a</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0"><span class="nav-number">1.11.</span> <span class="nav-text">12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 .</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DockerMachine应用"><span class="nav-number">1.</span> <span class="nav-text">DockerMachine应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意整个过程要等待一下"><span class="nav-number">1.0.1.</span> <span class="nav-text">注意整个过程要等待一下</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot整合Docker"><span class="nav-number"></span> <span class="nav-text">SpringBoot整合Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-SpringBoot部署项目"><span class="nav-number">1.</span> <span class="nav-text">Docker SpringBoot部署项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-install项目"><span class="nav-number">1.1.</span> <span class="nav-text">1.install项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0-0-1-jar"><span class="nav-number">1.2.</span> <span class="nav-text">2.将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0.0.1.jar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-cd到文件下-ls一下"><span class="nav-number">1.3.</span> <span class="nav-text">3.cd到文件下 ls一下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-执行-˛docker-version"><span class="nav-number">1.4.</span> <span class="nav-text">4.执行  ˛docker version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-执行-docker-machine-env"><span class="nav-number">1.5.</span> <span class="nav-text">5.执行 docker-machine env</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-执行eval-docker-machine-env-（复制后面的第四条）"><span class="nav-number">1.6.</span> <span class="nav-text">6.执行eval $(docker-machine env)（复制后面的第四条）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-ls一下目录"><span class="nav-number">1.7.</span> <span class="nav-text">8.ls一下目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-docker-build-t-cloudcomb-sun-1-0"><span class="nav-number">1.8.</span> <span class="nav-text">9.docker build -t cloudcomb/sun:1.0 .</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10。docker-build-t-cloudcomb-sun-1-0-（大佬说这一步是拉取镜像。用加速器-改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像"><span class="nav-number">1.9.</span> <span class="nav-text">10。docker build -t cloudcomb/sun:1.0 .（大佬说这一步是拉取镜像。用加速器 改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-docker-images-a"><span class="nav-number">1.10.</span> <span class="nav-text">11. docker images -a</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0"><span class="nav-number">1.11.</span> <span class="nav-text">12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 .</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#以上的文件是从github上拉的-现在自己构建SpringBoot-jar的应用"><span class="nav-number"></span> <span class="nav-text">以上的文件是从github上拉的 现在自己构建SpringBoot -jar的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot-Docker"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot Docker</span></a></li></ol></li></div>
             
 
           </div>

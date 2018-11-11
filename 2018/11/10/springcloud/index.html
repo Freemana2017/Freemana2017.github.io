@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="=============================================更多干货技术访问小D课堂官网 https://xdclass.net小D老师个人微信：jack794666918 公众号搜索：小D课堂SpringCloud课程笔记.txt 第一章 课程介绍和学习路线  1、微服务架构SpringCloud课程介绍​    简介：课程介绍和课程大纲讲解，讲课风格和重点内容理解">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Freemana2017">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/11/10/springcloud/index.html">
 <meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="=============================================更多干货技术访问小D课堂官网 https://xdclass.net小D老师个人微信：jack794666918 公众号搜索：小D课堂SpringCloud课程笔记.txt 第一章 课程介绍和学习路线  1、微服务架构SpringCloud课程介绍​    简介：课程介绍和课程大纲讲解，讲课风格和重点内容理解">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-10T08:57:40.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Freemana2017">
+<meta name="twitter:description" content="=============================================更多干货技术访问小D课堂官网 https://xdclass.net小D老师个人微信：jack794666918 公众号搜索：小D课堂SpringCloud课程笔记.txt 第一章 课程介绍和学习路线  1、微服务架构SpringCloud课程介绍​    简介：课程介绍和课程大纲讲解，讲课风格和重点内容理解">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/10/springcloud/">
 
 
 
 
 
-  <title>Freemana2017</title>
+  <title> | Freemana2017</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -244,201 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/SpringBoot-Docker-小D课堂/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/SpringBoot-Docker-小D课堂/" itemprop="url">SpringBoot Docker 小D课堂</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T10:13:42+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="构建SpringBoot-应用docker镜像"><a href="#构建SpringBoot-应用docker镜像" class="headerlink" title="构建SpringBoot 应用docker镜像"></a>构建SpringBoot 应用docker镜像</h1><h4 id="1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集"><a href="#1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集" class="headerlink" title="1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集"></a>1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集</h4><blockquote>
-<p> 官方文档：<a href="https://spring.io/guides/gs/spring-boot-docker/" target="_blank" rel="noopener">https://spring.io/guides/gs/spring-boot-docker/</a></p>
-<h2 id="1、步骤：maven里面添加配置pom-xml"><a href="#1、步骤：maven里面添加配置pom-xml" class="headerlink" title="1、步骤：maven里面添加配置pom.xml"></a>1、步骤：maven里面添加配置pom.xml</h2></blockquote>
-<pre><code>简介:使用Docker的maven插件，构建springboot应用
- &lt;!--在maven最上面的申明的地方--properties--&gt;
-     &lt;properties&gt;
-       &lt;docker.image.prefix&gt;xdclass&lt;/docker.image.prefix&gt;
-    &lt;/properties&gt;
-
-    &lt;build&gt;
-    &lt;!--项目打包的名称--&gt;
-        &lt;finalName&gt;docker-demo&lt;/finalName&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;com.spotify&lt;/groupId&gt;
-                &lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;1.3.6&lt;/version&gt;
-                &lt;configuration&gt;
-                    &lt;repository&gt;${docker.image.prefix}/${project.artifactId}&lt;/repository&gt;
-                    &lt;buildArgs&gt;
-                        &lt;JAR_FILE&gt;target/${project.build.finalName}.jar&lt;/JAR_FILE&gt;
-                    &lt;/buildArgs&gt;
-                &lt;/configuration&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
-
-    配置讲解
-    Spotify 的 docker-maven-plugin 插件是用maven插件方式构建docker镜像的。
-    ${project.build.finalName} 产出物名称，缺省为${project.artifactId}-${project.version}
-</code></pre><p>⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
-<blockquote>
-<p> <a href="https://blog.csdn.net/TMaskBoy/article/details/82562413" target="_blank" rel="noopener">https://blog.csdn.net/TMaskBoy/article/details/82562413</a></p>
-</blockquote>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111112653319.png" alt="image-20181111112653319"></p>
-<h1 id="高能预警"><a href="#高能预警" class="headerlink" title="高能预警"></a>高能预警</h1><ul>
-<li><p>No plugin found for prefix ‘docker’ in the current project and in the plugin groups<br>在Maven的配置文件 conf/settings.xml中添加com.spotify</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;pluginGroups&gt;  </span><br><span class="line">    &lt;pluginGroup&gt;com.spotify&lt;/pluginGroup&gt;  </span><br><span class="line">&lt;/pluginGroups&gt;</span><br><span class="line"></span><br><span class="line">注意setting配置文件在maven的仓库里面找不到 重新更新idea中maven的插件 然后 更换.m2中conf中setting.xml的内容</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>#详细错误如下：om.spotify.docker.client.shaded.com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of com.spotify.docker.client.messages.RegistryAuth: no String-argument constructor/factory method to deserialize from String value (‘swarm’)  </p>
-<p>起初pom.xml中docker-maven-plugin的版本是1.0.0，使用mvn package docker:build -e构建Image出现如上异常。<br>百般搜索无果，后来看其他的Spring Boot构建Docker镜像有用的是0.4.3，遂修改之。 </p>
-<ol start="2">
-<li>解决办法</li>
-</ol>
-<hr>
-<h1 id="将小D课堂里面的插件"><a href="#将小D课堂里面的插件" class="headerlink" title="将小D课堂里面的插件"></a>将小D课堂里面的插件</h1></li>
-</ul>
-<pre><code> &lt;groupId&gt;com.spotify&lt;/groupId&gt;
-&lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
-&lt;version&gt;1.3.6&lt;/version&gt;
-</code></pre><p>  改为</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> &lt;groupId&gt;com.spotify&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;  //这边不是dockerfile-maven-plugin了而是docker-maven-plugin</span><br><span class="line">&lt;version&gt;0.4.13&lt;/version&gt;</span><br></pre></td></tr></table></figure>
-<p>   ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
-<h3 id="第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><a href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集" class="headerlink" title="第2课 高级篇幅之构建SpringBoot应用docker镜像下集"></a>第2课 高级篇幅之构建SpringBoot应用docker镜像下集</h3><blockquote>
-<h4 id="步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><a href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）" class="headerlink" title="步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）"></a>步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</h4></blockquote>
-<pre><code>简介:打包SpringCloud镜像并上传私有仓库并部署
-1、 什么是Dockerfile : 由一系列命令和参数构成的脚本，这些命令应用于基础镜像, 最终创建一个新的镜       像
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
-
-
-参数讲解：
-FROM &lt;image&gt;:&lt;tag&gt; 需要一个基础镜像，可以是公共的或者是私有的， 后续构建会基于此镜像，如果同一个Dockerfile中建立多个镜像时，可以使用多个FROM指令
-
-VOLUME  配置一个具有持久化功能的目录，主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容   器的/tmp。改步骤是可选的，如果涉及到文件系统的应用就很有必要了。/tmp目录用来持久化到 Docker 数据 文件夹，因为 Spring Boot 使用的内嵌 Tomcat 容器默认使用/tmp作为工作目录 
-
-ARG  设置编译镜像时加入的参数， ENV 是设置容器的环境变量
-COPY : 只支持将本地文件复制到容器 ,还有个ADD更强大但复杂点
-ENTRYPOINT 容器启动时执行的命令
-EXPOSE 8080 暴露镜像端口
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -468,9 +279,7 @@ EXPOSE 8080 暴露镜像端口
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/10/springcloud/" itemprop="url">Untitled</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -520,9 +329,7 @@ EXPOSE 8080 暴露镜像端口
       
 
       
-        
-          
-            <p>=============================================<br>更多干货技术访问小D课堂官网 <a href="https://xdclass.net" target="_blank" rel="noopener">https://xdclass.net</a><br>小D老师个人微信：jack794666918</p>
+        <p>=============================================<br>更多干货技术访问小D课堂官网 <a href="https://xdclass.net" target="_blank" rel="noopener">https://xdclass.net</a><br>小D老师个人微信：jack794666918</p>
 <h1 id="公众号搜索：小D课堂"><a href="#公众号搜索：小D课堂" class="headerlink" title="公众号搜索：小D课堂"></a>公众号搜索：小D课堂</h1><p>SpringCloud课程笔记.txt</p>
 <p>第一章 课程介绍和学习路线 </p>
 <p>1、微服务架构SpringCloud课程介绍<br>​    简介：课程介绍和课程大纲讲解，讲课风格和重点内容理解技巧</p>
@@ -1923,8 +1730,6 @@ https://blog.csdn.net/liyuejin/article/details/78410586
 3）购买对应的课程后，记得进我们小D课堂官方的交流群，我会在里面分享主流技术和答疑，面试经验等等，还会同步更新资料和还超级干货分享 
 </code></pre><p>=============================================<br>更多干货技术访问小D课堂官网 <a href="https://xdclass.net" target="_blank" rel="noopener">https://xdclass.net</a><br>小D老师个人微信：jack794666918</p>
 <h1 id="公众号搜索：小D课堂-5"><a href="#公众号搜索：小D课堂-5" class="headerlink" title="公众号搜索：小D课堂"></a>公众号搜索：小D课堂</h1>
-          
-        
       
     </div>
     
@@ -1941,131 +1746,32 @@ https://blog.csdn.net/liyuejin/article/details/78410586
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/10/Untitled/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/10/Untitled/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T16:56:31+08:00">
-                2018-11-10
-              </time>
+              <a href="/2018/11/10/Untitled/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
+              <a href="/2018/11/11/SpringBoot-Docker-小D课堂/" rel="prev" title="SpringBoot Docker 小D课堂">
+                SpringBoot Docker 小D课堂 <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -2075,1030 +1781,11 @@ https://blog.csdn.net/liyuejin/article/details/78410586
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/10/Docker加速/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/10/Docker加速/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T11:20:02+08:00">
-                2018-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> <a href="https://www.jianshu.com/p/94c6e44ebd3c" target="_blank" rel="noopener">https://www.jianshu.com/p/94c6e44ebd3c</a></p>
-<p>不要使用https前缀， 负责会提示证书错误，</p>
-<blockquote>
-</blockquote>
-<h1 id="Version-requires"><a href="#Version-requires" class="headerlink" title="Version requires:"></a>Version requires:</h1><h2 id="Docker-for-MAC-version"><a href="#Docker-for-MAC-version" class="headerlink" title="- Docker for MAC version:"></a>- Docker for MAC version:</h2><p><img src="https:////upload-images.jianshu.io/upload_images/10517010-1617f9ee81621ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/569/format/webp" alt="img"></p>
-<p>docker version</p>
-<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS:"></a>STEPS:</h1><p>- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors</p>
-<p>添加：</p>
-<blockquote>
-<p><a href="http://registry.docker-cn.com" target="_blank" rel="noopener">http://registry.docker-cn.com</a></p>
-</blockquote>
-<p>Note：不要使用https前缀， 负责会提示证书错误，</p>
-<blockquote>
-<p>“registry-mirrors” :</p>
-<p>  No certs for egitstry.docker.com</p>
-</blockquote>
-<p>导致dockerrestart failed。</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/10517010-37b53711599fae68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498/format/webp" alt="img"></p>
-<p>adding Registry</p>
-<p>作者：millerix</p>
-<p>链接：<a href="https://www.jianshu.com/p/94c6e44ebd3c" target="_blank" rel="noopener">https://www.jianshu.com/p/94c6e44ebd3c</a></p>
-<p>來源：简书</p>
-<p>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/常见问题总结/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/09/常见问题总结/" itemprop="url">常见问题总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T17:14:16+08:00">
-                2018-11-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>前端向后端传值：</p>
-<ul>
-<li><p>Button 和form</p>
-</li>
-<li><ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goUpdatePage</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"$&#123;pageContext.request.contextPath&#125;/user/editcontroller?id="</span> + id;</span><br><span class="line">&#125;      </span><br><span class="line"> &lt;button type=<span class="string">"button"</span> onclick=<span class="string">"goUpdatePage($&#123;user.id&#125;)"</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary btn-xs"</span>&gt;</span><br><span class="line">    &lt;i</span><br><span class="line">            <span class="class"><span class="keyword">class</span></span>=<span class="string">" glyphicon glyphicon-pencil"</span>&gt;&lt;/i&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Docker-SpringBoot/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/07/Docker-SpringBoot/" itemprop="url">Docker SpringBoot</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T18:04:37+08:00">
-                2018-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringBoot</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="DockerMachine应用"><a href="#DockerMachine应用" class="headerlink" title="DockerMachine应用"></a>DockerMachine应用</h2><h4 id="注意整个过程要等待一下"><a href="#注意整个过程要等待一下" class="headerlink" title="注意整个过程要等待一下"></a>注意整个过程要等待一下</h4><blockquote>
-<p>参考<a href="https://study.163.com/course/courseLearn.htm?courseId=1002892012#/learn/video?lessonId=1003309140&amp;courseId=1002892012" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1002892012#/learn/video?lessonId=1003309140&amp;courseId=1002892012</a></p>
-<p>网易云课堂 动手玩Docker</p>
-</blockquote>
-<ul>
-<li>安装DockerMachine</li>
-<li>docker-machine ls    tcp://192.168.99.100:2376   name：cloudcomb</li>
-</ul>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107181833492.png" alt="image-20181107181833492"></p>
-<ul>
-<li><p>docker-machine create –driver virtualbox cloudcomb </p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107181903652.png" alt="image-20181107181903652"></p>
-</li>
-<li><p>Docker-machine env cloudcomb</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107182121568.png" alt="image-20181107182121568"></p>
-</li>
-</ul>
-<p>⚠️第四个变量eval说的是当前Dockermachine的名字是—cloudcomb</p>
-<ul>
-<li><p>eval $(docker-machine env cloudcomb) 拷贝放到底下</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107182325486.png" alt="image-20181107182325486"></p>
-</li>
-<li><p>使用网易蜂巢</p>
-</li>
-<li><p>Docker run hub.c163.com/library/busybox:latest echon hello world （unable。。这个过程要等待啊）⭐️</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107182746194.png" alt="image-20181107182746194"></p>
-</li>
-<li><p>docker-machine rm cloudcomb 删除docker-machine</p>
-</li>
-</ul>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107182909832.png" alt="image-20181107182909832"></p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107183004383.png" alt="image-20181107183004383"></p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107183018420.png" alt="image-20181107183018420"></p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107183034881.png" alt="image-20181107183034881"></p>
-<h1 id="SpringBoot整合Docker"><a href="#SpringBoot整合Docker" class="headerlink" title="SpringBoot整合Docker"></a>SpringBoot整合Docker</h1><blockquote>
-<p>Emmmm.等我有钱了 把Xnip去掉哈哈</p>
-</blockquote>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107183409783.png" alt="image-20181107183409783"></p>
-<ul>
-<li><p>下载源码<a href="https://github.com/bingohuang/spring-boot-docker" target="_blank" rel="noopener">https://github.com/bingohuang/spring-boot-docker</a></p>
-<blockquote>
-<p>Git 通过命令行下载文件 先cd一下指定一下下载的路径</p>
-</blockquote>
-</li>
-<li><p>导入项目到Idea 然后查看一下源码</p>
-</li>
-<li><p>运行一下项目（访问一下 测试一下）</p>
-<h2 id="Docker-SpringBoot部署项目"><a href="#Docker-SpringBoot部署项目" class="headerlink" title="Docker SpringBoot部署项目"></a>Docker SpringBoot部署项目</h2></li>
-</ul>
-<p>⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
-<h3 id="1-install项目"><a href="#1-install项目" class="headerlink" title="1.install项目"></a>1.install项目</h3><p>  <img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107185602118.png" alt="image-20181107185602118"></p>
-<blockquote>
-<p>找到这两个文件 放到桌面上</p>
-</blockquote>
-<h3 id="2-将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0-0-1-jar"><a href="#2-将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0-0-1-jar" class="headerlink" title="2.将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0.0.1.jar"></a>2.将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0.0.1.jar</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191351622.png" alt="image-20181107191351622"></p>
-<h3 id="3-cd到文件下-ls一下"><a href="#3-cd到文件下-ls一下" class="headerlink" title="3.cd到文件下 ls一下"></a>3.cd到文件下 ls一下</h3><h3 id="4-执行-˛docker-version"><a href="#4-执行-˛docker-version" class="headerlink" title="4.执行  ˛docker version"></a>4.执行  ˛docker version</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191444666.png" alt="image-20181107191444666"></p>
-<h3 id="5-执行-docker-machine-env"><a href="#5-执行-docker-machine-env" class="headerlink" title="5.执行 docker-machine env"></a>5.执行 docker-machine env</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191515590.png" alt="image-20181107191515590"></p>
-<h3 id="6-执行eval-docker-machine-env-（复制后面的第四条）"><a href="#6-执行eval-docker-machine-env-（复制后面的第四条）" class="headerlink" title="6.执行eval $(docker-machine env)（复制后面的第四条）"></a>6.执行eval $(docker-machine env)（复制后面的第四条）</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191547911.png" alt="image-20181107191547911"></p>
-<p>tcp://192.168.99.100:2376192.168.99.100</p>
-<p> tcp://127.0.0.1:2376 tcp://127.0.0.1:2376</p>
-<p>###7.docker version（没有-）</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191658043.png" alt="image-20181107191658043"></p>
-<h3 id="8-ls一下目录"><a href="#8-ls一下目录" class="headerlink" title="8.ls一下目录"></a>8.ls一下目录</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191730046.png" alt="image-20181107191730046"></p>
-<h3 id="9-docker-build-t-cloudcomb-sun-1-0"><a href="#9-docker-build-t-cloudcomb-sun-1-0" class="headerlink" title="9.docker build -t cloudcomb/sun:1.0 ."></a>9.docker build -t cloudcomb/sun:1.0 .</h3><blockquote>
-<p> （桌面上要有jar包和dockerfilede 文件）</p>
-</blockquote>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191826890.png" alt="image-20181107191826890"></p>
-<blockquote>
-<p>此时报错 没有gs-spring-boot-docker.jar文件 其实ls的时候就应该是gs-spring-boot-docker.jar 这儿是个bug。</p>
-<p>解决办法 改jar包名 添加gs前缀</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docker.mirrors.ustc.edu.cn</span><br></pre></td></tr></table></figure>
-<h3 id="10。docker-build-t-cloudcomb-sun-1-0-（大佬说这一步是拉取镜像。用加速器-改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像"><a href="#10。docker-build-t-cloudcomb-sun-1-0-（大佬说这一步是拉取镜像。用加速器-改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像" class="headerlink" title="10。docker build -t cloudcomb/sun:1.0 .（大佬说这一步是拉取镜像。用加速器 改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像"></a>10。docker build -t cloudcomb/sun:1.0 .（大佬说这一步是拉取镜像。用加速器 改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192039326.png" alt="image-20181107192039326"></p>
-<h3 id="11-docker-images-a"><a href="#11-docker-images-a" class="headerlink" title="11. docker images -a"></a>11. docker images -a</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192154611.png" alt="image-20181107192154611"></p>
-<h3 id="12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0"><a href="#12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0" class="headerlink" title="12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 ."></a>12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 .</h3><blockquote>
-<p>注意 cloudcomb和前面的cloudcomb要一一对应</p>
-<p>1024 与8080是一一对应的关系</p>
-<p>Error: Unable to access jarfile /app.jar</p>
-<p>⭐️ ADD user-server-0.0.1-SNAPSHOT.jar app.jar 要和pom的<artifactid>user-server</artifactid></p>
-<p>保持名字一样，不然maven打出来的包，docker找不到。</p>
-<ul>
-<li>最终的结局办法 好像是将copy去掉了 注意看控制台打印的信息 兄dei</li>
-</ul>
-</blockquote>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107192857396.png" alt="image-20181107192857396"></p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107193127019.png" alt="image-20181107193127019"></p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107193051806.png" alt="image-20181107193051806"></p>
-<p>DockerFile：</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107193402453.png" alt="image-20181107193402453"></p>
-<blockquote>
-<p>Docker就是给一名字 gs-spring-bbot</p>
-</blockquote>
-<p>贴一个Dockerfilr。</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">FROM hub.c.163.com/xbingo/jdk8:latest</span><br><span class="line"></span><br><span class="line">from hub.c.163.com/library/tomcat</span><br><span class="line"></span><br><span class="line">MAINTAINER Freemana2017 1047629166@qq.com</span><br><span class="line"></span><br><span class="line">ADD  atcrodfunding3_ssm-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line"></span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line">COPY atcrod.war /usr/local/tomcat/webapps</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">#FROM openjdk:8-jdk-alpine</span><br><span class="line">#VOLUME /tmp</span><br><span class="line">#ADD  atcrodfunding3_ssm-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd=file:/dev/./urandom&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line">#</span><br><span class="line"> </span><br><span class="line">#FROM hub.c.163.com/xbingo/jdk8:latest</span><br><span class="line">#</span><br><span class="line">#ADD gs-spring-boot-docker-0.1.0.jar app.jar</span><br><span class="line">#</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">#这个 Dockerfile 文件很简单，构建 Jdk 基础环境，添加 Spring Boot Jar 到镜像中，简单解释一下:</span><br><span class="line">#</span><br><span class="line">#FROM ，表示使用 Jdk8 环境 为基础镜像，如果镜像不是本地的会从 DockerHub 进行下载</span><br><span class="line">#VOLUME ，VOLUME 指向了一个/tmp的目录，由于 Spring Boot 使用内置的Tomcat容器，Tomcat 默认使用/tmp作为工作目录。这个命令的效果是：</span><br><span class="line">#在宿主机的/var/lib/docker目录下创建一个临时文件并把它链接到容器中的/tmp目录</span><br><span class="line">#ADD ，拷贝文件并且重命名</span><br><span class="line">#ENTRYPOINT ，为了缩短 Tomcat 的启动时间，添加java.security.egd的系统属性指向/dev/urandom作为 ENTRYPOINT</span><br><span class="line">#这样 Spring Boot 项目添加 Docker 依赖就完成了。</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<p>Dockerfile 用的war要有Tomcat </p>
-<p>自己理解吧 多看一些视频笔记什么的 反正很难,,,</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107184402451.png" alt="image-20181107184402451"></p>
-<hr>
-<hr>
-<hr>
-<h1 id="以上的文件是从github上拉的-现在自己构建SpringBoot-jar的应用"><a href="#以上的文件是从github上拉的-现在自己构建SpringBoot-jar的应用" class="headerlink" title="以上的文件是从github上拉的 现在自己构建SpringBoot -jar的应用"></a>以上的文件是从github上拉的 现在自己构建SpringBoot -jar的应用</h1><blockquote>
-<p>通过群里的指导 估计jar打包和war打包区别不大吧</p>
-<p>下面通过SpringBoot构建Docker部署一下试试</p>
-<p><a href="https://waylau.com/docker-spring-boot/" target="_blank" rel="noopener">https://waylau.com/docker-spring-boot/</a></p>
-<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a></p>
-<p><a href="https://lw900925.github.io/docker/docker-springboot.html" target="_blank" rel="noopener">https://lw900925.github.io/docker/docker-springboot.html</a></p>
-<p><a href="https://www.tianmaying.com/tutorial/spring-boot-docker" target="_blank" rel="noopener">https://www.tianmaying.com/tutorial/spring-boot-docker</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://bingohuang.com/spring-boot-docker/" target="_blank" rel="noopener">https://bingohuang.com/spring-boot-docker/</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://www.imooc.com/search/?words=docker" target="_blank" rel="noopener">https://www.imooc.com/search/?words=docker</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://www.ityouknow.com/docker/2018/03/30/docker-machine.html" target="_blank" rel="noopener">http://www.ityouknow.com/docker/2018/03/30/docker-machine.html</a></p>
-<p><a href="https://spring.io/guides/gs/spring-boot-docker/" target="_blank" rel="noopener">https://spring.io/guides/gs/spring-boot-docker/</a></p>
-</blockquote>
-<h2 id="SpringBoot-Docker"><a href="#SpringBoot-Docker" class="headerlink" title="SpringBoot Docker"></a>SpringBoot Docker</h2><blockquote>
-<p><a href="https://lw900925.github.io/docker/docker-springboot.html" target="_blank" rel="noopener">https://lw900925.github.io/docker/docker-springboot.html</a></p>
-</blockquote>
-<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a> 主要环节</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181110214317827.png" alt="image-20181110214317827"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Docker-Idea/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/07/Docker-Idea/" itemprop="url">Docker-Idea</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T15:39:20+08:00">
-                2018-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###1.Docker 在Intellij中的使用</p>
-<ul>
-<li><p>Machine的安装</p>
-</li>
-<li><p>compose的安装</p>
-</li>
-<li><p>Docker的配置</p>
-<p><strong>首先学习什么东西都要用官网的东西</strong></p>
-<p><strong>安装Docker的插件-看网上教程</strong></p>
-<p><strong>看Docker插件的官网</strong> <a href="https://www.jetbrains.com/help/idea/docker.html" target="_blank" rel="noopener">hrer</a></p>
-<blockquote>
-<p>学习英文。任何东西官网都用详细说明的</p>
-</blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 学习Docker</li>
-<li style="list-style: none"><input type="checkbox" checked> 学习SpringBoot整合Docker</li>
-<li style="list-style: none"><input type="checkbox" checked> 学习运维</li>
-</ul>
-<p><strong>下面开始Docker的学习</strong></p>
-<p>1.现在插件</p>
-<p>2.看网址的教程</p>
-<p>3.安装machin和compose</p>
-<blockquote>
-<p>machine和compose的安装参考</p>
-<p>1.Gitbook书</p>
-<p><a href="https://yeasy.gitbooks.io/docker_practice/content/compose/install.html" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/content/compose/install.html</a></p>
-<p>2。官方文档（为主）</p>
-<p><a href="https://docs.docker.com/machine/install-machine/" target="_blank" rel="noopener">https://docs.docker.com/machine/install-machine/</a> ⭐️</p>
-<p>（为什么每次都要重新下载dockermachine）</p>
-</blockquote>
-<blockquote>
-<p>Docker-machine env 不能执行二进制文件 首先要 重新下载Dockermachihe</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;</span><br><span class="line">  curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/usr/local/bin/docker-machine &amp;&amp;</span><br><span class="line">  chmod +x /usr/local/bin/docker-machine</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>3.Github</p>
-<p><a href="https://github.com/docker/machine/releases" target="_blank" rel="noopener">https://github.com/docker/machine/releases</a></p>
-<p><a href="https://github.com/docker/machine" target="_blank" rel="noopener">https://github.com/docker/machine</a></p>
-</blockquote>
-<h1 id="2-有些东西放在了云收藏里面"><a href="#2-有些东西放在了云收藏里面" class="headerlink" title="2.有些东西放在了云收藏里面"></a>2.有些东西放在了云收藏里面</h1><h6 id="Docker的用户名是2018112"><a href="#Docker的用户名是2018112" class="headerlink" title="Docker的用户名是2018112"></a>Docker的用户名是2018112</h6><p>#####安装Docker插件要开VPN 还有访问Gitbub也要开VPN wiredes的</p>
-<h6 id="安装Docker要安装DookerToolBox"><a href="#安装Docker要安装DookerToolBox" class="headerlink" title="安装Docker要安装DookerToolBox"></a>安装Docker要安装DookerToolBox</h6></li>
-</ul>
-<h1 id="3-Docker"><a href="#3-Docker" class="headerlink" title="3.Docker"></a>3.Docker</h1><p>  ！！Docker真是一个恐怖的东西</p>
-<p>  ######Docker的学习资源GitBook里面的Docker的附录部分</p>
-<blockquote>
-<p><a href="https://blog.lab99.org/post/docker-2016-07-14-faq.html" target="_blank" rel="noopener">https://blog.lab99.org/post/docker-2016-07-14-faq.html</a></p>
-</blockquote>
-<h4 id="1-无独有偶通过Docker-SpirngBoot的学习了解了TCP-socker-Engine-API-URL的填写"><a href="#1-无独有偶通过Docker-SpirngBoot的学习了解了TCP-socker-Engine-API-URL的填写" class="headerlink" title="1.无独有偶通过Docker-SpirngBoot的学习了解了TCP socker Engine API URL的填写"></a>1.无独有偶通过Docker-SpirngBoot的学习了解了TCP socker Engine API URL的填写</h4><blockquote>
-<p> Docker开启远程访问这是过程中产生的问题 安装了socket 以后想办法删除</p>
-<p>PS：Docker服务中进程间通信通过/var/run/docker.sock实现，默认服务不提供监听端口，因此使用docker remote api 需要手动绑定端口。方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; `# service docker stop``# docker -d -H unix:``///var/run/docker.sock -H tcp://0.0.0.0:2375`</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>  ###2.点击+号添加一个docker配置，输入Name和Engine API URL，URL是docker服务地址，需要docker开启远程连接功能。CentOS中在docker启动参数里添加如下配置即可开启远程连接。</p>
-<pre><code>-H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
-</code></pre><hr>
-<p>   <em>下面是docker在idea中的安装</em></p>
-<ul>
-<li><p>clouds里面没有Docker。在Docker中配置 TCP：tcp：//127.0.0.1:2376</p>
-</li>
-<li><p>注意这个是通过终端命令得到的</p>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker-machine env cloudcomb</span><br><span class="line">export DOCKER_TLS_VERIFY=&quot;1&quot;</span><br><span class="line">export DOCKER_HOST=&quot;tcp://192.168.99.101:2376&quot;</span><br><span class="line">export DOCKER_CERT_PATH=&quot;/Users/apple/.docker/machine/machines/cloudcomb&quot;</span><br><span class="line">export DOCKER_MACHINE_NAME=&quot;cloudcomb&quot;</span><br><span class="line"># Run this command to configure your shell:</span><br><span class="line"># eval $(docker-machine env cloudcomb)</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107213000670.png" alt="image-20181107213000670"></p>
-</li>
-<li><p>将前面的端口换成本地的 tcp:127.0.0.1:2376</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107213056424.png" alt="image-20181107213056424"></p>
-</li>
-</ul>
-<ul>
-<li style="list-style: none"><input type="checkbox"> emm睡一觉起来VPN打开要等一会</li>
-<li style="list-style: none"><input type="checkbox"> <img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108064320954.png" alt="image-20181108064320954"></li>
-</ul>
-<p>在终端输入dockerversion</p>
-<p>docker-machine env—Host is not running</p>
-<h5 id="学习资源：通过Github的搜索功能🔍-发现一些学习资料"><a href="#学习资源：通过Github的搜索功能🔍-发现一些学习资料" class="headerlink" title="#学习资源：通过Github的搜索功能🔍 发现一些学习资料"></a>#学习资源：通过Github的搜索功能🔍 发现一些学习资料</h5><p><a href="https://www.jetbrains.com/help/idea/docker.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/idea/docker.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Unditors/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/07/Unditors/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T15:32:58+08:00">
-                2018-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Hexo/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/07/Hexo/" itemprop="url">Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T15:24:22+08:00">
-                2018-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="这是Hexo的教程文档"><a href="#这是Hexo的教程文档" class="headerlink" title="这是Hexo的教程文档"></a>这是Hexo的教程文档</h3><h2 id="首先：写文件-通过终端new-然后使用Utils的categories-和tags的格式分类文章"><a href="#首先：写文件-通过终端new-然后使用Utils的categories-和tags的格式分类文章" class="headerlink" title="首先：写文件 通过终端new 然后使用Utils的categories 和tags的格式分类文章"></a>首先：写文件 通过终端new 然后使用Utils的categories 和tags的格式分类文章</h2><h5 id="然后将其移动指定的目录里面-分类显示。每天按时发布文章"><a href="#然后将其移动指定的目录里面-分类显示。每天按时发布文章" class="headerlink" title="然后将其移动指定的目录里面 分类显示。每天按时发布文章"></a>然后将其移动指定的目录里面 分类显示。每天按时发布文章</h5><p>######后面写一些Hexo的使用教程 和备注相关的东西 现在先这样 </p>
-<p><a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/front-matter</a> 学习Hexo按照这个网站里面有教程 学习任何东西都要使用官方文档</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -3106,6 +1793,10 @@ https://blog.csdn.net/liyuejin/article/details/78410586
 
 
           
+
+  
+
+
 
         </div>
         
@@ -3126,8 +1817,17 @@ https://blog.csdn.net/liyuejin/article/details/78410586
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -3187,6 +1887,22 @@ https://blog.csdn.net/liyuejin/article/details/78410586
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂"><span class="nav-number">1.</span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-1"><span class="nav-number">2.</span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-2"><span class="nav-number">3.</span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-3"><span class="nav-number">4.</span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-4"><span class="nav-number">5.</span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-5"><span class="nav-number">6.</span> <span class="nav-text">公众号搜索：小D课堂</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -3327,6 +2043,10 @@ https://blog.csdn.net/liyuejin/article/details/78410586
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
