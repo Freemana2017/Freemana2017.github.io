@@ -88,7 +88,7 @@
 <meta property="og:description" content="构建SpringBoot 应用docker镜像1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集  官方文档：https://spring.io/guides/gs/spring-boot-docker/ 1、步骤：maven里面添加配置pom.xml 简介:使用Docker的maven插件，构建springboot应用  &amp;lt;!--在maven最上面的申明的地方--pro">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111112653319.png">
-<meta property="og:updated_time" content="2018-11-11T03:32:03.901Z">
+<meta property="og:updated_time" content="2018-11-11T03:33:14.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot Docker 小D课堂">
 <meta name="twitter:description" content="构建SpringBoot 应用docker镜像1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集  官方文档：https://spring.io/guides/gs/spring-boot-docker/ 1、步骤：maven里面添加配置pom.xml 简介:使用Docker的maven插件，构建springboot应用  &amp;lt;!--在maven最上面的申明的地方--pro">
@@ -382,9 +382,8 @@
 <pre><code> &lt;groupId&gt;com.spotify&lt;/groupId&gt;
 &lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
 &lt;version&gt;1.3.6&lt;/version&gt;
-</code></pre><p>  改为</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> &lt;groupId&gt;com.spotify&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;  //这边不是dockerfile-maven-plugin了而是docker-maven-plugin</span><br><span class="line">&lt;version&gt;0.4.13&lt;/version&gt;</span><br></pre></td></tr></table></figure>
-<p>   ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
+</code></pre><h1 id="改为⭐️⭐️"><a href="#改为⭐️⭐️" class="headerlink" title="改为⭐️⭐️"></a>改为⭐️⭐️</h1>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;groupId&gt;com.spotify&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;  //这边不是dockerfile-maven-plugin了而是docker-maven-plugin</span><br><span class="line">&lt;version&gt;0.4.13&lt;/version&gt;</span><br></pre></td></tr></table></figure>
+<p>   ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ </p>
 <h3 id="第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><a href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集" class="headerlink" title="第2课 高级篇幅之构建SpringBoot应用docker镜像下集"></a>第2课 高级篇幅之构建SpringBoot应用docker镜像下集</h3><blockquote>
 <h4 id="步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><a href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）" class="headerlink" title="步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）"></a>步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</h4></blockquote>
 <pre><code>简介:打包SpringCloud镜像并上传私有仓库并部署
@@ -435,7 +434,7 @@ EXPOSE 8080 暴露镜像端口
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/springcloud/" rel="next" title="">
+              <a href="/2018/11/10/Docker加速/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -444,6 +443,10 @@ EXPOSE 8080 暴露镜像端口
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/11/springcloud/" rel="prev" title="test复制标题可以生效吗。yes no ?">
+                test复制标题可以生效吗。yes no ? <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -575,7 +578,7 @@ EXPOSE 8080 暴露镜像端口
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构建SpringBoot-应用docker镜像"><span class="nav-number">1.</span> <span class="nav-text">构建SpringBoot 应用docker镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#1、步骤：maven里面添加配置pom-xml"><span class="nav-number">1.1.</span> <span class="nav-text">1、步骤：maven里面添加配置pom.xml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高能预警"><span class="nav-number">2.</span> <span class="nav-text">高能预警</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将小D课堂里面的插件"><span class="nav-number">3.</span> <span class="nav-text">将小D课堂里面的插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><span class="nav-number">3.0.1.</span> <span class="nav-text">第2课 高级篇幅之构建SpringBoot应用docker镜像下集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构建SpringBoot-应用docker镜像"><span class="nav-number">1.</span> <span class="nav-text">构建SpringBoot 应用docker镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#1、步骤：maven里面添加配置pom-xml"><span class="nav-number">1.1.</span> <span class="nav-text">1、步骤：maven里面添加配置pom.xml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高能预警"><span class="nav-number">2.</span> <span class="nav-text">高能预警</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将小D课堂里面的插件"><span class="nav-number">3.</span> <span class="nav-text">将小D课堂里面的插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#改为⭐️⭐️"><span class="nav-number">4.</span> <span class="nav-text">改为⭐️⭐️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><span class="nav-number">4.0.1.</span> <span class="nav-text">第2课 高级篇幅之构建SpringBoot应用docker镜像下集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</span></a></li></ol></li></ol></li></div>
             
 
           </div>
