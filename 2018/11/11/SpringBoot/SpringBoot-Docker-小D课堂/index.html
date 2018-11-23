@@ -87,12 +87,17 @@
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="构建SpringBoot 应用docker镜像1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集  官方文档：https://spring.io/guides/gs/spring-boot-docker/ 1、步骤：maven里面添加配置pom.xml 简介:使用Docker的maven插件，构建springboot应用  &amp;lt;!--在maven最上面的申明的地方--pro">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/Users/apple/Library/Application%20Support/typora-user-images/image-20181111112653319.png">
-<meta property="og:updated_time" content="2018-11-11T03:33:14.842Z">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111112653319.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111130637806.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111130706064.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111131256001.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111133053363.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111133138180.png">
+<meta property="og:updated_time" content="2018-11-11T05:41:18.192Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot Docker 小D课堂">
 <meta name="twitter:description" content="构建SpringBoot 应用docker镜像1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集  官方文档：https://spring.io/guides/gs/spring-boot-docker/ 1、步骤：maven里面添加配置pom.xml 简介:使用Docker的maven插件，构建springboot应用  &amp;lt;!--在maven最上面的申明的地方--pro">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/Users/apple/Library/Application%20Support/typora-user-images/image-20181111112653319.png">
+<meta name="twitter:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111112653319.png">
 
 
 
@@ -366,7 +371,7 @@
 <blockquote>
 <p> <a href="https://blog.csdn.net/TMaskBoy/article/details/82562413" target="_blank" rel="noopener">https://blog.csdn.net/TMaskBoy/article/details/82562413</a></p>
 </blockquote>
-<p><img src="/2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/Users/apple/Library/Application Support/typora-user-images/image-20181111112653319.png" alt="image-20181111112653319"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111112653319.png" alt="image-20181111112653319"></p>
 <h1 id="高能预警"><a href="#高能预警" class="headerlink" title="高能预警"></a>高能预警</h1><ul>
 <li><p>No plugin found for prefix ‘docker’ in the current project and in the plugin groups<br>在Maven的配置文件 conf/settings.xml中添加com.spotify</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;pluginGroups&gt;  </span><br><span class="line">    &lt;pluginGroup&gt;com.spotify&lt;/pluginGroup&gt;  </span><br><span class="line">&lt;/pluginGroups&gt;</span><br><span class="line"></span><br><span class="line">注意setting配置文件在maven的仓库里面找不到 重新更新idea中maven的插件 然后 更换.m2中conf中setting.xml的内容</span><br></pre></td></tr></table></figure>
@@ -382,12 +387,13 @@
 <pre><code> &lt;groupId&gt;com.spotify&lt;/groupId&gt;
 &lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
 &lt;version&gt;1.3.6&lt;/version&gt;
-</code></pre><h1 id="改为⭐️⭐️"><a href="#改为⭐️⭐️" class="headerlink" title="改为⭐️⭐️"></a>改为⭐️⭐️</h1>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;groupId&gt;com.spotify&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;  //这边不是dockerfile-maven-plugin了而是docker-maven-plugin</span><br><span class="line">&lt;version&gt;0.4.13&lt;/version&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="改为⭐️⭐️"><a href="#改为⭐️⭐️" class="headerlink" title="改为⭐️⭐️"></a>改为⭐️⭐️</h1>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;groupId&gt;com.spotify&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt; ⭐️ //这边不是dockerfile-maven-plugin了而是docker-maven-plugin</span><br><span class="line">&lt;version&gt;0.4.13&lt;/version&gt;</span><br></pre></td></tr></table></figure>
 <p>   ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ </p>
 <h3 id="第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><a href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集" class="headerlink" title="第2课 高级篇幅之构建SpringBoot应用docker镜像下集"></a>第2课 高级篇幅之构建SpringBoot应用docker镜像下集</h3><blockquote>
 <h4 id="步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><a href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）" class="headerlink" title="步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）"></a>步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</h4></blockquote>
 <pre><code>简介:打包SpringCloud镜像并上传私有仓库并部署
 1、 什么是Dockerfile : 由一系列命令和参数构成的脚本，这些命令应用于基础镜像, 最终创建一个新的镜       像
+实战
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 ARG JAR_FILE
@@ -404,7 +410,37 @@ ARG  设置编译镜像时加入的参数， ENV 是设置容器的环境变量
 COPY : 只支持将本地文件复制到容器 ,还有个ADD更强大但复杂点
 ENTRYPOINT 容器启动时执行的命令
 EXPOSE 8080 暴露镜像端口
-</code></pre>
+</code></pre><h3 id="第3课构建镜像"><a href="#第3课构建镜像" class="headerlink" title="第3课构建镜像"></a>第3课构建镜像</h3><pre><code>2、构建镜像
+        mvn install dockerfile:build
+        打标签
+        docker tag a1b9fc71720d registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:docker-demo-v201808
+        推送到镜像仓库
+        docker push registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:docker-demo-v201808
+
+        应用服务器拉取镜像
+        docker pull registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:docker-demo-v201808
+
+
+        docker run -d --name xdclass_docker_demo1 -p 8099:8080  a1b9fc71720d
+
+        3、查看启动日志 docker logs -f  containerid
+</code></pre><h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><h2 id="1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈"><a href="#1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈" class="headerlink" title="1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈"></a>1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈</h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111130637806.png" alt="image-20181111130637806"></p>
+<h2 id="2-docker-images"><a href="#2-docker-images" class="headerlink" title="2.docker images"></a>2.docker images</h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111130706064.png" alt="image-20181111130706064"></p>
+<blockquote>
+<p>没有名字镜像？？注意在idea中测试的话就要用idea 不要随变改成终端</p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111131256001.png" alt="image-20181111131256001"></p>
+<h2 id="3-docker-run-d-–name-demo-p-8080-8080-8ef42611e3b0"><a href="#3-docker-run-d-–name-demo-p-8080-8080-8ef42611e3b0" class="headerlink" title="3.docker  run -d –name demo -p 8080:8080  8ef42611e3b0"></a>3.docker  run -d –name demo -p 8080:8080  8ef42611e3b0</h2><blockquote>
+<p>备注：运行镜像 –name 指定名字 -d 后台运行 8ef42611e3b0：刚刚构建的image的ID </p>
+<p>name 不会用就别用</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111133053363.png" alt="image-20181111133053363"></p>
+</blockquote>
+<h3 id="4-docker-ps"><a href="#4-docker-ps" class="headerlink" title="4.docker ps"></a>4.docker ps</h3><blockquote>
+<p>查看一下镜像的进程</p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111133138180.png" alt="image-20181111133138180"></p>
+<p>？？？没有程序。测试一下</p>
+
       
     </div>
     
@@ -434,8 +470,8 @@ EXPOSE 8080 暴露镜像端口
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/09/开发遇到的问题/常见问题总结/" rel="next" title="常见问题总结">
-                <i class="fa fa-chevron-left"></i> 常见问题总结
+              <a href="/2018/11/09/开发遇到的问题/常见问题总结/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -545,7 +581,7 @@ EXPOSE 8080 暴露镜像端口
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -578,7 +614,7 @@ EXPOSE 8080 暴露镜像端口
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构建SpringBoot-应用docker镜像"><span class="nav-number">1.</span> <span class="nav-text">构建SpringBoot 应用docker镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#1、步骤：maven里面添加配置pom-xml"><span class="nav-number">1.1.</span> <span class="nav-text">1、步骤：maven里面添加配置pom.xml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高能预警"><span class="nav-number">2.</span> <span class="nav-text">高能预警</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将小D课堂里面的插件"><span class="nav-number">3.</span> <span class="nav-text">将小D课堂里面的插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#改为⭐️⭐️"><span class="nav-number">4.</span> <span class="nav-text">改为⭐️⭐️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><span class="nav-number">4.0.1.</span> <span class="nav-text">第2课 高级篇幅之构建SpringBoot应用docker镜像下集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构建SpringBoot-应用docker镜像"><span class="nav-number">1.</span> <span class="nav-text">构建SpringBoot 应用docker镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#1、步骤：maven里面添加配置pom-xml"><span class="nav-number">1.1.</span> <span class="nav-text">1、步骤：maven里面添加配置pom.xml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高能预警"><span class="nav-number">2.</span> <span class="nav-text">高能预警</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将小D课堂里面的插件"><span class="nav-number">3.</span> <span class="nav-text">将小D课堂里面的插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#改为⭐️⭐️"><span class="nav-number">4.</span> <span class="nav-text">改为⭐️⭐️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><span class="nav-number">4.0.1.</span> <span class="nav-text">第2课 高级篇幅之构建SpringBoot应用docker镜像下集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3课构建镜像"><span class="nav-number">4.0.2.</span> <span class="nav-text">第3课构建镜像</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实战"><span class="nav-number">5.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈"><span class="nav-number">5.1.</span> <span class="nav-text">1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-docker-images"><span class="nav-number">5.2.</span> <span class="nav-text">2.docker images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-docker-run-d-–name-demo-p-8080-8080-8ef42611e3b0"><span class="nav-number">5.3.</span> <span class="nav-text">3.docker  run -d –name demo -p 8080:8080  8ef42611e3b0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-docker-ps"><span class="nav-number">5.3.1.</span> <span class="nav-text">4.docker ps</span></a></li></ol></li></ol></li></div>
             
 
           </div>

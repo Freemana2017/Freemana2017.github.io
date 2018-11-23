@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Docker,腾讯云,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;amp;courseId=1006018194 小D课堂  123sudo docker">
+<meta name="keywords" content="Docker,腾讯云">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker上传到腾讯云服务器上">
+<meta property="og:url" content="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/index.html">
+<meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;amp;courseId=1006018194 小D课堂  123sudo docker">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Desktop/屏幕快照%202018-11-15%20下午5.44.02.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182444968.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182457396.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182649857.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182725221.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115183150585.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115185616768.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181117182934398.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181117183003800.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181118104713199.png">
+<meta property="og:updated_time" content="2018-11-23T08:20:51.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker上传到腾讯云服务器上">
+<meta name="twitter:description" content="https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;amp;courseId=1006018194 小D课堂  123sudo docker">
+<meta name="twitter:image" content="http://yoursite.com/Users/apple/Desktop/屏幕快照%202018-11-15%20下午5.44.02.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/">
+
+
+
+
+
+  <title>Docker上传到腾讯云服务器上 | Freemana2017</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Freemana2017</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Docker上传到腾讯云服务器上</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T11:35:27+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><a href="https://cloud.tencent.com/document/product/457/9117" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/457/9117</a> 腾讯云</p>
+<p><a href="https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194</a> 小D课堂</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login --username=[username] ccr.ccs.tencentyun.com 	</span><br><span class="line">sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 	</span><br><span class="line">100007660104</span><br></pre></td></tr></table></figure>
+<p>username:腾讯云账号，开通时已注册。输入密码后即登录完成。<img src="/Users/apple/Desktop/屏幕快照 2018-11-15 下午5.44.02.png" alt="屏幕快照 2018-11-15 下午5.44.02"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182444968.png" alt="image-20181115182444968"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182457396.png" alt="image-20181115182457396"></p>
+<p>##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成</p>
+<p>####密码输入的时候先输入电脑root密码 z</p>
+<p>###再输入密码yhp836143</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182649857.png" alt="image-20181115182649857"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br></pre></td></tr></table></figure>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182725221.png" alt="image-20181115182725221"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag  5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<p>密码输入 z 因为是sudo</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115183150585.png" alt="image-20181115183150585"></p>
+<h3 id="使用镜像—-下载镜像"><a href="#使用镜像—-下载镜像" class="headerlink" title="使用镜像—-下载镜像"></a>使用镜像—-下载镜像</h3><blockquote>
+<p>小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 </p>
+</blockquote>
+<blockquote>
+<p>登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境</p>
+</blockquote>
+<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115185616768.png" alt="image-20181115185616768"></p>
+<p>在本机上远程腾讯云 搭建Docker环境</p>
+<p>登录到镜像仓库，需输入密码。</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username=[username] ccr.ccs.tencentyun.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下载镜像。</p>
+<ul>
+<li>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h1><blockquote>
+<p> <a href="https://www.w3cschool.cn/kxqhmy/suzagdn1.html" target="_blank" rel="noopener">https://www.w3cschool.cn/kxqhmy/suzagdn1.html</a></p>
+</blockquote>
+<p>查看是否存在进程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux |grep docker1</span><br></pre></td></tr></table></figure>
+<p>停止进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo service docker stop1</span><br></pre></td></tr></table></figure>
+<p>重启docker：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dockerd</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="Docker在云服务器上的安装"><a href="#Docker在云服务器上的安装" class="headerlink" title="Docker在云服务器上的安装"></a>Docker在云服务器上的安装</h1><blockquote>
+<p><a href="https://www.jianshu.com/p/ea3078dae4fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ea3078dae4fb</a> 简书 </p>
+</blockquote>
+<p>1.登陆到服务器上面 通过终端 </p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181117182934398.png" alt="image-20181117182934398"></p>
+<p>或者云主机登陆</p>
+<p>2.开始操作</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181117183003800.png" alt="image-20181117183003800"></p>
+<p>3.<a href="https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions</a> 官网</p>
+<blockquote>
+<p> Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装</p>
+</blockquote>
+<p>Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span><br></pre></td></tr></table></figure>
+<p>docker -d -p 8888：8080 </p>
+<p>先分配角色。在启动Docker </p>
+<p>如果端口播被占用了 先关闭Docker</p>
+<p>sudo service docker stop</p>
+<p>在启动Doccur</p>
+<p>service docker start</p>
+<hr>
+<p>大佬指教。不是locaohostg 192.168.2.123</p>
+<p>是公网ip腾讯公网的ip–118.89.28.213</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181118104713199.png" alt="image-20181118104713199"></p>
+<p>加镜像名啊 兄die</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+            <a href="/tags/腾讯云/" rel="tag"># 腾讯云</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/11/SpringBoot/Spring Boot/" rel="next" title="SpringBoot尚硅谷">
+                <i class="fa fa-chevron-left"></i> SpringBoot尚硅谷
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/11/Docker/Docker加速/" rel="prev" title="Docker镜像加速">
+                Docker镜像加速 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">袁海鹏</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用镜像—-下载镜像"><span class="nav-number">1.</span> <span class="nav-text">使用镜像—-下载镜像</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#https-cloud-tencent-com-developer-labs-lab-10054-console"><span class="nav-number"></span> <span class="nav-text">### https://cloud.tencent.com/developer/labs/lab/10054/console</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><span class="nav-number"></span> <span class="nav-text">⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker在云服务器上的安装"><span class="nav-number"></span> <span class="nav-text">Docker在云服务器上的安装</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">袁海鹏</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

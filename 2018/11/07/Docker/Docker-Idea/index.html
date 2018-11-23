@@ -87,14 +87,14 @@
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="###1.Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/11/07/Docker/Docker-Idea/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213000670.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/07/Docker/Docker-Idea/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213056424.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/07/Docker/Docker-Idea/Users/apple/Library/Application%20Support/typora-user-images/image-20181108064320954.png">
-<meta property="og:updated_time" content="2018-11-07T22:53:41.418Z">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213000670.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213056424.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108064320954.png">
+<meta property="og:updated_time" content="2018-11-15T01:52:42.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker-Idea">
 <meta name="twitter:description" content="###1.Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/07/Docker/Docker-Idea/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213000670.png">
+<meta name="twitter:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213000670.png">
 
 
 
@@ -418,19 +418,21 @@
 <li><p>注意这个是通过终端命令得到的</p>
 </li>
 <li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker-machine env cloudcomb</span><br><span class="line">export DOCKER_TLS_VERIFY=&quot;1&quot;</span><br><span class="line">export DOCKER_HOST=&quot;tcp://192.168.99.101:2376&quot;</span><br><span class="line">export DOCKER_CERT_PATH=&quot;/Users/apple/.docker/machine/machines/cloudcomb&quot;</span><br><span class="line">export DOCKER_MACHINE_NAME=&quot;cloudcomb&quot;</span><br><span class="line"># Run this command to configure your shell:</span><br><span class="line"># eval $(docker-machine env cloudcomb)</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/11/07/Docker/Docker-Idea/Users/apple/Library/Application Support/typora-user-images/image-20181107213000670.png" alt="image-20181107213000670"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107213000670.png" alt="image-20181107213000670"></p>
 </li>
 <li><p>将前面的端口换成本地的 tcp:127.0.0.1:2376</p>
-<p><img src="/2018/11/07/Docker/Docker-Idea/Users/apple/Library/Application Support/typora-user-images/image-20181107213056424.png" alt="image-20181107213056424"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107213056424.png" alt="image-20181107213056424"></p>
 </li>
 </ul>
 <ul>
 <li style="list-style: none"><input type="checkbox"> emm睡一觉起来VPN打开要等一会</li>
-<li style="list-style: none"><input type="checkbox"> <img src="/2018/11/07/Docker/Docker-Idea/Users/apple/Library/Application Support/typora-user-images/image-20181108064320954.png" alt="image-20181108064320954"></li>
+<li style="list-style: none"><input type="checkbox"> <img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108064320954.png" alt="image-20181108064320954"></li>
 </ul>
 <p>在终端输入dockerversion</p>
 <p>docker-machine env—Host is not running</p>
 <h5 id="学习资源：通过Github的搜索功能🔍-发现一些学习资料"><a href="#学习资源：通过Github的搜索功能🔍-发现一些学习资料" class="headerlink" title="#学习资源：通过Github的搜索功能🔍 发现一些学习资料"></a>#学习资源：通过Github的搜索功能🔍 发现一些学习资料</h5><p><a href="https://www.jetbrains.com/help/idea/docker.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/idea/docker.html</a></p>
+<p>alip1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FROM java:8</span><br><span class="line">VOLUME /tmp</span><br><span class="line">COPY target/tran4spd-1.0-SNAPSHOT.jar resource.jar</span><br><span class="line">RUN bash -c &quot;touch /resource.jar&quot;</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;resource.jar&quot;]</span><br><span class="line"></span><br><span class="line"># docker run -d -p 18080:8099 --name docker-resource leesia/resource:1.0</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -572,7 +574,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

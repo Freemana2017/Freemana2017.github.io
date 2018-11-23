@@ -81,15 +81,19 @@
 
 <meta name="description" content="前端向后端传值：  Button 和form   1234567function goUpdatePage(id) &amp;#123;    window.location.href = &quot;$&amp;#123;pageContext.request.contextPath&amp;#125;/user/editcontroller?id=&quot; + id;&amp;#125;       &amp;lt;button type=&quot;bu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常见问题总结">
+<meta property="og:title" content="Freemana2017">
 <meta property="og:url" content="http://yoursite.com/2018/11/09/开发遇到的问题/常见问题总结/index.html">
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="前端向后端传值：  Button 和form   1234567function goUpdatePage(id) &amp;#123;    window.location.href = &quot;$&amp;#123;pageContext.request.contextPath&amp;#125;/user/editcontroller?id=&quot; + id;&amp;#125;       &amp;lt;button type=&quot;bu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-09T09:16:37.581Z">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Desktop/屏幕快照%202018-11-14%20下午1.19.50.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181114135152950.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181117115951176.png">
+<meta property="og:updated_time" content="2018-11-17T04:00:18.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常见问题总结">
+<meta name="twitter:title" content="Freemana2017">
 <meta name="twitter:description" content="前端向后端传值：  Button 和form   1234567function goUpdatePage(id) &amp;#123;    window.location.href = &quot;$&amp;#123;pageContext.request.contextPath&amp;#125;/user/editcontroller?id=&quot; + id;&amp;#125;       &amp;lt;button type=&quot;bu">
+<meta name="twitter:image" content="http://yoursite.com/Users/apple/Desktop/屏幕快照%202018-11-14%20下午1.19.50.png">
 
 
 
@@ -125,7 +129,7 @@
 
 
 
-  <title>常见问题总结 | Freemana2017</title>
+  <title> | Freemana2017</title>
   
 
 
@@ -279,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">常见问题总结</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -341,7 +345,36 @@
 </li>
 </ul>
 </li>
+<li><p>开发中service层 必须要写 @service注解</p>
+</li>
+<li><p>⚠️service中不要加@service。在service的实现serviceiml中加@service注解</p>
+</li>
+<li><p>开发的顺序 从前端传值到Controller 再到 service 再到serviceimpl 再到userdao 再到mybatis.xml再到数据库 数据库返回前端页面</p>
+</li>
+<li><p>引入mybatis 的多个mapper的配置文件 mapper.xml  Spring Boot 的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mybatis.mapper-locations=classpath:mybatis/mapper/*.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>###idea警告：Field injection is not recommended</p>
+</li>
+<li><p>####Springboot开发 Dao中UserDao RoleDao中要加 @Mapper注解</p>
+<p># </p>
+</li>
+<li><h1 id=""><a href="#" class="headerlink" title=""></a><img src="/Users/apple/Desktop/屏幕快照 2018-11-14 下午1.19.50.png" alt="屏幕快照 2018-11-14 下午1.19.50"></h1></li>
+<li><p>import和open项目是不一样的 出现上面的情况要import一下啊 兄ide</p>
+</li>
+<li><h3 id="Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’"><a href="#Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’" class="headerlink" title="Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’"></a>Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’</h3></li>
+<li><p>Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Ca</p>
+<blockquote>
+<p> 看到那个<strong>resultType</strong>了么，就是它惹的祸，这里把<strong>resultType</strong>改为<strong>resultMap</strong>就OK啦，重启tomcat，木有异常啦</p>
+</blockquote>
+</li>
 </ul>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181114135152950.png" alt="image-20181114135152950"></p>
+<blockquote>
+<p>跳转视图 用字符串哈 </p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181117115951176.png" alt="image-20181117115951176"></p>
+<p>开发中前端的img要放到和框架的同一目录及下面哈。兄die</p>
 
       
     </div>
@@ -430,8 +463,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -468,7 +510,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -491,6 +533,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’"><span class="nav-number">1.0.1.</span> <span class="nav-text">Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
