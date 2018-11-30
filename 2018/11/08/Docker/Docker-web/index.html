@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="docker,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="学习地址* https://www.imooc.com/video/14624（慕课网）-6⃣刘果国  #第一个 java web项目 （SpringBoot 项目打包成一个war包的方式） 一制作自己的景象 Dockerfile  docker build   首先需要一个war文件 拷贝在桌面上   Docker images    1.建立一个Dockerfile vim Dockerf">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker-web">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/Docker/Docker-web/index.html">
+<meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="学习地址* https://www.imooc.com/video/14624（慕课网）-6⃣刘果国  #第一个 java web项目 （SpringBoot 项目打包成一个war包的方式） 一制作自己的景象 Dockerfile  docker build   首先需要一个war文件 拷贝在桌面上   Docker images    1.建立一个Dockerfile vim Dockerf">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108171728002.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108172737831.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108174858497.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108174929561.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108175158795.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108175309803.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108175738036.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108175751244.png">
+<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108180034419.png">
+<meta property="og:updated_time" content="2018-11-30T07:10:52.223Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker-web">
+<meta name="twitter:description" content="学习地址* https://www.imooc.com/video/14624（慕课网）-6⃣刘果国  #第一个 java web项目 （SpringBoot 项目打包成一个war包的方式） 一制作自己的景象 Dockerfile  docker build   首先需要一个war文件 拷贝在桌面上   Docker images    1.建立一个Dockerfile vim Dockerf">
+<meta name="twitter:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108171728002.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/08/Docker/Docker-web/">
+
+
+
+
+
+  <title>docker-web | Freemana2017</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Freemana2017</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/Docker/Docker-web/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">docker-web</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T10:20:30+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p> 学习地址* <a href="https://www.imooc.com/video/14624（慕课网）-6⃣刘果国" target="_blank" rel="noopener">https://www.imooc.com/video/14624（慕课网）-6⃣刘果国</a></p>
+</blockquote>
+<p>#第一个 java web项目 （SpringBoot 项目打包成一个war包的方式）</p>
+<h3 id="一制作自己的景象"><a href="#一制作自己的景象" class="headerlink" title="一制作自己的景象"></a>一制作自己的景象</h3><ul>
+<li><p>Dockerfile</p>
+</li>
+<li><p>docker build</p>
+<hr>
+<ul>
+<li>首先需要一个war文件 拷贝在桌面上</li>
+</ul>
+<blockquote>
+<p>Docker images</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="1-建立一个Dockerfile"><a href="#1-建立一个Dockerfile" class="headerlink" title="1.建立一个Dockerfile"></a>1.建立一个Dockerfile</h5><blockquote>
+<p>vim Dockerfile</p>
+</blockquote>
+<h6 id="2-下载Tomcat镜像"><a href="#2-下载Tomcat镜像" class="headerlink" title="2. 下载Tomcat镜像"></a>2. 下载Tomcat镜像</h6><blockquote>
+<p>网易镜像中心 找Tomcat的镜像 <a href="https://c.163yun.com/hub#/m/home/" target="_blank" rel="noopener">https://c.163yun.com/hub#/m/home/</a></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108171728002.png" alt="image-20181108171728002"></p>
+</blockquote>
+<p>（包括JDK Tomcat）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull hub.c.163.com/library/tomcat:latest</span><br></pre></td></tr></table></figure>
+<p> <img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108172737831.png" alt="image-20181108172737831"></p>
+<p>站在巨人的肩上</p>
+<h5 id="3-编辑Dockerfile"><a href="#3-编辑Dockerfile" class="headerlink" title="3.编辑Dockerfile"></a>3.编辑Dockerfile</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在Mac终端中使用vim编辑文件步骤</span><br><span class="line">1.  cd   文件所在的文件夹路径  &lt;回車&gt;</span><br><span class="line">2. 輸入  vim 文件名 &lt;回車&gt;</span><br><span class="line">3. 按下 i 鍵來编辑文本文字</span><br><span class="line">4. 退出vim編輯器：</span><br><span class="line">     不保存并退出  &lt;ESC&gt;   :q!   &lt;回車&gt;</span><br><span class="line">     保存并退出     &lt;ESC&gt;   :wq   &lt;回車&gt;</span><br></pre></td></tr></table></figure>
+<p>from hub.c.163.com/library/tomcat</p>
+<p>MAINTAINER Freemana2017 <a href="mailto:1047629166@qq.com" target="_blank" rel="noopener">1047629166@qq.com</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/apple/Desktop/Dockerweb</span><br><span class="line">ls</span><br><span class="line">&gt; mv atcrodfunding3_ssm-0.0.1-SNAPSHOT.war atcrod.war</span><br><span class="line">mv atcrodfunding3_ssm-0.0.1-SNAPSHOT.war atcrod.war (用MV 重新命名一下)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>进入文件夹里面 编写Dockerfile</p>
+</li>
+<li><p>学会看镜像的说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">How to use this image.</span><br><span class="line"></span><br><span class="line">Run the default Tomcat server (CMD [\&quot;catalina.sh\&quot;, \&quot;run\&quot;]):</span><br><span class="line"></span><br><span class="line">$ docker run -it --rm tomcat:8.0</span><br><span class="line">You can test it by visiting http://container-ip:8080 in a browser or, if you need access outside the host, on port 8888:</span><br><span class="line"></span><br><span class="line">$ docker run -it --rm -p 8888:8080 tomcat:8.0</span><br><span class="line">You can then go to http://localhost:8888 or http://host-ip:8888 in a browser.</span><br><span class="line"></span><br><span class="line">The default Tomcat environment in the image for versions 7 and 8 is:</span><br><span class="line"></span><br><span class="line">⭐️CATALINA_BASE:   /usr/local/tomcat</span><br><span class="line">⭐️CATALINA_HOME:   /usr/local/tomcat</span><br><span class="line">CATALINA_TMPDIR: /usr/local/tomcat/temp</span><br><span class="line">JRE_HOME:        /usr</span><br><span class="line">CLASSPATH:       /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1。编写Dockerfile-文件–Dockerfile"><a href="#1。编写Dockerfile-文件–Dockerfile" class="headerlink" title="1。编写Dockerfile 文件–Dockerfile"></a>1。编写Dockerfile 文件–Dockerfile</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from hub.c.163.com/library/tomcat</span><br><span class="line"></span><br><span class="line">MAINTAINER Freemana2017 1047629166@qq.com</span><br><span class="line"></span><br><span class="line">COPY atcrod.war /usr/local/tomcat/webapps</span><br></pre></td></tr></table></figure>
+<h3 id="2-创建镜像-–docker-build"><a href="#2-创建镜像-–docker-build" class="headerlink" title="2.创建镜像 –docker build"></a>2.创建镜像 –docker build</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108174858497.png" alt="image-20181108174858497"></p>
+<h3 id="3-查看镜像–docker-images"><a href="#3-查看镜像–docker-images" class="headerlink" title="3.查看镜像–docker images"></a>3.查看镜像–docker images</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108174929561.png" alt="image-20181108174929561"></p>
+<h2 id="4-给镜像写名字-docker-build-t-atcrod-latest"><a href="#4-给镜像写名字-docker-build-t-atcrod-latest" class="headerlink" title="4.给镜像写名字 docker build -t atcrod:latest ."></a>4.给镜像写名字 docker build -t atcrod:latest .</h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108175158795.png" alt="image-20181108175158795"></p>
+<h3 id="5-再次查看镜像-docker-images"><a href="#5-再次查看镜像-docker-images" class="headerlink" title="5.再次查看镜像 docker images"></a>5.再次查看镜像 docker images</h3><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108175309803.png" alt="image-20181108175309803"></p>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="二运行自己的容器"><a href="#二运行自己的容器" class="headerlink" title="###二运行自己的容器"></a>###二运行自己的容器</h1><h3 id="1-docker-run-d-p-8888-8080-atcrod"><a href="#1-docker-run-d-p-8888-8080-atcrod" class="headerlink" title="1.docker run -d -p 8888:8080 atcrod"></a>1.docker run -d -p 8888:8080 atcrod</h3><blockquote>
+<p>8888本机的端口号。8080Tomcat的端口号 去163.com查询 atcrod镜像的名字</p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108175738036.png" alt="image-20181108175738036"></p>
+<h4 id="2-docker-ps"><a href="#2-docker-ps" class="headerlink" title="2.docker ps"></a>2.docker ps</h4><blockquote>
+<p>查看Tomcat的进程 检查容器是不是启动啦</p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108175751244.png" alt="image-20181108175751244"></p>
+<h3 id="3-netstat-na-grep-8888"><a href="#3-netstat-na-grep-8888" class="headerlink" title="3.netstat -na|grep 8888"></a>3.netstat -na|grep 8888</h3><blockquote>
+<p>检查端口是不是存在了  输入localhost:8888测试Tomcat是否启动啦</p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181108180034419.png" alt="image-20181108180034419"></p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="⚠️-以上只是web项目在Docker中的部署项目"><a href="#⚠️-以上只是web项目在Docker中的部署项目" class="headerlink" title="⚠️ 以上只是web项目在Docker中的部署项目"></a>⚠️ 以上只是web项目在Docker中的部署项目</h1><h1 id="3-Docker-部署SpringBoot-web项目"><a href="#3-Docker-部署SpringBoot-web项目" class="headerlink" title="3.Docker 部署SpringBoot web项目"></a>3.Docker 部署SpringBoot web项目</h1><blockquote>
+<p>学习资源汇总</p>
+<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a></p>
+<p><a href="https://blog.csdn.net/weixin_39800144/article/details/79214978" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39800144/article/details/79214978</a></p>
+<p><a href="https://blog.csdn.net/weixin_39800144/article/details/79213276" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39800144/article/details/79213276</a></p>
+<p><a href="https://bingohuang.com/spring-boot-docker/" target="_blank" rel="noopener">https://bingohuang.com/spring-boot-docker/</a></p>
+</blockquote>
+<blockquote>
+<p>FROM java:8</p>
+<p>VOLUME /tmp</p>
+<p>COPY target/tran4spd-1.0-SNAPSHOT.jar resource.jar.   #这边放的是Docker部署的jar包的位置 绝对路径</p>
+<p>RUN bash -c “touch /resource.jar”</p>
+<p>EXPOSE 8080</p>
+<p>ENTRYPOINT [“java”,”-jar”,”resource.jar”]</p>
+<p># docker run -d -p 18080:8099 –name docker-resource leesia/resource:1.0</p>
+</blockquote>
+<p> 注意java-jar无法运行Tomcat要外置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;servlet-api&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.5&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>##文件路径不要用中文！！！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/07/Docker/Docker-SpringBoot/" rel="next" title="Docker SpringBoot">
+                <i class="fa fa-chevron-left"></i> Docker SpringBoot
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/09/开发遇到的问题/Iterm2配置/" rel="prev" title="ITerm2的配置">
+                ITerm2的配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">袁海鹏</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一制作自己的景象"><span class="nav-number">1.</span> <span class="nav-text">一制作自己的景象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-建立一个Dockerfile"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.建立一个Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-下载Tomcat镜像"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">2. 下载Tomcat镜像</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-编辑Dockerfile"><span class="nav-number">1.0.2.</span> <span class="nav-text">3.编辑Dockerfile</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#1。编写Dockerfile-文件–Dockerfile"><span class="nav-number">2.</span> <span class="nav-text">1。编写Dockerfile 文件–Dockerfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-创建镜像-–docker-build"><span class="nav-number">3.</span> <span class="nav-text">2.创建镜像 –docker build</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查看镜像–docker-images"><span class="nav-number">4.</span> <span class="nav-text">3.查看镜像–docker images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-给镜像写名字-docker-build-t-atcrod-latest"><span class="nav-number"></span> <span class="nav-text">4.给镜像写名字 docker build -t atcrod:latest .</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-再次查看镜像-docker-images"><span class="nav-number">1.</span> <span class="nav-text">5.再次查看镜像 docker images</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二运行自己的容器"><span class="nav-number"></span> <span class="nav-text">###二运行自己的容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-docker-run-d-p-8888-8080-atcrod"><span class="nav-number">1.</span> <span class="nav-text">1.docker run -d -p 8888:8080 atcrod</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-docker-ps"><span class="nav-number">1.1.</span> <span class="nav-text">2.docker ps</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-netstat-na-grep-8888"><span class="nav-number">2.</span> <span class="nav-text">3.netstat -na|grep 8888</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#⚠️-以上只是web项目在Docker中的部署项目"><span class="nav-number"></span> <span class="nav-text">⚠️ 以上只是web项目在Docker中的部署项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Docker-部署SpringBoot-web项目"><span class="nav-number"></span> <span class="nav-text">3.Docker 部署SpringBoot web项目</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">袁海鹏</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
