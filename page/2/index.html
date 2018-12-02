@@ -259,6 +259,199 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/Docker/Docker上传云服务器/" itemprop="url">Docker上传到腾讯云服务器上</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T11:35:27+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://cloud.tencent.com/document/product/457/9117" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/457/9117</a> 腾讯云</p>
+<p><a href="https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194</a> 小D课堂</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login --username=[username] ccr.ccs.tencentyun.com 	</span><br><span class="line">sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 	</span><br><span class="line">100007660104</span><br></pre></td></tr></table></figure>
+<p>username:腾讯云账号，开通时已注册。输入密码后即登录完成。<img src="/Users/apple/Desktop/屏幕快照 2018-11-15 下午5.44.02.png" alt="屏幕快照 2018-11-15 下午5.44.02"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182444968.png" alt="image-20181115182444968"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182457396.png" alt="image-20181115182457396"></p>
+<p>##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成</p>
+<p>####密码输入的时候先输入电脑root密码 z</p>
+<p>###再输入密码yhp836143</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182649857.png" alt="image-20181115182649857"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br></pre></td></tr></table></figure>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182725221.png" alt="image-20181115182725221"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag  5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<p>密码输入 z 因为是sudo</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115183150585.png" alt="image-20181115183150585"></p>
+<h3 id="使用镜像—-下载镜像"><a href="#使用镜像—-下载镜像" class="headerlink" title="使用镜像—-下载镜像"></a>使用镜像—-下载镜像</h3><blockquote>
+<p>小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 </p>
+</blockquote>
+<blockquote>
+<p>登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境</p>
+</blockquote>
+<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115185616768.png" alt="image-20181115185616768"></p>
+<p>在本机上远程腾讯云 搭建Docker环境</p>
+<p>登录到镜像仓库，需输入密码。</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username=[username] ccr.ccs.tencentyun.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下载镜像。</p>
+<ul>
+<li>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h1><blockquote>
+<p> <a href="https://www.w3cschool.cn/kxqhmy/suzagdn1.html" target="_blank" rel="noopener">https://www.w3cschool.cn/kxqhmy/suzagdn1.html</a></p>
+</blockquote>
+<p>查看是否存在进程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux |grep docker1</span><br></pre></td></tr></table></figure>
+<p>停止进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo service docker stop1</span><br></pre></td></tr></table></figure>
+<p>重启docker：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dockerd</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="Docker在云服务器上的安装"><a href="#Docker在云服务器上的安装" class="headerlink" title="Docker在云服务器上的安装"></a>Docker在云服务器上的安装</h1><blockquote>
+<p><a href="https://www.jianshu.com/p/ea3078dae4fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ea3078dae4fb</a> 简书 </p>
+</blockquote>
+<p>1.登陆到服务器上面 通过终端 </p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181117182934398.png" alt="image-20181117182934398"></p>
+<p>或者云主机登陆</p>
+<p>2.开始操作</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181117183003800.png" alt="image-20181117183003800"></p>
+<p>3.<a href="https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions</a> 官网</p>
+<blockquote>
+<p> Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装</p>
+</blockquote>
+<p>Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span><br></pre></td></tr></table></figure>
+<p>docker -d -p 8888：8080 </p>
+<p>先分配角色。在启动Docker </p>
+<p>如果端口播被占用了 先关闭Docker</p>
+<p>sudo service docker stop</p>
+<p>在启动Doccur</p>
+<p>service docker start</p>
+<hr>
+<p>大佬指教。不是locaohostg 192.168.2.123</p>
+<p>是公网ip腾讯公网的ip–118.89.28.213</p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181118104713199.png" alt="image-20181118104713199"></p>
+<p>加镜像名啊 兄die</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -3081,7 +3274,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -3103,7 +3296,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
