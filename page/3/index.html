@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Docker,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,22 +79,13 @@
 
 
 
-<meta name="description" content="###1.Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网">
-<meta name="keywords" content="Docker">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Docker-Idea">
-<meta property="og:url" content="http://yoursite.com/2018/11/07/Docker/Docker-Idea/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Freemana2017">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Freemana2017">
-<meta property="og:description" content="###1.Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213000670.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213056424.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181108064320954.png">
-<meta property="og:updated_time" content="2018-11-15T01:52:42.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker-Idea">
-<meta name="twitter:description" content="###1.Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网">
-<meta name="twitter:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181107213000670.png">
+<meta name="twitter:title" content="Freemana2017">
 
 
 
@@ -124,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/07/Docker/Docker-Idea/">
+  <link rel="canonical" href="http://yoursite.com/page/3/">
 
 
 
 
 
-  <title>Docker-Idea | Freemana2017</title>
+  <title>Freemana2017</title>
   
 
 
@@ -149,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -252,9 +244,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -284,7 +276,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker-Idea</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/Docker/Docker-Idea/" itemprop="url">Docker-Idea</a></h1>
         
 
         <div class="post-meta">
@@ -356,7 +350,9 @@
       
 
       
-        <p>###1.Docker 在Intellij中的使用</p>
+        
+          
+            <p>###1.Docker 在Intellij中的使用</p>
 <ul>
 <li><p>Machine的安装</p>
 </li>
@@ -434,6 +430,8 @@
 <p>alip1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FROM java:8</span><br><span class="line">VOLUME /tmp</span><br><span class="line">COPY target/tran4spd-1.0-SNAPSHOT.jar resource.jar</span><br><span class="line">RUN bash -c &quot;touch /resource.jar&quot;</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;resource.jar&quot;]</span><br><span class="line"></span><br><span class="line"># docker run -d -p 18080:8099 --name docker-resource leesia/resource:1.0</span><br></pre></td></tr></table></figure>
 
+          
+        
       
     </div>
     
@@ -448,40 +446,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Docker/" rel="tag"># Docker</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/11/07/开发遇到的问题/Hexo/" rel="next" title="Hexo的使用教程">
-                <i class="fa fa-chevron-left"></i> Hexo的使用教程
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/07/Docker/Docker-SpringBoot/" rel="prev" title="Docker SpringBoot">
-                Docker SpringBoot <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -491,11 +463,163 @@
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/开发遇到的问题/Hexo/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/开发遇到的问题/Hexo/" itemprop="url">Hexo的使用教程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T15:24:22+08:00">
+                2018-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="主题copy一份在apple中"><a href="#主题copy一份在apple中" class="headerlink" title="主题copy一份在apple中"></a>主题copy一份在apple中</h3><h3 id="不需要终端new-或者-标题title直接复制也是可以的"><a href="#不需要终端new-或者-标题title直接复制也是可以的" class="headerlink" title="不需要终端new 或者 标题title直接复制也是可以的"></a>不需要终端new 或者 标题title直接复制也是可以的</h3><h3 id="有时候有延迟"><a href="#有时候有延迟" class="headerlink" title="有时候有延迟"></a>有时候有延迟</h3><h3 id="下面就是图片的问题啦-用图床ipic解决问题"><a href="#下面就是图片的问题啦-用图床ipic解决问题" class="headerlink" title="下面就是图片的问题啦  用图床ipic解决问题"></a>下面就是图片的问题啦  用图床ipic解决问题</h3><blockquote>
+<p><a href="https://www.jianshu.com/p/dbc945b05d55" target="_blank" rel="noopener">https://www.jianshu.com/p/dbc945b05d55</a> PIC </p>
+<p><a href="https://sspai.com/post/39965" target="_blank" rel="noopener">https://sspai.com/post/39965</a> 少数派</p>
+</blockquote>
+<p> ### </p>
+<p> <a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/front-matter</a> 学习Hexo按照这个网站里面有教程 学习任何东西都要使用官方文档</p>
+<p>其余学习的东西在safair收藏➕随笔 hexo里面 真的好累 搭建这个环境</p>
+<p>总之就是照着官网的例子 然后使用这个模版 然后yml文件要写全 坑太多了 能出一本书 先这样</p>
+
+          
+        
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -503,10 +627,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -527,17 +647,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -597,22 +708,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-有些东西放在了云收藏里面"><span class="nav-number">1.</span> <span class="nav-text">2.有些东西放在了云收藏里面</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Docker的用户名是2018112"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">Docker的用户名是2018112</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装Docker要安装DookerToolBox"><span class="nav-number">1.0.0.0.0.2.</span> <span class="nav-text">安装Docker要安装DookerToolBox</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Docker"><span class="nav-number">2.</span> <span class="nav-text">3.Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-无独有偶通过Docker-SpirngBoot的学习了解了TCP-socker-Engine-API-URL的填写"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">1.无独有偶通过Docker-SpirngBoot的学习了解了TCP socker Engine API URL的填写</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#学习资源：通过Github的搜索功能🔍-发现一些学习资料"><span class="nav-number">2.0.0.1.1.</span> <span class="nav-text">#学习资源：通过Github的搜索功能🔍 发现一些学习资料</span></a></li></ol></li></ol></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -753,10 +848,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
