@@ -88,16 +88,16 @@
 <meta property="og:description" content="https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;amp;courseId=1006018194 小D课堂  123sudo docker">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/Users/apple/Desktop/屏幕快照%202018-11-15%20下午5.44.02.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182444968.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182457396.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182649857.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115182725221.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115183150585.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181115185616768.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181117182934398.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181117183003800.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181118104713199.png">
-<meta property="og:updated_time" content="2018-11-23T08:20:51.141Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1otnpx4j30dk07d0t3.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1oukn07j30dv08qjrn.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1ov48d5j30q906vwfg.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ot5895j30u1027aak.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ovh1gkj30o80etgp4.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ou52xtj30nu0bnq5d.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1osadhhj30x402rmxk.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1oslvouj313t03adhb.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ovw8kwj30d603emxg.jpg">
+<meta property="og:updated_time" content="2018-12-04T13:42:52.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker上传到腾讯云服务器上">
 <meta name="twitter:description" content="https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;amp;courseId=1006018194 小D课堂  123sudo docker">
@@ -347,24 +347,24 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login --username=[username] ccr.ccs.tencentyun.com 	</span><br><span class="line">sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 	</span><br><span class="line">100007660104</span><br></pre></td></tr></table></figure>
 <p>username:腾讯云账号，开通时已注册。输入密码后即登录完成。<img src="/Users/apple/Desktop/屏幕快照 2018-11-15 下午5.44.02.png" alt="屏幕快照 2018-11-15 下午5.44.02"></p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182444968.png" alt="image-20181115182444968"></p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182457396.png" alt="image-20181115182457396"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1otnpx4j30dk07d0t3.jpg" alt="image-20181115182444968"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1oukn07j30dv08qjrn.jpg" alt="image-20181115182457396"></p>
 <p>##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成</p>
 <p>####密码输入的时候先输入电脑root密码 z</p>
 <p>###再输入密码yhp836143</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182649857.png" alt="image-20181115182649857"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1ov48d5j30q906vwfg.jpg" alt="image-20181115182649857"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115182725221.png" alt="image-20181115182725221"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ot5895j30u1027aak.jpg" alt="image-20181115182725221"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag  5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
 <p>密码输入 z 因为是sudo</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115183150585.png" alt="image-20181115183150585"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ovh1gkj30o80etgp4.jpg" alt="image-20181115183150585"></p>
 <h3 id="使用镜像—-下载镜像"><a href="#使用镜像—-下载镜像" class="headerlink" title="使用镜像—-下载镜像"></a>使用镜像—-下载镜像</h3><blockquote>
 <p>小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 </p>
 </blockquote>
 <blockquote>
 <p>登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境</p>
 </blockquote>
-<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115185616768.png" alt="image-20181115185616768"></p>
+<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ou52xtj30nu0bnq5d.jpg" alt="image-20181115185616768"></p>
 <p>在本机上远程腾讯云 搭建Docker环境</p>
 <p>登录到镜像仓库，需输入密码。</p>
 <ul>
@@ -394,10 +394,10 @@
 <p><a href="https://www.jianshu.com/p/ea3078dae4fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ea3078dae4fb</a> 简书 </p>
 </blockquote>
 <p>1.登陆到服务器上面 通过终端 </p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181117182934398.png" alt="image-20181117182934398"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1osadhhj30x402rmxk.jpg" alt="image-20181117182934398"></p>
 <p>或者云主机登陆</p>
 <p>2.开始操作</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181117183003800.png" alt="image-20181117183003800"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1oslvouj313t03adhb.jpg" alt="image-20181117183003800"></p>
 <p>3.<a href="https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions</a> 官网</p>
 <blockquote>
 <p> Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装</p>
@@ -413,7 +413,7 @@
 <hr>
 <p>大佬指教。不是locaohostg 192.168.2.123</p>
 <p>是公网ip腾讯公网的ip–118.89.28.213</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181118104713199.png" alt="image-20181118104713199"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ovw8kwj30d603emxg.jpg" alt="image-20181118104713199"></p>
 <p>加镜像名啊 兄die</p>
 
       
@@ -536,7 +536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

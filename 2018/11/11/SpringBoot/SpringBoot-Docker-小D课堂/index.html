@@ -87,17 +87,17 @@
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="构建SpringBoot 应用docker镜像1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集  官方文档：https://spring.io/guides/gs/spring-boot-docker/ 1、步骤：maven里面添加配置pom.xml 简介:使用Docker的maven插件，构建springboot应用  &amp;lt;!--在maven最上面的申明的地方--pro">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111112653319.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111130637806.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111130706064.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111131256001.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111133053363.png">
-<meta property="og:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111133138180.png">
-<meta property="og:updated_time" content="2018-11-11T05:41:18.192Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1qkosbaj30nw10pwj8.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1qi5qd3j30uw0u0dog.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qlpbxvj30qw04taax.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qj8tx1j314c0b142v.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1qmrfedj31bl03h766.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qm8xnmj30xs02g3zi.jpg">
+<meta property="og:updated_time" content="2018-12-04T13:44:30.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot Docker 小D课堂">
 <meta name="twitter:description" content="构建SpringBoot 应用docker镜像1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集  官方文档：https://spring.io/guides/gs/spring-boot-docker/ 1、步骤：maven里面添加配置pom.xml 简介:使用Docker的maven插件，构建springboot应用  &amp;lt;!--在maven最上面的申明的地方--pro">
-<meta name="twitter:image" content="http://yoursite.com/Users/apple/Library/Application%20Support/typora-user-images/image-20181111112653319.png">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1qkosbaj30nw10pwj8.jpg">
 
 
 
@@ -371,7 +371,7 @@
 <blockquote>
 <p> <a href="https://blog.csdn.net/TMaskBoy/article/details/82562413" target="_blank" rel="noopener">https://blog.csdn.net/TMaskBoy/article/details/82562413</a></p>
 </blockquote>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111112653319.png" alt="image-20181111112653319"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1qkosbaj30nw10pwj8.jpg" alt="image-20181111112653319"></p>
 <h1 id="高能预警"><a href="#高能预警" class="headerlink" title="高能预警"></a>高能预警</h1><ul>
 <li><p>No plugin found for prefix ‘docker’ in the current project and in the plugin groups<br>在Maven的配置文件 conf/settings.xml中添加com.spotify</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;pluginGroups&gt;  </span><br><span class="line">    &lt;pluginGroup&gt;com.spotify&lt;/pluginGroup&gt;  </span><br><span class="line">&lt;/pluginGroups&gt;</span><br><span class="line"></span><br><span class="line">注意setting配置文件在maven的仓库里面找不到 重新更新idea中maven的插件 然后 更换.m2中conf中setting.xml的内容</span><br></pre></td></tr></table></figure>
@@ -424,21 +424,21 @@ EXPOSE 8080 暴露镜像端口
         docker run -d --name xdclass_docker_demo1 -p 8099:8080  a1b9fc71720d
 
         3、查看启动日志 docker logs -f  containerid
-</code></pre><h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><h2 id="1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈"><a href="#1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈" class="headerlink" title="1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈"></a>1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈</h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111130637806.png" alt="image-20181111130637806"></p>
-<h2 id="2-docker-images"><a href="#2-docker-images" class="headerlink" title="2.docker images"></a>2.docker images</h2><p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111130706064.png" alt="image-20181111130706064"></p>
+</code></pre><h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><h2 id="1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈"><a href="#1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈" class="headerlink" title="1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈"></a>1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1qi5qd3j30uw0u0dog.jpg" alt="image-20181111130637806"></p>
+<h2 id="2-docker-images"><a href="#2-docker-images" class="headerlink" title="2.docker images"></a>2.docker images</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qlpbxvj30qw04taax.jpg" alt="image-20181111130706064"></p>
 <blockquote>
 <p>没有名字镜像？？注意在idea中测试的话就要用idea 不要随变改成终端</p>
 </blockquote>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111131256001.png" alt="image-20181111131256001"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qj8tx1j314c0b142v.jpg" alt="image-20181111131256001"></p>
 <h2 id="3-docker-run-d-–name-demo-p-8080-8080-8ef42611e3b0"><a href="#3-docker-run-d-–name-demo-p-8080-8080-8ef42611e3b0" class="headerlink" title="3.docker  run -d –name demo -p 8080:8080  8ef42611e3b0"></a>3.docker  run -d –name demo -p 8080:8080  8ef42611e3b0</h2><blockquote>
 <p>备注：运行镜像 –name 指定名字 -d 后台运行 8ef42611e3b0：刚刚构建的image的ID </p>
 <p>name 不会用就别用</p>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111133053363.png" alt="image-20181111133053363"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1qmrfedj31bl03h766.jpg" alt="image-20181111133053363"></p>
 </blockquote>
 <h3 id="4-docker-ps"><a href="#4-docker-ps" class="headerlink" title="4.docker ps"></a>4.docker ps</h3><blockquote>
 <p>查看一下镜像的进程</p>
 </blockquote>
-<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181111133138180.png" alt="image-20181111133138180"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qm8xnmj30xs02g3zi.jpg" alt="image-20181111133138180"></p>
 <p>？？？没有程序。测试一下</p>
 
       
@@ -559,7 +559,7 @@ EXPOSE 8080 暴露镜像端口
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

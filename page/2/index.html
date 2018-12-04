@@ -259,6 +259,567 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/Spring/SpringAOP/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/Spring/SpringAOP/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T11:15:43+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/Spring/SpringIOC/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/Spring/SpringIOC/" itemprop="url">Spring IOC 及bean容器 注入</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T11:15:35+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-IOC及Bean容器"><a href="#1-IOC及Bean容器" class="headerlink" title="1.IOC及Bean容器"></a>1.IOC及Bean容器</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujqkn9spj30qg0d7tdk.jpg" alt="image-20181204112123361"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujvagx1wj30pd0cvq6w.jpg" alt="image-20181204112558352"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxujvhyoy4j30pt0c5dka.jpg" alt="image-20181204112610645"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujvwjs5sj30c205udhe.jpg" alt="image-20181204112633570"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujw23swoj30g7054409.jpg" alt="image-20181204112642537"></p>
+<p>​        <img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujwq1hexj30h907egng.jpg" alt="image-20181204112721200"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujx7te4hj30ps0c8gta.jpg" alt="image-20181204112749653"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxujxio22dj30ol0altaz.jpg" alt="image-20181204112806521"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujxwmlf5j30qc0bxdmb.jpg" alt="image-20181204112829260"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuk0la8d7j30i50ba0vq.jpg" alt="image-20181204113102818"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuk0qs1wqj30nx0elwh2.jpg" alt="image-20181204113112596"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuk1bfuy3j30ov0dyn2q.jpg" alt="image-20181204113137177"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuka1co3hj30r70dqdk5.jpg" alt="image-20181204114008113"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxukdg0ft7j30qp0e6n58.jpg" alt="image-20181204114323513"></p>
+<hr>
+<h1 id="2-Spring-注入"><a href="#2-Spring-注入" class="headerlink" title="2.Spring 注入"></a>2.Spring 注入</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuke8ttpaj30ov0aljtn.jpg" alt="image-20181204114410294"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxukes474xj30qf0ecti7.jpg" alt="image-20181204114441779"></p>
+<h3 id="lt-必须要有get-set方法-gt-lt-property-name-””-ref-””-gt"><a href="#lt-必须要有get-set方法-gt-lt-property-name-””-ref-””-gt" class="headerlink" title="&lt;必须要有get/set方法&gt;  &lt; property  name=”” ref=””&gt;"></a>&lt;必须要有get/set方法&gt;  &lt; property  name=”” ref=””&gt;</h3><p>⭐️</p>
+<h2 id="name-当前Bean中class所在的类的注入的属性的-成员变量名"><a href="#name-当前Bean中class所在的类的注入的属性的-成员变量名" class="headerlink" title="* name= 当前Bean中class所在的类的注入的属性的 成员变量名"></a>* name= 当前Bean中class所在的类的注入的属性的 成员变量名</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxum7f4sajj30v807wtdj.jpg" alt="image-20181204124649320"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxum95t6pqj30pd069mzy.jpg" alt="image-20181204124830178"></p>
+<h1 id="ref-表示引用-下一个的ID值"><a href="#ref-表示引用-下一个的ID值" class="headerlink" title="*  ref=表示引用 下一个的ID值"></a>*  ref=表示引用 下一个的ID值</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxumb2q7b0j30sg0asn3o.jpg" alt="image-20181204125020261"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxukgekg3mj30qm0ca40f.jpg" alt="image-20181204114612223"></p>
+<p>** &lt;必须要有构造器方法&gt;</p>
+<hr>
+<h1 id="3-实战–IOC"><a href="#3-实战–IOC" class="headerlink" title="3.实战–IOC"></a>3.实战–IOC</h1><h2 id="3-1传统的new-方式实现接口编程"><a href="#3-1传统的new-方式实现接口编程" class="headerlink" title="3.1传统的new 方式实现接口编程"></a>3.1传统的new 方式实现接口编程</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxutolhua2j30e1043q34.jpg" alt="image-20181204170512470">​            <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxutogdwogj30kv060wgq.jpg" alt="image-20181204170523359"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxutozb1aej30mq06atbp.jpg" alt="image-20181204170549881"></p>
+<hr>
+<h3 id="3-2使用Bean开发"><a href="#3-2使用Bean开发" class="headerlink" title="3.2使用Bean开发"></a>3.2使用Bean开发</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxutzlbaksj30df04aq44.jpg" alt="image-20181204171605641"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxutzyr9vmj30td05bn0b.jpg" alt="image-20181204171627549"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu06g1j0j30mv036jsw.jpg" alt="image-20181204171639524"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuu0daszqj30og05i0wg.jpg" alt="image-20181204171650863"></p>
+<hr>
+<h2 id="3-2-set注入"><a href="#3-2-set注入" class="headerlink" title="3.2  set注入"></a>3.2  set注入</h2><p>1.Dao层</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuu8gnutdj30d0043mxw.jpg" alt="image-20181204172436838"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu8t7v8tj30lc057q5p.jpg" alt="image-20181204172457619"></p>
+<p>2.service层</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu93gk0oj30dx03s0ti.jpg" alt="image-20181204172514000"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuubimupwj30ou0d948d.jpg" alt="image-20181204172733300"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuug2oqz5j30wy09lakv.jpg" alt="image-20181204173155624"></p>
+<h2 id="3-3-构造方法注入"><a href="#3-3-构造方法注入" class="headerlink" title="3.3 构造方法注入"></a>3.3 构造方法注入</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuuh9zm1zj30ov0d1gv2.jpg" alt="image-20181204173304844"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuuing7kvj30xv09on8c.jpg" alt="image-20181204173423731"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuuj7qweqj30om05cacr.jpg" alt="image-20181204173457333"></p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuuluzs59j30ny0d20wc.jpg" alt="image-20181204173729662"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuum7g5wtj30j202lwf6.jpg" alt="image-20181204173750205"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/RabbitMQ/2.命令行与管控台/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/RabbitMQ/2.命令行与管控台/" itemprop="url">Rabbit MQ 命令行与管控台</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-03T18:35:56+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqpytrpdj30xq0jqn3o.jpg" alt="image-20181203183728631"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqrqgdptj31ae0ivmz6.jpg" alt="image-20181203183843056"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqrupv92j318c0iydnm.jpg" alt="image-20181203183917805"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqsckm5oj319f0j0tgc.jpg" alt="image-20181203183945903"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqsomlwpj318m0ci3zi.jpg" alt="image-20181203184000014"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqtiozd0j31ae0i4n34.jpg" alt="image-20181203184053778"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqu3srf1j317w0ci0xo.jpg" alt="image-20181203184127097"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqupvb4lj318h069juk.jpg" alt="image-20181203184201778"></p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/RabbitMQ/1.RabbitMQ下载/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/RabbitMQ/1.RabbitMQ下载/" itemprop="url">Linux安装RabbitMQ</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-03T16:10:13+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）"><a href="#在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）" class="headerlink" title="在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）"></a>在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtnnpv0kej30o8099adm.jpg" alt="image-20181203165130740"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtno42lroj30mb0r4qcc.jpg" alt="image-20181203165154131"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtnrrk6anj30je03l3z4.jpg" alt="image-20181203165525206"></p>
+<h1 id="1-下载Erlang"><a href="#1-下载Erlang" class="headerlink" title="1.下载Erlang"></a>1.下载Erlang</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtnvkts0cj30o501jmyk.jpg" alt="image-20181203165903389"></p>
+<blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtnsidfxbj30je03l3z4.jpg" alt="image-20181203165605014"></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.erlang-solutions.com/resources/download.html" target="_blank" rel="noopener">https://www.erlang-solutions.com/resources/download.html</a> ❌❌❌</p>
+<p><a href="http://www.rabbitmq.com/releases/erlang/" target="_blank" rel="noopener">http://www.rabbitmq.com/releases/erlang/</a> ☑️☑️☑️</p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtos30kzoj30so0gxn1w.jpg" alt="image-20181203173018568"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtntxxecaj30rt0vigow.jpg" alt="image-20181203165728974"></p>
+<h1 id="2-下载RabbitMQ服务器、"><a href="#2-下载RabbitMQ服务器、" class="headerlink" title="2 下载RabbitMQ服务器、"></a>2 下载RabbitMQ服务器、</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtnz2q80jj30nx0c4n0k.jpg" alt="image-20181203170225802"></p>
+<p>#<img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxto06zu1jj30hq03xgm3.jpg" alt="image-20181203170330188"></p>
+<h2 id="方法一：Wget-地址"><a href="#方法一：Wget-地址" class="headerlink" title="#方法一：Wget +地址"></a>#方法一：Wget +地址</h2><h3 id="方法二：在终端中输入命令-scp-待上传文件名-linux用户名-服务器IP-存放到服务器的哪个位置"><a href="#方法二：在终端中输入命令-scp-待上传文件名-linux用户名-服务器IP-存放到服务器的哪个位置" class="headerlink" title="方法二：在终端中输入命令: scp 待上传文件名 linux用户名@服务器IP:存放到服务器的哪个位置 :~"></a>方法二：在终端中输入命令: scp 待上传文件名 linux用户名@服务器IP:存放到服务器的哪个位置 :~</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxto8kjqkjj30us020abl.jpg" alt="image-20181203171132886"></p>
+<p>fa</p>
+<h2 id="3-安装scoket"><a href="#3-安装scoket" class="headerlink" title="3.安装scoket"></a>3.安装scoket</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtoq92natj30yo01labr.jpg" alt="image-20181203172832430"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtq6k7em3j30gs05j40w.jpg" alt="image-20181203181849194"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtqbmkxz1j314y0lp7do.jpg" alt="image-20181203182341329"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqej08ejj30xi036415.jpg" alt="image-20181203182628670"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqevc0hwj30cn01awez.jpg" alt="image-20181203182648913"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqf7ogpij30oq0gudy8.jpg" alt="image-20181203182708308"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtqgjea22j30ni089gqu.jpg" alt="image-20181203182825353"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqhwgt1bj30o602fwgq.jpg" alt="image-20181203182943795"></p>
+<p><img src="../../../Users/apple/Library/Application%20Support/typora-user-images/image-20181203183221113.png" alt="image-20181203183221113"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqm9rnfaj30oe09kmyi.jpg" alt="image-20181203183355716"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqmkjo9uj30m004d3zj.jpg" alt="image-20181203183413438"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">## RabbitMQ 参考资料</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">慕课网老师讲义 </span><br><span class="line">准备：</span><br><span class="line">yum install </span><br><span class="line">build-essential openssl openssl-devel unixODBC unixODBC-devel </span><br><span class="line">make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz</span><br><span class="line"></span><br><span class="line">下载：</span><br><span class="line">wget www.rabbitmq.com/releases/erlang/erlang-18.3-1.el7.centos.x86_64.rpm</span><br><span class="line">wget http://repo.iotti.biz/CentOS/7/x86_64/socat-1.7.3.2-5.el7.lux.x86_64.rpm</span><br><span class="line">wget www.rabbitmq.com/releases/rabbitmq-server/v3.6.5/rabbitmq-server-3.6.5-1.noarch.rpm</span><br><span class="line"></span><br><span class="line">配置文件：</span><br><span class="line">vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app</span><br><span class="line">比如修改密码、配置等等，例如：loopback_users 中的 &lt;&lt;&quot;guest&quot;&gt;&gt;,只保留guest</span><br><span class="line">服务启动和停止：</span><br><span class="line">启动 rabbitmq-server start &amp;</span><br><span class="line">停止 rabbitmqctl app_stop</span><br><span class="line"></span><br><span class="line">管理插件：rabbitmq-plugins enable rabbitmq_management</span><br><span class="line">访问地址：http://192.168.11.76:15672/</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/RabbitMQ/0.RabbitMQ/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1027,530 +1588,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/Linux/Linux安装Tomcat/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/30/Linux/Linux安装Tomcat/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-30T18:16:55+08:00">
-                2018-11-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/Linux/Linux安装JDK/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/30/Linux/Linux安装JDK/" itemprop="url">linux安装JDK1.7 cento7</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-30T18:16:36+08:00">
-                2018-11-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxq9ghv4vuj30si6zdqv7.jpg" alt="image-20181130182328907"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxq9h8hnfhj30u071ehdv.jpg" alt="image-20181130182410513"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/Linux/Linux/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/30/Linux/Linux/" itemprop="url">Linux</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-30T15:32:45+08:00">
-                2018-11-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Linux-SSH-Mac"><a href="#Linux-SSH-Mac" class="headerlink" title="Linux SSH Mac"></a>Linux SSH Mac</h1><h4 id="1-下载-淘宝-用户名dongguakeji-密码dongguakeji"><a href="#1-下载-淘宝-用户名dongguakeji-密码dongguakeji" class="headerlink" title="1.下载 淘宝 用户名dongguakeji 密码dongguakeji"></a>1.下载 淘宝 用户名dongguakeji 密码dongguakeji</h4><h4 id="2-mac远程访问SSH"><a href="#2-mac远程访问SSH" class="headerlink" title="2.mac远程访问SSH"></a>2.mac远程访问SSH</h4><ul>
-<li>不再sudoers文件中此事将被报告 （dongguakeji密码不能使用）–解决 使用root登陆分配权限</li>
-<li><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxq4m2knj2j30pj0j5jyi.jpg" alt="image-20181130153551168"></li>
-</ul>
-<h4 id="3-使用root登陆-远程SSH连接Linux-centos7"><a href="#3-使用root登陆-远程SSH连接Linux-centos7" class="headerlink" title="3.使用root登陆 远程SSH连接Linux centos7"></a>3.使用root登陆 远程SSH连接Linux centos7</h4><ul>
-<li>使用root访问 关闭防火墙 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.你要改用iptables的话，需要安装iptables服务</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li><strong> sudo yum install iptables-services </strong></li>
-</ul>
-</blockquote>
-<p>CentOS 7.0默认使用的是firewall作为防火墙，这里改为 iptables防火墙步骤。 </p>
-<blockquote>
-<ul>
-<li>firewall-cmd –state.  #查看默认防火墙状态 </li>
-</ul>
-</blockquote>
-<p> （关闭后显示notrunning，开启后显示running） </p>
-<p>[root@localhost ~]#firewall-cmd –state </p>
-<p>not running </p>
-<hr>
-<ul>
-<li><p>关闭防火墙： </p>
-</li>
-<li><blockquote>
-<p> systemctl stop firewalld.service #停止firewall </p>
-</blockquote>
-</li>
-<li><blockquote>
-<p> systemctl disable firewalld.service #禁止firewall开机启动 </p>
-</blockquote>
-</li>
-</ul>
-<p>4.Linux下ip设置</p>
-<blockquote>
-<p><a href="https://blog.csdn.net/qq_34924407/article/details/79967650" target="_blank" rel="noopener">https://blog.csdn.net/qq_34924407/article/details/79967650</a>.  Centos7中查看IP命令：IP add</p>
-<p><a href="https://blog.csdn.net/tuntun1120/article/details/65443757" target="_blank" rel="noopener">https://blog.csdn.net/tuntun1120/article/details/65443757</a> 虚拟机下CentOS7开启SSH连接</p>
-</blockquote>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxq4sek0hqj30dt0es0zf.jpg" alt="image-20181130154156372"></p>
-<h4 id="4-切换网络模式选择-然后重新编辑"><a href="#4-切换网络模式选择-然后重新编辑" class="headerlink" title="4.切换网络模式选择 然后重新编辑"></a>4.切换网络模式选择 然后重新编辑</h4><h2 id="⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台"><a href="#⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台" class="headerlink" title="⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台"></a>⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台</h2><h2 id="然后重新编辑IP-变成下面这样"><a href="#然后重新编辑IP-变成下面这样" class="headerlink" title="然后重新编辑IP 变成下面这样"></a>然后重新编辑IP 变成下面这样</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxq4uvev0uj30ni0dutm8.jpg" alt="image-20181130154418731"></p>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>1.先检查SSH 服务开没开</p>
-<p>2.检查22 端口的状态</p>
-<p>3.看网络互相通过ping看看是不是有64type的回应</p>
-<p>4。资料在收藏夹里面 还有慕课的视频Linux</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/test/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/test/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T11:35:27+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1601,7 +1638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
