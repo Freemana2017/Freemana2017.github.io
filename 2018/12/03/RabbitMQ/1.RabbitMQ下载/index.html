@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="RabbitMQ,">
 
 
 
@@ -80,9 +80,10 @@
 
 
 <meta name="description" content="在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）   1.下载Erlang     https://www.erlang-solutions.com/resources/download.html ❌❌❌ http://www.rabbitmq.com/releases/erlang/ ☑️☑️☑️    2 下载RabbitMQ服务器、 # #方法一：Wg">
+<meta name="keywords" content="RabbitMQ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux安装RabbitMQ">
-<meta property="og:url" content="http://yoursite.com/2018/12/03/Untitled/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/12/03/RabbitMQ/1.RabbitMQ下载/index.html">
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）   1.下载Erlang     https://www.erlang-solutions.com/resources/download.html ❌❌❌ http://www.rabbitmq.com/releases/erlang/ ☑️☑️☑️    2 下载RabbitMQ服务器、 # #方法一：Wg">
 <meta property="og:locale" content="default">
@@ -104,10 +105,10 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqf7ogpij30oq0gudy8.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtqgjea22j30ni089gqu.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqhwgt1bj30o602fwgq.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/Users/apple/Library/Application%20Support/typora-user-images/image-20181203183221113.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/Users/apple/Library/Application%20Support/typora-user-images/image-20181203183221113.png">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqm9rnfaj30oe09kmyi.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqmkjo9uj30m004d3zj.jpg">
-<meta property="og:updated_time" content="2018-12-03T10:34:15.302Z">
+<meta property="og:updated_time" content="2018-12-04T10:26:29.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux安装RabbitMQ">
 <meta name="twitter:description" content="在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）   1.下载Erlang     https://www.erlang-solutions.com/resources/download.html ❌❌❌ http://www.rabbitmq.com/releases/erlang/ ☑️☑️☑️    2 下载RabbitMQ服务器、 # #方法一：Wg">
@@ -141,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/03/Untitled/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/03/RabbitMQ/1.RabbitMQ下载/">
 
 
 
@@ -284,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/Untitled/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/RabbitMQ/1.RabbitMQ下载/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -379,6 +380,7 @@
 <p><img src="../../../Users/apple/Library/Application%20Support/typora-user-images/image-20181203183221113.png" alt="image-20181203183221113"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqm9rnfaj30oe09kmyi.jpg" alt="image-20181203183355716"></p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqmkjo9uj30m004d3zj.jpg" alt="image-20181203183413438"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">## RabbitMQ 参考资料</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">慕课网老师讲义 </span><br><span class="line">准备：</span><br><span class="line">yum install </span><br><span class="line">build-essential openssl openssl-devel unixODBC unixODBC-devel </span><br><span class="line">make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz</span><br><span class="line"></span><br><span class="line">下载：</span><br><span class="line">wget www.rabbitmq.com/releases/erlang/erlang-18.3-1.el7.centos.x86_64.rpm</span><br><span class="line">wget http://repo.iotti.biz/CentOS/7/x86_64/socat-1.7.3.2-5.el7.lux.x86_64.rpm</span><br><span class="line">wget www.rabbitmq.com/releases/rabbitmq-server/v3.6.5/rabbitmq-server-3.6.5-1.noarch.rpm</span><br><span class="line"></span><br><span class="line">配置文件：</span><br><span class="line">vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app</span><br><span class="line">比如修改密码、配置等等，例如：loopback_users 中的 &lt;&lt;&quot;guest&quot;&gt;&gt;,只保留guest</span><br><span class="line">服务启动和停止：</span><br><span class="line">启动 rabbitmq-server start &amp;</span><br><span class="line">停止 rabbitmqctl app_stop</span><br><span class="line"></span><br><span class="line">管理插件：rabbitmq-plugins enable rabbitmq_management</span><br><span class="line">访问地址：http://192.168.11.76:15672/</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -394,6 +396,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/RabbitMQ/" rel="tag"># RabbitMQ</a>
+          
+        </div>
+      
 
       
       
@@ -403,7 +411,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/03/RabbitMQ/" rel="next" title="初识RabbitMQ">
+              <a href="/2018/12/03/RabbitMQ/0.RabbitMQ/" rel="next" title="初识RabbitMQ">
                 <i class="fa fa-chevron-left"></i> 初识RabbitMQ
               </a>
             
@@ -413,7 +421,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/03/命令行与管控台/" rel="prev" title="Rabbit MQ 命令行与管控台">
+              <a href="/2018/12/03/RabbitMQ/2.命令行与管控台/" rel="prev" title="Rabbit MQ 命令行与管控台">
                 Rabbit MQ 命令行与管控台 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -492,7 +500,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -514,7 +522,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

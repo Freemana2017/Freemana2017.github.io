@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Spring,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.IOC及Bean容器     ​                   2.Spring 注入  &amp;lt;必须要有get/set方法&amp;gt;  &amp;lt; property  name=”” ref=””&amp;gt;⭐️ * name= 当前Bean中class所在的类的注入的属性的 成员变量名  *  ref=表示引用 下一个的ID值   ** &amp;lt;必须要有构造器方法&amp;gt;  3.实战–IOC">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring IOC 及bean容器 注入">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/Spring/SpringIOC/index.html">
+<meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="1.IOC及Bean容器     ​                   2.Spring 注入  &amp;lt;必须要有get/set方法&amp;gt;  &amp;lt; property  name=”” ref=””&amp;gt;⭐️ * name= 当前Bean中class所在的类的注入的属性的 成员变量名  *  ref=表示引用 下一个的ID值   ** &amp;lt;必须要有构造器方法&amp;gt;  3.实战–IOC">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujqkn9spj30qg0d7tdk.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujvagx1wj30pd0cvq6w.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxujvhyoy4j30pt0c5dka.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujvwjs5sj30c205udhe.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujw23swoj30g7054409.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujwq1hexj30h907egng.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujx7te4hj30ps0c8gta.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxujxio22dj30ol0altaz.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujxwmlf5j30qc0bxdmb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuk0la8d7j30i50ba0vq.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuk0qs1wqj30nx0elwh2.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuk1bfuy3j30ov0dyn2q.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuka1co3hj30r70dqdk5.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxukdg0ft7j30qp0e6n58.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuke8ttpaj30ov0aljtn.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxukes474xj30qf0ecti7.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxum7f4sajj30v807wtdj.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxum95t6pqj30pd069mzy.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxumb2q7b0j30sg0asn3o.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxukgekg3mj30qm0ca40f.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxutolhua2j30e1043q34.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxutogdwogj30kv060wgq.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxutozb1aej30mq06atbp.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxutzlbaksj30df04aq44.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxutzyr9vmj30td05bn0b.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu06g1j0j30mv036jsw.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuu0daszqj30og05i0wg.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuu8gnutdj30d0043mxw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu8t7v8tj30lc057q5p.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu93gk0oj30dx03s0ti.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuubimupwj30ou0d948d.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuug2oqz5j30wy09lakv.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuuh9zm1zj30ov0d1gv2.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuuing7kvj30xv09on8c.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuuj7qweqj30om05cacr.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuuluzs59j30ny0d20wc.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuum7g5wtj30j202lwf6.jpg">
+<meta property="og:updated_time" content="2018-12-04T09:39:51.692Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring IOC 及bean容器 注入">
+<meta name="twitter:description" content="1.IOC及Bean容器     ​                   2.Spring 注入  &amp;lt;必须要有get/set方法&amp;gt;  &amp;lt; property  name=”” ref=””&amp;gt;⭐️ * name= 当前Bean中class所在的类的注入的属性的 成员变量名  *  ref=表示引用 下一个的ID值   ** &amp;lt;必须要有构造器方法&amp;gt;  3.实战–IOC">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujqkn9spj30qg0d7tdk.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/04/Spring/SpringIOC/">
+
+
+
+
+
+  <title>Spring IOC 及bean容器 注入 | Freemana2017</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Freemana2017</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/Spring/SpringIOC/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring IOC 及bean容器 注入</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T11:15:35+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-IOC及Bean容器"><a href="#1-IOC及Bean容器" class="headerlink" title="1.IOC及Bean容器"></a>1.IOC及Bean容器</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujqkn9spj30qg0d7tdk.jpg" alt="image-20181204112123361"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujvagx1wj30pd0cvq6w.jpg" alt="image-20181204112558352"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxujvhyoy4j30pt0c5dka.jpg" alt="image-20181204112610645"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujvwjs5sj30c205udhe.jpg" alt="image-20181204112633570"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujw23swoj30g7054409.jpg" alt="image-20181204112642537"></p>
+<p>​        <img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxujwq1hexj30h907egng.jpg" alt="image-20181204112721200"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujx7te4hj30ps0c8gta.jpg" alt="image-20181204112749653"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxujxio22dj30ol0altaz.jpg" alt="image-20181204112806521"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxujxwmlf5j30qc0bxdmb.jpg" alt="image-20181204112829260"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuk0la8d7j30i50ba0vq.jpg" alt="image-20181204113102818"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuk0qs1wqj30nx0elwh2.jpg" alt="image-20181204113112596"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuk1bfuy3j30ov0dyn2q.jpg" alt="image-20181204113137177"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuka1co3hj30r70dqdk5.jpg" alt="image-20181204114008113"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxukdg0ft7j30qp0e6n58.jpg" alt="image-20181204114323513"></p>
+<hr>
+<h1 id="2-Spring-注入"><a href="#2-Spring-注入" class="headerlink" title="2.Spring 注入"></a>2.Spring 注入</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuke8ttpaj30ov0aljtn.jpg" alt="image-20181204114410294"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxukes474xj30qf0ecti7.jpg" alt="image-20181204114441779"></p>
+<h3 id="lt-必须要有get-set方法-gt-lt-property-name-””-ref-””-gt"><a href="#lt-必须要有get-set方法-gt-lt-property-name-””-ref-””-gt" class="headerlink" title="&lt;必须要有get/set方法&gt;  &lt; property  name=”” ref=””&gt;"></a>&lt;必须要有get/set方法&gt;  &lt; property  name=”” ref=””&gt;</h3><p>⭐️</p>
+<h2 id="name-当前Bean中class所在的类的注入的属性的-成员变量名"><a href="#name-当前Bean中class所在的类的注入的属性的-成员变量名" class="headerlink" title="* name= 当前Bean中class所在的类的注入的属性的 成员变量名"></a>* name= 当前Bean中class所在的类的注入的属性的 成员变量名</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxum7f4sajj30v807wtdj.jpg" alt="image-20181204124649320"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxum95t6pqj30pd069mzy.jpg" alt="image-20181204124830178"></p>
+<h1 id="ref-表示引用-下一个的ID值"><a href="#ref-表示引用-下一个的ID值" class="headerlink" title="*  ref=表示引用 下一个的ID值"></a>*  ref=表示引用 下一个的ID值</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxumb2q7b0j30sg0asn3o.jpg" alt="image-20181204125020261"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxukgekg3mj30qm0ca40f.jpg" alt="image-20181204114612223"></p>
+<p>** &lt;必须要有构造器方法&gt;</p>
+<hr>
+<h1 id="3-实战–IOC"><a href="#3-实战–IOC" class="headerlink" title="3.实战–IOC"></a>3.实战–IOC</h1><h2 id="3-1传统的new-方式实现接口编程"><a href="#3-1传统的new-方式实现接口编程" class="headerlink" title="3.1传统的new 方式实现接口编程"></a>3.1传统的new 方式实现接口编程</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxutolhua2j30e1043q34.jpg" alt="image-20181204170512470">​            <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxutogdwogj30kv060wgq.jpg" alt="image-20181204170523359"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxutozb1aej30mq06atbp.jpg" alt="image-20181204170549881"></p>
+<hr>
+<h3 id="3-2使用Bean开发"><a href="#3-2使用Bean开发" class="headerlink" title="3.2使用Bean开发"></a>3.2使用Bean开发</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxutzlbaksj30df04aq44.jpg" alt="image-20181204171605641"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxutzyr9vmj30td05bn0b.jpg" alt="image-20181204171627549"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu06g1j0j30mv036jsw.jpg" alt="image-20181204171639524"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuu0daszqj30og05i0wg.jpg" alt="image-20181204171650863"></p>
+<hr>
+<h2 id="3-2-set注入"><a href="#3-2-set注入" class="headerlink" title="3.2  set注入"></a>3.2  set注入</h2><p>1.Dao层</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuu8gnutdj30d0043mxw.jpg" alt="image-20181204172436838"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu8t7v8tj30lc057q5p.jpg" alt="image-20181204172457619"></p>
+<p>2.service层</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuu93gk0oj30dx03s0ti.jpg" alt="image-20181204172514000"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuubimupwj30ou0d948d.jpg" alt="image-20181204172733300"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuug2oqz5j30wy09lakv.jpg" alt="image-20181204173155624"></p>
+<h2 id="3-3-构造方法注入"><a href="#3-3-构造方法注入" class="headerlink" title="3.3 构造方法注入"></a>3.3 构造方法注入</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuuh9zm1zj30ov0d1gv2.jpg" alt="image-20181204173304844"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuuing7kvj30xv09on8c.jpg" alt="image-20181204173423731"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuuj7qweqj30om05cacr.jpg" alt="image-20181204173457333"></p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuuluzs59j30ny0d20wc.jpg" alt="image-20181204173729662"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuum7g5wtj30j202lwf6.jpg" alt="image-20181204173750205"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/03/RabbitMQ/2.命令行与管控台/" rel="next" title="Rabbit MQ 命令行与管控台">
+                <i class="fa fa-chevron-left"></i> Rabbit MQ 命令行与管控台
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/04/Spring/SpringAOP/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">袁海鹏</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-IOC及Bean容器"><span class="nav-number">1.</span> <span class="nav-text">1.IOC及Bean容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Spring-注入"><span class="nav-number">2.</span> <span class="nav-text">2.Spring 注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-必须要有get-set方法-gt-lt-property-name-””-ref-””-gt"><span class="nav-number">2.0.1.</span> <span class="nav-text">&lt;必须要有get/set方法&gt;  &lt; property  name=”” ref=””&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name-当前Bean中class所在的类的注入的属性的-成员变量名"><span class="nav-number">2.1.</span> <span class="nav-text">* name= 当前Bean中class所在的类的注入的属性的 成员变量名</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#ref-表示引用-下一个的ID值"><span class="nav-number">3.</span> <span class="nav-text">*  ref=表示引用 下一个的ID值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-实战–IOC"><span class="nav-number">4.</span> <span class="nav-text">3.实战–IOC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1传统的new-方式实现接口编程"><span class="nav-number">4.1.</span> <span class="nav-text">3.1传统的new 方式实现接口编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2使用Bean开发"><span class="nav-number">4.1.1.</span> <span class="nav-text">3.2使用Bean开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-set注入"><span class="nav-number">4.2.</span> <span class="nav-text">3.2  set注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-构造方法注入"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 构造方法注入</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">袁海鹏</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
