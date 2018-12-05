@@ -79,10 +79,12 @@
 
 
 
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435rabbitmqctl stop_app：关闭应用rabbitmqctl stop_app：启动应用rabbitmqctlstatus：节点状态rabbitmqctladd_user username password：添加用户rabbitmqctllist_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rabbit MQ 命令行与管控台">
 <meta property="og:url" content="http://yoursite.com/2018/12/03/RabbitMQ/2.命令行与管控台/index.html">
 <meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435rabbitmqctl stop_app：关闭应用rabbitmqctl stop_app：启动应用rabbitmqctlstatus：节点状态rabbitmqctladd_user username password：添加用户rabbitmqctllist_">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqpytrpdj30xq0jqn3o.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqrqgdptj31ae0ivmz6.jpg">
@@ -92,9 +94,10 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqtiozd0j31ae0i4n34.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqu3srf1j317w0ci0xo.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqupvb4lj318h069juk.jpg">
-<meta property="og:updated_time" content="2018-12-04T10:58:42.751Z">
+<meta property="og:updated_time" content="2018-12-05T07:07:04.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rabbit MQ 命令行与管控台">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435rabbitmqctl stop_app：关闭应用rabbitmqctl stop_app：启动应用rabbitmqctlstatus：节点状态rabbitmqctladd_user username password：添加用户rabbitmqctllist_">
 <meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqpytrpdj30xq0jqn3o.jpg">
 
 
@@ -344,6 +347,7 @@
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqu3srf1j317w0ci0xo.jpg" alt="image-20181203184127097"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqupvb4lj318h069juk.jpg" alt="image-20181203184201778"></p>
 <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl stop_app：关闭应用</span><br><span class="line"></span><br><span class="line">rabbitmqctl stop_app：启动应用</span><br><span class="line"></span><br><span class="line">rabbitmqctlstatus：节点状态</span><br><span class="line"></span><br><span class="line">rabbitmqctladd_user username password：添加用户</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_users：列出所有用户</span><br><span class="line"></span><br><span class="line">rabbitmqctldelete_user username：删除用户</span><br><span class="line"></span><br><span class="line">rabbitmqctl clear_permissions -p vhostpath username ：清楚用户权限</span><br><span class="line"></span><br><span class="line">rabbitmqctladd_vhost vhostpath：创建虚拟主机</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_vhost：列出所有虚拟主机</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_permissions -p vhostpath：列出虚拟主机所有权限</span><br><span class="line"></span><br><span class="line">rabbitmqctldelete_vhost vhostpath：删除虚拟主机</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_queues：查看所有队列信息</span><br><span class="line"></span><br><span class="line">rabbitmqctl -p vhostpath purge_queue blue：清除队列里的消息</span><br><span class="line"></span><br><span class="line">rabbitmqctlreset：移除所有数据，要在rabbitmqctlstop_app之后使用</span><br><span class="line"></span><br><span class="line">rabbitmqctl join_cluster [--ram]：组成集群命令</span><br><span class="line"></span><br><span class="line">rabbitmqctlcluster_status：查看集群状态</span><br><span class="line"></span><br><span class="line">rabbitmqctlchange_cluster_node_type disc |ram：修改集群节点的存储模式</span><br><span class="line"></span><br><span class="line">rabbitmqctlforget_cluster_node_ [--offline] ：忘记节点（摘除节点）</span><br></pre></td></tr></table></figure>
 
       
     </div>
