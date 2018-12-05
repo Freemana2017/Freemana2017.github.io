@@ -79,17 +79,30 @@
 
 
 
+<meta name="description" content="1.加入依赖12345&amp;lt;dependency&amp;gt;		&amp;lt;groupId&amp;gt;com.rabbitmq&amp;lt;/groupId&amp;gt;		&amp;lt;artifactId&amp;gt;amqp-client&amp;lt;/artifactId&amp;gt;		&amp;lt;scope&amp;gt;3.6.5&amp;lt;/scope&amp;gt;	&amp;lt;/dependency&amp;gt; 2.编码实战2.1Productor1">
 <meta name="keywords" content="RabbitMQ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="消费生产与消费">
 <meta property="og:url" content="http://yoursite.com/2018/12/05/RabbitMQ/4消费生产与消费/index.html">
 <meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="1.加入依赖12345&amp;lt;dependency&amp;gt;		&amp;lt;groupId&amp;gt;com.rabbitmq&amp;lt;/groupId&amp;gt;		&amp;lt;artifactId&amp;gt;amqp-client&amp;lt;/artifactId&amp;gt;		&amp;lt;scope&amp;gt;3.6.5&amp;lt;/scope&amp;gt;	&amp;lt;/dependency&amp;gt; 2.编码实战2.1Productor1">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvw37tlpgj30xb0ic7bg.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvw454689j30qu09lq5j.jpg">
-<meta property="og:updated_time" content="2018-12-05T07:15:20.090Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvxi75tl7j30ua0k5al8.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz40oiozj30uq0u018o.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz6507ofj30ux0buq4n.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvz69uqgzj30m208xmyw.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz7rq8pkj30kq0avab7.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz7wyfebj30m80153z5.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz8x3ursj30ta0rpajz.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvzaq02sjj30i9026gmp.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvzckmwgij30gd05e402.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvzd3r6l5j30lc05pjsr.jpg">
+<meta property="og:updated_time" content="2018-12-05T09:08:40.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="消费生产与消费">
+<meta name="twitter:description" content="1.加入依赖12345&amp;lt;dependency&amp;gt;		&amp;lt;groupId&amp;gt;com.rabbitmq&amp;lt;/groupId&amp;gt;		&amp;lt;artifactId&amp;gt;amqp-client&amp;lt;/artifactId&amp;gt;		&amp;lt;scope&amp;gt;3.6.5&amp;lt;/scope&amp;gt;	&amp;lt;/dependency&amp;gt; 2.编码实战2.1Productor1">
 <meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvw37tlpgj30xb0ic7bg.jpg">
 
 
@@ -332,6 +345,21 @@
       
         <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvw37tlpgj30xb0ic7bg.jpg" alt="image-20181205151420002"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvw454689j30qu09lq5j.jpg" alt="image-20181205151512556"></p>
+<h1 id="1-加入依赖"><a href="#1-加入依赖" class="headerlink" title="1.加入依赖"></a>1.加入依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;com.rabbitmq&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;amqp-client&lt;/artifactId&gt;</span><br><span class="line">		&lt;scope&gt;3.6.5&lt;/scope&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="2-编码实战"><a href="#2-编码实战" class="headerlink" title="2.编码实战"></a>2.编码实战</h1><h3 id="2-1Productor"><a href="#2-1Productor" class="headerlink" title="2.1Productor"></a>2.1Productor</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Procuder</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 生产端Procuder http://94.191.24.33:15672/#/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">// 1.创建一个ConnectionFactory 并进行配置</span></span><br><span class="line">		ConnectionFactory connectionFactory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">		connectionFactory.setHost(<span class="string">"94.191.24.33"</span>);</span><br><span class="line">		connectionFactory.setPort(<span class="number">15672</span>);</span><br><span class="line">		connectionFactory.setVirtualHost(<span class="string">"/"</span>);</span><br><span class="line">		<span class="comment">// 2.通过连接工厂创建连接connectionFactory.newConnection();</span></span><br><span class="line">		Connection connection = connectionFactory.newConnection();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 3.通过connection创建一个Channel</span></span><br><span class="line">		Channel channel = connection.createChannel();</span><br><span class="line">		<span class="comment">// 4.通过Channel发送数据</span></span><br><span class="line"></span><br><span class="line">		String msg = <span class="string">"Hello RabbitMQ"</span>;</span><br><span class="line"> 		<span class="comment">//channel.basicPublish(exchange, routingKey, props, body);</span></span><br><span class="line">		channel.basicPublish(<span class="string">""</span>, <span class="string">"test001"</span>, <span class="keyword">null</span>, msg.getBytes());</span><br><span class="line">		channel.close();</span><br><span class="line">		connection.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvxi75tl7j30ua0k5al8.jpg" alt="image-20181205160320034"></p>
+<hr>
+<h3 id="2-2-Consumer"><a href="#2-2-Consumer" class="headerlink" title="2.2.Consumer"></a>2.2.Consumer</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">// 1.创建一个ConnectionFactory，并进行配置</span></span><br><span class="line">		ConnectionFactory connectionFactory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">		connectionFactory.setHost(<span class="string">"94.191.24.33"</span>);</span><br><span class="line">		connectionFactory.setPort(<span class="number">5672</span>);</span><br><span class="line">		connectionFactory.setVirtualHost(<span class="string">"/"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 2.通过连接工厂创建连接</span></span><br><span class="line">		Connection connection = connectionFactory.newConnection();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 3 通过连接工厂创建连接</span></span><br><span class="line">		Channel channel = connection.createChannel();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 4.申明（创建）一个队列</span></span><br><span class="line">		String queueName = <span class="string">"test001"</span>;</span><br><span class="line">		<span class="comment">// channel.queueDeclare(queueName, durable, exclusive, autoDelete, arguments)</span></span><br><span class="line">		channel.queueDeclare(<span class="string">"test001"</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 5.创建消费者</span></span><br><span class="line">		QueueingConsumer queueingConsumer = <span class="keyword">new</span> QueueingConsumer(channel);</span><br><span class="line"></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * 6.设置channel # channel.basicConsume(queue,autoAck, autoAck) # 1：queue：队列的名字</span></span><br><span class="line"><span class="comment">		 * 2.autoAck：是否自动签收 3:autoAck：具体的消费者对象</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		channel.basicConsume(queueName, <span class="keyword">true</span>, queueingConsumer);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//7.获取消息</span></span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			Delivery delivery = queueingConsumer.nextDelivery();</span><br><span class="line">			String msg = <span class="keyword">new</span> String(delivery.getBody());<span class="comment">// 获取消息</span></span><br><span class="line">			System.out.println(<span class="string">"消费端"</span> + msg);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz40oiozj30uq0u018o.jpg" alt="image-20181205165853880"></p>
+<hr>
+<h3 id="2-3-启动程序看管控台"><a href="#2-3-启动程序看管控台" class="headerlink" title="2.3 启动程序看管控台"></a>2.3 启动程序看管控台</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz6507ofj30ux0buq4n.jpg" alt="image-20181205170034688"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvz69uqgzj30m208xmyw.jpg" alt="image-20181205170103019"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz7rq8pkj30kq0avab7.jpg" alt="image-20181205170136237"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz7wyfebj30m80153z5.jpg" alt="image-20181205170239009"></p>
+<h3 id="2-4-方法的API"><a href="#2-4-方法的API" class="headerlink" title="2.4 方法的API"></a>2.4 方法的API</h3><h3 id="3-一些基础"><a href="#3-一些基础" class="headerlink" title="3.一些基础"></a>3.一些基础</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz8x3ursj30ta0rpajz.jpg" alt="image-20181205170337122"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvzaq02sjj30i9026gmp.jpg" alt="image-20181205170521505"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvzckmwgij30gd05e402.jpg" alt="image-20181205170707823"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvzd3r6l5j30lc05pjsr.jpg" alt="image-20181205170738566"></p>
 
       
     </div>
@@ -422,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -483,6 +520,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-加入依赖"><span class="nav-number">1.</span> <span class="nav-text">1.加入依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-编码实战"><span class="nav-number">2.</span> <span class="nav-text">2.编码实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1Productor"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1Productor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Consumer"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2.Consumer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-启动程序看管控台"><span class="nav-number">2.0.3.</span> <span class="nav-text">2.3 启动程序看管控台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-方法的API"><span class="nav-number">2.0.4.</span> <span class="nav-text">2.4 方法的API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一些基础"><span class="nav-number">2.0.5.</span> <span class="nav-text">3.一些基础</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
