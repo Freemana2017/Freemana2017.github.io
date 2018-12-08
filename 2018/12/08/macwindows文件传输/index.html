@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,">
+  <meta name="keywords" content="文件传输,">
 
 
 
@@ -79,15 +79,20 @@
 
 
 
-<meta name="keywords" content="java">
+<meta name="description" content="文件传输12345678910111213141516171819202122232425262728import cv2 as cvimport pytesseract as tessfrom PIL import Imagedef recognize_text():    gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)    ret, binary = c">
+<meta name="keywords" content="文件传输">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java并发编程">
-<meta property="og:url" content="http://yoursite.com/2018/12/04/java基础/java并发编程汪文君bibil/index.html">
+<meta property="og:title" content="mac windows文件传输">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/macwindows文件传输/index.html">
 <meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="文件传输12345678910111213141516171819202122232425262728import cv2 as cvimport pytesseract as tessfrom PIL import Imagedef recognize_text():    gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)    ret, binary = c">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-05T07:23:24.424Z">
+<meta property="og:image" content="http://yoursite.com/2018/Users/apple/Library/Application%20Support/typora-user-images/image-20181208200257739.png">
+<meta property="og:updated_time" content="2018-12-08T12:02:59.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java并发编程">
+<meta name="twitter:title" content="mac windows文件传输">
+<meta name="twitter:description" content="文件传输12345678910111213141516171819202122232425262728import cv2 as cvimport pytesseract as tessfrom PIL import Imagedef recognize_text():    gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)    ret, binary = c">
+<meta name="twitter:image" content="http://yoursite.com/2018/Users/apple/Library/Application%20Support/typora-user-images/image-20181208200257739.png">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/04/java基础/java并发编程汪文君bibil/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/08/macwindows文件传输/">
 
 
 
 
 
-  <title>java并发编程 | Freemana2017</title>
+  <title>mac windows文件传输 | Freemana2017</title>
   
 
 
@@ -260,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/java并发编程汪文君bibil/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/08/macwindows文件传输/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -277,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java并发编程</h1>
+          <h1 class="post-title" itemprop="name headline">mac windows文件传输</h1>
         
 
         <div class="post-meta">
@@ -289,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T21:37:01+08:00">
-                2018-12-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-08T20:00:09+08:00">
+                2018-12-08
               </time>
             
 
@@ -327,7 +332,13 @@
       
 
       
-        
+        <h1 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> pytesseract <span class="keyword">as</span> tess</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recognize_text</span><span class="params">()</span>:</span></span><br><span class="line">    gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)</span><br><span class="line">    ret, binary = cv.threshold(gray, <span class="number">0</span>, <span class="number">255</span>, cv.THRESH_BINARY_INV | cv.THRESH_OTSU)</span><br><span class="line">    kernel = cv.getStructuringElement(cv.MORPH_RECT, (<span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line">    bin1 = cv.morphologyEx(binary, cv.MORPH_OPEN, kernel)</span><br><span class="line">    kernel = cv.getStructuringElement(cv.MORPH_RECT, (<span class="number">2</span>, <span class="number">1</span>))</span><br><span class="line">    open_out = cv.morphologyEx(bin1, cv.MORPH_OPEN, kernel)</span><br><span class="line">    cv.imshow(<span class="string">"binary-image"</span>, open_out)</span><br><span class="line"></span><br><span class="line">    cv.bitwise_not(open_out, open_out)</span><br><span class="line">    textImage = Image.fromarray(open_out)</span><br><span class="line">    text = tess.image_to_string(textImage)</span><br><span class="line">    print(<span class="string">"识别结果: %s"</span>%text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">"--------- Python OpenCV Tutorial ---------"</span>)</span><br><span class="line">src = cv.imread(<span class="string">"/Users/apple/Desktop/1.png"</span>)</span><br><span class="line">cv.namedWindow(<span class="string">"input image"</span>, cv.WINDOW_AUTOSIZE)</span><br><span class="line">cv.imshow(<span class="string">"input image"</span>, src)</span><br><span class="line">recognize_text()</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://pythonware.com/products/pil/" target="_blank" rel="noopener">http://pythonware.com/products/pil/</a></p>
+<p><a href="https://pypi.python.org/pypi/pytesseract" target="_blank" rel="noopener">https://pypi.python.org/pypi/pytesseract</a></p>
+</blockquote>
+<p><img src="../../../Users/apple/Library/Application Support/typora-user-images/image-20181208200257739.png" alt="image-20181208200257739"></p>
+
       
     </div>
     
@@ -344,7 +355,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/文件传输/" rel="tag"># 文件传输</a>
           
         </div>
       
@@ -357,8 +368,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/04/java基础/引用传递/" rel="next" title="java引用传递">
-                <i class="fa fa-chevron-left"></i> java引用传递
+              <a href="/2018/12/05/RabbitMQ/quickstart/" rel="next" title="慕课网 Rabbit MQ 老师源代码">
+                <i class="fa fa-chevron-left"></i> 慕课网 Rabbit MQ 老师源代码
               </a>
             
           </div>
@@ -366,10 +377,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/04/java基础/java8实战 汪文君/" rel="prev" title="java8实战">
-                java8实战 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -421,8 +428,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -482,6 +498,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件传输"><span class="nav-number">1.</span> <span class="nav-text">文件传输</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
