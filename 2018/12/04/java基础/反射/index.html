@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,15 +79,40 @@
 
 
 
-<meta name="keywords" content="java">
+<meta name="description" content="java反射机制完全详解#1.反射源头 —Class类 1.1 取得Class类对象 ⭐️1234567public class Demo &amp;#123;	public static void main(String[] args) &amp;#123;		Date date = new Date();		Class&amp;lt;? extends Date&amp;gt; class1 = date.getClass(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java反射">
 <meta property="og:url" content="http://yoursite.com/2018/12/04/java基础/反射/index.html">
 <meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="java反射机制完全详解#1.反射源头 —Class类 1.1 取得Class类对象 ⭐️1234567public class Demo &amp;#123;	public static void main(String[] args) &amp;#123;		Date date = new Date();		Class&amp;lt;? extends Date&amp;gt; class1 = date.getClass(">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-05T07:21:46.589Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy045fyyr4j30ta07mgol.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy045sb6edj30w007q0wl.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fy04641futj30v807swi3.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fy04mm6qjlj30no079q6s.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy04uyf5k6j30tb0f6k2t.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fy04vku43wj30oc03njti.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fy04vyun60j30uz0d8k3z.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy0584nh1pj30os0ccju6.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fy0591uvm6j30zg0f6wmy.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fy0898maetj30sr0cw7i9.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy089flmtuj30um0be7en.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy08b5ht7zj30u709ednb.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy08gii658j30us0hx1b1.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08j6f384j30lm0adwng.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08jlg98sj30oj03cjtu.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy08jsc5gej30j701h0tu.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08m5au6cj30od09utgt.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08n0l8cmj30on0ecqbq.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fy092l0dt4j30ur0clwk1.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy0936ny34j30oo0aajvp.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy09fdt0fmj30m0076abl.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fy09hq5dz4j30m3060abh.jpg">
+<meta property="og:updated_time" content="2018-12-09T04:46:26.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java反射">
+<meta name="twitter:description" content="java反射机制完全详解#1.反射源头 —Class类 1.1 取得Class类对象 ⭐️1234567public class Demo &amp;#123;	public static void main(String[] args) &amp;#123;		Date date = new Date();		Class&amp;lt;? extends Date&amp;gt; class1 = date.getClass(">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy045fyyr4j30ta07mgol.jpg">
 
 
 
@@ -327,7 +352,49 @@
       
 
       
-        
+        <h1 id="java反射机制完全详解"><a href="#java反射机制完全详解" class="headerlink" title="java反射机制完全详解"></a>java反射机制完全详解</h1><p>#1.反射源头 —Class类</p>
+<h3 id="1-1-取得Class类对象-⭐️"><a href="#1-1-取得Class类对象-⭐️" class="headerlink" title="1.1 取得Class类对象 ⭐️"></a>1.1 取得Class类对象 ⭐️</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Date date = <span class="keyword">new</span> Date();</span><br><span class="line">		Class&lt;? extends Date&gt; class1 = date.getClass();<span class="comment">//取得class类对象</span></span><br><span class="line">		System.out.println(class1);<span class="comment">//class java.util.Date</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用类.class获得反射的是实例划对象</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Date date = <span class="keyword">new</span> Date();</span><br><span class="line">		Class&lt;? extends Date&gt; class1 = java.util.Date.class ;<span class="comment">//取得class类对象</span></span><br><span class="line">		System.out.println(class1);<span class="comment">//class java.util.Date</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用Class类提供的方法实例化对向</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; forName = Class.forName(<span class="string">"java.util.Date"</span>);</span><br><span class="line">		System.out.println(forName);<span class="comment">//class java.util.Date</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy045fyyr4j30ta07mgol.jpg" alt="image-20181209065531027"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy045sb6edj30w007q0wl.jpg" alt="image-20181209065552031"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy04641futj30v807swi3.jpg" alt="image-20181209065610108"></p>
+<p>#2.利用反射实例化对象</p>
+<h2 id="2-1public-T-newInstacne-⭐️⭐️"><a href="#2-1public-T-newInstacne-⭐️⭐️" class="headerlink" title="2.1public T newInstacne ⭐️⭐️"></a>2.1public T newInstacne ⭐️⭐️</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"^^^^"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"######"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, InstantiationException, IllegalAccessException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; class1 = Class.forName(<span class="string">"反射.Demo3"</span>);</span><br><span class="line">		Object object = class1.newInstance();<span class="comment">// 实例化对象</span></span><br><span class="line">		<span class="comment">// Demo3 demo3=new Demo3();//调用无参构造</span></span><br><span class="line">		System.out.println(class1);</span><br><span class="line">		System.out.println(object);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy04mm6qjlj30no079q6s.jpg" alt="image-20181209071201967"></p>
+<hr>
+<h3 id="2-2。工厂设计模式"><a href="#2-2。工厂设计模式" class="headerlink" title="2.2。工厂设计模式"></a>2.2。工厂设计模式</h3><hr>
+<h1 id="3-取得类继承结构"><a href="#3-取得类继承结构" class="headerlink" title="3.取得类继承结构"></a>3.取得类继承结构</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy04uyf5k6j30tb0f6k2t.jpg" alt="image-20181209072002912"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy04vku43wj30oc03njti.jpg" alt="image-20181209072038753"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy04vyun60j30uz0d8k3z.jpg" alt="image-20181209072101490"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> <span class="keyword">extends</span> <span class="title">Object</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"^^^^"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"######"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ClassNotFoundException, InstantiationException, IllegalAccessException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; class1 = Class.forName(<span class="string">"反射.Demo3"</span>);</span><br><span class="line">		class1.getName();<span class="comment">// 包名.类名</span></span><br><span class="line">		class1.getPackage();<span class="comment">// package 包名</span></span><br><span class="line">		class1.getPackage().getName();<span class="comment">// 包名</span></span><br><span class="line">		class1.getSimpleName();<span class="comment">// 类名</span></span><br><span class="line"></span><br><span class="line">		class1.getSuperclass().getName();<span class="comment">// 父类的包名</span></span><br><span class="line">		Class&lt;?&gt;[] icls = class1.getInterfaces();<span class="comment">// [Ljava.lang.Class;@6bf256fa</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; icls.length; i++) &#123;</span><br><span class="line">			System.out.println(icls[i].getSimpleName());<span class="comment">//Serializable</span></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy0584nh1pj30os0ccju6.jpg" alt="image-20181209073242823"></p>
+<p> <img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy0591uvm6j30zg0f6wmy.jpg" alt="image-20181209073335835"></p>
+<h1 id="4-反射取得构造方法（invoke）"><a href="#4-反射取得构造方法（invoke）" class="headerlink" title="4.反射取得构造方法（invoke）"></a>4.反射取得构造方法（invoke）</h1><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy0898maetj30sr0cw7i9.jpg" alt="image-20181209091731678"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy089flmtuj30um0be7en.jpg" alt="image-20181209091744030"></p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy08b5ht7zj30u709ednb.jpg" alt="image-20181209091924296"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy08gii658j30us0hx1b1.jpg" alt="image-20181209092434006"></p>
+<h1 id="5-反射取得方法-⭐️⭐️⭐️"><a href="#5-反射取得方法-⭐️⭐️⭐️" class="headerlink" title="5.反射取得方法 ⭐️⭐️⭐️"></a>5.反射取得方法 ⭐️⭐️⭐️</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08j6f384j30lm0adwng.jpg" alt="image-20181209092707626"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08jlg98sj30oj03cjtu.jpg" alt="image-20181209092730947"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy08jsc5gej30j701h0tu.jpg" alt="image-20181209092742987"></p>
+<blockquote>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08m5au6cj30od09utgt.jpg" alt="image-20181209092955657"></p>
+</blockquote>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy08n0l8cmj30on0ecqbq.jpg" alt="image-20181209093048728"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Demo5 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) throws ClassNotFoundException &#123;</span><br><span class="line">		 getMethodDemo();</span><br><span class="line">	&#125;</span><br><span class="line">	// 获取指定Class中的公共函数</span><br><span class="line">	public  static void getMethodDemo() throws ClassNotFoundException &#123;</span><br><span class="line">		Class&lt;?&gt; clazz = Class.forName(&quot;反射.Persion&quot;);</span><br><span class="line">		Method[] methods = clazz.getMethods();</span><br><span class="line">		for (int i = 0; i &lt; methods.length; i++) &#123;</span><br><span class="line">			System.out.println(methods[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy092l0dt4j30ur0clwk1.jpg" alt="image-20181209094546727"></p>
+<hr>
+<h1 id="6-Invoke"><a href="#6-Invoke" class="headerlink" title="6.Invoke"></a>6.Invoke</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy0936ny34j30oo0aajvp.jpg" alt="image-20181209094620520"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy09fdt0fmj30m0076abl.jpg" alt="image-20181209095804423"></p>
+<p>–</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy09hq5dz4j30m3060abh.jpg" alt="image-20181209100015073"></p>
+
       
     </div>
     
@@ -341,12 +408,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-        </div>
       
 
       
@@ -421,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -482,6 +552,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java反射机制完全详解"><span class="nav-number">1.</span> <span class="nav-text">java反射机制完全详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-取得Class类对象-⭐️"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 取得Class类对象 ⭐️</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1public-T-newInstacne-⭐️⭐️"><span class="nav-number">1.1.</span> <span class="nav-text">2.1public T newInstacne ⭐️⭐️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2。工厂设计模式"><span class="nav-number">1.1.1.</span> <span class="nav-text">2.2。工厂设计模式</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#3-取得类继承结构"><span class="nav-number">2.</span> <span class="nav-text">3.取得类继承结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-反射取得构造方法（invoke）"><span class="nav-number">3.</span> <span class="nav-text">4.反射取得构造方法（invoke）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-反射取得方法-⭐️⭐️⭐️"><span class="nav-number">4.</span> <span class="nav-text">5.反射取得方法 ⭐️⭐️⭐️</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Invoke"><span class="nav-number">5.</span> <span class="nav-text">6.Invoke</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
