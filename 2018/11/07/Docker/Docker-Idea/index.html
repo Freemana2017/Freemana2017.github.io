@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ndoklwj30u602yt9n.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1nbu2afj30i90f8751.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ncn0rpj30hz0b4aal.jpg">
-<meta property="og:updated_time" content="2018-12-04T13:41:11.901Z">
+<meta property="og:updated_time" content="2018-12-09T10:38:24.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker-Idea">
 <meta name="twitter:description" content="###1.Docker 在Intellij中的使用  Machine的安装  compose的安装  Docker的配置 首先学习什么东西都要用官网的东西 安装Docker的插件-看网上教程 看Docker插件的官网 hrer  学习英文。任何东西官网都用详细说明的    学习Docker  学习SpringBoot整合Docker  学习运维  下面开始Docker的学习 1.现在插件 2.看网">
@@ -451,8 +451,8 @@
 <p>在终端输入dockerversion</p>
 <p>docker-machine env—Host is not running</p>
 <h5 id="学习资源：通过Github的搜索功能🔍-发现一些学习资料"><a href="#学习资源：通过Github的搜索功能🔍-发现一些学习资料" class="headerlink" title="#学习资源：通过Github的搜索功能🔍 发现一些学习资料"></a>#学习资源：通过Github的搜索功能🔍 发现一些学习资料</h5><p><a href="https://www.jetbrains.com/help/idea/docker.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/idea/docker.html</a></p>
-<p>alip1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FROM java:8</span><br><span class="line">VOLUME /tmp</span><br><span class="line">COPY target/tran4spd-1.0-SNAPSHOT.jar resource.jar</span><br><span class="line">RUN bash -c &quot;touch /resource.jar&quot;</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;resource.jar&quot;]</span><br><span class="line"></span><br><span class="line"># docker run -d -p 18080:8099 --name docker-resource leesia/resource:1.0</span><br></pre></td></tr></table></figure>
+<p>alip1<code>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FROM java:8</span><br><span class="line">VOLUME /tmp</span><br><span class="line"></span><br><span class="line">sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line"></span><br><span class="line">COPY target/tran4spd-1.0-SNAPSHOT.jar resource.jar</span><br><span class="line">RUN bash -c &quot;touch /resource.jar&quot;</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;resource.jar&quot;]</span><br><span class="line"></span><br><span class="line"># docker run -d -p 18080:8099 --name docker-resource leesia/resource:1.0</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -584,7 +584,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -606,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

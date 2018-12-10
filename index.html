@@ -269,6 +269,412 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/java基础/java反射/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/10/java基础/java反射/" itemprop="url">java反射</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T17:31:33+08:00">
+                2018-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/10/java基础/java反射/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/10/java基础/java反射/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy1s79mxgyj30rc0ek787.jpg" alt="image-20181210173312356"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// Foo的实例对象如何表示</span></span><br><span class="line">		Foo foo1 = <span class="keyword">new</span> Foo();<span class="comment">// foo1就表示出来了</span></span><br><span class="line">		<span class="comment">// Foo 这个类 也是个实例对象 ，Class类的实列对象 如何表示呢</span></span><br><span class="line">		<span class="comment">// 任何一个类都是Class的实列对象 这个实列对象有三种表示方式</span></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * c1 c2表示了Foo类的类类型（class type）</span></span><br><span class="line"><span class="comment">		 *  万事万物皆对象</span></span><br><span class="line"><span class="comment">		 *  类也是对象 是Class类的实列对象</span></span><br><span class="line"><span class="comment">		 *  这个对象我们称为该类的lei lei</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="comment">// 第一种表示方式---&gt;实际在告诉我们任何一个类都以一个隐含的静态成员</span></span><br><span class="line">		Class c1=Foo.class;</span><br><span class="line">		<span class="comment">// 第二种表示方式--&gt;已经知道该类的对象通过getClass方法</span></span><br><span class="line">		Class c2 = foo1.getClass();</span><br><span class="line">		<span class="comment">//第三种方式</span></span><br><span class="line">		Class c3=Class.forName(<span class="string">"com.package.Foo"</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 我们完全可以通过类类型创建该类的对象实列</span></span><br><span class="line">	<span class="comment">// --&gt;通过c1 or c2 创建Foo的实例</span></span><br><span class="line">	Foo foo = (Foo) c1.newInstance();foo.print();</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1sq809zrj31170q7wrg.jpg" alt="image-20181210175126381"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1sqkhk81j30oc0bpwh6.jpg" alt="image-20181210175146126"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1su2y72qj30n00c6tc2.jpg" alt="image-20181210175508741"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1sv48n9kj30jd0cldix.jpg" alt="image-20181210175609088"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Class c1 = <span class="keyword">int</span>.class;<span class="comment">//int 的类类型</span></span><br><span class="line">		Class c2 = String.class;<span class="comment">//String类的类类型   String类字节码（自己发明的)</span></span><br><span class="line">		Class c3 = <span class="keyword">double</span>.class;</span><br><span class="line">		Class c4 = Double.class;</span><br><span class="line">		Class c5 = <span class="keyword">void</span>.class;</span><br><span class="line">		</span><br><span class="line">		System.out.println(c1.getName());</span><br><span class="line">		System.out.println(c2.getName());</span><br><span class="line">		System.out.println(c2.getSimpleName());<span class="comment">//不包含包名的类的名称</span></span><br><span class="line">		System.out.println(c5.getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//Foo的实例对象如何表示</span></span><br><span class="line">		Foo foo1 = <span class="keyword">new</span> Foo();<span class="comment">//foo1就表示出来了.</span></span><br><span class="line">		<span class="comment">//Foo这个类 也是一个实例对象，Class类的实例对象,如何表示呢</span></span><br><span class="line">		<span class="comment">//任何一个类都是Class的实例对象，这个实例对象有三种表示方式</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//第一种表示方式---&gt;实际在告诉我们任何一个类都有一个隐含的静态成员变量class</span></span><br><span class="line">		Class c1 = Foo.class;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//第二中表达方式  已经知道该类的对象通过getClass方法</span></span><br><span class="line">		Class c2 = foo1.getClass();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/*官网 c1 ,c2 表示了Foo类的类类型(class type)</span></span><br><span class="line"><span class="comment">		 * 万事万物皆对象，</span></span><br><span class="line"><span class="comment">		 * 类也是对象，是Class类的实例对象</span></span><br><span class="line"><span class="comment">		 * 这个对象我们称为该类的类类型</span></span><br><span class="line"><span class="comment">		 * </span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//不管c1  or c2都代表了Foo类的类类型，一个类只可能是Class类的一个实例对象</span></span><br><span class="line">		System.out.println(c1 == c2);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//第三种表达方式</span></span><br><span class="line">		Class c3 = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			c3 = Class.forName(<span class="string">"com.imooc.reflect.Foo"</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(c2==c3);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//我们完全可以通过类的类类型创建该类的对象实例----&gt;通过c1 or c2 or c3创建Foo的实例对象</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Foo foo = (Foo)c1.newInstance();<span class="comment">//需要有无参数的构造方法</span></span><br><span class="line">			foo.print();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"foo"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanUtil</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 根据标准javaBean对象的属性名获取其属性值</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> propertyName</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">getValueByPropertyName</span><span class="params">(Object obj, String propertyName)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 1.根据属性名称就可以获取其get方法</span></span><br><span class="line">		String getMethodName = <span class="string">"get"</span></span><br><span class="line">				+ propertyName.substring(<span class="number">0</span>, <span class="number">1</span>).toUpperCase()</span><br><span class="line">				+ propertyName.substring(<span class="number">1</span>);</span><br><span class="line">		<span class="comment">//2.获取方法对象</span></span><br><span class="line">		Class c = obj.getClass();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//get方法都是public的且无参数</span></span><br><span class="line">			Method m= c.getMethod(getMethodName);</span><br><span class="line">			<span class="comment">//3 通过方法的反射操作方法</span></span><br><span class="line">			Object value = m.invoke(obj);</span><br><span class="line">			<span class="keyword">return</span> value;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassUtil</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 打印类的信息，包括类的成员函数、成员变量(只获取成员函数)</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> obj 该对象所属类的信息</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printClassMethodMessage</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">		<span class="comment">//要获取类的信息  首先要获取类的类类型</span></span><br><span class="line">		Class c = obj.getClass();<span class="comment">//传递的是哪个子类的对象  c就是该子类的类类型</span></span><br><span class="line">		<span class="comment">//获取类的名称</span></span><br><span class="line">		System.out.println(<span class="string">"类的名称是:"</span>+c.getName());</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * Method类，方法对象</span></span><br><span class="line"><span class="comment">		 * 一个成员方法就是一个Method对象</span></span><br><span class="line"><span class="comment">		 * getMethods()方法获取的是所有的public的函数，包括父类继承而来的</span></span><br><span class="line"><span class="comment">		 * getDeclaredMethods()获取的是所有该类自己声明的方法，不问访问权限</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		Method[] ms = c.getMethods();<span class="comment">//c.getDeclaredMethods()</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ms.length;i++)&#123;</span><br><span class="line">			<span class="comment">//得到方法的返回值类型的类类型</span></span><br><span class="line">			Class returnType = ms[i].getReturnType();</span><br><span class="line">			System.out.print(returnType.getName()+<span class="string">" "</span>);</span><br><span class="line">			<span class="comment">//得到方法的名称</span></span><br><span class="line">			System.out.print(ms[i].getName()+<span class="string">"("</span>);</span><br><span class="line">			<span class="comment">//获取参数类型---&gt;得到的是参数列表的类型的类类型</span></span><br><span class="line">			Class[] paramTypes = ms[i].getParameterTypes();</span><br><span class="line">			<span class="keyword">for</span> (Class class1 : paramTypes) &#123;</span><br><span class="line">				System.out.print(class1.getName()+<span class="string">","</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(<span class="string">")"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取成员变量的信息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printFieldMessage</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		Class c = obj.getClass();</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * 成员变量也是对象</span></span><br><span class="line"><span class="comment">		 * java.lang.reflect.Field</span></span><br><span class="line"><span class="comment">		 * Field类封装了关于成员变量的操作</span></span><br><span class="line"><span class="comment">		 * getFields()方法获取的是所有的public的成员变量的信息</span></span><br><span class="line"><span class="comment">		 * getDeclaredFields获取的是该类自己声明的成员变量的信息</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="comment">//Field[] fs = c.getFields();</span></span><br><span class="line">		Field[] fs = c.getDeclaredFields();</span><br><span class="line">		<span class="keyword">for</span> (Field field : fs) &#123;</span><br><span class="line">			<span class="comment">//得到成员变量的类型的类类型</span></span><br><span class="line">			Class fieldType = field.getType();</span><br><span class="line">			String typeName = fieldType.getName();</span><br><span class="line">			<span class="comment">//得到成员变量的名称</span></span><br><span class="line">			String fieldName = field.getName();</span><br><span class="line">			System.out.println(typeName+<span class="string">" "</span>+fieldName);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 打印对象的构造函数的信息</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printConMessage</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">		Class c = obj.getClass();</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * 构造函数也是对象</span></span><br><span class="line"><span class="comment">		 * java.lang. Constructor中封装了构造函数的信息</span></span><br><span class="line"><span class="comment">		 * getConstructors获取所有的public的构造函数</span></span><br><span class="line"><span class="comment">		 * getDeclaredConstructors得到所有的构造函数</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="comment">//Constructor[] cs = c.getConstructors();</span></span><br><span class="line">		Constructor[] cs = c.getDeclaredConstructors();</span><br><span class="line">		<span class="keyword">for</span> (Constructor constructor : cs) &#123;</span><br><span class="line">			System.out.print(constructor.getName()+<span class="string">"("</span>);</span><br><span class="line">			<span class="comment">//获取构造函数的参数列表---&gt;得到的是参数列表的类类型</span></span><br><span class="line">			Class[] paramTypes = constructor.getParameterTypes();</span><br><span class="line">			<span class="keyword">for</span> (Class class1 : paramTypes) &#123;</span><br><span class="line">				System.out.print(class1.getName()+<span class="string">","</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(<span class="string">")"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/09/Docker war总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/09/Docker war总结/" itemprop="url">Docker war</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-09T18:15:18+08:00">
+                2018-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/09/Docker war总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/09/Docker war总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Docker-打包-War镜像"><a href="#Docker-打包-War镜像" class="headerlink" title="Docker 打包 War镜像"></a>Docker 打包 War镜像</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/09/万和杯/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/09/万和杯/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-09T17:23:36+08:00">
+                2018-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/09/万和杯/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/09/万和杯/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://blog.csdn.net/int93/article/details/78811801/" target="_blank" rel="noopener">https://blog.csdn.net/int93/article/details/78811801/</a> python 参考网址</p>
+</blockquote>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy0ng5m78pj30qo0ttdzu.jpg" alt="image-20181209180310336"></p>
+<p>讲文件放到IDE 里面 看视频</p>
+<p>tesseract</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/08/macwindows文件传输/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1300,407 +1706,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/RabbitMQ/3.管控台/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/RabbitMQ/3.管控台/" itemprop="url">RabbitMQ管控台</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:58:33+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/RabbitMQ/3.管控台/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/RabbitMQ/3.管控台/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="不积跬步-无以至千里-养成写博客理解的习惯"><a href="#不积跬步-无以至千里-养成写博客理解的习惯" class="headerlink" title="不积跬步 无以至千里 养成写博客理解的习惯"></a>不积跬步 无以至千里 养成写博客理解的习惯</h4><h3 id="博客在学习的时候写-看最好的视频-写做好的博客-cheerUP"><a href="#博客在学习的时候写-看最好的视频-写做好的博客-cheerUP" class="headerlink" title="#博客在学习的时候写 看最好的视频 写做好的博客 cheerUP"></a>#博客在学习的时候写 看最好的视频 写做好的博客 cheerUP</h3><hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvw1csyrnj30s11wrk1k.jpg" alt="image-20181205150907065"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvvyn2vssj30r844yb29.jpg" alt="image-20181205150956171"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvw1dt0onj30jdawb1ky.jpg" alt="image-20181205151144586"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/Rabbit MQ命令总结/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/Rabbit MQ命令总结/" itemprop="url">Rabbit MQ命令总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:37:35+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/Rabbit MQ命令总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/Rabbit MQ命令总结/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="命令总结-RabbitMQ"><a href="#命令总结-RabbitMQ" class="headerlink" title="命令总结 RabbitMQ"></a>命令总结 RabbitMQ</h1><h1 id="不积跬步无以至千里"><a href="#不积跬步无以至千里" class="headerlink" title="不积跬步无以至千里"></a>不积跬步无以至千里</h1><h5 id="1-lsof-i-5672-查看有没有启动成功"><a href="#1-lsof-i-5672-查看有没有启动成功" class="headerlink" title="1.lsof -i :5672 查看有没有启动成功"></a>1.lsof -i :5672 查看有没有启动成功</h5><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuwjxdarpj30ma02rabn.jpg" alt="image-20181204184449441"></p>
-<h5 id="2-rabbitmq"><a href="#2-rabbitmq" class="headerlink" title="2.rabbitmq"></a>2.rabbitmq</h5><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuwmg4ed4j30ma01maax.jpg" alt="image-20181204184714442"></p>
-<h5 id="3-rabbitmqctl-list-queues-查看所有队列的名称"><a href="#3-rabbitmqctl-list-queues-查看所有队列的名称" class="headerlink" title="3.rabbitmqctl list_queues 查看所有队列的名称"></a>3.rabbitmqctl list_queues 查看所有队列的名称</h5><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuwnj1pccj30gq02kmxu.jpg" alt="image-20181204184817578"></p>
-<h5 id="4-rabbitmqctl-list-vhosts"><a href="#4-rabbitmqctl-list-vhosts" class="headerlink" title="4.rabbitmqctl list_vhosts"></a>4.rabbitmqctl list_vhosts</h5><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuwoqqncfj30gp025dgh.jpg" alt="image-20181204184926639"></p>
-<h5 id="5-rabbitmqctl-status-查看当前节点的状态"><a href="#5-rabbitmqctl-status-查看当前节点的状态" class="headerlink" title="5.rabbitmqctl status 查看当前节点的状态"></a>5.rabbitmqctl status 查看当前节点的状态</h5><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuwqc7fy4j30ex03wgnf.jpg" alt="image-20181204185059365"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/集合/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/java基础/集合/" itemprop="url">javaSE 总结 IO 集合 线程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:24:04+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/java基础/集合/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/集合/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-集合"><a href="#1-集合" class="headerlink" title="1.集合"></a>1.集合</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1748,7 +1758,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1770,7 +1780,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
