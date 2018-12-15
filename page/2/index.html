@@ -269,6 +269,329 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/RabbitMQ/4消费生产与消费/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/05/RabbitMQ/4消费生产与消费/" itemprop="url">消费生产与消费</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T15:13:11+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/05/RabbitMQ/4消费生产与消费/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/05/RabbitMQ/4消费生产与消费/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvw37tlpgj30xb0ic7bg.jpg" alt="image-20181205151420002"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvw454689j30qu09lq5j.jpg" alt="image-20181205151512556"></p>
+<h1 id="1-加入依赖"><a href="#1-加入依赖" class="headerlink" title="1.加入依赖"></a>1.加入依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;com.rabbitmq&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;amqp-client&lt;/artifactId&gt;</span><br><span class="line">		&lt;scope&gt;3.6.5&lt;/scope&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="2-编码实战"><a href="#2-编码实战" class="headerlink" title="2.编码实战"></a>2.编码实战</h1><h3 id="2-1Productor"><a href="#2-1Productor" class="headerlink" title="2.1Productor"></a>2.1Productor</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Procuder</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 生产端Procuder http://94.191.24.33:15672/#/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">// 1.创建一个ConnectionFactory 并进行配置</span></span><br><span class="line">		ConnectionFactory connectionFactory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">		connectionFactory.setHost(<span class="string">"94.191.24.33"</span>);</span><br><span class="line">		connectionFactory.setPort(<span class="number">15672</span>);</span><br><span class="line">		connectionFactory.setVirtualHost(<span class="string">"/"</span>);</span><br><span class="line">		<span class="comment">// 2.通过连接工厂创建连接connectionFactory.newConnection();</span></span><br><span class="line">		Connection connection = connectionFactory.newConnection();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 3.通过connection创建一个Channel</span></span><br><span class="line">		Channel channel = connection.createChannel();</span><br><span class="line">		<span class="comment">// 4.通过Channel发送数据</span></span><br><span class="line"></span><br><span class="line">		String msg = <span class="string">"Hello RabbitMQ"</span>;</span><br><span class="line"> 		<span class="comment">//channel.basicPublish(exchange, routingKey, props, body);</span></span><br><span class="line">		channel.basicPublish(<span class="string">""</span>, <span class="string">"test001"</span>, <span class="keyword">null</span>, msg.getBytes());</span><br><span class="line">		channel.close();</span><br><span class="line">		connection.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvxi75tl7j30ua0k5al8.jpg" alt="image-20181205160320034"></p>
+<hr>
+<h3 id="2-2-Consumer"><a href="#2-2-Consumer" class="headerlink" title="2.2.Consumer"></a>2.2.Consumer</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">// 1.创建一个ConnectionFactory，并进行配置</span></span><br><span class="line">		ConnectionFactory connectionFactory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">		connectionFactory.setHost(<span class="string">"94.191.24.33"</span>);</span><br><span class="line">		connectionFactory.setPort(<span class="number">5672</span>);</span><br><span class="line">		connectionFactory.setVirtualHost(<span class="string">"/"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 2.通过连接工厂创建连接</span></span><br><span class="line">		Connection connection = connectionFactory.newConnection();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 3 通过连接工厂创建连接</span></span><br><span class="line">		Channel channel = connection.createChannel();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 4.申明（创建）一个队列</span></span><br><span class="line">		String queueName = <span class="string">"test001"</span>;</span><br><span class="line">		<span class="comment">// channel.queueDeclare(queueName, durable, exclusive, autoDelete, arguments)</span></span><br><span class="line">		channel.queueDeclare(<span class="string">"test001"</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 5.创建消费者</span></span><br><span class="line">		QueueingConsumer queueingConsumer = <span class="keyword">new</span> QueueingConsumer(channel);</span><br><span class="line"></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * 6.设置channel # channel.basicConsume(queue,autoAck, autoAck) # 1：queue：队列的名字</span></span><br><span class="line"><span class="comment">		 * 2.autoAck：是否自动签收 3:autoAck：具体的消费者对象</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		channel.basicConsume(queueName, <span class="keyword">true</span>, queueingConsumer);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//7.获取消息</span></span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			Delivery delivery = queueingConsumer.nextDelivery();</span><br><span class="line">			String msg = <span class="keyword">new</span> String(delivery.getBody());<span class="comment">// 获取消息</span></span><br><span class="line">			System.out.println(<span class="string">"消费端"</span> + msg);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz40oiozj30uq0u018o.jpg" alt="image-20181205165853880"></p>
+<hr>
+<h3 id="2-3-启动程序看管控台"><a href="#2-3-启动程序看管控台" class="headerlink" title="2.3 启动程序看管控台"></a>2.3 启动程序看管控台</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz6507ofj30ux0buq4n.jpg" alt="image-20181205170034688"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvz69uqgzj30m208xmyw.jpg" alt="image-20181205170103019"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz7rq8pkj30kq0avab7.jpg" alt="image-20181205170136237"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz7wyfebj30m80153z5.jpg" alt="image-20181205170239009"></p>
+<h3 id="2-4-方法的API"><a href="#2-4-方法的API" class="headerlink" title="2.4 方法的API"></a>2.4 方法的API</h3><h3 id="3-一些基础"><a href="#3-一些基础" class="headerlink" title="3.一些基础"></a>3.一些基础</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvz8x3ursj30ta0rpajz.jpg" alt="image-20181205170337122"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvzaq02sjj30i9026gmp.jpg" alt="image-20181205170521505"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvzckmwgij30gd05e402.jpg" alt="image-20181205170707823"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvzd3r6l5j30lc05pjsr.jpg" alt="image-20181205170738566"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/引用传递/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/java基础/引用传递/" itemprop="url">java引用传递</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T21:36:47+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/java基础/引用传递/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/引用传递/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h3 id="（show（）方法出栈-栈里面只有成员变量）"><a href="#（show（）方法出栈-栈里面只有成员变量）" class="headerlink" title="（show（）方法出栈 栈里面只有成员变量）"></a>（show（）方法出栈 栈里面只有成员变量）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//基本数据类型参数传递</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">		show(x);<span class="comment">//⭐️x=3 show（）方法出栈 栈里面只有3 </span></span><br><span class="line">		System.out.println(<span class="string">"x="</span> + x); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		x = <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzhm7oth9j30wa0fnwk8.jpg" alt="image-20181208175552226"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzhmhdeiij30so09076n.jpg" alt="image-20181208175608090"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//基本数据类型参数传递</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">		show(x);<span class="comment">// 答案x=4 执行的是show 里面的方法</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		x = <span class="number">4</span>;</span><br><span class="line">		System.out.println(<span class="string">"x="</span> + x); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzhog1xp1j30kl0b377t.jpg" alt="image-20181208175756626"></p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzhpcgg6aj30j10c577j.jpg" alt="image-20181208175849677"></p>
+<hr>
+<hr>
+<hr>
+<h1 id="引用数据类型参数传递"><a href="#引用数据类型参数传递" class="headerlink" title="引用数据类型参数传递"></a>引用数据类型参数传递</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzi3ii8g7j30i90cu0w6.jpg" alt="image-20181208181230101"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//引用数据类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo2 demo2 = <span class="keyword">new</span> Demo2();</span><br><span class="line">		demo2.x=<span class="number">9</span>;</span><br><span class="line">		show(demo2);<span class="comment">// ⭐️ x=4</span></span><br><span class="line">		System.out.println(demo2.x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Demo2 d)</span> </span>&#123;</span><br><span class="line">		d.x = <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzi44iftuj31330gvwku.jpg" alt="image-20181208181304546"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzi49xiv8j30in0dpmxr.jpg" alt="image-20181208181313939"></p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzi70mk3yj318h0p8n7x.jpg" alt="image-20181208181550692"></p>
+<hr>
+<h2 id="引用数据类型传递详解"><a href="#引用数据类型传递详解" class="headerlink" title="引用数据类型传递详解"></a>引用数据类型传递详解</h2><ul>
+<li><p>栈内存：保存所有的对象名称 d(保存了引用堆内存空间的地址）</p>
+</li>
+<li><p>堆内存空间。保存具体对象的具体属性</p>
+</li>
+<li><p>全局数据区：保存static类型的属性</p>
+</li>
+<li><p>全局代码区：保存所有的方法定义</p>
+<h1 id="java的引用传递-同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址"><a href="#java的引用传递-同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址" class="headerlink" title="java的引用传递 同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址"></a>java的引用传递 同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址</h1></li>
+</ul>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> data = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo1</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.data = data;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.data;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.data = data;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo1 demo1 = <span class="keyword">new</span> Demo1();</span><br><span class="line">		fun(demo1);<span class="comment">//</span></span><br><span class="line">		System.out.println(demo1.getData());<span class="comment">//30</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo1 temp)</span> </span>&#123; <span class="comment">// 接受引用</span></span><br><span class="line">		temp.setData(<span class="number">30</span>);<span class="comment">// 修改属性内容</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzitjhmtkj30qn0uxgsh.jpg" alt="image-20181208183729045"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzitz8xyvj313l0n3475.jpg" alt="image-20181208183756336"></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/lym152898/article/details/54411956" target="_blank" rel="noopener">https://blog.csdn.net/lym152898/article/details/54411956</a></p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxziwzqdcdj30rj394kae.jpg" alt="image-20181208184049245"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzixhog6pj30rb12jdnc.jpg" alt="image-20181208184118821"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxziy77tthj30ri44n4qp.jpg" alt="image-20181208184158837"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzizum77rj30mo6cu7wi.jpg" alt="image-20181208184333093"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzj0hc314j30ir03babl.jpg" alt="image-20181208184410426"></p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzj48hz9aj30o00mxwmv.jpg" alt="image-20181208184746357"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzj5y8hpaj30s6254wzo.jpg" alt="image-20181208184926276"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/RabbitMQ/3.管控台/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -665,135 +988,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/动态代理/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/java基础/动态代理/" itemprop="url">java动态代理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:23:59+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/java基础/动态代理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/动态代理/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/反射/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -985,7 +1179,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/04/Spring/java容器的注解/" itemprop="url">基于java的容器注解</a></h1>
+                <a class="post-title-link" href="/2018/12/04/Spring/java容器的注解/" itemprop="url">基于java的容器注解 @Bean</a></h1>
         
 
         <div class="post-meta">
@@ -1130,7 +1324,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/04/Spring/bean的配置作用域/" itemprop="url">Bean的配置项作用域生命周期</a></h1>
+                <a class="post-title-link" href="/2018/12/04/Spring/bean的配置作用域/" itemprop="url">Spring Bean装配 基于xml形式</a></h1>
         
 
         <div class="post-meta">
@@ -1199,6 +1393,19 @@
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuurapo4ij30nb0cfn0i.jpg" alt="image-20181204174242759"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuus7s8n7j30mz0a2wh3.jpg" alt="image-20181204174336075"></p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuuvlnopnj30ld08mq46.jpg" alt="image-20181204174414473"></p>
+<hr>
+<h1 id="Spring-Awre"><a href="#Spring-Awre" class="headerlink" title="Spring Awre"></a>Spring Awre</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy1tkd5pa0j30o009w41k.jpg" alt="image-20181210182021661"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoocApplicationContext</span> <span class="keyword">implements</span> <span class="title">ApplicationContextAware</span>  </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApplicationContext</span><span class="params">(ApplicationContext applicationContext)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"MoocApplicationContext : "</span> + applicationContext.getBean(<span class="string">"moocApplicationContext"</span>).hashCode());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoocBeanName</span> <span class="keyword">implements</span> <span class="title">BeanNameAware</span>, <span class="title">ApplicationContextAware</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String beanName;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBeanName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.beanName = name;</span><br><span class="line">		System.out.println(<span class="string">"MoocBeanName : "</span> + name);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApplicationContext</span><span class="params">(ApplicationContext applicationContext)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"setApplicationContext : "</span> + applicationContext.getBean(<span class="keyword">this</span>.beanName).hashCode());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Autowiring"><a href="#Autowiring" class="headerlink" title="Autowiring"></a>Autowiring</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1trm8rwej30p00e045t.jpg" alt="image-20181210182721723"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoWiringDAO</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"AutoWiringDAO : "</span> + word);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoWiringService</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> AutoWiringDAO autoWiringDAO;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">AutoWiringService</span><span class="params">(AutoWiringDAO autoWiringDAO)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"AutoWiringService"</span>);</span><br><span class="line">		<span class="keyword">this</span>.autoWiringDAO = autoWiringDAO;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAutoWiringDAO</span><span class="params">(AutoWiringDAO autoWiringDAO)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"setAutoWiringDAO"</span>);</span><br><span class="line">		<span class="keyword">this</span>.autoWiringDAO = autoWiringDAO;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.autoWiringDAO.say(word);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">default-autowire</span>=<span class="string">"constructor"</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"autoWiringService"</span> <span class="attr">class</span>=<span class="string">"com.imooc.autowiring.AutoWiringService"</span> &gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.imooc.autowiring.AutoWiringDAO"</span> &gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"> <span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1u0nlaitj30np0dljvy.jpg" alt="image-20181210183603337"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1u11vyyhj30ov0d7q9p.jpg" alt="image-20181210183627336"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1u1rb428j30ov0crtev.jpg" alt="image-20181210183707965"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy1u5sil1vj30jm05j0uv.jpg" alt="image-20181210184059831"></p>
 
           
         
@@ -1539,150 +1746,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/RabbitMQ/2.命令行与管控台/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/03/RabbitMQ/2.命令行与管控台/" itemprop="url">Rabbit MQ 命令行与管控台</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-03T18:35:56+08:00">
-                2018-12-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/03/RabbitMQ/2.命令行与管控台/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/03/RabbitMQ/2.命令行与管控台/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqpytrpdj30xq0jqn3o.jpg" alt="image-20181203183728631"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqrqgdptj31ae0ivmz6.jpg" alt="image-20181203183843056"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqrupv92j318c0iydnm.jpg" alt="image-20181203183917805"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqsckm5oj319f0j0tgc.jpg" alt="image-20181203183945903"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqsomlwpj318m0ci3zi.jpg" alt="image-20181203184000014"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqtiozd0j31ae0i4n34.jpg" alt="image-20181203184053778"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqu3srf1j317w0ci0xo.jpg" alt="image-20181203184127097"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqupvb4lj318h069juk.jpg" alt="image-20181203184201778"></p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl stop_app：关闭应用</span><br><span class="line"></span><br><span class="line">rabbitmqctl stop_app：启动应用</span><br><span class="line"></span><br><span class="line">rabbitmqctlstatus：节点状态</span><br><span class="line"></span><br><span class="line">rabbitmqctladd_user username password：添加用户</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_users：列出所有用户</span><br><span class="line"></span><br><span class="line">rabbitmqctldelete_user username：删除用户</span><br><span class="line"></span><br><span class="line">rabbitmqctl clear_permissions -p vhostpath username ：清楚用户权限</span><br><span class="line"></span><br><span class="line">rabbitmqctladd_vhost vhostpath：创建虚拟主机</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_vhost：列出所有虚拟主机</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_permissions -p vhostpath：列出虚拟主机所有权限</span><br><span class="line"></span><br><span class="line">rabbitmqctldelete_vhost vhostpath：删除虚拟主机</span><br><span class="line"></span><br><span class="line">rabbitmqctllist_queues：查看所有队列信息</span><br><span class="line"></span><br><span class="line">rabbitmqctl -p vhostpath purge_queue blue：清除队列里的消息</span><br><span class="line"></span><br><span class="line">rabbitmqctlreset：移除所有数据，要在rabbitmqctlstop_app之后使用</span><br><span class="line"></span><br><span class="line">rabbitmqctl join_cluster [--ram]：组成集群命令</span><br><span class="line"></span><br><span class="line">rabbitmqctlcluster_status：查看集群状态</span><br><span class="line"></span><br><span class="line">rabbitmqctlchange_cluster_node_type disc |ram：修改集群节点的存储模式</span><br><span class="line"></span><br><span class="line">rabbitmqctlforget_cluster_node_ [--offline] ：忘记节点（摘除节点）</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1730,7 +1798,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1752,7 +1820,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
