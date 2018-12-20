@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Thymeleaf]]></title>
+    <url>%2F2018%2F12%2F19%2FJSP%20Servlet%20Thyme%2FThymeleaf%2F</url>
+    <content type="text"><![CDATA[#Thymeleaf中取值 reservation：$. {reservations}其中${reservations}的值是modeandview里面的 #reservation的值是随 便起的变量 放在reservation里面 –表格]]></content>
+      <tags>
+        <tag>Thymeleaf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Html]]></title>
+    <url>%2F2018%2F12%2F19%2FHTML%2BCSS%2BJS%2FHTML%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <tags>
+        <tag>Html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F12%2F15%2F%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%2F%E7%94%B5%E5%BD%B1%2F</url>
+    <content type="text"><![CDATA[邪不压正找到你让子弹飞你好 之华人不彪悍枉少年#我不是药神仙 影一本好书]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>%2F2018%2F12%2F15%2Ft%2F</url>
     <content type="text"></content>
@@ -16,7 +37,7 @@
   <entry>
     <title><![CDATA[Jquery]]></title>
     <url>%2F2018%2F12%2F14%2FJquery%2F</url>
-    <content type="text"><![CDATA[1.获取Jquery对象1234567&lt;input type="text" id="username" value="jack"/&gt;&lt;script type="text/javascript"&gt; //jquery获得数据 语法$&#123;"选择器"&#125;==Jquery（"选择器"） var usernmae = $("#username"); //val() 函数 用于获得value属性的值 jack alert(usernmae.val());&lt;/script&gt; 2.Jquery与Dom对象的互相转换12345678910111213141516171819202122&lt;input type="text" id="username" value="jack"/&gt;&lt;script type="text/javascript"&gt; //Jquery对象和Dom对象的转换 //1。使用Javascripe获取value的值 var username = document.getElementById("username"); alert(username.value);//jack用的是属性 //2。将dom对象 转换为Jquery对象 //# 语法：$(dom对象) //# 建议 ：Jquery对象变量名字 建议以$开头 var $username = $(username); alert($username.val()); //3.将jquery对象转为Dom对象 //3.1 Jquery对象内部使用数组存放所有的数据 可以通过数组的下标获取（索引） var username2 = $username[0]; alert(username2.value); //3.2Jquery提供函数get()转换为dom对象 var username3 = $username.get(0); alert(username3.value);&lt;/script&gt; 3. 选择器3.1 基本选择器【重要】 id ,id选择器 通过id 值获得元素 element，标签选择器 通过标签名获得元素 .class 类选择器 通过class值获得元素。注意：使用点开头 s1,s2,… 多选择器，将多个选择器的结果添加一个数组中。 123456789101112131415161718192021&lt;script type="text/javascript"&gt; //window.onload=function()&#123;...&#125;匿名函数 //jquery 页面加载--&gt;function()匿名函数 $(document).ready(function () &#123; &#125;); //id选择器 为id绑定一个事件 然后传递一个函数 $("#btn1").click(function () &#123; $("#one").css("background-color", "#ff0") &#125;); //类选择器 $(".btn2").click(function () &#123; $(".one").css("background-color", "#ff0"); &#125;); //元素选择器 $("div").background = "#ff2";&lt;/script&gt;&lt;input type="button" id="btn1" value="选择id为one的元素"&gt;&lt;input type="button" class="btn2" value="选择id为one的元素"&gt; 3.2层级3.33.43.53.63.73.8]]></content>
+    <content type="text"><![CDATA[1.获取Jquery对象1234567&lt;input type="text" id="username" value="jack"/&gt;&lt;script type="text/javascript"&gt; //jquery获得数据 语法$&#123;"选择器"&#125;==Jquery（"选择器"） var usernmae = $("#username"); //val() 函数 用于获得value属性的值 jack alert(usernmae.val());&lt;/script&gt; 2.Jquery与Dom对象的互相转换12345678910111213141516171819202122&lt;input type="text" id="username" value="jack"/&gt;&lt;script type="text/javascript"&gt; //Jquery对象和Dom对象的转换 //1。使用Javascripe获取value的值 var username = document.getElementById("username"); alert(username.value);//jack用的是属性 //2。将dom对象 转换为Jquery对象 //# 语法：$(dom对象) //# 建议 ：Jquery对象变量名字 建议以$开头 var $username = $(username); alert($username.val()); //3.将jquery对象转为Dom对象 //3.1 Jquery对象内部使用数组存放所有的数据 可以通过数组的下标获取（索引） var username2 = $username[0]; alert(username2.value); //3.2Jquery提供函数get()转换为dom对象 var username3 = $username.get(0); alert(username3.value);&lt;/script&gt; 3. 选择器3.1 基本选择器【重要】 id ,id选择器 通过id 值获得元素 element，标签选择器 通过标签名获得元素 .class 类选择器 通过class值获得元素。注意：使用点开头 s1,s2,… 多选择器，将多个选择器的结果添加一个数组中。 123456789101112131415161718192021&lt;script type="text/javascript"&gt; //window.onload=function()&#123;...&#125;匿名函数 //jquery 页面加载--&gt;function()匿名函数 $(document).ready(function () &#123; &#125;); //id选择器 为id绑定一个事件 然后传递一个函数 $("#btn1").click(function () &#123; $("#one").css("background-color", "#ff0") &#125;); //类选择器 $(".btn2").click(function () &#123; $(".one").css("background-color", "#ff0"); &#125;); //元素选择器 $("div").background = "#ff2";&lt;/script&gt;&lt;input type="button" id="btn1" value="选择id为one的元素"&gt;&lt;input type="button" class="btn2" value="选择id为one的元素"&gt; 3.2层级选择器 3.3基本过滤选择器——“：关键字“ 123456789101112131415161718192021222324252627&lt;label for="username"&gt;&lt;/label&gt;&lt;input type="text" id="username" value="jack"/&gt;&lt;script type="text/javascript"&gt; // &lt;input type="text" value="请输入账号" defaultValue="请输入账号"&gt; $("input[type='text']").on("blur focus", function () &#123; //1.获得默认值 var attr = $(this).attr("defaultValue"); //2.判断是否获得焦点 if ($(this).is(":focus")) &#123; //2.1 获得焦点，清空value值 ，this 当前执行对象 是dom对象用$(this)转为jquery对象 if ($(this).val() === attr) &#123; $(this).val(""); &#125; &#125; else &#123; //2.2失去焦点 设置默认值 if ($(this).val() === "") &#123; $(this).val(attr); &#125; &#125; &#125;);&lt;/script&gt;&lt;label&gt; &lt;input type="text" value="请输入账号" defaultValue="请输入账号"&gt; &lt;input type="text" value="请输入账号" defaultValue="请输入密码"&gt;&lt;/label&gt;&lt;/body&gt;&lt;/html&gt; 3.4内容过滤 3.5可见性过滤 （重要） 123456789101112*/// &lt;input type="button" value="选取所有可见的div元素" id="bt1"&gt;$("#b1").click(function () &#123; $("div:hidden").css("background-color", "#ff0");&#125;);// &lt;input type="button" value="选取所有不可见的元素利用jquery中的show（）将他们显示出来" id="bt2"&gt;$("#bt2").click(function () &#123; $("div:hidden").css("background-color", "#ff0");&#125;); 3.63.73.8Jquery文档1.8.3]]></content>
       <tags>
         <tag>Jquery</tag>
       </tags>
@@ -25,6 +46,9 @@
     <title><![CDATA[蓝桥杯随笔]]></title>
     <url>%2F2018%2F12%2F14%2F%E8%93%9D%E6%A1%A5%E6%9D%AF%2F</url>
     <content type="text"><![CDATA[一些笔记1.Java整型与字符串相互转换(转) ####1如何将字串 String 转换成整数 int? 有两个方法: 1) int i = Integer.parseInt([String]); ​ i = Integer.parseInt([String],[int radix]); 2). int i = Integer.valueOf(my_str).intValue(); 注: 字串转成 Double, Float, L #####2 如何将整数 int 转换成字串 String ? A. 有叁种方法: 1.) String s = String.valueOf(i); 2.) String s = Integer.toString(i); 3.) String s = “” + i; 注: Double, Float, Long 转成字串的方法大同小异. &amp;&amp; : 逻辑与 当前仅当两个操作数都为真的时候条件才为真|| ： 逻辑或 如果任何两个操作数任何一个为真 条件为真]]></content>
+      <tags>
+        <tag>蓝桥杯</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[test]]></title>
@@ -200,15 +224,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Docker上传到腾讯云服务器上]]></title>
-    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E4%B8%8A%E4%BC%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
-    <content type="text"><![CDATA[https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194 小D课堂 先选择容器服务 123sudo docker login --username=[username] ccr.ccs.tencentyun.com sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 100007660104sad username:腾讯云账号，开通时已注册。输入密码后即登录完成。 ##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成 ####密码输入的时候先输入电脑root密码 z ###再输入密码yhp836143 12$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号] 12$ sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 密码输入 z 因为是sudo 使用镜像—-下载镜像 小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境 ### https://cloud.tencent.com/developer/labs/lab/10054/console 在本机上远程腾讯云 搭建Docker环境 登录到镜像仓库，需输入密码。 1$ sudo docker login --username=[username] ccr.ccs.tencentyun.com 下载镜像。 sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 1$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest ⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? https://www.w3cschool.cn/kxqhmy/suzagdn1.html 查看是否存在进程： 1$ ps aux |grep docker1 停止进程 1$sudo service docker stop1 重启docker： 1$dockerd Docker在云服务器上的安装 https://www.jianshu.com/p/ea3078dae4fb 简书 1.登陆到服务器上面 通过终端 或者云主机登陆 2.开始操作 3.https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions 官网 Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装 Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? 1Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? docker -d -p 8888：8080 先分配角色。在启动Docker 如果端口播被占用了 先关闭Docker sudo service docker stop 1sudo service docker stop 在启动Doccur service docker start 1service docker start 大佬指教。不是locaohostg 192.168.2.123 是公网ip腾讯公网的ip–118.89.28.213 加镜像名啊 兄die]]></content>
-      <tags>
-        <tag>腾讯云</tag>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Docker镜像加速]]></title>
     <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E5%8A%A0%E9%80%9F%2F</url>
     <content type="text"><![CDATA[emmm。。。为什么图片可以使用 网上的地址？ https://www.jianshu.com/p/94c6e44ebd3c 不要使用https前缀， 负责会提示证书错误， Version requires:- Docker for MAC version: docker version STEPS:- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors 添加： http://registry.docker-cn.com Note：不要使用https前缀， 负责会提示证书错误， “registry-mirrors” : No certs for egitstry.docker.com 导致dockerrestart failed。]]></content>
@@ -220,6 +235,15 @@
       <categories>
         <category>SpringBoot</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker上传到腾讯云服务器上]]></title>
+    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E4%B8%8A%E4%BC%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194 小D课堂 先选择容器服务 123sudo docker login --username=[username] ccr.ccs.tencentyun.com sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 100007660104sad username:腾讯云账号，开通时已注册。输入密码后即登录完成。 ##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成 ####密码输入的时候先输入电脑root密码 z ###再输入密码yhp836143 12$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号] 12$ sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 密码输入 z 因为是sudo 使用镜像—-下载镜像 小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境 ### https://cloud.tencent.com/developer/labs/lab/10054/console 在本机上远程腾讯云 搭建Docker环境 登录到镜像仓库，需输入密码。 1$ sudo docker login --username=[username] ccr.ccs.tencentyun.com 下载镜像。 sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 1$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest ⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? https://www.w3cschool.cn/kxqhmy/suzagdn1.html 查看是否存在进程： 1$ ps aux |grep docker1 停止进程 1$sudo service docker stop1 重启docker： 1$dockerd Docker在云服务器上的安装 https://www.jianshu.com/p/ea3078dae4fb 简书 1.登陆到服务器上面 通过终端 或者云主机登陆 2.开始操作 3.https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions 官网 Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装 Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? 1Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? docker -d -p 8888：8080 先分配角色。在启动Docker 如果端口播被占用了 先关闭Docker sudo service docker stop 1sudo service docker stop 在启动Doccur service docker start 1service docker start 大佬指教。不是locaohostg 192.168.2.123 是公网ip腾讯公网的ip–118.89.28.213 加镜像名啊 兄die]]></content>
+      <tags>
+        <tag>Docker</tag>
+        <tag>腾讯云</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[SpringBoot Docker 小D课堂]]></title>
