@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[纯洁的微笑]]></title>
+    <url>%2F2018%2F12%2F21%2FUntitled%201%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Jekyll]]></title>
+    <url>%2F2018%2F12%2F21%2FJekll%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[1234gem install jekylljekyll new my-awesome-sitecd my-awesome-sitejekyll server 读Bug 没有发现bundler 没有发现minima]]></content>
+      <tags>
+        <tag>Jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Redis]]></title>
+    <url>%2F2018%2F12%2F21%2FReids%2F</url>
+    <content type="text"><![CDATA[Jredies 参照杨开整的书 注意Netty不要使用默认的 要换成书里面的]]></content>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git]]></title>
+    <url>%2F2018%2F12%2F21%2FGit%2F</url>
+    <content type="text"><![CDATA[GitHub创建仓库提示代码123456echo &quot;# 项目名&quot; &gt;&gt; README.mdgit initgit add README.mdgit commit -m &quot;first commit&quot;git remote add origin git@github.com:qiubaiying/项目名.gitgit push -u origin master 若仓库存在直接push: 12git remote add origin git@github.com:qiubaiying/test.gitgit push -u origin master 常用操作创建仓库（初始化)123456在当前指定目录下创建git init新建一个仓库目录git init [project-name]克隆一个远程项目git clone [url] ##添加文件到缓存区 12345添加所有变化的文件 git add .添加名称指定文件git add text.txt 配置123设置提交代码时的用户信息git config [--global] user.name &quot;[name]&quot;git config [--global] user.email &quot;[email address]&quot; 提交123456789101112131415161718提交暂存区到仓库区git commit -m &quot;msg&quot;# 提交暂存区的指定文件到仓库区$ git commit [file1] [file2] ... -m [message]# 提交工作区自上次commit之后的变化，直接到仓库区$ git commit -a# 提交时显示所有diff信息$ git commit -v# 使用一次新的commit，替代上一次提交# 如果代码没有任何新变化，则用来改写上一次commit的提交信息$ git commit --amend -m [message]# 重做上一次commit，并包括指定文件的新变化$ git commit --amend [file1] [file2] ... 远程同步1234567891011121314151617181920212223# 下载远程仓库的所有变动$ git fetch [remote]# 显示所有远程仓库$ git remote -v# 显示某个远程仓库的信息$ git remote show [remote]# 增加一个新的远程仓库，并命名$ git remote add [shortname] [url]# 取回远程仓库的变化，并与本地分支合并$ git pull [remote] [branch]# 上传本地指定分支到远程仓库$ git push [remote] [branch]# 强行推送当前分支到远程仓库，即使有冲突$ git push [remote] --force# 推送所有分支到远程仓库$ git push [remote] --all 分支123456789101112131415161718192021222324252627282930313233343536373839404142# 列出所有本地分支$ git branch# 列出所有远程分支$ git branch -r# 列出所有本地分支和远程分支$ git branch -a# 新建一个分支，但依然停留在当前分支$ git branch [branch-name]# 新建一个分支，并切换到该分支$ git checkout -b [branch]# 新建一个分支，指向指定commit$ git branch [branch] [commit]# 新建一个分支，与指定的远程分支建立追踪关系$ git branch --track [branch] [remote-branch]# 切换到指定分支，并更新工作区$ git checkout [branch-name]# 切换到上一个分支$ git checkout -# 建立追踪关系，在现有分支与指定的远程分支之间$ git branch --set-upstream [branch] [remote-branch]# 合并指定分支到当前分支$ git merge [branch]# 选择一个commit，合并进当前分支$ git cherry-pick [commit]# 删除分支$ git branch -d [branch-name]# 删除远程分支$ git push origin --delete [branch-name]$ git branch -dr [remote/branch] ##标签Tags 1234567891011121314151617181920212223添加标签 在当前commitgit tag -a v1.0 -m &apos;xxx&apos; 添加标签 在指定commitgit tag v1.0 [commit]查看git tag删除git tag -d V1.0删除远程taggit push origin :refs/tags/[tagName]推送git push origin --tags拉取git fetch origin tag V1.0新建一个分支，指向某个taggit checkout -b [branch] [tag] 查看信息123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960# 显示有变更的文件$ git status# 显示当前分支的版本历史$ git log# 显示commit历史，以及每次commit发生变更的文件$ git log --stat# 搜索提交历史，根据关键词$ git log -S [keyword]# 显示某个commit之后的所有变动，每个commit占据一行$ git log [tag] HEAD --pretty=format:%s# 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件$ git log [tag] HEAD --grep feature# 显示某个文件的版本历史，包括文件改名$ git log --follow [file]$ git whatchanged [file]# 显示指定文件相关的每一次diff$ git log -p [file]# 显示过去5次提交$ git log -5 --pretty --oneline# 显示所有提交过的用户，按提交次数排序$ git shortlog -sn# 显示指定文件是什么人在什么时间修改过$ git blame [file]# 显示暂存区和工作区的差异$ git diff# 显示暂存区和上一个commit的差异$ git diff --cached [file]# 显示工作区与当前分支最新commit之间的差异$ git diff HEAD# 显示两次提交之间的差异$ git diff [first-branch]...[second-branch]# 显示今天你写了多少行代码$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;# 显示某次提交的元数据和内容变化$ git show [commit]# 显示某次提交发生变化的文件$ git show --name-only [commit]# 显示某次提交时，某个文件的内容$ git show [commit]:[filename]# 显示当前分支的最近几次提交$ git reflog 撤销12345678910111213141516171819202122232425262728293031# 恢复暂存区的指定文件到工作区$ git checkout [file]# 恢复某个commit的指定文件到暂存区和工作区$ git checkout [commit] [file]# 恢复暂存区的所有文件到工作区$ git checkout .# 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变$ git reset [file]# 重置暂存区与工作区，与上一次commit保持一致$ git reset --hard# 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变$ git reset [commit]# 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致$ git reset --hard [commit]# 重置当前HEAD为指定commit，但保持暂存区和工作区不变$ git reset --keep [commit]# 新建一个commit，用来撤销指定commit# 后者的所有变化都将被前者抵消，并且应用到当前分支$ git revert [commit]# 暂时将未提交的变化移除，稍后再移入$ git stash$ git stash pop 其他12# 生成一个可供发布的压缩包$ git archives]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Thymeleaf]]></title>
     <url>%2F2018%2F12%2F19%2FJSP%20Servlet%20Thyme%2FThymeleaf%2F</url>
     <content type="text"><![CDATA[#Thymeleaf中取值 reservation：$. {reservations}其中${reservations}的值是modeandview里面的 #reservation的值是随 便起的变量 放在reservation里面 –表格]]></content>
@@ -224,9 +253,13 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Docker镜像加速]]></title>
-    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E5%8A%A0%E9%80%9F%2F</url>
-    <content type="text"><![CDATA[emmm。。。为什么图片可以使用 网上的地址？ https://www.jianshu.com/p/94c6e44ebd3c 不要使用https前缀， 负责会提示证书错误， Version requires:- Docker for MAC version: docker version STEPS:- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors 添加： http://registry.docker-cn.com Note：不要使用https前缀， 负责会提示证书错误， “registry-mirrors” : No certs for egitstry.docker.com 导致dockerrestart failed。]]></content>
+    <title><![CDATA[Docker上传到腾讯云服务器上]]></title>
+    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E4%B8%8A%E4%BC%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194 小D课堂 先选择容器服务 123sudo docker login --username=[username] ccr.ccs.tencentyun.com sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 100007660104sad username:腾讯云账号，开通时已注册。输入密码后即登录完成。 ##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成 ####密码输入的时候先输入电脑root密码 z ###再输入密码yhp836143 12$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号] 12$ sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 密码输入 z 因为是sudo 使用镜像—-下载镜像 小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境 ### https://cloud.tencent.com/developer/labs/lab/10054/console 在本机上远程腾讯云 搭建Docker环境 登录到镜像仓库，需输入密码。 1$ sudo docker login --username=[username] ccr.ccs.tencentyun.com 下载镜像。 sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 1$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest ⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? https://www.w3cschool.cn/kxqhmy/suzagdn1.html 查看是否存在进程： 1$ ps aux |grep docker1 停止进程 1$sudo service docker stop1 重启docker： 1$dockerd Docker在云服务器上的安装 https://www.jianshu.com/p/ea3078dae4fb 简书 1.登陆到服务器上面 通过终端 或者云主机登陆 2.开始操作 3.https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions 官网 Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装 Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? 1Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? docker -d -p 8888：8080 先分配角色。在启动Docker 如果端口播被占用了 先关闭Docker sudo service docker stop 1sudo service docker stop 在启动Doccur service docker start 1service docker start 大佬指教。不是locaohostg 192.168.2.123 是公网ip腾讯公网的ip–118.89.28.213 加镜像名啊 兄die]]></content>
+      <tags>
+        <tag>Docker</tag>
+        <tag>腾讯云</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[SpringBoot尚硅谷]]></title>
@@ -237,13 +270,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Docker上传到腾讯云服务器上]]></title>
-    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E4%B8%8A%E4%BC%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
-    <content type="text"><![CDATA[https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194 小D课堂 先选择容器服务 123sudo docker login --username=[username] ccr.ccs.tencentyun.com sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 100007660104sad username:腾讯云账号，开通时已注册。输入密码后即登录完成。 ##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成 ####密码输入的时候先输入电脑root密码 z ###再输入密码yhp836143 12$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号] 12$ sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 密码输入 z 因为是sudo 使用镜像—-下载镜像 小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境 ### https://cloud.tencent.com/developer/labs/lab/10054/console 在本机上远程腾讯云 搭建Docker环境 登录到镜像仓库，需输入密码。 1$ sudo docker login --username=[username] ccr.ccs.tencentyun.com 下载镜像。 sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 1$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest ⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? https://www.w3cschool.cn/kxqhmy/suzagdn1.html 查看是否存在进程： 1$ ps aux |grep docker1 停止进程 1$sudo service docker stop1 重启docker： 1$dockerd Docker在云服务器上的安装 https://www.jianshu.com/p/ea3078dae4fb 简书 1.登陆到服务器上面 通过终端 或者云主机登陆 2.开始操作 3.https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions 官网 Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装 Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? 1Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? docker -d -p 8888：8080 先分配角色。在启动Docker 如果端口播被占用了 先关闭Docker sudo service docker stop 1sudo service docker stop 在启动Doccur service docker start 1service docker start 大佬指教。不是locaohostg 192.168.2.123 是公网ip腾讯公网的ip–118.89.28.213 加镜像名啊 兄die]]></content>
-      <tags>
-        <tag>Docker</tag>
-        <tag>腾讯云</tag>
-      </tags>
+    <title><![CDATA[Docker镜像加速]]></title>
+    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E5%8A%A0%E9%80%9F%2F</url>
+    <content type="text"><![CDATA[emmm。。。为什么图片可以使用 网上的地址？ https://www.jianshu.com/p/94c6e44ebd3c 不要使用https前缀， 负责会提示证书错误， Version requires:- Docker for MAC version: docker version STEPS:- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors 添加： http://registry.docker-cn.com Note：不要使用https前缀， 负责会提示证书错误， “registry-mirrors” : No certs for egitstry.docker.com 导致dockerrestart failed。]]></content>
   </entry>
   <entry>
     <title><![CDATA[SpringBoot Docker 小D课堂]]></title>
