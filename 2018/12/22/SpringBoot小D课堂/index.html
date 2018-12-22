@@ -87,7 +87,7 @@
 <meta property="og:description" content="1、零基础快速入门SpringBoot2.0 (5节课)1、SpringBoot2.x课程全套介绍和高手系列知识点​    简介：介绍SpringBoot2.x课程大纲章节​        java基础，jdk环境，maven基础 2、SpringBoot2.x依赖环境和版本新特性说明简介：讲解新版本依赖环境和springboot2新特性概述 1、依赖版本jdk8以上, Springboot2.x">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyfql7mx9tj30u00zxgzd.jpg">
-<meta property="og:updated_time" content="2018-12-22T11:28:29.397Z">
+<meta property="og:updated_time" content="2018-12-22T11:33:51.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot小D课堂">
 <meta name="twitter:description" content="1、零基础快速入门SpringBoot2.0 (5节课)1、SpringBoot2.x课程全套介绍和高手系列知识点​    简介：介绍SpringBoot2.x课程大纲章节​        java基础，jdk环境，maven基础 2、SpringBoot2.x依赖环境和版本新特性说明简介：讲解新版本依赖环境和springboot2新特性概述 1、依赖版本jdk8以上, Springboot2.x">
@@ -397,11 +397,8 @@
 <pre><code>1、接口调试工具安装和基本使用
 2、下载地址：https://www.getpostman.com/
 </code></pre><p>​    </p>
-<p>3、SpringBoot基础HTTP接口GET请求实战<br>​    简介:讲解springboot接口，http的get请求，各个注解使用<br>​        1、GET请求<br>​            1、单一参数@RequestMapping(path = “/{id}”, method = RequestMethod.GET)<br>​                1) public String getUser(@PathVariable String id ) {}<br>​<br>​                2）@RequestMapping(path = “/{depid}/{userid}”, method = RequestMethod.GET) 可以同时指定多个提交方法<br>​                getUser(@PathVariable(“depid”) String departmentID,@PathVariable(“userid”) String userid)<br>​<br>                3）一个顶俩<br>                @GetMapping = @RequestMapping(method = RequestMethod.GET)<br>                @PostMapping = @RequestMapping(method = RequestMethod.POST)<br>                @PutMapping = @RequestMapping(method = RequestMethod.PUT)<br>                @DeleteMapping = @RequestMapping(method = RequestMethod.DELETE)</p>
-<pre><code>4）@RequestParam(value = &quot;name&quot;, required = true)
-    可以设置默认值，比如分页 
-
-4)@RequestBody 请求体映射实体类
+<p>3、SpringBoot基础HTTP接口GET请求实战<br>​    简介:讲解springboot接口，http的get请求，各个注解使用<br>​        1、GET请求<br>​            1、单一参数@RequestMapping(path = “/{id}”, method = RequestMethod.GET)<br>​                1) public String getUser(@PathVariable String id ) {}<br>​<br>​                2）@RequestMapping(path = “/{depid}/{userid}”, method = RequestMethod.GET) 可以同时指定多个提交方法<br>​                getUser(@PathVariable(“depid”) String departmentID,@PathVariable(“userid”) String userid)<br>​<br>​                3）一个顶俩<br>​                @GetMapping = @RequestMapping(method = RequestMethod.GET)<br>​                @PostMapping = @RequestMapping(method = RequestMethod.POST)<br>​                @PutMapping = @RequestMapping(method = RequestMethod.PUT)<br>​                @DeleteMapping = @RequestMapping(method = RequestMethod.DELETE)<br>​<br>                4）@RequestParam(value = “name”, required = true)<br>                    可以设置默认值，比如分页 </p>
+<pre><code>4)@RequestBody 请求体映射实体类
     需要指定http头为 content-type为application/json charset=utf-8
 
 5）@RequestHeader 请求头，比如鉴权
@@ -447,7 +444,7 @@ META/resources &gt; resources &gt; static &gt; public  里面找是否存在相�
     2）spring.resources.static-locations = classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/ 
 
 5、静态资源文件存储在CDN
-</code></pre><p>7、SpringBoot2.x文件上传实战<br>​    简介：讲解HTML页面文件上传和后端处理实战<br>​        1、讲解springboot文件上传 MultipartFile file，源自SpringMVC<br>​<br>​            1）静态页面直接访问：localhost:8080/index.html<br>​                注意点：<br>​                    如果想要直接访问html页面，则需要把html放在springboot默认加载的文件夹下面<br>​            2）MultipartFile 对象的transferTo方法，用于文件保存（效率和操作比原先用FileOutStream方便和高效）<br>​<br>            访问路径 <a href="http://localhost:8080/images/39020dbb-9253-41b9-8ff9-403309ff3f19.jpeg" target="_blank" rel="noopener">http://localhost:8080/images/39020dbb-9253-41b9-8ff9-403309ff3f19.jpeg</a></p>
+</code></pre><p>7、SpringBoot2.x文件上传实战<br>​    简介：讲解HTML页面文件上传和后端处理实战<br>​        1、讲解springboot文件上传 MultipartFile file，源自SpringMVC<br>​<br>​            1）静态页面直接访问：localhost:8080/index.html<br>​                注意点：<br>​                    如果想要直接访问html页面，则需要把html放在springboot默认加载的文件夹下面<br>​            2）MultipartFile 对象的transferTo方法，用于文件保存（效率和操作比原先用FileOutStream方便和高效）<br>​<br>​            访问路径 <a href="http://localhost:8080/images/39020dbb-9253-41b9-8ff9-403309ff3f19.jpeg" target="_blank" rel="noopener">http://localhost:8080/images/39020dbb-9253-41b9-8ff9-403309ff3f19.jpeg</a></p>
 <p>​        </p>
 <p>8、jar包方式运行web项目的文件上传和访问处理（核心知识）<br>​    简介：讲解SpingBoot2.x使用 java -jar运行方式的图片上传和访问处理</p>
 <pre><code>1、文件大小配置，启动类里面配置
@@ -531,12 +528,8 @@ classloader
 3、参考：https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#common-application-properties
 
 如果需要修改，直接复制对应的配置文件，加到application.properties里面
-</code></pre><p>3、SpringBoot注解把配置文件自动映射到属性和实体类实战<br>​    简介：讲解使用@value注解配置文件自动映射到属性和实体类<br>​<br>​    1、配置文件加载<br>​        方式一<br>​            1、Controller上面配置<br>​               @PropertySource({“classpath:resource.properties”})<br>​            2、增加属性<br>​                 @Value(“${test.name}”)<br>​                  private String name;<br>​<br>        方式二：实体类配置文件<br>        步骤：<br>            1、添加 @Component 注解；<br>            2、使用 @PropertySource 注解指定配置文件位置；<br>            3、使用 @ConfigurationProperties 注解，设置相关属性；</p>
-<pre><code>4、必须 通过注入IOC对象Resource 进来 ， 才能在类中使用获取的配置文件值。
-    @Autowired
-    private ServerSettings serverSettings;
-
-    例子：
+</code></pre><p>3、SpringBoot注解把配置文件自动映射到属性和实体类实战<br>​    简介：讲解使用@value注解配置文件自动映射到属性和实体类<br>​<br>​    1、配置文件加载<br>​        方式一<br>​            1、Controller上面配置<br>​               @PropertySource({“classpath:resource.properties”})<br>​            2、增加属性<br>​                 @Value(“${test.name}”)<br>​                  private String name;<br>​<br>​        方式二：实体类配置文件<br>​        步骤：<br>​            1、添加 @Component 注解；<br>​            2、使用 @PropertySource 注解指定配置文件位置；<br>​            3、使用 @ConfigurationProperties 注解，设置相关属性；<br>​<br>            4、必须 通过注入IOC对象Resource 进来 ， 才能在类中使用获取的配置文件值。<br>                @Autowired<br>                private ServerSettings serverSettings;</p>
+<pre><code>    例子：
         @Configuration
         @ConfigurationProperties(prefix=&quot;test&quot;)
         @PropertySource(value=&quot;classpath:resource.properties&quot;)
@@ -667,10 +660,8 @@ https://examples.javacodegeeks.com/enterprise-java/spring/tomcat-vs-jetty-vs-und
 </code></pre><p>2、SpringBoot2.x启动原理概述<br>​    简介：讲解SpringBoot启动流程概述和基本加载案例</p>
 <hr>
 <h1 id="6、SpringBoot拦截器实战和-Servlet3-0自定义Filter、Listener-4节课"><a href="#6、SpringBoot拦截器实战和-Servlet3-0自定义Filter、Listener-4节课" class="headerlink" title="6、SpringBoot拦截器实战和 Servlet3.0自定义Filter、Listener 4节课"></a>6、SpringBoot拦截器实战和 Servlet3.0自定义Filter、Listener 4节课</h1><p>加入小D课堂技术交流答疑群：Q群：699347262</p>
-<p>1、深入SpringBoot2.x过滤器Filter和使用Servlet3.0配置自定义Filter实战(核心知识)<br>​    简介:讲解SpringBoot里面Filter讲解和使用Servlet3.0配置自定义Filter实战<br>​<br>​        filter简单理解：人—&gt;检票员（filter）—&gt; 景点<br>​<br>        1、SpringBoot启动默认加载的Filter<br>            characterEncodingFilter<br>            hiddenHttpMethodFilter<br>            httpPutFormContentFilter<br>            requestContextFilter</p>
-<pre><code>2、Filter优先级
-
-    Ordered.HIGHEST_PRECEDENCE
+<p>1、深入SpringBoot2.x过滤器Filter和使用Servlet3.0配置自定义Filter实战(核心知识)<br>​    简介:讲解SpringBoot里面Filter讲解和使用Servlet3.0配置自定义Filter实战<br>​<br>​        filter简单理解：人—&gt;检票员（filter）—&gt; 景点<br>​<br>​        1、SpringBoot启动默认加载的Filter<br>​            characterEncodingFilter<br>​            hiddenHttpMethodFilter<br>​            httpPutFormContentFilter<br>​            requestContextFilter<br>​<br>        2、Filter优先级</p>
+<pre><code>    Ordered.HIGHEST_PRECEDENCE
     Ordered.LOWEST_PRECEDENCE
 
     低位值意味着更高的优先级 Higher values are interpreted as lower priority
@@ -726,13 +717,8 @@ public class UserServlet extends HttpServlet{
         System.out.println(&quot;======requestInitialized========&quot;);
 
     }
-</code></pre><p>4、SpringBoot2.X自定义拦截器实战及新旧配置对比(核心知识)<br>​    简介: 讲解拦截器使用，Spingboot2.x新版本配置拦截拦截器和旧版本SpringBoot配置拦截器区别讲解<br>​<br>​    1、@Configuration<br>​        继承WebMvcConfigurationAdapter(SpringBoot2.X之前旧版本)<br>​<br>        SpringBoot2.X 新版本配置拦截器 implements WebMvcConfigurer</p>
-<pre><code>2、自定义拦截器 HandlerInterceptor
-    preHandle：调用Controller某个方法之前
-    postHandle：Controller之后调用，视图渲染之前，如果控制器Controller出现了异常，则不会执行此方法
-    afterCompletion：不管有没有异常，这个afterCompletion都会被调用，用于资源清理
-
-3、按照注册顺序进行拦截，先注册，先被拦截
+</code></pre><p>4、SpringBoot2.X自定义拦截器实战及新旧配置对比(核心知识)<br>​    简介: 讲解拦截器使用，Spingboot2.x新版本配置拦截拦截器和旧版本SpringBoot配置拦截器区别讲解<br>​<br>​    1、@Configuration<br>​        继承WebMvcConfigurationAdapter(SpringBoot2.X之前旧版本)<br>​<br>​        SpringBoot2.X 新版本配置拦截器 implements WebMvcConfigurer<br>​<br>    2、自定义拦截器 HandlerInterceptor<br>        preHandle：调用Controller某个方法之前<br>        postHandle：Controller之后调用，视图渲染之前，如果控制器Controller出现了异常，则不会执行此方法<br>        afterCompletion：不管有没有异常，这个afterCompletion都会被调用，用于资源清理</p>
+<pre><code>3、按照注册顺序进行拦截，先注册，先被拦截
 
 拦截器不生效常见问题：
     1）是否有加@Configuration
@@ -855,10 +841,8 @@ Filter
     注意：$表达式只能写在th标签内部
     快速入门：https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html
 </code></pre><hr>
-<h1 id="8、数据库操作之整合Mybaties和事务讲解-5节课"><a href="#8、数据库操作之整合Mybaties和事务讲解-5节课" class="headerlink" title="8、数据库操作之整合Mybaties和事务讲解 5节课"></a>8、数据库操作之整合Mybaties和事务讲解 5节课</h1><p>1、SpringBoot2.x持久化数据方式介绍<br>​<br>​    简介：介绍近几年常用的访问数据库的方式和优缺点<br>​<br>        1、原始java访问数据库<br>            开发流程麻烦<br>            1、注册驱动/加载驱动<br>                Class.forName(“com.mysql.jdbc.Driver”)<br>            2、建立连接<br>                Connection con = DriverManager.getConnection(“jdbc:mysql://localhost:3306/dbname”,”root”,”root”);<br>            3、创建Statement</p>
-<pre><code>    4、执行SQL语句
-
-    5、处理结果集
+<h1 id="8、数据库操作之整合Mybaties和事务讲解-5节课"><a href="#8、数据库操作之整合Mybaties和事务讲解-5节课" class="headerlink" title="8、数据库操作之整合Mybaties和事务讲解 5节课"></a>8、数据库操作之整合Mybaties和事务讲解 5节课</h1><p>1、SpringBoot2.x持久化数据方式介绍<br>​<br>​    简介：介绍近几年常用的访问数据库的方式和优缺点<br>​<br>​        1、原始java访问数据库<br>​            开发流程麻烦<br>​            1、注册驱动/加载驱动<br>​                Class.forName(“com.mysql.jdbc.Driver”)<br>​            2、建立连接<br>​                Connection con = DriverManager.getConnection(“jdbc:mysql://localhost:3306/dbname”,”root”,”root”);<br>​            3、创建Statement<br>​<br>            4、执行SQL语句</p>
+<pre><code>    5、处理结果集
 
     6、关闭连接，释放资源
 
@@ -942,14 +926,8 @@ https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-s
 整合问题集合：
     https://my.oschina.net/hxflar1314520/blog/1800035
     https://blog.csdn.net/tingxuetage/article/details/80179772
-</code></pre><p>3、SpringBoot2.x整合Mybatis3.x增删改查实操和控制台打印SQL语句<br>​    讲解:SpringBoot2.x整合Mybatis3.x增删改查实操, 控制台打印sql语句<br>​<br>​    1、控制台打印sql语句<br>​        #增加打印sql语句，一般用于本地开发测试<br>​        mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl<br>​<br>    2、增加mapper代码<br>        @Select(“SELECT * FROM user”)<br>        @Results({<br>            @Result(column = “create_time”,property = “createTime”)  //javaType = java.util.Date.class<br>        })<br>        List<user> getAll();</user></p>
-<pre><code>   @Select(&quot;SELECT * FROM user WHERE id = #{id}&quot;)
-   @Results({
-        @Result(column = &quot;create_time&quot;,property = &quot;createTime&quot;)
-   })
-   User findById(Long id);
-
-   @Update(&quot;UPDATE user SET name=#{name} WHERE id =#{id}&quot;)
+</code></pre><p>3、SpringBoot2.x整合Mybatis3.x增删改查实操和控制台打印SQL语句<br>​    讲解:SpringBoot2.x整合Mybatis3.x增删改查实操, 控制台打印sql语句<br>​<br>​    1、控制台打印sql语句<br>​        #增加打印sql语句，一般用于本地开发测试<br>​        mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl<br>​<br>​    2、增加mapper代码<br>​        @Select(“SELECT <em> FROM user”)<br>​        @Results({<br>​            @Result(column = “create_time”,property = “createTime”)  //javaType = java.util.Date.class<br>​        })<br>​        List<user> getAll();<br>​<br>        @Select(“SELECT </user></em> FROM user WHERE id = #{id}”)<br>        @Results({<br>             @Result(column = “create_time”,property = “createTime”)<br>        })<br>        User findById(Long id);</p>
+<pre><code>   @Update(&quot;UPDATE user SET name=#{name} WHERE id =#{id}&quot;)
    void update(User user);
 
    @Delete(&quot;DELETE FROM user WHERE id =#{userId}&quot;)
@@ -981,15 +959,8 @@ https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-s
        userMapper.update(user);
        return JsonData.buildSuccess();
    }
-</code></pre><p>4、事务介绍和常见的隔离级别，传播行为<br>​<br>​    简介：讲解什么是数据库事务，常见的隔离级别和传播行为<br>​<br>    1、介绍什么是事务，单机事务，分布式事务处理等</p>
-<pre><code>2、讲解场景的隔离级别
-    Serializable： 最严格，串行处理，消耗资源大
-    Repeatable Read：保证了一个事务不会修改已经由另一个事务读取但未提交（回滚）的数据
-    Read Committed：大多数主流数据库的默认事务等级
-    Read Uncommitted：保证了读取过程中不会读取到非法数据。
-
-
-3、讲解常见的传播行为
+</code></pre><p>4、事务介绍和常见的隔离级别，传播行为<br>​<br>​    简介：讲解什么是数据库事务，常见的隔离级别和传播行为<br>​<br>​    1、介绍什么是事务，单机事务，分布式事务处理等<br>​<br>    2、讲解场景的隔离级别<br>        Serializable： 最严格，串行处理，消耗资源大<br>        Repeatable Read：保证了一个事务不会修改已经由另一个事务读取但未提交（回滚）的数据<br>        Read Committed：大多数主流数据库的默认事务等级<br>        Read Uncommitted：保证了读取过程中不会读取到非法数据。</p>
+<pre><code>3、讲解常见的传播行为
     PROPAGATION_REQUIRED--支持当前事务，如果当前没有事务，就新建一个事务,最常见的选择。
 
     PROPAGATION_SUPPORTS--支持当前事务，如果当前没有事务，就以非事务方式执行。
@@ -1019,7 +990,7 @@ https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-s
     }
 </code></pre><hr>
 <p>#9、SpringBoot2.x整合Redis实战 4节课<br>​    </p>
-<p>1、分布式缓存Redis介绍<br>​    简介:讲解为什么要用缓存和介绍什么是Redis，新手练习工具<br>​<br>​    1、redis官网 <a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a><br>​<br>    2、新手入门redis在线测试工具：<a href="http://try.redis.io/" target="_blank" rel="noopener">http://try.redis.io/</a></p>
+<p>1、分布式缓存Redis介绍<br>​    简介:讲解为什么要用缓存和介绍什么是Redis，新手练习工具<br>​<br>​    1、redis官网 <a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a><br>​<br>​    2、新手入门redis在线测试工具：<a href="http://try.redis.io/" target="_blank" rel="noopener">http://try.redis.io/</a></p>
 <p>2、源码编译安装Redis4.x<br>​    简介：使用源码安装Redis4.x和配置外网访问</p>
 <pre><code>1、快速安装  https://redis.io/download#installation
         wget http://download.redis.io/releases/redis-4.0.9.tar.gz
@@ -1123,11 +1094,8 @@ https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-s
     Logger：日志记录器
     Appender：指定日志输出的目的地，目的地可以是控制台，文件
     Layout：日志布局 格式化日志信息的输出
-</code></pre><p>​<br>​    4、日志级别：DEBUG &lt; INFO &lt; WARN &lt; ERROR<br>​<br>        ===========log4j示例===========        </p>
-<pre><code>     ### 设置###
-    log4j.rootLogger = debug,stdout,D,E
-
-    ### 输出信息到控制抬 ###
+</code></pre><p>​<br>​    4、日志级别：DEBUG &lt; INFO &lt; WARN &lt; ERROR<br>​<br>​        ===========log4j示例===========<br>​         ### 设置###<br>​        log4j.rootLogger = debug,stdout,D,E<br>​    </p>
+<pre><code>    ### 输出信息到控制抬 ###
     log4j.appender.stdout = org.apache.log4j.ConsoleAppender
     log4j.appender.stdout.Target = System.out
     log4j.appender.stdout.layout = org.apache.log4j.PatternLayout
@@ -1207,7 +1175,7 @@ elasticSearch主要特点
      https://www.elastic.co/guide/en/elasticsearch/reference/6.0/release-notes-6.0.0.html#breaking-java-6.0.0
     2、6.1更新特性 
     https://www.elastic.co/guide/en/elasticsearch/reference/6.1/release-notes-6.1.0.html
-</code></pre><p>2、快熟部署ElastcSearch5.6.x<br>​    简介：讲解为什么不用ES6.x版本，及本地快速安装ElasticSeach和场景问题处理<br>​<br>​    配置JDK1.8<br>​        使用wget 下载elasticsearch安装包<br>​        wget  <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.8.tar.gz" target="_blank" rel="noopener">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.8.tar.gz</a><br>​    解压<br>​        tar -zxvf elasticsearch-5.6.8.tar.gz<br>​    官网：<a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/products/elasticsearch</a><br>​<br>    外网访问配置：<br>        config目录下面elasticsearch.yml<br>        修改为 network.host: 0.0.0.0</p>
+</code></pre><p>2、快熟部署ElastcSearch5.6.x<br>​    简介：讲解为什么不用ES6.x版本，及本地快速安装ElasticSeach和场景问题处理<br>​<br>​    配置JDK1.8<br>​        使用wget 下载elasticsearch安装包<br>​        wget  <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.8.tar.gz" target="_blank" rel="noopener">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.8.tar.gz</a><br>​    解压<br>​        tar -zxvf elasticsearch-5.6.8.tar.gz<br>​    官网：<a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/products/elasticsearch</a><br>​<br>​    外网访问配置：<br>​        config目录下面elasticsearch.yml<br>​        修改为 network.host: 0.0.0.0</p>
 <pre><code>配置es出现相关问题处理（阿里云、腾讯云，亚马逊云安装问题集合）：
     1、问题一
         Java HotSpot(TM) 64-Bit Server VM warning: INFO: os::commit_memory(0x00000000c5330000, 986513408, 0) failed; error=&apos;Cannot allocate memory&apos; (errno=12)
@@ -1261,14 +1229,8 @@ https://docs.spring.io/spring-data/elasticsearch/docs/3.0.6.RELEASE/reference/ht
 
 
  3、配置文件：ELASTICSEARCH (ElasticsearchProperties)
-    spring.data.elasticsearch.cluster-name=elasticsearch # Elasticsearch cluster name.
-    spring.data.elasticsearch.cluster-nodes=localhost:9300 # Comma-separated list of cluster node addresses.
-    spring.data.elasticsearch.repositories.enabled=true # Whether to enable Elasticsearch repositories.
-
-4、QueryBuilder使用
-https://www.elastic.co/guide/en/elasticsearch/client/java-api/1.3/query-dsl-queries.html
-
-//单个匹配，搜索name为jack的文档  
+</code></pre><p>​            spring.data.elasticsearch.cluster-name=elasticsearch # Elasticsearch cluster name.<br>​            spring.data.elasticsearch.cluster-nodes=localhost:9300 # Comma-separated list of cluster node addresses.<br>​            spring.data.elasticsearch.repositories.enabled=true # Whether to enable Elasticsearch repositories.<br>​<br>        4、QueryBuilder使用<br>        <a href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/1.3/query-dsl-queries.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/client/java-api/1.3/query-dsl-queries.html</a></p>
+<pre><code>//单个匹配，搜索name为jack的文档  
 QueryBuilder queryBuilder = QueryBuilders.matchQuery(&quot;title&quot;, &quot;搜&quot;); 
 
 4、查看es数据
@@ -1310,50 +1272,34 @@ QueryBuilder queryBuilder = QueryBuilders.matchQuery(&quot;title&quot;, &quot;�
     Session： 一个发送或接收消息的线程
     Destination ：消息的目的地;消息发送给谁.
     MessageConsumer / MessageProducer： 消息接收者，消费者
-</code></pre><p>2、ActiveMQ5.x消息队列基础介绍和安装<br>​<br>​    简介：介绍ActiveMQ5.x消息队列基础特性和本地快速安装<br>​        特点：<br>​            1）支持来自Java，C，C ++，C＃，Ruby，Perl，Python，PHP的各种跨语言客户端和协议<br>​            2）支持许多高级功能，如消息组，虚拟目标，通配符和复合目标<br>​            3) 完全支持JMS 1.1和J2EE 1.4，支持瞬态，持久，事务和XA消息<br>​            4) Spring支持，ActiveMQ可以轻松嵌入到Spring应用程序中，并使用Spring的XML配置机制进行配置<br>​            5) 支持在流行的J2EE服务器（如TomEE，Geronimo，JBoss，GlassFish和WebLogic）中进行测试<br>​            6) 使用JDBC和高性能日志支持非常快速的持久化<br>​            …<br>​<br>        1、下载地址：<a href="http://activemq.apache.org/activemq-5153-release.html" target="_blank" rel="noopener">http://activemq.apache.org/activemq-5153-release.html</a><br>        2、快速开始：<a href="http://activemq.apache.org/getting-started.html" target="_blank" rel="noopener">http://activemq.apache.org/getting-started.html</a><br>        3、如果我们是32位的机器，就双击win32目录下的activemq.bat,如果是64位机器，则双击win64目录下的activemq.bat<br>        4、bin目录里面启动 选择对应的系统版本和位数，activeMQ start 启动<br>        5、启动后访问路径<a href="http://127.0.0.1:8161/" target="_blank" rel="noopener">http://127.0.0.1:8161/</a></p>
-<pre><code>6、用户名和密码默认都是admin
-7、官方案例集合
-    https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples
-面板：    
-Name：队列名称。
-Number Of Pending Messages：等待消费的消息个数。
-Number Of Consumers：当前连接的消费者数目
-Messages Enqueued：进入队列的消息总个数，包括出队列的和待消费的，这个数量只增不减。
-Messages Dequeued：已经消费的消息数量。
-</code></pre><p>3、SpringBoot2.x整合ActiveMQ实战之点对点消息(p2p)<br>​<br>​    简介:SpringBoot2.x整合ActiveMQ实战之点对点消息<br>​<br>    1、官网地址：<a href="https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-activemq" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-activemq</a></p>
-<pre><code>2、加入依赖
-    &lt;!-- 整合消息队列ActiveMQ --&gt;
-    &lt;dependency&gt;  
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  
-        &lt;artifactId&gt;spring-boot-starter-activemq&lt;/artifactId&gt;  
-    &lt;/dependency&gt;  
+</code></pre><p>2、ActiveMQ5.x消息队列基础介绍和安装<br>​<br>​    简介：介绍ActiveMQ5.x消息队列基础特性和本地快速安装<br>​        特点：<br>​            1）支持来自Java，C，C ++，C＃，Ruby，Perl，Python，PHP的各种跨语言客户端和协议<br>​            2）支持许多高级功能，如消息组，虚拟目标，通配符和复合目标<br>​            3) 完全支持JMS 1.1和J2EE 1.4，支持瞬态，持久，事务和XA消息<br>​            4) Spring支持，ActiveMQ可以轻松嵌入到Spring应用程序中，并使用Spring的XML配置机制进行配置<br>​            5) 支持在流行的J2EE服务器（如TomEE，Geronimo，JBoss，GlassFish和WebLogic）中进行测试<br>​            6) 使用JDBC和高性能日志支持非常快速的持久化<br>​            …<br>​<br>​        1、下载地址：<a href="http://activemq.apache.org/activemq-5153-release.html" target="_blank" rel="noopener">http://activemq.apache.org/activemq-5153-release.html</a><br>​        2、快速开始：<a href="http://activemq.apache.org/getting-started.html" target="_blank" rel="noopener">http://activemq.apache.org/getting-started.html</a><br>​        3、如果我们是32位的机器，就双击win32目录下的activemq.bat,如果是64位机器，则双击win64目录下的activemq.bat<br>​        4、bin目录里面启动 选择对应的系统版本和位数，activeMQ start 启动<br>​        5、启动后访问路径<a href="http://127.0.0.1:8161/" target="_blank" rel="noopener">http://127.0.0.1:8161/</a><br>​<br>        6、用户名和密码默认都是admin<br>        7、官方案例集合<br>            <a href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples" target="_blank" rel="noopener">https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples</a><br>        面板：<br>        Name：队列名称。<br>        Number Of Pending Messages：等待消费的消息个数。<br>        Number Of Consumers：当前连接的消费者数目<br>        Messages Enqueued：进入队列的消息总个数，包括出队列的和待消费的，这个数量只增不减。<br>        Messages Dequeued：已经消费的消息数量。</p>
+<p>3、SpringBoot2.x整合ActiveMQ实战之点对点消息(p2p)<br>​<br>​    简介:SpringBoot2.x整合ActiveMQ实战之点对点消息<br>​<br>​    1、官网地址：<a href="https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-activemq" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-activemq</a><br>​<br>    2、加入依赖<br>        <!-- 整合消息队列ActiveMQ --><br>        <dependency><br>            <groupid>org.springframework.boot</groupid><br>            <artifactid>spring-boot-starter-activemq</artifactid><br>        </dependency>  </p>
+<pre><code>   &lt;!-- 如果配置线程池则加入 --&gt;
+   &lt;dependency&gt;  
+       &lt;groupId&gt;org.apache.activemq&lt;/groupId&gt;  
+       &lt;artifactId&gt;activemq-pool&lt;/artifactId&gt;  
+   &lt;/dependency&gt;
 
-    &lt;!-- 如果配置线程池则加入 --&gt;
-    &lt;dependency&gt;  
-        &lt;groupId&gt;org.apache.activemq&lt;/groupId&gt;  
-        &lt;artifactId&gt;activemq-pool&lt;/artifactId&gt;  
-    &lt;/dependency&gt;
+3、application.properties配置文件配置
+    #整合jms测试，安装在别的机器，防火墙和端口号记得开放
+   spring.activemq.broker-url=tcp://127.0.0.1:61616
 
- 3、application.properties配置文件配置
-     #整合jms测试，安装在别的机器，防火墙和端口号记得开放
-    spring.activemq.broker-url=tcp://127.0.0.1:61616
+   #集群配置
+   #spring.activemq.broker-url=failover:(tcp://localhost:61616,tcp://localhost:61617)
 
-    #集群配置
-    #spring.activemq.broker-url=failover:(tcp://localhost:61616,tcp://localhost:61617)
+   spring.activemq.user=admin
+   spring.activemq.password=admin
+   #下列配置要增加依赖
+   spring.activemq.pool.enabled=true
+   spring.activemq.pool.max-connections=100
 
-    spring.activemq.user=admin
-    spring.activemq.password=admin
-    #下列配置要增加依赖
-    spring.activemq.pool.enabled=true
-    spring.activemq.pool.max-connections=100
+ 4、springboot启动类 @EnableJms，开启支持jms
 
-  4、springboot启动类 @EnableJms，开启支持jms
+ 5、模拟请求
+     localhost:8080/api/v1/order?msg=12312321321312
 
-  5、模拟请求
-      localhost:8080/api/v1/order?msg=12312321321312
-
-  6、消费者：实时监听对应的队列
-      @JmsListener(destination = &quot;order.queue&quot;)
+ 6、消费者：实时监听对应的队列
+     @JmsListener(destination = &quot;order.queue&quot;)
 </code></pre><p>​    </p>
 <p>4、SpringBoot整合ActiveMQ实战之发布订阅模式(pub/sub)<br>​    简介：SpringBoot整合ActiveMQ实战之发布订阅模式(pub/sub),及同时支持点对点和发布订阅模型</p>
 <pre><code>    1、需要加入配置文件，支持发布订阅模型，默认只支持点对点
@@ -1444,7 +1390,7 @@ Messages Dequeued：已经消费的消息数量。
 
 6、注意：
     在阿里云，腾讯云或者虚拟机，记得检查端口号和防火墙是否启动
-</code></pre><p>8、Springboot2.x整合RocketMQ4.x实战上集<br>​    简介：Springboot2.x整合RocketMQ4.x实战，加入相关依赖，开发生产者代码<br>​<br>​    启动nameser和broker<br>​<br>    1、加入相关依赖<br>        <dependency><br>            <groupid>org.apache.rocketmq</groupid><br>            <artifactid>rocketmq-client</artifactid><br>            <version>${rocketmq.version}</version><br>        </dependency><br>        <dependency><br>            <groupid>org.apache.rocketmq</groupid><br>            <artifactid>rocketmq-common</artifactid><br>            <version>${rocketmq.version}</version><br>        </dependency>  </p>
+</code></pre><p>8、Springboot2.x整合RocketMQ4.x实战上集<br>​    简介：Springboot2.x整合RocketMQ4.x实战，加入相关依赖，开发生产者代码<br>​<br>​    启动nameser和broker<br>​<br>​    1、加入相关依赖<br>​        <dependency><br>​            <groupid>org.apache.rocketmq</groupid><br>​            <artifactid>rocketmq-client</artifactid><br>​            <version>${rocketmq.version}</version><br>​        </dependency><br>​        <dependency><br>​            <groupid>org.apache.rocketmq</groupid><br>​            <artifactid>rocketmq-common</artifactid><br>​            <version>${rocketmq.version}</version><br>​        </dependency>  </p>
 <pre><code>2、application.properties加入配置文件        
     # 消费者的组名
     apache.rocketmq.consumer.PushConsumer=orderConsumer
@@ -1467,10 +1413,8 @@ Messages Dequeued：已经消费的消息数量。
     private String namesrvAddr;
 
     private  DefaultMQProducer producer ;
-</code></pre><p>​<br>​        public DefaultMQProducer getProducer(){<br>​            return this.producer;<br>​        }<br>​<br>        @PostConstruct<br>        public void defaultMQProducer() {<br>            //生产者的组名<br>            producer = new DefaultMQProducer(producerGroup);<br>            //指定NameServer地址，多个地址以 ; 隔开<br>            //如 producer.setNamesrvAddr(“192.168.100.141:9876;192.168.100.142:9876;192.168.100.149:9876”);<br>            producer.setNamesrvAddr(namesrvAddr);<br>            producer.setVipChannelEnabled(false);</p>
-<pre><code>    try {
-        /**
-         * Producer对象在使用之前必须要调用start初始化，只能初始化一次
+</code></pre><p>​<br>​        public DefaultMQProducer getProducer(){<br>​            return this.producer;<br>​        }<br>​<br>​        @PostConstruct<br>​        public void defaultMQProducer() {<br>​            //生产者的组名<br>​            producer = new DefaultMQProducer(producerGroup);<br>​            //指定NameServer地址，多个地址以 ; 隔开<br>​            //如 producer.setNamesrvAddr(“192.168.100.141:9876;192.168.100.142:9876;192.168.100.149:9876”);<br>​            producer.setNamesrvAddr(namesrvAddr);<br>​            producer.setVipChannelEnabled(false);<br>​<br>            try {<br>                /**</p>
+<pre><code>         * Producer对象在使用之前必须要调用start初始化，只能初始化一次
          */
         producer.start();
 
@@ -1614,11 +1558,8 @@ Messages Dequeued：已经消费的消息数量。
 
 5、可以整合多个模板引擎
     除了REST Web服务外，您还可以使用Spring WebFlux提供动态HTML内容。Spring WebFlux支持各种模板技术，包括Thymeleaf，FreeMarker
-</code></pre><p>3、SpringBoot2.x webflux实战<br>​    简介:webflux响应式编程实战<br>​<br>​    1、WebFlux中，请求和响应不再是WebMVC中的ServletRequest和ServletResponse，而是ServerRequest和ServerResponse<br>​<br>    2、加入依赖，如果同时存在spring-boot-starter-web，则会优先用spring-boot-starter-web<br>        <dependency><br>                <groupid>org.springframework.boot</groupid><br>                <artifactid>spring-boot-starter-webflux</artifactid><br>        </dependency></p>
-<pre><code>    测试
-    localhost:8080/api/v1/user/test
-
-3、启动方式默认是Netty,8080端口
+</code></pre><p>3、SpringBoot2.x webflux实战<br>​    简介:webflux响应式编程实战<br>​<br>​    1、WebFlux中，请求和响应不再是WebMVC中的ServletRequest和ServletResponse，而是ServerRequest和ServerResponse<br>​<br>​    2、加入依赖，如果同时存在spring-boot-starter-web，则会优先用spring-boot-starter-web<br>​        <dependency><br>​                <groupid>org.springframework.boot</groupid><br>​                <artifactid>spring-boot-starter-webflux</artifactid><br>​        </dependency><br>​<br>        测试<br>        localhost:8080/api/v1/user/test</p>
+<pre><code>3、启动方式默认是Netty,8080端口
 </code></pre><p>​    </p>
 <pre><code>4、参考：https://spring.io/blog/2016/04/19/understanding-reactive-types
 </code></pre><p>4、WebFlux客户端WebClient讲解<br>​    简介：讲解SpringBoot2.x WebFlux客户端WebClient的介绍和使用<br>​        1、反应式客户端</p>
@@ -1653,18 +1594,8 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export JAVA_HOME PATH CLASSPATH
 
 使用 source /etc/profile   让配置立刻生效
-</code></pre><p>3、阿里云服务器SpringBoot2.x生产环境部署实战<br>​    简介：讲解SpringBoot生产环境部署和常见注意事项<br>​<br>​<br>​    1、去除相关生产环境没用的jar<br>​        比如热部署dev-tool<br>​<br>    2、本地maven打包成jar包<br>        mvn clean package  -Dmaven.test.skip=true 跳过测试</p>
-<pre><code>3、服务器安装jdk，上传Jar包
-    上传工具：
-        windows:
-            winscp
-            securtyCRT
-        mac：
-            filezilla
-    ssh root@120.79.160.143
-    访问路径 http://120.79.160.143:8080/api/v1/user/find
-
-    java -jar xxxx.jar
+</code></pre><p>3、阿里云服务器SpringBoot2.x生产环境部署实战<br>​    简介：讲解SpringBoot生产环境部署和常见注意事项<br>​<br>​<br>​    1、去除相关生产环境没用的jar<br>​        比如热部署dev-tool<br>​<br>​    2、本地maven打包成jar包<br>​        mvn clean package  -Dmaven.test.skip=true 跳过测试<br>​<br>    3、服务器安装jdk，上传Jar包<br>        上传工具：<br>            windows:<br>                winscp<br>                securtyCRT<br>            mac：<br>                filezilla<br>        ssh <a href="mailto:root@120.79.160.143" target="_blank" rel="noopener">root@120.79.160.143</a><br>        访问路径 <a href="http://120.79.160.143:8080/api/v1/user/find" target="_blank" rel="noopener">http://120.79.160.143:8080/api/v1/user/find</a></p>
+<pre><code>    java -jar xxxx.jar
 
     守护进程、系统服务、shell脚本
 
@@ -1770,6 +1701,10 @@ export JAVA_HOME PATH CLASSPATH
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/12/22/SpringBoot纯洁的微笑/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -1857,7 +1792,7 @@ export JAVA_HOME PATH CLASSPATH
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
