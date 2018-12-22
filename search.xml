@@ -250,15 +250,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Docker上传到腾讯云服务器上]]></title>
-    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E4%B8%8A%E4%BC%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
-    <content type="text"><![CDATA[https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194 小D课堂 先选择容器服务 123sudo docker login --username=[username] ccr.ccs.tencentyun.com sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 100007660104sad username:腾讯云账号，开通时已注册。输入密码后即登录完成。 ##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成 ####密码输入的时候先输入电脑root密码 z ###再输入密码yhp836143 12$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号] 12$ sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 密码输入 z 因为是sudo 使用镜像—-下载镜像 小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境 ### https://cloud.tencent.com/developer/labs/lab/10054/console 在本机上远程腾讯云 搭建Docker环境 登录到镜像仓库，需输入密码。 1$ sudo docker login --username=[username] ccr.ccs.tencentyun.com 下载镜像。 sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 1$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest ⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? https://www.w3cschool.cn/kxqhmy/suzagdn1.html 查看是否存在进程： 1$ ps aux |grep docker1 停止进程 1$sudo service docker stop1 重启docker： 1$dockerd Docker在云服务器上的安装 https://www.jianshu.com/p/ea3078dae4fb 简书 1.登陆到服务器上面 通过终端 或者云主机登陆 2.开始操作 3.https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions 官网 Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装 Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? 1Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? docker -d -p 8888：8080 先分配角色。在启动Docker 如果端口播被占用了 先关闭Docker sudo service docker stop 1sudo service docker stop 在启动Doccur service docker start 1service docker start 大佬指教。不是locaohostg 192.168.2.123 是公网ip腾讯公网的ip–118.89.28.213 加镜像名啊 兄die]]></content>
-      <tags>
-        <tag>Docker</tag>
-        <tag>腾讯云</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Docker镜像加速]]></title>
     <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E5%8A%A0%E9%80%9F%2F</url>
     <content type="text"><![CDATA[emmm。。。为什么图片可以使用 网上的地址？ https://www.jianshu.com/p/94c6e44ebd3c 不要使用https前缀， 负责会提示证书错误， Version requires:- Docker for MAC version: docker version STEPS:- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors 添加： http://registry.docker-cn.com Note：不要使用https前缀， 负责会提示证书错误， “registry-mirrors” : No certs for egitstry.docker.com 导致dockerrestart failed。]]></content>
@@ -270,6 +261,15 @@
       <categories>
         <category>SpringBoot</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker上传到腾讯云服务器上]]></title>
+    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E4%B8%8A%E4%BC%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194 小D课堂 先选择容器服务 123sudo docker login --username=[username] ccr.ccs.tencentyun.com sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 100007660104sad username:腾讯云账号，开通时已注册。输入密码后即登录完成。 ##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成 ####密码输入的时候先输入电脑root密码 z ###再输入密码yhp836143 12$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号] 12$ sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 密码输入 z 因为是sudo 使用镜像—-下载镜像 小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境 ### https://cloud.tencent.com/developer/labs/lab/10054/console 在本机上远程腾讯云 搭建Docker环境 登录到镜像仓库，需输入密码。 1$ sudo docker login --username=[username] ccr.ccs.tencentyun.com 下载镜像。 sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 1$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest ⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? https://www.w3cschool.cn/kxqhmy/suzagdn1.html 查看是否存在进程： 1$ ps aux |grep docker1 停止进程 1$sudo service docker stop1 重启docker： 1$dockerd Docker在云服务器上的安装 https://www.jianshu.com/p/ea3078dae4fb 简书 1.登陆到服务器上面 通过终端 或者云主机登陆 2.开始操作 3.https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions 官网 Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装 Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? 1Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? docker -d -p 8888：8080 先分配角色。在启动Docker 如果端口播被占用了 先关闭Docker sudo service docker stop 1sudo service docker stop 在启动Doccur service docker start 1service docker start 大佬指教。不是locaohostg 192.168.2.123 是公网ip腾讯公网的ip–118.89.28.213 加镜像名啊 兄die]]></content>
+      <tags>
+        <tag>Docker</tag>
+        <tag>腾讯云</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[SpringBoot Docker 小D课堂]]></title>
