@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SSM,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="新建SSM项目哦对了，关于IDEA的版本问题强烈建议使用旗舰版，有条件的就购买，没条件的嘛。。 天朝你懂的。在欢迎界面点击Create New Project。 之后选择Maven(新建JAVAEE项目是需要安装JDK的，这个就不在这里讲解了。 )选好之后点击下一步。之后填入GroupID和ArtifactID这里尽量按照Maven的命名规范来即可。之后点击下一步，填入项目名称，这里我建议和之前">
+<meta name="keywords" content="SSM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM整合">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/SSM整合/index.html">
+<meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="新建SSM项目哦对了，关于IDEA的版本问题强烈建议使用旗舰版，有条件的就购买，没条件的嘛。。 天朝你懂的。在欢迎界面点击Create New Project。 之后选择Maven(新建JAVAEE项目是需要安装JDK的，这个就不在这里讲解了。 )选好之后点击下一步。之后填入GroupID和ArtifactID这里尽量按照Maven的命名规范来即可。之后点击下一步，填入项目名称，这里我建议和之前">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fygj0lmkbsj30gs0be47x.jpg">
+<meta property="og:image" content="http://i.imgur.com/St7JEw7.png">
+<meta property="og:image" content="http://i.imgur.com/5kSWIla.png">
+<meta property="og:image" content="http://i.imgur.com/DiiEJ4h.png">
+<meta property="og:image" content="http://i.imgur.com/aOJC4Ic.png">
+<meta property="og:image" content="http://i.imgur.com/rWOtgha.png">
+<meta property="og:image" content="http://i.imgur.com/u2xPqCS.png">
+<meta property="og:image" content="http://i.imgur.com/fCaXCDT.png">
+<meta property="og:image" content="http://i.imgur.com/vJPS2Yh.png">
+<meta property="og:image" content="http://i.imgur.com/FH695fj.png">
+<meta property="og:image" content="http://i.imgur.com/f1RS3LJ.png">
+<meta property="og:image" content="http://i.imgur.com/gKKK6YG.png">
+<meta property="og:image" content="http://i.imgur.com/7jjk7JF.png">
+<meta property="og:image" content="http://i.imgur.com/9Zw2ngh.png">
+<meta property="og:image" content="http://i.imgur.com/zJgW4za.png">
+<meta property="og:image" content="http://i.imgur.com/q8zyEJk.png">
+<meta property="og:updated_time" content="2018-12-23T03:42:26.979Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSM整合">
+<meta name="twitter:description" content="新建SSM项目哦对了，关于IDEA的版本问题强烈建议使用旗舰版，有条件的就购买，没条件的嘛。。 天朝你懂的。在欢迎界面点击Create New Project。 之后选择Maven(新建JAVAEE项目是需要安装JDK的，这个就不在这里讲解了。 )选好之后点击下一步。之后填入GroupID和ArtifactID这里尽量按照Maven的命名规范来即可。之后点击下一步，填入项目名称，这里我建议和之前">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fygj0lmkbsj30gs0be47x.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/SSM整合/">
+
+
+
+
+
+  <title>SSM整合 | Freemana2017</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+<a href="https://github.com/Freemana2017" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Freemana2017</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/SSM整合/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SSM整合</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T11:36:52+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/23/SSM整合/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/23/SSM整合/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fygj0lmkbsj30gs0be47x.jpg" alt="image-20181223113853623"></p>
+<h1 id="新建SSM项目"><a href="#新建SSM项目" class="headerlink" title="新建SSM项目"></a>新建SSM项目</h1><p>哦对了，关于IDEA的版本问题强烈建议使用旗舰版，有条件的就购买，没条件的嘛。。 天朝你懂的。<br>在欢迎界面点击<code>Create New Project</code>。<br><a href="http://i.imgur.com/St7JEw7.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/St7JEw7.png" alt="img"></a></p>
+<p>之后选择<code>Maven</code>(新建JAVAEE项目是需要安装JDK的，这个就不在这里讲解了。 )选好之后点击下一步。<br><a href="http://i.imgur.com/5kSWIla.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/5kSWIla.png" alt="img"></a><br>之后填入<code>GroupID</code>和<code>ArtifactID</code>这里尽量按照Maven的命名规范来即可。<br><a href="http://i.imgur.com/DiiEJ4h.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/DiiEJ4h.png" alt="img"></a><br>之后点击下一步，填入项目名称，这里我建议和之前填写的<code>ArtifactID</code>名称一样即可。<br><a href="http://i.imgur.com/aOJC4Ic.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/aOJC4Ic.png" alt="img"></a><br>点击Finish完成项目的创建。<br>之后尽量不要做其他操作，让IDEA完成索引创建。<br><a href="http://i.imgur.com/rWOtgha.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/rWOtgha.png" alt="img"></a></p>
+<h1 id="完善目录结构"><a href="#完善目录结构" class="headerlink" title="完善目录结构"></a>完善目录结构</h1><p>首先观察一下IDEA给我们生成的目录结构，这是一个标准的Maven目录。 但是其中少了一个<code>webapp</code>目录用于存放<code>jsp</code>、<code>css</code>、<code>js</code>、图片之类的文件。 之后还需要完善我们的目录结构，如下图：<br><a href="http://i.imgur.com/u2xPqCS.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/u2xPqCS.png" alt="img"></a><br>以上的命名都是我们开发过程中常用的命名规则，不一定按照我这样来，但是最好是有一定的规范。</p>
+<hr>
+<h1 id="POM-xml"><a href="#POM-xml" class="headerlink" title="POM.xml"></a>POM.xml</h1><p><code>pom.xml</code>是整个maven的核心配置文件，里面有对项目的描述和项目所需要的依赖。 哦对了，在修改<code>pom.xml</code>文件之前我们最好先设置一下该项目的Maven设置(IDEA对每个项目的maven设置和Eclipse不一样，不是设置一次就可了，如果今后还要新建项目那就还需要设置， 同时按住<code>ctrl</code>,<code>alt</code>,<code>s</code>是打开设置的快捷键，更多有关IDEA的操作今后会更新相关博文。 )<br><a href="http://i.imgur.com/fCaXCDT.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/fCaXCDT.png" alt="img"></a></p>
+<h2 id="IDEA的Maven设置"><a href="#IDEA的Maven设置" class="headerlink" title="IDEA的Maven设置"></a>IDEA的Maven设置</h2><p>在<code>Eclipse</code>中用过Maven的都应该知道，这里是将项目的Maven换成我们自己安装的Maven，下面两个目录是选择Maven配置文件，不知道是什么原因在<code>Eclipse</code> 中选择了配置文件之后会自动的将Maven本地厂库的路径更改为你<code>settings.xml</code>中配置的路径。 既然这里没有自动选中那我们就手动修改即可，尽量不要放在C盘，一是用久之后本地厂库占用的空间会比较大，二是万一系统崩溃的话还有可能找回来。</p>
+<hr>
+<h2 id="修改pom-xml"><a href="#修改pom-xml" class="headerlink" title="修改pom.xml"></a>修改pom.xml</h2><p>以下是我的<code>pom.xml</code>文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!--suppress MavenModelInspection --&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;groupId&gt;com.crossoverJie&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;SSM&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;source&gt;1.6&lt;/source&gt;</span><br><span class="line">                    &lt;target&gt;1.6&lt;/target&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;spring.version&gt;4.1.4.RELEASE&lt;/spring.version&gt;</span><br><span class="line">        &lt;jackson.version&gt;2.5.0&lt;/jackson.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.8.1&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- spring --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-core&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-web&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- 使用SpringMVC需配置 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- 关系型数据库整合时需配置 如hibernate jpa等 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-orm&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2.4&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- log4j --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2.17&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- mysql连接 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.1.34&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.3.1&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.0.18&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- json --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;fastjson&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2.3&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;jackson.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;jackson.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;jackson.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- aop --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.aspectj&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.8.4&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- servlet --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;servlet-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.0-alpha-1&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jstl&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.4&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- 上传文件 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;commons-fileupload&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.3.1&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="spring-mvc-xml"><a href="#spring-mvc-xml" class="headerlink" title="spring-mvc.xml"></a>spring-mvc.xml</h1><p>这个配置文件是springMVC的配置文件：<br>里面的我都写有注释，应该都能看懂。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span><br><span class="line">                        http://www.springframework.org/schema/context</span><br><span class="line">                        http://www.springframework.org/schema/context/spring-context-3.1.xsd</span><br><span class="line">                        http://www.springframework.org/schema/mvc</span><br><span class="line">                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&quot;&gt;</span><br><span class="line">    &lt;!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;com.crossoverJie.controller&quot; /&gt;</span><br><span class="line">    &lt;!--避免IE执行AJAX时，返回JSON出现下载文件 --&gt;</span><br><span class="line">    &lt;!--&lt;bean id=&quot;mappingJacksonHttpMessageConverter&quot;</span><br><span class="line">          class=&quot;org.springframework.http.converter.json.MappingJacksonHttpMessageConverter&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;supportedMediaTypes&quot;&gt;</span><br><span class="line">            &lt;list&gt;</span><br><span class="line">                &lt;value&gt;text/html;charset=UTF-8&lt;/value&gt;</span><br><span class="line">            &lt;/list&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;--&gt;</span><br><span class="line">    &lt;mvc:annotation-driven/&gt;</span><br><span class="line">    &lt;!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射</span><br><span class="line">    --&gt;</span><br><span class="line">    &lt;!-- 定义跳转的文件的前后缀 ，视图模式配置--&gt;</span><br><span class="line">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line">        &lt;!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 --&gt;</span><br><span class="line">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!-- 配置文件上传，如果没有使用文件上传可以不用配置，当然如果不配，那么配置文件中也不必引入上传组件包 --&gt;</span><br><span class="line">    &lt;bean id=&quot;multipartResolver&quot;</span><br><span class="line">          class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;</span><br><span class="line">        &lt;!-- 默认编码 --&gt;</span><br><span class="line">        &lt;property name=&quot;defaultEncoding&quot; value=&quot;utf-8&quot; /&gt;</span><br><span class="line">        &lt;!-- 文件大小最大值 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxUploadSize&quot; value=&quot;10485760000&quot; /&gt;</span><br><span class="line">        &lt;!-- 内存中的最大值 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxInMemorySize&quot; value=&quot;40960&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!-- 配置拦截器 --&gt;</span><br><span class="line">    &lt;!--&lt;mvc:interceptors&gt;</span><br><span class="line">        &lt;mvc:interceptor&gt;</span><br><span class="line">            &amp;lt;!&amp;ndash; &lt;mvc:mapping path=&quot;/**&quot;/&gt;拦截所有 &amp;ndash;&amp;gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/user/**&quot;/&gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/role/**&quot;/&gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/function/**&quot;/&gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/news/**&quot;/&gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/img/**&quot;/&gt;</span><br><span class="line">            &lt;bean class=&quot;com.crossoverJie.intercept.Intercept&quot;&gt;&lt;/bean&gt;</span><br><span class="line">        &lt;/mvc:interceptor&gt;</span><br><span class="line">    &lt;/mvc:interceptors&gt;--&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>关于上面拦截器注释掉的那里，配置是没有问题的，因为这是一个整合项目，所以里边也没有用到拦截器，为了防止运行报错所以就先注释掉了。 如果后续需要增加拦截器，可以参考这里的配置。</p>
+<hr>
+<h1 id="spring-mybatis-xml"><a href="#spring-mybatis-xml" class="headerlink" title="spring-mybatis.xml"></a>spring-mybatis.xml</h1><p>这个是spring和mybatis的整合配置文件，其中还有<code>Druid</code>连接池的配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span><br><span class="line">                        http://www.springframework.org/schema/context</span><br><span class="line">                        http://www.springframework.org/schema/context/spring-context-3.1.xsd&quot;&gt;</span><br><span class="line">    &lt;!-- 自动扫描 --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;com.crossoverJie&quot; /&gt;</span><br><span class="line">    &lt;!-- 引入配置文件 --&gt;</span><br><span class="line">    &lt;bean id=&quot;propertyConfigurer&quot;</span><br><span class="line">          class=&quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;location&quot; value=&quot;classpath:jdbc.properties&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;bean id=&quot;dataSource&quot; class=&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span><br><span class="line">          init-method=&quot;init&quot; destroy-method=&quot;close&quot;&gt;</span><br><span class="line">        &lt;!-- 指定连接数据库的驱动 --&gt;</span><br><span class="line">        &lt;property name=&quot;driverClassName&quot; value=&quot;$&#123;jdbc.driverClass&#125;&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;url&quot; value=&quot;$&#123;jdbc.url&#125;&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;username&quot; value=&quot;$&#123;jdbc.user&#125;&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 配置初始化大小、最小、最大 --&gt;</span><br><span class="line">        &lt;property name=&quot;initialSize&quot; value=&quot;3&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;minIdle&quot; value=&quot;3&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;maxActive&quot; value=&quot;20&quot; /&gt;</span><br><span class="line">        &lt;!-- 配置获取连接等待超时的时间 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxWait&quot; value=&quot;60000&quot; /&gt;</span><br><span class="line">        &lt;!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 --&gt;</span><br><span class="line">        &lt;property name=&quot;timeBetweenEvictionRunsMillis&quot; value=&quot;60000&quot; /&gt;</span><br><span class="line">        &lt;!-- 配置一个连接在池中最小生存的时间，单位是毫秒 --&gt;</span><br><span class="line">        &lt;property name=&quot;minEvictableIdleTimeMillis&quot; value=&quot;300000&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;validationQuery&quot; value=&quot;SELECT &apos;x&apos;&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;testWhileIdle&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;testOnBorrow&quot; value=&quot;false&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;testOnReturn&quot; value=&quot;false&quot; /&gt;</span><br><span class="line">        &lt;!-- 打开PSCache，并且指定每个连接上PSCache的大小 --&gt;</span><br><span class="line">        &lt;property name=&quot;poolPreparedStatements&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;maxPoolPreparedStatementPerConnectionSize&quot;</span><br><span class="line">                  value=&quot;20&quot; /&gt;</span><br><span class="line">        &lt;!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 --&gt;</span><br><span class="line">        &lt;property name=&quot;filters&quot; value=&quot;stat&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 --&gt;</span><br><span class="line">    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;</span><br><span class="line">        &lt;!-- 自动扫描mapping.xml文件 --&gt;</span><br><span class="line">        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapping/*.xml&quot;&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!-- DAO接口所在包名，Spring会自动查找其下的类 --&gt;</span><br><span class="line">    &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;basePackage&quot; value=&quot;com.crossoverJie.dao&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!-- (事务管理)transaction manager, use JtaTransactionManager for global tx --&gt;</span><br><span class="line">    &lt;bean id=&quot;transactionManager&quot;</span><br><span class="line">          class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>以上两个就是最重要的配置文件了，只要其中的包名和配置文件中的名字一样就不会出问题。<br>关于<code>xxMpper.xml</code>以及实体类的生成，我们可以借助<code>mybatis-generator</code>自动生成工具来生成，方便快捷。</p>
+<p>—-</p>
+<h1 id="IDEA配置Tomcat"><a href="#IDEA配置Tomcat" class="headerlink" title="IDEA配置Tomcat"></a>IDEA配置Tomcat</h1><p>关于Tomcat的下载与安装我这里就不多介绍了。<br><a href="http://i.imgur.com/vJPS2Yh.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/vJPS2Yh.png" alt="img"></a><br>按照下图选择：<br><a href="http://i.imgur.com/FH695fj.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/FH695fj.png" alt="img"></a><br>在<code>name</code>中为这个Tomcat输入一个名字。 之后选择你本地Tomcat的目录点击<code>Ok</code>即可。<br><a href="http://i.imgur.com/f1RS3LJ.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/f1RS3LJ.png" alt="img"></a><br><a href="http://i.imgur.com/gKKK6YG.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/gKKK6YG.png" alt="img"></a><br><a href="http://i.imgur.com/7jjk7JF.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/7jjk7JF.png" alt="img"></a><br>点击<code>apply</code>和保存之后就返回首页即可看到Tomcat的标识。<br><a href="http://i.imgur.com/9Zw2ngh.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/9Zw2ngh.png" alt="img"></a><br>根据需要点击<code>Run</code>和<code>Debug</code>即可运行。</p>
+<p>运行结果如下：<br><a href="http://i.imgur.com/zJgW4za.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/zJgW4za.png" alt="img"></a><br><a href="http://i.imgur.com/q8zyEJk.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/q8zyEJk.png" alt="img"></a><br>点击上图的2,3,4可看到不同用户的结果，如果你走到这一步，那么恭喜你整合成功。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SSM/" rel="tag"># SSM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/22/SSM项目实战/" rel="next" title="SSM项目实战">
+                <i class="fa fa-chevron-left"></i> SSM项目实战
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg" alt="袁海鹏">
+            
+              <p class="site-author-name" itemprop="name">袁海鹏</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新建SSM项目"><span class="nav-number">1.</span> <span class="nav-text">新建SSM项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完善目录结构"><span class="nav-number">2.</span> <span class="nav-text">完善目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POM-xml"><span class="nav-number">3.</span> <span class="nav-text">POM.xml</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA的Maven设置"><span class="nav-number">3.1.</span> <span class="nav-text">IDEA的Maven设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改pom-xml"><span class="nav-number">3.2.</span> <span class="nav-text">修改pom.xml</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-mvc-xml"><span class="nav-number">4.</span> <span class="nav-text">spring-mvc.xml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-mybatis-xml"><span class="nav-number">5.</span> <span class="nav-text">spring-mybatis.xml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDEA配置Tomcat"><span class="nav-number">6.</span> <span class="nav-text">IDEA配置Tomcat</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">袁海鹏</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+</div>
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/12/23/SSM整合/';
+          this.page.identifier = '2018/12/23/SSM整合/';
+          this.page.title = 'SSM整合';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+

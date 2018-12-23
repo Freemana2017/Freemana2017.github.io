@@ -269,6 +269,328 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/RabbitMQ/1.RabbitMQ下载/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/RabbitMQ/1.RabbitMQ下载/" itemprop="url">Linux安装RabbitMQ</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-03T16:10:13+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/03/RabbitMQ/1.RabbitMQ下载/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/03/RabbitMQ/1.RabbitMQ下载/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）"><a href="#在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）" class="headerlink" title="在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）"></a>在基于RPM的Linux上安装（RHEL，CentOS，Fedora，openSUSE）</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtnnpv0kej30o8099adm.jpg" alt="image-20181203165130740"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtno42lroj30mb0r4qcc.jpg" alt="image-20181203165154131"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtnrrk6anj30je03l3z4.jpg" alt="image-20181203165525206"></p>
+<h1 id="1-下载Erlang"><a href="#1-下载Erlang" class="headerlink" title="1.下载Erlang"></a>1.下载Erlang</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtnvkts0cj30o501jmyk.jpg" alt="image-20181203165903389"></p>
+<blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtnsidfxbj30je03l3z4.jpg" alt="image-20181203165605014"></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.erlang-solutions.com/resources/download.html" target="_blank" rel="noopener">https://www.erlang-solutions.com/resources/download.html</a> ❌❌❌</p>
+<p><a href="http://www.rabbitmq.com/releases/erlang/" target="_blank" rel="noopener">http://www.rabbitmq.com/releases/erlang/</a> ☑️☑️☑️</p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtos30kzoj30so0gxn1w.jpg" alt="image-20181203173018568"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtntxxecaj30rt0vigow.jpg" alt="image-20181203165728974"></p>
+<h1 id="2-下载RabbitMQ服务器、"><a href="#2-下载RabbitMQ服务器、" class="headerlink" title="2 下载RabbitMQ服务器、"></a>2 下载RabbitMQ服务器、</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtnz2q80jj30nx0c4n0k.jpg" alt="image-20181203170225802"></p>
+<p>#<img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxto06zu1jj30hq03xgm3.jpg" alt="image-20181203170330188"></p>
+<h2 id="方法一：Wget-地址"><a href="#方法一：Wget-地址" class="headerlink" title="#方法一：Wget +地址"></a>#方法一：Wget +地址</h2><h3 id="方法二：在终端中输入命令-scp-待上传文件名-linux用户名-服务器IP-存放到服务器的哪个位置"><a href="#方法二：在终端中输入命令-scp-待上传文件名-linux用户名-服务器IP-存放到服务器的哪个位置" class="headerlink" title="方法二：在终端中输入命令: scp 待上传文件名 linux用户名@服务器IP:存放到服务器的哪个位置 :~"></a>方法二：在终端中输入命令: scp 待上传文件名 linux用户名@服务器IP:存放到服务器的哪个位置 :~</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxto8kjqkjj30us020abl.jpg" alt="image-20181203171132886"></p>
+<p>fa</p>
+<h2 id="3-安装scoket"><a href="#3-安装scoket" class="headerlink" title="3.安装scoket"></a>3.安装scoket</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtoq92natj30yo01labr.jpg" alt="image-20181203172832430"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtq6k7em3j30gs05j40w.jpg" alt="image-20181203181849194"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtqbmkxz1j314y0lp7do.jpg" alt="image-20181203182341329"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqej08ejj30xi036415.jpg" alt="image-20181203182628670"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqevc0hwj30cn01awez.jpg" alt="image-20181203182648913"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqf7ogpij30oq0gudy8.jpg" alt="image-20181203182708308"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtqgjea22j30ni089gqu.jpg" alt="image-20181203182825353"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqhwgt1bj30o602fwgq.jpg" alt="image-20181203182943795"></p>
+<p><img src="../../../Users/apple/Library/Application%20Support/typora-user-images/image-20181203183221113.png" alt="image-20181203183221113"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtqm9rnfaj30oe09kmyi.jpg" alt="image-20181203183355716"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtqmkjo9uj30m004d3zj.jpg" alt="image-20181203183413438"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">## RabbitMQ 参考资料</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">慕课网老师讲义 </span><br><span class="line">准备：</span><br><span class="line">yum install </span><br><span class="line">build-essential openssl openssl-devel unixODBC unixODBC-devel </span><br><span class="line">make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz</span><br><span class="line"></span><br><span class="line">下载：</span><br><span class="line">wget www.rabbitmq.com/releases/erlang/erlang-18.3-1.el7.centos.x86_64.rpm</span><br><span class="line">wget http://repo.iotti.biz/CentOS/7/x86_64/socat-1.7.3.2-5.el7.lux.x86_64.rpm</span><br><span class="line">wget www.rabbitmq.com/releases/rabbitmq-server/v3.6.5/rabbitmq-server-3.6.5-1.noarch.rpm</span><br><span class="line"></span><br><span class="line">配置文件：</span><br><span class="line">vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app</span><br><span class="line">比如修改密码、配置等等，例如：loopback_users 中的 &lt;&lt;&quot;guest&quot;&gt;&gt;,只保留guest</span><br><span class="line">服务启动和停止：</span><br><span class="line">启动 rabbitmq-server start &amp;</span><br><span class="line">停止 rabbitmqctl app_stop</span><br><span class="line"></span><br><span class="line">管理插件：rabbitmq-plugins enable rabbitmq_management</span><br><span class="line">访问地址：http://192.168.11.76:15672/</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/RabbitMQ/0.RabbitMQ/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/RabbitMQ/0.RabbitMQ/" itemprop="url">初识RabbitMQ</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-03T15:51:36+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/03/RabbitMQ/0.RabbitMQ/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/03/RabbitMQ/0.RabbitMQ/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlxgchvjj31870ern6w.jpg" alt="image-20181203155139352"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtm31vym6j312n0f4gqv.jpg" alt="image-20181203155703094"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtm61u0izj312t0fuwpl.jpg" alt="image-20181203155954831"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtqp4t42qj314m0gwtat.jpg" alt="image-20181203160051576"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtm7cg6duj318v0bttec.jpg" alt="image-20181203160111421"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtm85847xj311t0lwgwl.jpg" alt="image-20181203160156504"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtme3pql0j312c0chjwo.jpg" alt="image-20181203160740131"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtmekw13aj313k0cn7ba.jpg" alt="image-20181203160750129"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtmeyvcz2j314m09qafc.jpg" alt="image-20181203160830652"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtmf9i854j315s0870ut.jpg" alt="image-20181203160847253"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtmfq1wbxj312y02vtan.jpg" alt="image-20181203160913700"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtmfv78khj315t04dgng.jpg" alt="image-20181203160922335"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtmghc69kj30zy0lxnbg.jpg" alt="image-20181203160957424"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtmj713lcj311v0khgye.jpg" alt="image-20181203161234879"></p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtmlfjhhij312h0m345u.jpg" alt="image-20181203161442751"></p>
+<hr>
+<blockquote>
+<p><a href="http://www.rabbitmq.com/#features" target="_blank" rel="noopener">http://www.rabbitmq.com/#features</a></p>
+</blockquote>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtmus94mlj30ti07n75i.jpg" alt="image-20181203162342344"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtmvfs24lj30hs0ju78q.jpg" alt="image-20181203162419973"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtmxgs95wj30pf01175a.jpg" alt="image-20181203162616940"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtmyck2kuj30gq00zwf0.jpg" alt="image-20181203162707928"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtmyh38xbj30eg00y74s.jpg" alt="image-20181203162716103"></p>
+<p><em>安装顺序 ：先是erlang 然后是 socat 然后是rabbitmq</em></p>
+<h2 id="Linux安装："><a href="#Linux安装：" class="headerlink" title="Linux安装："></a>Linux安装：</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtn2yu2w7j3088063weo.jpg" alt="image-20181203163134473"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtn60qtumj30xr04k0ue.jpg" alt="image-20181203163430336"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtn6nfxwaj30qr01r0t6.jpg" alt="image-20181203163503541"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtn8hs9jqj30d30pbdj7.jpg" alt="image-20181203163653399"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtn8uem6ij30cx0awdgn.jpg" alt="image-20181203163713590"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtn93rvucj30m208ajtp.jpg" alt="image-20181203163728711"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtnb74x9yj30t704bq5g.jpg" alt="image-20181203163929359"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtnccxy96j30us0evqdb.jpg" alt="image-20181203164035837"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/项目实战/常用maven仓库/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1117,7 +1439,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker加速/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -1136,7 +1458,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/11/Docker/Docker加速/" itemprop="url">Docker镜像加速</a></h1>
+                <a class="post-title-link" href="/2018/11/11/Docker/Docker上传云服务器/" itemprop="url">Docker上传到腾讯云服务器上</a></h1>
         
 
         <div class="post-meta">
@@ -1167,8 +1489,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/11/Docker/Docker加速/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker加速/" itemprop="commentCount"></span>
+                <a href="/2018/11/11/Docker/Docker上传云服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker上传云服务器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1198,25 +1520,84 @@
       
         
           
-            <p>emmm。。。为什么图片可以使用 网上的地址？</p>
-<p><a href="https://www.jianshu.com/p/94c6e44ebd3c" target="_blank" rel="noopener">https://www.jianshu.com/p/94c6e44ebd3c</a></p>
-<p>不要使用https前缀， 负责会提示证书错误，</p>
-<blockquote>
+            <blockquote>
+<p><a href="https://cloud.tencent.com/document/product/457/9117" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/457/9117</a> 腾讯云</p>
+<p><a href="https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194</a> 小D课堂</p>
 </blockquote>
-<h1 id="Version-requires"><a href="#Version-requires" class="headerlink" title="Version requires:"></a>Version requires:</h1><h2 id="Docker-for-MAC-version"><a href="#Docker-for-MAC-version" class="headerlink" title="- Docker for MAC version:"></a>- Docker for MAC version:</h2><p><img src="https:////upload-images.jianshu.io/upload_images/10517010-1617f9ee81621ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/569/format/webp" alt="img"></p>
-<p>docker version</p>
-<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS:"></a>STEPS:</h1><p>- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors</p>
-<p>添加：</p>
-<blockquote>
-<p><a href="http://registry.docker-cn.com" target="_blank" rel="noopener">http://registry.docker-cn.com</a></p>
+<p>先选择容器服务 </p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy0o6vzw9hj307h0j3whv.jpg" alt="image-20181209182853099"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login --username=[username] ccr.ccs.tencentyun.com 	</span><br><span class="line">sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 	</span><br><span class="line">100007660104sad</span><br></pre></td></tr></table></figure>
+<p>username:腾讯云账号，开通时已注册。输入密码后即登录完成。<img src="/Users/apple/Desktop/屏幕快照 2018-11-15 下午5.44.02.png" alt="屏幕快照 2018-11-15 下午5.44.02"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1otnpx4j30dk07d0t3.jpg" alt="image-20181115182444968"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1oukn07j30dv08qjrn.jpg" alt="image-20181115182457396"></p>
+<p>##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成</p>
+<p>####密码输入的时候先输入电脑root密码 z</p>
+<p>###再输入密码yhp836143</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1ov48d5j30q906vwfg.jpg" alt="image-20181115182649857"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ot5895j30u1027aak.jpg" alt="image-20181115182725221"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag  5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<p>密码输入 z 因为是sudo</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ovh1gkj30o80etgp4.jpg" alt="image-20181115183150585"></p>
+<h3 id="使用镜像—-下载镜像"><a href="#使用镜像—-下载镜像" class="headerlink" title="使用镜像—-下载镜像"></a>使用镜像—-下载镜像</h3><blockquote>
+<p>小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 </p>
 </blockquote>
-<p>Note：不要使用https前缀， 负责会提示证书错误，</p>
 <blockquote>
-<p>“registry-mirrors” :</p>
-<p>  No certs for egitstry.docker.com</p>
+<p>登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境</p>
 </blockquote>
-<p>导致dockerrestart failed。</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/10517010-37b53711599fae68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498/format/webp" alt="img"></p>
+<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ou52xtj30nu0bnq5d.jpg" alt="image-20181115185616768"></p>
+<p>在本机上远程腾讯云 搭建Docker环境</p>
+<p>登录到镜像仓库，需输入密码。</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username=[username] ccr.ccs.tencentyun.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下载镜像。</p>
+<ul>
+<li>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h1><blockquote>
+<p> <a href="https://www.w3cschool.cn/kxqhmy/suzagdn1.html" target="_blank" rel="noopener">https://www.w3cschool.cn/kxqhmy/suzagdn1.html</a></p>
+</blockquote>
+<p>查看是否存在进程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux |grep docker1</span><br></pre></td></tr></table></figure>
+<p>停止进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo service docker stop1</span><br></pre></td></tr></table></figure>
+<p>重启docker：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dockerd</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="Docker在云服务器上的安装"><a href="#Docker在云服务器上的安装" class="headerlink" title="Docker在云服务器上的安装"></a>Docker在云服务器上的安装</h1><blockquote>
+<p><a href="https://www.jianshu.com/p/ea3078dae4fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ea3078dae4fb</a> 简书 </p>
+</blockquote>
+<p>1.登陆到服务器上面 通过终端 </p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1osadhhj30x402rmxk.jpg" alt="image-20181117182934398"></p>
+<p>或者云主机登陆</p>
+<p>2.开始操作</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1oslvouj313t03adhb.jpg" alt="image-20181117183003800"></p>
+<p>3.<a href="https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions</a> 官网</p>
+<blockquote>
+<p> Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装</p>
+</blockquote>
+<p>Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span><br></pre></td></tr></table></figure>
+<p>docker -d -p 8888：8080 </p>
+<p>先分配角色。在启动Docker </p>
+<p>如果端口播被占用了 先关闭Docker</p>
+<p>sudo service docker stop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
+<p>在启动Doccur</p>
+<p>service docker start</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
+<hr>
+<p>大佬指教。不是locaohostg 192.168.2.123</p>
+<p>是公网ip腾讯公网的ip–118.89.28.213</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ovw8kwj30d603emxg.jpg" alt="image-20181118104713199"></p>
+<p>加镜像名啊 兄die</p>
 
           
         
@@ -2388,445 +2769,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/Docker/Docker上传云服务器/" itemprop="url">Docker上传到腾讯云服务器上</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T11:35:27+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/11/Docker/Docker上传云服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker上传云服务器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><a href="https://cloud.tencent.com/document/product/457/9117" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/457/9117</a> 腾讯云</p>
-<p><a href="https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194</a> 小D课堂</p>
-</blockquote>
-<p>先选择容器服务 </p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy0o6vzw9hj307h0j3whv.jpg" alt="image-20181209182853099"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login --username=[username] ccr.ccs.tencentyun.com 	</span><br><span class="line">sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 	</span><br><span class="line">100007660104sad</span><br></pre></td></tr></table></figure>
-<p>username:腾讯云账号，开通时已注册。输入密码后即登录完成。<img src="/Users/apple/Desktop/屏幕快照 2018-11-15 下午5.44.02.png" alt="屏幕快照 2018-11-15 下午5.44.02"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1otnpx4j30dk07d0t3.jpg" alt="image-20181115182444968"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1oukn07j30dv08qjrn.jpg" alt="image-20181115182457396"></p>
-<p>##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成</p>
-<p>####密码输入的时候先输入电脑root密码 z</p>
-<p>###再输入密码yhp836143</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1ov48d5j30q906vwfg.jpg" alt="image-20181115182649857"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ot5895j30u1027aak.jpg" alt="image-20181115182725221"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag  5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
-<p>密码输入 z 因为是sudo</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ovh1gkj30o80etgp4.jpg" alt="image-20181115183150585"></p>
-<h3 id="使用镜像—-下载镜像"><a href="#使用镜像—-下载镜像" class="headerlink" title="使用镜像—-下载镜像"></a>使用镜像—-下载镜像</h3><blockquote>
-<p>小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 </p>
-</blockquote>
-<blockquote>
-<p>登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境</p>
-</blockquote>
-<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ou52xtj30nu0bnq5d.jpg" alt="image-20181115185616768"></p>
-<p>在本机上远程腾讯云 搭建Docker环境</p>
-<p>登录到镜像仓库，需输入密码。</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username=[username] ccr.ccs.tencentyun.com</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>下载镜像。</p>
-<ul>
-<li>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h1><blockquote>
-<p> <a href="https://www.w3cschool.cn/kxqhmy/suzagdn1.html" target="_blank" rel="noopener">https://www.w3cschool.cn/kxqhmy/suzagdn1.html</a></p>
-</blockquote>
-<p>查看是否存在进程：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux |grep docker1</span><br></pre></td></tr></table></figure>
-<p>停止进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo service docker stop1</span><br></pre></td></tr></table></figure>
-<p>重启docker：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dockerd</span><br></pre></td></tr></table></figure>
-<hr>
-<hr>
-<hr>
-<hr>
-<h1 id="Docker在云服务器上的安装"><a href="#Docker在云服务器上的安装" class="headerlink" title="Docker在云服务器上的安装"></a>Docker在云服务器上的安装</h1><blockquote>
-<p><a href="https://www.jianshu.com/p/ea3078dae4fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ea3078dae4fb</a> 简书 </p>
-</blockquote>
-<p>1.登陆到服务器上面 通过终端 </p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1osadhhj30x402rmxk.jpg" alt="image-20181117182934398"></p>
-<p>或者云主机登陆</p>
-<p>2.开始操作</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1oslvouj313t03adhb.jpg" alt="image-20181117183003800"></p>
-<p>3.<a href="https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions</a> 官网</p>
-<blockquote>
-<p> Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装</p>
-</blockquote>
-<p>Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span><br></pre></td></tr></table></figure>
-<p>docker -d -p 8888：8080 </p>
-<p>先分配角色。在启动Docker </p>
-<p>如果端口播被占用了 先关闭Docker</p>
-<p>sudo service docker stop</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
-<p>在启动Doccur</p>
-<p>service docker start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
-<hr>
-<p>大佬指教。不是locaohostg 192.168.2.123</p>
-<p>是公网ip腾讯公网的ip–118.89.28.213</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ovw8kwj30d603emxg.jpg" alt="image-20181118104713199"></p>
-<p>加镜像名啊 兄die</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/" itemprop="url">SpringBoot Docker 小D课堂</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T10:13:42+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/SpringBoot/SpringBoot-Docker-小D课堂/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="构建SpringBoot-应用docker镜像"><a href="#构建SpringBoot-应用docker镜像" class="headerlink" title="构建SpringBoot 应用docker镜像"></a>构建SpringBoot 应用docker镜像</h1><h4 id="1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集"><a href="#1-第1课-高级篇幅之构建SpringBoot应用docker镜像上集" class="headerlink" title="1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集"></a>1.第1课 高级篇幅之构建SpringBoot应用docker镜像上集</h4><blockquote>
-<p> 官方文档：<a href="https://spring.io/guides/gs/spring-boot-docker/" target="_blank" rel="noopener">https://spring.io/guides/gs/spring-boot-docker/</a></p>
-<h2 id="1、步骤：maven里面添加配置pom-xml"><a href="#1、步骤：maven里面添加配置pom-xml" class="headerlink" title="1、步骤：maven里面添加配置pom.xml"></a>1、步骤：maven里面添加配置pom.xml</h2></blockquote>
-<pre><code>简介:使用Docker的maven插件，构建springboot应用
- &lt;!--在maven最上面的申明的地方--properties--&gt;
-     &lt;properties&gt;
-       &lt;docker.image.prefix&gt;xdclass&lt;/docker.image.prefix&gt;
-    &lt;/properties&gt;
-
-    &lt;build&gt;
-    &lt;!--项目打包的名称--&gt;
-        &lt;finalName&gt;docker-demo&lt;/finalName&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;com.spotify&lt;/groupId&gt;
-                &lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;1.3.6&lt;/version&gt;
-                &lt;configuration&gt;
-                    &lt;repository&gt;${docker.image.prefix}/${project.artifactId}&lt;/repository&gt;
-                    &lt;buildArgs&gt;
-                        &lt;JAR_FILE&gt;target/${project.build.finalName}.jar&lt;/JAR_FILE&gt;
-                    &lt;/buildArgs&gt;
-                &lt;/configuration&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
-
-    配置讲解
-    Spotify 的 docker-maven-plugin 插件是用maven插件方式构建docker镜像的。
-    ${project.build.finalName} 产出物名称，缺省为${project.artifactId}-${project.version}
-</code></pre><p>⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
-<blockquote>
-<p> <a href="https://blog.csdn.net/TMaskBoy/article/details/82562413" target="_blank" rel="noopener">https://blog.csdn.net/TMaskBoy/article/details/82562413</a></p>
-</blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1qkosbaj30nw10pwj8.jpg" alt="image-20181111112653319"></p>
-<h1 id="高能预警"><a href="#高能预警" class="headerlink" title="高能预警"></a>高能预警</h1><ul>
-<li><p>No plugin found for prefix ‘docker’ in the current project and in the plugin groups<br>在Maven的配置文件 conf/settings.xml中添加com.spotify</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;pluginGroups&gt;  </span><br><span class="line">    &lt;pluginGroup&gt;com.spotify&lt;/pluginGroup&gt;  </span><br><span class="line">&lt;/pluginGroups&gt;</span><br><span class="line"></span><br><span class="line">注意setting配置文件在maven的仓库里面找不到 重新更新idea中maven的插件 然后 更换.m2中conf中setting.xml的内容</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>#详细错误如下：om.spotify.docker.client.shaded.com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of com.spotify.docker.client.messages.RegistryAuth: no String-argument constructor/factory method to deserialize from String value (‘swarm’)  </p>
-<p>起初pom.xml中docker-maven-plugin的版本是1.0.0，使用mvn package docker:build -e构建Image出现如上异常。<br>百般搜索无果，后来看其他的Spring Boot构建Docker镜像有用的是0.4.3，遂修改之。 </p>
-<ol start="2">
-<li>解决办法</li>
-</ol>
-<hr>
-<h1 id="将小D课堂里面的插件"><a href="#将小D课堂里面的插件" class="headerlink" title="将小D课堂里面的插件"></a>将小D课堂里面的插件</h1></li>
-</ul>
-<pre><code> &lt;groupId&gt;com.spotify&lt;/groupId&gt;
-&lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
-&lt;version&gt;1.3.6&lt;/version&gt;
-</code></pre><h1 id="改为⭐️⭐️"><a href="#改为⭐️⭐️" class="headerlink" title="改为⭐️⭐️"></a>改为⭐️⭐️</h1>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;groupId&gt;com.spotify&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt; ⭐️ //这边不是dockerfile-maven-plugin了而是docker-maven-plugin</span><br><span class="line">&lt;version&gt;0.4.13&lt;/version&gt;</span><br></pre></td></tr></table></figure>
-<p>   ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ </p>
-<h3 id="第2课-高级篇幅之构建SpringBoot应用docker镜像下集"><a href="#第2课-高级篇幅之构建SpringBoot应用docker镜像下集" class="headerlink" title="第2课 高级篇幅之构建SpringBoot应用docker镜像下集"></a>第2课 高级篇幅之构建SpringBoot应用docker镜像下集</h3><blockquote>
-<h4 id="步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）"><a href="#步骤1创建Dockerfile-默认是根目录，（可以修改为src-main-docker-Dockerfile-如果修则需要制定路径）" class="headerlink" title="步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）"></a>步骤1创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）</h4></blockquote>
-<pre><code>简介:打包SpringCloud镜像并上传私有仓库并部署
-1、 什么是Dockerfile : 由一系列命令和参数构成的脚本，这些命令应用于基础镜像, 最终创建一个新的镜       像
-实战
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
-
-
-参数讲解：
-FROM &lt;image&gt;:&lt;tag&gt; 需要一个基础镜像，可以是公共的或者是私有的， 后续构建会基于此镜像，如果同一个Dockerfile中建立多个镜像时，可以使用多个FROM指令
-
-VOLUME  配置一个具有持久化功能的目录，主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容   器的/tmp。改步骤是可选的，如果涉及到文件系统的应用就很有必要了。/tmp目录用来持久化到 Docker 数据 文件夹，因为 Spring Boot 使用的内嵌 Tomcat 容器默认使用/tmp作为工作目录 
-
-ARG  设置编译镜像时加入的参数， ENV 是设置容器的环境变量
-COPY : 只支持将本地文件复制到容器 ,还有个ADD更强大但复杂点
-ENTRYPOINT 容器启动时执行的命令
-EXPOSE 8080 暴露镜像端口
-</code></pre><h3 id="第3课构建镜像"><a href="#第3课构建镜像" class="headerlink" title="第3课构建镜像"></a>第3课构建镜像</h3><pre><code>2、构建镜像
-        mvn install dockerfile:build
-        打标签
-        docker tag a1b9fc71720d registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:docker-demo-v201808
-        推送到镜像仓库
-        docker push registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:docker-demo-v201808
-
-        应用服务器拉取镜像
-        docker pull registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:docker-demo-v201808
-
-
-        docker run -d --name xdclass_docker_demo1 -p 8099:8080  a1b9fc71720d
-
-        3、查看启动日志 docker logs -f  containerid
-</code></pre><h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><h2 id="1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈"><a href="#1-mvn-install-dockerfile-build。不知道为什么终端没有用idea中终端却有用-😄哈哈" class="headerlink" title="1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈"></a>1.mvn install dockerfile:build。不知道为什么终端没有用idea中终端却有用 😄哈哈</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1qi5qd3j30uw0u0dog.jpg" alt="image-20181111130637806"></p>
-<h2 id="2-docker-images"><a href="#2-docker-images" class="headerlink" title="2.docker images"></a>2.docker images</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qlpbxvj30qw04taax.jpg" alt="image-20181111130706064"></p>
-<blockquote>
-<p>没有名字镜像？？注意在idea中测试的话就要用idea 不要随变改成终端</p>
-</blockquote>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qj8tx1j314c0b142v.jpg" alt="image-20181111131256001"></p>
-<h2 id="3-docker-run-d-–name-demo-p-8080-8080-8ef42611e3b0"><a href="#3-docker-run-d-–name-demo-p-8080-8080-8ef42611e3b0" class="headerlink" title="3.docker  run -d –name demo -p 8080:8080  8ef42611e3b0"></a>3.docker  run -d –name demo -p 8080:8080  8ef42611e3b0</h2><blockquote>
-<p>备注：运行镜像 –name 指定名字 -d 后台运行 8ef42611e3b0：刚刚构建的image的ID </p>
-<p>name 不会用就别用</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1qmrfedj31bl03h766.jpg" alt="image-20181111133053363"></p>
-</blockquote>
-<h3 id="4-docker-ps"><a href="#4-docker-ps" class="headerlink" title="4.docker ps"></a>4.docker ps</h3><blockquote>
-<p>查看一下镜像的进程</p>
-</blockquote>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1qm8xnmj30xs02g3zi.jpg" alt="image-20181111133138180"></p>
-<p>？？？没有程序。测试一下</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2879,7 +2821,7 @@ EXPOSE 8080 暴露镜像端口
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2901,7 +2843,7 @@ EXPOSE 8080 暴露镜像端口
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

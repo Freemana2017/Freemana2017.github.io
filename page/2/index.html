@@ -269,6 +269,355 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/java基础/for循环讲解/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/15/java基础/for循环讲解/" itemprop="url">for 循环</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T08:22:37+08:00">
+                2018-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/15/java基础/for循环讲解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/15/java基础/for循环讲解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="for-循环-大圈套小圈"><a href="#for-循环-大圈套小圈" class="headerlink" title="for 循环 大圈套小圈"></a>for 循环 大圈套小圈</h2><p>#1.1for循环思想</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code4</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; <span class="number">3</span>; x++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y &lt; <span class="number">4</span>; y++) &#123;</span><br><span class="line">				System.out.println(<span class="string">"ok"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy74z95rqtj30rq0bc0zt.jpg" alt="image-20181215084305163"></p>
+<hr>
+<p>读第一个for循环初始化一个x 变量x=0：</p>
+<p>​         先执行x=0; 执行x&lt;3满足条件—&gt;</p>
+<p>执行第二个for循环语句初始化一个变量y=0;</p>
+<p>​       先执行y=0;执行y&lt;4满足条件–&gt;打印一次ok</p>
+<p>当内循环没有结束时循环出不去执行–&gt;y++;打印四次ok；</p>
+<p>y++=4时候y&lt;4不成立 跳出循环 y在内存中消失 –&gt;执行–x++</p>
+<p>满足条件 又产生一个y=0,内循环继续循环四次 所以一共打印12个ok</p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy751mjh1pj30lo0fhgrh.jpg" alt="image-20181215084525009"></p>
+<hr>
+<p>#1.2验证doc命令行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code5</span> </span>&#123;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * for循环基本思想demo1</span></span><br><span class="line"><span class="comment"> * 输出： </span></span><br><span class="line"><span class="comment"> * 		 *****</span></span><br><span class="line"><span class="comment"> * 		 *****</span></span><br><span class="line"><span class="comment"> * 		 *****</span></span><br><span class="line"><span class="comment"> *       *****</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy758fljzcj30vk0pktec.jpg" alt="image-20181215085157010"></p>
+<blockquote>
+<p>i 控制行 第一个for循环</p>
+<p>j控制列 第二个for循环 （每一列的个数）</p>
+</blockquote>
+<p>#1.3验证doc命令行 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code6</span> </span>&#123;</span><br><span class="line">	<span class="comment">/** 输出doc界面：</span></span><br><span class="line"><span class="comment">	 *  *****</span></span><br><span class="line"><span class="comment">	 *  ****</span></span><br><span class="line"><span class="comment">	 *  ***</span></span><br><span class="line"><span class="comment">	 *  **</span></span><br><span class="line"><span class="comment">	 *  *</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; <span class="number">5</span>; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy75o9qvhij30uj0oxn2q.jpg" alt="image-20181215090711158"></p>
+<p>分析：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy75pwaov3j30q00fmq9w.jpg" alt="image-20181215090844549"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy75q9siifj30gn08ego3.jpg" alt="image-20181215090906622"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy75qmx5l8j30ep0cqq6d.jpg" alt="image-20181215090927631"></p>
+<hr>
+<p>#1.4验证doc</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code7</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * * </span></span><br><span class="line"><span class="comment">	 * ** </span></span><br><span class="line"><span class="comment">	 * *** </span></span><br><span class="line"><span class="comment">	 * **** </span></span><br><span class="line"><span class="comment">	 * *****</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy767w90r2j30ru0kfwkj.jpg" alt="image-20181215092601659"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy7688y7vqj30q00cn0xy.jpg" alt="image-20181215092622770"></p>
+<hr>
+<p>#1.5验证doc⭐️</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code8</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 54321 </span></span><br><span class="line"><span class="comment">	 * 5432 </span></span><br><span class="line"><span class="comment">	 * 543 </span></span><br><span class="line"><span class="comment">	 * 54 </span></span><br><span class="line"><span class="comment">	 * 5</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">5</span>; j &gt; i; j--) &#123;</span><br><span class="line">				System.out.print(j);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy76uq68l0j30tu0m40zs.jpg" alt="image-20181215094758361"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy770n4jd6j30sp0l2tjb.jpg" alt="image-20181215095339271"></p>
+<blockquote>
+<p>int j=5 j&gt;i j– 其中j—是关键</p>
+</blockquote>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code9</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 1 </span></span><br><span class="line"><span class="comment">	 * 22 </span></span><br><span class="line"><span class="comment">	 * 333 </span></span><br><span class="line"><span class="comment">	 * 4444 </span></span><br><span class="line"><span class="comment">	 * 55555</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;=i; j++) &#123;</span><br><span class="line">				System.out.print(i);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy77fs68fvj30ut0lcaev.jpg" alt="image-20181215100813415"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy77h058syj30dd076gmt.jpg" alt="image-20181215100923906"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code10</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 *  * * * * *</span></span><br><span class="line"><span class="comment">	 *  -* * * * </span></span><br><span class="line"><span class="comment">	 *  --* * * </span></span><br><span class="line"><span class="comment">	 *  ---* * </span></span><br><span class="line"><span class="comment">	 *  ----* </span></span><br><span class="line"><span class="comment">	 *  由两个图形组成一个由向下的*组成</span></span><br><span class="line"><span class="comment">	 *   一个由向上的——组成</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">" "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> z = i; z&lt;=<span class="number">5</span>  ; z++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"* "</span>);</span><br><span class="line">			&#125;System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy78ca2b97j30rt0yv45w.jpg" alt="image-20181215103926561"></p>
+<blockquote>
+<p>分析：</p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy78cpz0o4j30730btjrx.jpg" alt="image-20181215103952180"></p>
+<hr>
+<p>#1.6作 业：打印</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy78f5ce0sj305k07t74x.jpg" alt="image-20181215104212818"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy78fh0wxkj307v07pdgg.jpg" alt="image-20181215104231193"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code8</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 54321 </span></span><br><span class="line"><span class="comment">	 * 5432 </span></span><br><span class="line"><span class="comment">	 * 543 </span></span><br><span class="line"><span class="comment">	 * 54 </span></span><br><span class="line"><span class="comment">	 * 5</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">5</span>; j &gt;i; j--) &#123;</span><br><span class="line">				System.out.print(j);</span><br><span class="line">			&#125;System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	 </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy78qkb6snj30r40izgoj.jpg" alt="image-20181215105144545"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy78qoqjdwj30rr0jv79w.jpg" alt="image-20181215105317814"></p>
+<h1 id="规律：for内循环-如果ji-并且让j–"><a href="#规律：for内循环-如果ji-并且让j–" class="headerlink" title="规律：for内循环 如果ji 并且让j–"></a>规律：for内循环 如果j<i 不成立="" 改成j="">i 并且让j–</i></h1><hr>
+<hr>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy78vv9n43j30vn0kk7ax.jpg" alt="image-20181215105815854"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code9</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 1 </span></span><br><span class="line"><span class="comment">	 * 22 </span></span><br><span class="line"><span class="comment">	 * 333 </span></span><br><span class="line"><span class="comment">	 * 4444 </span></span><br><span class="line"><span class="comment">	 * 55555</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=<span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">				System.out.print(i);</span><br><span class="line">			&#125;System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/Jquery/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/14/Jquery/" itemprop="url">Jquery</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-14T16:54:38+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/14/Jquery/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/14/Jquery/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-获取Jquery对象"><a href="#1-获取Jquery对象" class="headerlink" title="1.获取Jquery对象"></a>1.获取Jquery对象</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"username"</span> value=<span class="string">"jack"</span>/&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//jquery获得数据 语法$&#123;"选择器"&#125;==Jquery（"选择器"）</span></span><br><span class="line">    <span class="keyword">var</span> usernmae = $(<span class="string">"#username"</span>);</span><br><span class="line">    <span class="comment">//val() 函数 用于获得value属性的值 jack</span></span><br><span class="line">    alert(usernmae.val());</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy6f57gxk6j30uj0dpdkk.jpg" alt="image-20181214174914025"></p>
+<h1 id="2-Jquery与Dom对象的互相转换"><a href="#2-Jquery与Dom对象的互相转换" class="headerlink" title="2.Jquery与Dom对象的互相转换"></a>2.Jquery与Dom对象的互相转换</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"username"</span> value=<span class="string">"jack"</span>/&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//Jquery对象和Dom对象的转换</span></span><br><span class="line">    <span class="comment">//1。使用Javascripe获取value的值</span></span><br><span class="line">    <span class="keyword">var</span> username = <span class="built_in">document</span>.getElementById(<span class="string">"username"</span>);</span><br><span class="line">    alert(username.value);<span class="comment">//jack用的是属性</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//2。将dom对象 转换为Jquery对象</span></span><br><span class="line">    <span class="comment">//# 语法：$(dom对象)</span></span><br><span class="line">    <span class="comment">//# 建议 ：Jquery对象变量名字 建议以$开头</span></span><br><span class="line">    <span class="keyword">var</span> $username = $(username);</span><br><span class="line">    alert($username.val());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.将jquery对象转为Dom对象</span></span><br><span class="line">    <span class="comment">//3.1 Jquery对象内部使用数组存放所有的数据 可以通过数组的下标获取（索引）</span></span><br><span class="line">    <span class="keyword">var</span> username2 = $username[<span class="number">0</span>];</span><br><span class="line">    alert(username2.value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.2Jquery提供函数get()转换为dom对象</span></span><br><span class="line">    <span class="keyword">var</span> username3 = $username.get(<span class="number">0</span>);</span><br><span class="line">    alert(username3.value);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy6kuqovt1j30rj0od7cj.jpg" alt="image-20181214210647995"></p>
+<h1 id="3-选择器"><a href="#3-选择器" class="headerlink" title="3. 选择器"></a>3. 选择器</h1><h2 id="3-1-基本选择器【重要】"><a href="#3-1-基本选择器【重要】" class="headerlink" title="3.1 基本选择器【重要】"></a>3.1 基本选择器【重要】</h2><ul>
+<li><p>id ,id选择器 <xxx id=""> 通过id 值获得元素</xxx></p>
+</li>
+<li><p>element，标签选择器 <xxx> 通过标签名获得元素</xxx></p>
+</li>
+<li><p>.class 类选择器 <xxx class=""> 通过class值获得元素。注意：使用点开头</xxx></p>
+</li>
+<li><p>s1,s2,…  多选择器，将多个选择器的结果添加一个数组中。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//window.onload=function()&#123;...&#125;匿名函数</span></span><br><span class="line">    <span class="comment">//jquery 页面加载--&gt;function()匿名函数</span></span><br><span class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//id选择器 为id绑定一个事件 然后传递一个函数</span></span><br><span class="line">    $(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#one"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#ff0"</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//类选择器</span></span><br><span class="line">    $(<span class="string">".btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#ff0"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//元素选择器</span></span><br><span class="line">    $(<span class="string">"div"</span>).background = <span class="string">"#ff2"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="button" id="btn1" value="选择id为one的元素"&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="button" class="btn2" value="选择id为one的元素"&gt;</span></span><br></pre></td></tr></table></figure>
+<p> <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy6lx4kpddj30qv0ppahp.jpg" alt="image-20181214214342463"></p>
+<h2 id="3-2层级选择器"><a href="#3-2层级选择器" class="headerlink" title="3.2层级选择器"></a>3.2层级选择器</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy79q7tek6j30hh08kgo5.jpg" alt="image-20181215112727120"></p>
+<h2 id="3-3基本过滤选择器——“：关键字“"><a href="#3-3基本过滤选择器——“：关键字“" class="headerlink" title="3.3基本过滤选择器——“：关键字“"></a>3.3基本过滤选择器——“：关键字“</h2><p><img src="../../../Users/apple/Library/Application%20Support/typora-user-images/image-20181216091014781.png" alt="image-20181216091014781"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;label <span class="keyword">for</span>=<span class="string">"username"</span>&gt;&lt;/label&gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"username"</span> value=<span class="string">"jack"</span>/&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">// &lt;input type="text" value="请输入账号" defaultValue="请输入账号"&gt;</span></span><br><span class="line">    $(<span class="string">"input[type='text']"</span>).on(<span class="string">"blur focus"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//1.获得默认值</span></span><br><span class="line">        <span class="keyword">var</span> attr = $(<span class="keyword">this</span>).attr(<span class="string">"defaultValue"</span>);</span><br><span class="line">        <span class="comment">//2.判断是否获得焦点</span></span><br><span class="line">        <span class="keyword">if</span> ($(<span class="keyword">this</span>).is(<span class="string">":focus"</span>)) &#123;</span><br><span class="line">            <span class="comment">//2.1 获得焦点，清空value值 ，this 当前执行对象  是dom对象用$(this)转为jquery对象</span></span><br><span class="line">            <span class="keyword">if</span> ($(<span class="keyword">this</span>).val() === attr) &#123;</span><br><span class="line">                $(<span class="keyword">this</span>).val(<span class="string">""</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//2.2失去焦点  设置默认值</span></span><br><span class="line">            <span class="keyword">if</span> ($(<span class="keyword">this</span>).val() === <span class="string">""</span>) &#123;</span><br><span class="line">                $(<span class="keyword">this</span>).val(attr);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;label&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="text" value="请输入账号" defaultValue="请输入账号"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="text" value="请输入账号" defaultValue="请输入密码"&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>label&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy8ryvjoscj30to0pgths.jpg" alt="image-20181216184406335"></p>
+<h2 id="3-4内容过滤"><a href="#3-4内容过滤" class="headerlink" title="3.4内容过滤"></a>3.4内容过滤</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy8s5db3q2j30iz07zdhs.jpg" alt="image-20181216185020697"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy8s3tkbqwj30pi032mys.jpg" alt="image-20181216184851872"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy8s6915z0j30oc09d0xg.jpg" alt="image-20181216185112383"></p>
+<h2 id="3-5可见性过滤-（重要）"><a href="#3-5可见性过滤-（重要）" class="headerlink" title="3.5可见性过滤 （重要）"></a>3.5可见性过滤 （重要）</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy8s94kuebj30sf06hjst.jpg" alt="image-20181216185358024"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ &lt;input type="button" value="选取所有可见的div元素" id="bt1"&gt;</span></span><br><span class="line"><span class="regexp">$("#b1").click(function () &#123;</span></span><br><span class="line"><span class="regexp">    $("div:hidden").css("background-color", "#ff0");</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ &lt;input type="button" value="选取所有不可见的元素利用jquery中的show（）将他们显示出来" id="bt2"&gt;</span></span><br><span class="line"><span class="regexp">$("#bt2").click(function () &#123;</span></span><br><span class="line"><span class="regexp">    $("div:hidden").css("background-color", "#ff0");</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6<img src="../../../Users/apple/Library/Application Support/typora-user-images/image-20181216214851469.png" alt="image-20181216214851469"></h2><h2 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h2><h2 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h2><h1 id="Jquery文档1-8-3"><a href="#Jquery文档1-8-3" class="headerlink" title="Jquery文档1.8.3"></a>Jquery文档1.8.3</h1><p> <img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy79uf2mgej304g08x3z6.jpg" alt="image-20181215113129106"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/蓝桥杯/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1453,316 +1802,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/引用传递/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/java基础/引用传递/" itemprop="url">java引用传递</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T21:36:47+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/java基础/引用传递/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/引用传递/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h3 id="（show（）方法出栈-栈里面只有成员变量）"><a href="#（show（）方法出栈-栈里面只有成员变量）" class="headerlink" title="（show（）方法出栈 栈里面只有成员变量）"></a>（show（）方法出栈 栈里面只有成员变量）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//基本数据类型参数传递</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">		show(x);<span class="comment">//⭐️x=3 show（）方法出栈 栈里面只有3 </span></span><br><span class="line">		System.out.println(<span class="string">"x="</span> + x); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		x = <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzhm7oth9j30wa0fnwk8.jpg" alt="image-20181208175552226"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzhmhdeiij30so09076n.jpg" alt="image-20181208175608090"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//基本数据类型参数传递</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">		show(x);<span class="comment">// 答案x=4 执行的是show 里面的方法</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		x = <span class="number">4</span>;</span><br><span class="line">		System.out.println(<span class="string">"x="</span> + x); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzhog1xp1j30kl0b377t.jpg" alt="image-20181208175756626"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzhpcgg6aj30j10c577j.jpg" alt="image-20181208175849677"></p>
-<hr>
-<hr>
-<hr>
-<h1 id="引用数据类型参数传递"><a href="#引用数据类型参数传递" class="headerlink" title="引用数据类型参数传递"></a>引用数据类型参数传递</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzi3ii8g7j30i90cu0w6.jpg" alt="image-20181208181230101"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//引用数据类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo2 demo2 = <span class="keyword">new</span> Demo2();</span><br><span class="line">		demo2.x=<span class="number">9</span>;</span><br><span class="line">		show(demo2);<span class="comment">// ⭐️ x=4</span></span><br><span class="line">		System.out.println(demo2.x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Demo2 d)</span> </span>&#123;</span><br><span class="line">		d.x = <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzi44iftuj31330gvwku.jpg" alt="image-20181208181304546"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzi49xiv8j30in0dpmxr.jpg" alt="image-20181208181313939"></p>
-<hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzi70mk3yj318h0p8n7x.jpg" alt="image-20181208181550692"></p>
-<hr>
-<h2 id="引用数据类型传递详解"><a href="#引用数据类型传递详解" class="headerlink" title="引用数据类型传递详解"></a>引用数据类型传递详解</h2><ul>
-<li><p>栈内存：保存所有的对象名称 d(保存了引用堆内存空间的地址）</p>
-</li>
-<li><p>堆内存空间。保存具体对象的具体属性</p>
-</li>
-<li><p>全局数据区：保存static类型的属性</p>
-</li>
-<li><p>全局代码区：保存所有的方法定义</p>
-<h1 id="java的引用传递-同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址"><a href="#java的引用传递-同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址" class="headerlink" title="java的引用传递 同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址"></a>java的引用传递 同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址</h1></li>
-</ul>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> data = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo1</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.data = data;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.data;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.data = data;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo1 demo1 = <span class="keyword">new</span> Demo1();</span><br><span class="line">		fun(demo1);<span class="comment">//</span></span><br><span class="line">		System.out.println(demo1.getData());<span class="comment">//30</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo1 temp)</span> </span>&#123; <span class="comment">// 接受引用</span></span><br><span class="line">		temp.setData(<span class="number">30</span>);<span class="comment">// 修改属性内容</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzitjhmtkj30qn0uxgsh.jpg" alt="image-20181208183729045"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzitz8xyvj313l0n3475.jpg" alt="image-20181208183756336"></p>
-<blockquote>
-<p><a href="https://blog.csdn.net/lym152898/article/details/54411956" target="_blank" rel="noopener">https://blog.csdn.net/lym152898/article/details/54411956</a></p>
-</blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxziwzqdcdj30rj394kae.jpg" alt="image-20181208184049245"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzixhog6pj30rb12jdnc.jpg" alt="image-20181208184118821"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxziy77tthj30ri44n4qp.jpg" alt="image-20181208184158837"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzizum77rj30mo6cu7wi.jpg" alt="image-20181208184333093"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzj0hc314j30ir03babl.jpg" alt="image-20181208184410426"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzj48hz9aj30o00mxwmv.jpg" alt="image-20181208184746357"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzj5y8hpaj30s6254wzo.jpg" alt="image-20181208184926276"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/RabbitMQ/3.管控台/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/RabbitMQ/3.管控台/" itemprop="url">RabbitMQ管控台</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:58:33+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/RabbitMQ/3.管控台/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/RabbitMQ/3.管控台/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="不积跬步-无以至千里-养成写博客理解的习惯"><a href="#不积跬步-无以至千里-养成写博客理解的习惯" class="headerlink" title="不积跬步 无以至千里 养成写博客理解的习惯"></a>不积跬步 无以至千里 养成写博客理解的习惯</h4><h3 id="博客在学习的时候写-看最好的视频-写做好的博客-cheerUP"><a href="#博客在学习的时候写-看最好的视频-写做好的博客-cheerUP" class="headerlink" title="#博客在学习的时候写 看最好的视频 写做好的博客 cheerUP"></a>#博客在学习的时候写 看最好的视频 写做好的博客 cheerUP</h3><hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvw1csyrnj30s11wrk1k.jpg" alt="image-20181205150907065"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvvyn2vssj30r844yb29.jpg" alt="image-20181205150956171"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvw1dt0onj30jdawb1ky.jpg" alt="image-20181205151144586"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1815,7 +1854,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1837,7 +1876,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
