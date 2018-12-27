@@ -269,6 +269,302 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/Rabbit MQ/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/25/Rabbit MQ/" itemprop="url">RabbitMQ 千峰教育笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-25T15:58:34+08:00">
+                2018-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/25/Rabbit MQ/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/25/Rabbit MQ/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-RabbitMQ-简介"><a href="#1-RabbitMQ-简介" class="headerlink" title="1.RabbitMQ 简介"></a>1.RabbitMQ 简介</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyj3gtdkruj30px0e0n2c.jpg" alt="image-20181225165734938"></p>
+<h1 id="2-Rabbit-MQ的安装"><a href="#2-Rabbit-MQ的安装" class="headerlink" title="2.Rabbit MQ的安装"></a>2.Rabbit MQ的安装</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyj3h0eljmj30q10jin08.jpg" alt="image-20181225165746248"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyj3i01ys8j30l80ckmza.jpg" alt="image-20181225165843244"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj3ij5y4nj30lc0cbtb3.jpg" alt="image-20181225165914324"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyj3istug2j30ln079dh0.jpg" alt="image-20181225165930292"></p>
+<hr>
+<h1 id="3-Rabbit-MQ添加用户"><a href="#3-Rabbit-MQ添加用户" class="headerlink" title="3.Rabbit MQ添加用户"></a>3.Rabbit MQ添加用户</h1><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj3jz47efj30k20fs76p.jpg" alt="image-20181225170037413"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj3k5g42nj30jn06g75p.jpg" alt="image-20181225170047899"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj3kefpswj30jl0jc42u.jpg" alt="image-20181225170102393"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj3madvytj30p30fw0vl.jpg" alt="image-20181225170250851"></p>
+<hr>
+<h1 id="4-Rabbit-MQ使用教程-⭐️"><a href="#4-Rabbit-MQ使用教程-⭐️" class="headerlink" title="4.Rabbit MQ使用教程 ⭐️"></a>4.Rabbit MQ使用教程 ⭐️</h1><h3 id="4-1消息模式种类"><a href="#4-1消息模式种类" class="headerlink" title="4.1消息模式种类"></a>4.1消息模式种类</h3><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj42bganlj30n40mngs9.jpg" alt="image-20181225171815196"></p>
+<hr>
+<h3 id="4-2-pom-amp-log4j-properties"><a href="#4-2-pom-amp-log4j-properties" class="headerlink" title="4.2 pom&amp;log4j.properties"></a>4.2 pom&amp;log4j.properties</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;com.qianfeng&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;testrabbitmqdemo&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">  &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;testrabbitmqdemo&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;http://maven.apache.org&lt;/url&gt;</span><br><span class="line"></span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client --&gt;</span><br><span class="line">    &lt;!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client --&gt;</span><br><span class="line">   =====================amqp-clien==========================   ============================</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;com.rabbitmq&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;amqp-client&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.5.0&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.slf4j&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.7.25&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;3.3.2&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- https://mvnrepository.com/artifact/org.springframework.amqp/spring-</span><br><span class="line">rabbit</span><br><span class="line">􏴏􏴐 spring 􏰚􏲂􏱗,amqp 􏰪􏱚 rabbitmq 􏴑􏲅􏴒􏴓 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">   ===================spring-rabbit=========================   ============================</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework.amqp&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-rabbit&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.7.6.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-test&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">log4j.rootLogger=DEBUG,A1</span><br><span class="line">log4j.logger.com.taotao = DEBUG</span><br><span class="line">log4j.logger.org.mybatis = DEBUG</span><br><span class="line">log4j.appender.A1=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.A1.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.A1.layout.ConversionPattern=%-d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; [%t] [%c]-</span><br><span class="line">[%p] %m%n</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="4-3HelloWorld-生产者-消费者"><a href="#4-3HelloWorld-生产者-消费者" class="headerlink" title="4.3HelloWorld (生产者 消费者)"></a>4.3HelloWorld (生产者 消费者)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.rabbitmq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Connection;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.ConnectionFactory;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用于创建连接的工具类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectionUtils</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ConnectionFactory connectionFactory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">        connectionFactory.setHost(<span class="string">"94.191.24.33"</span>);<span class="comment">//这个Host是ip地址 如果是Linux的就是Linux的ipconfig// 否则就是服务器的公网地址此处是腾讯云的公网ip地址</span></span><br><span class="line">        connectionFactory.setPort(<span class="number">5672</span>);<span class="comment">//5672是服务器的端口 15672是网页的端口</span></span><br><span class="line">        connectionFactory.setUsername(<span class="string">"guest"</span>);</span><br><span class="line">        connectionFactory.setPassword(<span class="string">"guest"</span>);</span><br><span class="line">        connectionFactory.setVirtualHost(<span class="string">"/"</span>);</span><br><span class="line">        <span class="keyword">return</span> connectionFactory.newConnection();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.rabbitmq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Channel;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Connection;</span><br><span class="line"><span class="comment">//生产者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sender</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String QUEUEName = <span class="string">"RabbitmqName"</span>;<span class="comment">//定义一个队列的名字</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//1。获取连接</span></span><br><span class="line">        Connection connection = ConnectionUtils.getConnection();</span><br><span class="line">        <span class="comment">//2。创建通道</span></span><br><span class="line">        Channel channel = connection.createChannel();</span><br><span class="line">        <span class="comment">//3。声明队列</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 如果队列存在则什么都不做 如果不存在才创建</span></span><br><span class="line"><span class="comment">         * QUEUEName ： 参数1 队列的名字</span></span><br><span class="line"><span class="comment">         * durable   :  参数2 是否持久化队列</span></span><br><span class="line"><span class="comment">         *              &gt; 我们的队列模式是在内存中的 如果rabbitmq 重启 会丢失</span></span><br><span class="line"><span class="comment">         *              &gt; 如果设置为true ,则会保存到erlang自带的数据库中，重启后会重新读取</span></span><br><span class="line"><span class="comment">         *exclusive:    参数3 是否排除 有两个作用</span></span><br><span class="line"><span class="comment">         *               &gt; 作用1： 第一个当我们的连接关闭后是否会自动删除队列</span></span><br><span class="line"><span class="comment">         *               &gt; 作用2：是否私有当前队列 如果私有了其他通道不可以访问当前对列</span></span><br><span class="line"><span class="comment">         *               &gt; 如果为true 一般是一个队列只适用于一个消费者的时候</span></span><br><span class="line"><span class="comment">         *autodelete：   参数4：是否自动删除</span></span><br><span class="line"><span class="comment">         *               参数5：一切其他参数</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        channel.queueDeclare(QUEUEName, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">//4。发送内容</span></span><br><span class="line">        channel.basicPublish(<span class="string">""</span>, QUEUEName, <span class="keyword">null</span>, <span class="string">"发送的消息"</span>.getBytes());</span><br><span class="line">        <span class="comment">//5。关闭连接</span></span><br><span class="line">        connection.close();</span><br><span class="line">        channel.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.rabbitmq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Channel;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Connection;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.QueueingConsumer;</span><br><span class="line"></span><br><span class="line"><span class="comment">//消费者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Recver</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String QUEUEName = <span class="string">"RabbitmqName"</span>;<span class="comment">//定义一个队列的名字</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Connection connection = ConnectionUtils.getConnection();</span><br><span class="line">        Channel channel = connection.createChannel();</span><br><span class="line">        channel.queueDeclare(QUEUEName, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">//定义一个消费者</span></span><br><span class="line">        QueueingConsumer consumer = <span class="keyword">new</span> QueueingConsumer(channel);</span><br><span class="line">        <span class="comment">//接受参数 参数2是自动确认</span></span><br><span class="line">        channel.basicConsume(QUEUEName, <span class="keyword">true</span>, consumer);</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="comment">//获取消息</span></span><br><span class="line">            <span class="comment">//如果没有消息会等待 有的话就获取执行然后销毁是一次性的</span></span><br><span class="line">            QueueingConsumer.Delivery delivery = consumer.nextDelivery();</span><br><span class="line">            String s = <span class="keyword">new</span> String(delivery.getBody());</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="RabbitMQ连接工具"><a href="#RabbitMQ连接工具" class="headerlink" title="RabbitMQ连接工具"></a>RabbitMQ连接工具</h5><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyjb6o7v3pj311v0ecdnn.jpg" alt="image-20181225212436448"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyk0rutcvhj30v00u0ann.jpg" alt="image-20181226120954989"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyk0sa5uqdj30wi0q4gvy.jpg" alt="image-20181226121023056"></p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/6.Exchange/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/25/6.Exchange/" itemprop="url">RabbitMQ Exchange</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-25T15:58:33+08:00">
+                2018-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/25/6.Exchange/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/25/6.Exchange/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj1sjd092j312g0oa1kx.jpg" alt="image-20181225155936857"></p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyj1ttyra6j30wh0h1wj6.jpg" alt="image-20181225160053086"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1uxhmw1j314o0bwafe.jpg" alt="image-20181225160157263"></p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj1wutzw7j31210ihalp.jpg" alt="image-20181225160348696"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1x4mw2hj310s0jpjyc.jpg" alt="image-20181225160404374"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyj1y2bncbj30pp06b0wq.jpg" alt="image-20181225160458534"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1zy0kd7j30o50b8aiv.jpg" alt="image-20181225160646411"></p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/SSM整合/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -351,7 +647,7 @@
         
           
             <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fygj0lmkbsj30gs0be47x.jpg" alt="image-20181223113853623"></p>
-<h1 id="新建SSM项目"><a href="#新建SSM项目" class="headerlink" title="新建SSM项目"></a>新建SSM项目</h1><p>哦对了，关于IDEA的版本问题强烈建议使用旗舰版，有条件的就购买，没条件的嘛。。 天朝你懂的。<br>在欢迎界面点击<code>Create New Project</code>。<br><a href="http://i.imgur.com/St7JEw7.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/St7JEw7.png" alt="img"></a></p>
+<h1 id="新建SSM项目"><a href="#新建SSM项目" class="headerlink" title="新建SSM项目"></a>新建SSM项目</h1><p> ，关于IDEA的版本问题强烈建议使用旗舰版，有条件的就购买，没条件的嘛。。 天朝你懂的。<br>在欢迎界面点击<code>Create New Project</code>。<br><a href="http://i.imgur.com/St7JEw7.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/St7JEw7.png" alt="img"></a></p>
 <p>之后选择<code>Maven</code>(新建JAVAEE项目是需要安装JDK的，这个就不在这里讲解了。 )选好之后点击下一步。<br><a href="http://i.imgur.com/5kSWIla.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/5kSWIla.png" alt="img"></a><br>之后填入<code>GroupID</code>和<code>ArtifactID</code>这里尽量按照Maven的命名规范来即可。<br><a href="http://i.imgur.com/DiiEJ4h.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/DiiEJ4h.png" alt="img"></a><br>之后点击下一步，填入项目名称，这里我建议和之前填写的<code>ArtifactID</code>名称一样即可。<br><a href="http://i.imgur.com/aOJC4Ic.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/aOJC4Ic.png" alt="img"></a><br>点击Finish完成项目的创建。<br>之后尽量不要做其他操作，让IDEA完成索引创建。<br><a href="http://i.imgur.com/rWOtgha.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/rWOtgha.png" alt="img"></a></p>
 <h1 id="完善目录结构"><a href="#完善目录结构" class="headerlink" title="完善目录结构"></a>完善目录结构</h1><p>首先观察一下IDEA给我们生成的目录结构，这是一个标准的Maven目录。 但是其中少了一个<code>webapp</code>目录用于存放<code>jsp</code>、<code>css</code>、<code>js</code>、图片之类的文件。 之后还需要完善我们的目录结构，如下图：<br><a href="http://i.imgur.com/u2xPqCS.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/u2xPqCS.png" alt="img"></a><br>以上的命名都是我们开发过程中常用的命名规则，不一定按照我这样来，但是最好是有一定的规范。</p>
 <hr>
@@ -373,6 +669,10 @@
 <p>—-</p>
 <h1 id="IDEA配置Tomcat"><a href="#IDEA配置Tomcat" class="headerlink" title="IDEA配置Tomcat"></a>IDEA配置Tomcat</h1><p>关于Tomcat的下载与安装我这里就不多介绍了。<br><a href="http://i.imgur.com/vJPS2Yh.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/vJPS2Yh.png" alt="img"></a><br>按照下图选择：<br><a href="http://i.imgur.com/FH695fj.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/FH695fj.png" alt="img"></a><br>在<code>name</code>中为这个Tomcat输入一个名字。 之后选择你本地Tomcat的目录点击<code>Ok</code>即可。<br><a href="http://i.imgur.com/f1RS3LJ.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/f1RS3LJ.png" alt="img"></a><br><a href="http://i.imgur.com/gKKK6YG.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/gKKK6YG.png" alt="img"></a><br><a href="http://i.imgur.com/7jjk7JF.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/7jjk7JF.png" alt="img"></a><br>点击<code>apply</code>和保存之后就返回首页即可看到Tomcat的标识。<br><a href="http://i.imgur.com/9Zw2ngh.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/9Zw2ngh.png" alt="img"></a><br>根据需要点击<code>Run</code>和<code>Debug</code>即可运行。</p>
 <p>运行结果如下：<br><a href="http://i.imgur.com/zJgW4za.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/zJgW4za.png" alt="img"></a><br><a href="http://i.imgur.com/q8zyEJk.png" target="_blank" rel="noopener"><img src="http://i.imgur.com/q8zyEJk.png" alt="img"></a><br>点击上图的2,3,4可看到不同用户的结果，如果你走到这一步，那么恭喜你整合成功。</p>
+<hr>
+<h4 id="Jdbc-properties"><a href="#Jdbc-properties" class="headerlink" title="Jdbc.properties"></a>Jdbc.properties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">jdbc.driver=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc:mysql://localhost:3307/ssm?useUnicode=true&amp;characterEncoding=utf8</span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password=</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="mybatis-config-xml"><a href="#mybatis-config-xml" class="headerlink" title="mybatis-config.xml"></a>mybatis-config.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">  PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">  &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">	&lt;!-- 配置全局属性 --&gt;</span><br><span class="line">	&lt;settings&gt;</span><br><span class="line">		&lt;!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 --&gt;</span><br><span class="line">		&lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- 使用列别名替换列名 默认:true --&gt;</span><br><span class="line">		&lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot; /&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- 开启驼峰命名转换:Table&#123;create_time&#125; -&gt; Entity&#123;createTime&#125; --&gt;</span><br><span class="line">		&lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">	&lt;/settings&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -2702,271 +3002,11 @@ export JAVA_HOME PATH CLASSPATH
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/开发遇到的问题/电影/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/15/开发遇到的问题/电影/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T20:30:35+08:00">
-                2018-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/15/开发遇到的问题/电影/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/15/开发遇到的问题/电影/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="邪不压正"><a href="#邪不压正" class="headerlink" title="邪不压正"></a>邪不压正</h1><h1 id="找到你"><a href="#找到你" class="headerlink" title="找到你"></a>找到你</h1><h1 id="让子弹飞"><a href="#让子弹飞" class="headerlink" title="让子弹飞"></a>让子弹飞</h1><h1 id="你好-之华"><a href="#你好-之华" class="headerlink" title="你好 之华"></a>你好 之华</h1><h1 id="人不彪悍枉少年"><a href="#人不彪悍枉少年" class="headerlink" title="人不彪悍枉少年"></a>人不彪悍枉少年</h1><p>#我不是药神仙</p>
-<h1 id="影"><a href="#影" class="headerlink" title="影"></a>影</h1><h1 id="一本好书"><a href="#一本好书" class="headerlink" title="一本好书"></a>一本好书</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/t/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/15/t/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T10:59:33+08:00">
-                2018-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/15/t/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/15/t/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>27402-658F-3E2D-5B3B-E995</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -3014,7 +3054,7 @@ export JAVA_HOME PATH CLASSPATH
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
