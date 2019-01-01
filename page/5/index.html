@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker加速/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/Linux/Linux/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -288,7 +288,182 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/11/Docker/Docker加速/" itemprop="url">Docker镜像加速</a></h1>
+                <a class="post-title-link" href="/2018/11/30/Linux/Linux/" itemprop="url">Linux</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-30T15:32:45+08:00">
+                2018-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/30/Linux/Linux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/30/Linux/Linux/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Linux-SSH-Mac"><a href="#Linux-SSH-Mac" class="headerlink" title="Linux SSH Mac"></a>Linux SSH Mac</h1><h4 id="1-下载-淘宝-用户名dongguakeji-密码dongguakeji"><a href="#1-下载-淘宝-用户名dongguakeji-密码dongguakeji" class="headerlink" title="1.下载 淘宝 用户名dongguakeji 密码dongguakeji"></a>1.下载 淘宝 用户名dongguakeji 密码dongguakeji</h4><h4 id="2-mac远程访问SSH"><a href="#2-mac远程访问SSH" class="headerlink" title="2.mac远程访问SSH"></a>2.mac远程访问SSH</h4><ul>
+<li>不再sudoers文件中此事将被报告 （dongguakeji密码不能使用）–解决 使用root登陆分配权限</li>
+<li><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxq4m2knj2j30pj0j5jyi.jpg" alt="image-20181130153551168"></li>
+</ul>
+<h4 id="3-使用root登陆-远程SSH连接Linux-centos7"><a href="#3-使用root登陆-远程SSH连接Linux-centos7" class="headerlink" title="3.使用root登陆 远程SSH连接Linux centos7"></a>3.使用root登陆 远程SSH连接Linux centos7</h4><ul>
+<li>使用root访问 关闭防火墙 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.你要改用iptables的话，需要安装iptables服务</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><strong> sudo yum install iptables-services </strong></li>
+</ul>
+</blockquote>
+<p>CentOS 7.0默认使用的是firewall作为防火墙，这里改为 iptables防火墙步骤。 </p>
+<blockquote>
+<ul>
+<li>firewall-cmd –state.  #查看默认防火墙状态 </li>
+</ul>
+</blockquote>
+<p> （关闭后显示notrunning，开启后显示running） </p>
+<p>[root@localhost ~]#firewall-cmd –state </p>
+<p>not running </p>
+<hr>
+<ul>
+<li><p>关闭防火墙： </p>
+</li>
+<li><blockquote>
+<p> systemctl stop firewalld.service #停止firewall </p>
+</blockquote>
+</li>
+<li><blockquote>
+<p> systemctl disable firewalld.service #禁止firewall开机启动 </p>
+</blockquote>
+</li>
+</ul>
+<p>4.Linux下ip设置</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_34924407/article/details/79967650" target="_blank" rel="noopener">https://blog.csdn.net/qq_34924407/article/details/79967650</a>.  Centos7中查看IP命令：IP add</p>
+<p><a href="https://blog.csdn.net/tuntun1120/article/details/65443757" target="_blank" rel="noopener">https://blog.csdn.net/tuntun1120/article/details/65443757</a> 虚拟机下CentOS7开启SSH连接</p>
+</blockquote>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxq4sek0hqj30dt0es0zf.jpg" alt="image-20181130154156372"></p>
+<h4 id="4-切换网络模式选择-然后重新编辑"><a href="#4-切换网络模式选择-然后重新编辑" class="headerlink" title="4.切换网络模式选择 然后重新编辑"></a>4.切换网络模式选择 然后重新编辑</h4><h2 id="⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台"><a href="#⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台" class="headerlink" title="⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台"></a>⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台</h2><h2 id="然后重新编辑IP-变成下面这样"><a href="#然后重新编辑IP-变成下面这样" class="headerlink" title="然后重新编辑IP 变成下面这样"></a>然后重新编辑IP 变成下面这样</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxq4uvev0uj30ni0dutm8.jpg" alt="image-20181130154418731"></p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>1.先检查SSH 服务开没开</p>
+<p>2.检查22 端口的状态</p>
+<p>3.看网络互相通过ping看看是不是有64type的回应</p>
+<p>4。资料在收藏夹里面 还有慕课的视频Linux</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/Docker/Docker上传云服务器/" itemprop="url">Docker上传到腾讯云服务器上</a></h1>
         
 
         <div class="post-meta">
@@ -319,8 +494,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/11/Docker/Docker加速/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker加速/" itemprop="commentCount"></span>
+                <a href="/2018/11/11/Docker/Docker上传云服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker上传云服务器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,25 +525,84 @@
       
         
           
-            <p>emmm。。。为什么图片可以使用 网上的地址？</p>
-<p><a href="https://www.jianshu.com/p/94c6e44ebd3c" target="_blank" rel="noopener">https://www.jianshu.com/p/94c6e44ebd3c</a></p>
-<p>不要使用https前缀， 负责会提示证书错误，</p>
-<blockquote>
+            <blockquote>
+<p><a href="https://cloud.tencent.com/document/product/457/9117" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/457/9117</a> 腾讯云</p>
+<p><a href="https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194</a> 小D课堂</p>
 </blockquote>
-<h1 id="Version-requires"><a href="#Version-requires" class="headerlink" title="Version requires:"></a>Version requires:</h1><h2 id="Docker-for-MAC-version"><a href="#Docker-for-MAC-version" class="headerlink" title="- Docker for MAC version:"></a>- Docker for MAC version:</h2><p><img src="https:////upload-images.jianshu.io/upload_images/10517010-1617f9ee81621ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/569/format/webp" alt="img"></p>
-<p>docker version</p>
-<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS:"></a>STEPS:</h1><p>- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors</p>
-<p>添加：</p>
-<blockquote>
-<p><a href="http://registry.docker-cn.com" target="_blank" rel="noopener">http://registry.docker-cn.com</a></p>
+<p>先选择容器服务 </p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy0o6vzw9hj307h0j3whv.jpg" alt="image-20181209182853099"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login --username=[username] ccr.ccs.tencentyun.com 	</span><br><span class="line">sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 	</span><br><span class="line">100007660104sad</span><br></pre></td></tr></table></figure>
+<p>username:腾讯云账号，开通时已注册。输入密码后即登录完成。<img src="/Users/apple/Desktop/屏幕快照 2018-11-15 下午5.44.02.png" alt="屏幕快照 2018-11-15 下午5.44.02"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1otnpx4j30dk07d0t3.jpg" alt="image-20181115182444968"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1oukn07j30dv08qjrn.jpg" alt="image-20181115182457396"></p>
+<p>##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成</p>
+<p>####密码输入的时候先输入电脑root密码 z</p>
+<p>###再输入密码yhp836143</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1ov48d5j30q906vwfg.jpg" alt="image-20181115182649857"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ot5895j30u1027aak.jpg" alt="image-20181115182725221"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag  5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<p>密码输入 z 因为是sudo</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ovh1gkj30o80etgp4.jpg" alt="image-20181115183150585"></p>
+<h3 id="使用镜像—-下载镜像"><a href="#使用镜像—-下载镜像" class="headerlink" title="使用镜像—-下载镜像"></a>使用镜像—-下载镜像</h3><blockquote>
+<p>小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 </p>
 </blockquote>
-<p>Note：不要使用https前缀， 负责会提示证书错误，</p>
 <blockquote>
-<p>“registry-mirrors” :</p>
-<p>  No certs for egitstry.docker.com</p>
+<p>登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境</p>
 </blockquote>
-<p>导致dockerrestart failed。</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/10517010-37b53711599fae68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498/format/webp" alt="img"></p>
+<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ou52xtj30nu0bnq5d.jpg" alt="image-20181115185616768"></p>
+<p>在本机上远程腾讯云 搭建Docker环境</p>
+<p>登录到镜像仓库，需输入密码。</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username=[username] ccr.ccs.tencentyun.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下载镜像。</p>
+<ul>
+<li>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h1><blockquote>
+<p> <a href="https://www.w3cschool.cn/kxqhmy/suzagdn1.html" target="_blank" rel="noopener">https://www.w3cschool.cn/kxqhmy/suzagdn1.html</a></p>
+</blockquote>
+<p>查看是否存在进程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux |grep docker1</span><br></pre></td></tr></table></figure>
+<p>停止进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo service docker stop1</span><br></pre></td></tr></table></figure>
+<p>重启docker：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dockerd</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="Docker在云服务器上的安装"><a href="#Docker在云服务器上的安装" class="headerlink" title="Docker在云服务器上的安装"></a>Docker在云服务器上的安装</h1><blockquote>
+<p><a href="https://www.jianshu.com/p/ea3078dae4fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ea3078dae4fb</a> 简书 </p>
+</blockquote>
+<p>1.登陆到服务器上面 通过终端 </p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1osadhhj30x402rmxk.jpg" alt="image-20181117182934398"></p>
+<p>或者云主机登陆</p>
+<p>2.开始操作</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1oslvouj313t03adhb.jpg" alt="image-20181117183003800"></p>
+<p>3.<a href="https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions</a> 官网</p>
+<blockquote>
+<p> Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装</p>
+</blockquote>
+<p>Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span><br></pre></td></tr></table></figure>
+<p>docker -d -p 8888：8080 </p>
+<p>先分配角色。在启动Docker </p>
+<p>如果端口播被占用了 先关闭Docker</p>
+<p>sudo service docker stop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
+<p>在启动Doccur</p>
+<p>service docker start</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
+<hr>
+<p>大佬指教。不是locaohostg 192.168.2.123</p>
+<p>是公网ip腾讯公网的ip–118.89.28.213</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ovw8kwj30d603emxg.jpg" alt="image-20181118104713199"></p>
+<p>加镜像名啊 兄die</p>
 
           
         
@@ -1553,7 +1787,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker上传云服务器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker加速/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -1572,7 +1806,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/11/Docker/Docker上传云服务器/" itemprop="url">Docker上传到腾讯云服务器上</a></h1>
+                <a class="post-title-link" href="/2018/11/11/Docker/Docker加速/" itemprop="url">Docker镜像加速</a></h1>
         
 
         <div class="post-meta">
@@ -1603,8 +1837,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/11/Docker/Docker上传云服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker上传云服务器/" itemprop="commentCount"></span>
+                <a href="/2018/11/11/Docker/Docker加速/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker加速/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1634,84 +1868,25 @@
       
         
           
-            <blockquote>
-<p><a href="https://cloud.tencent.com/document/product/457/9117" target="_blank" rel="noopener">https://cloud.tencent.com/document/product/457/9117</a> 腾讯云</p>
-<p><a href="https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194</a> 小D课堂</p>
-</blockquote>
-<p>先选择容器服务 </p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy0o6vzw9hj307h0j3whv.jpg" alt="image-20181209182853099"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login --username=[username] ccr.ccs.tencentyun.com 	</span><br><span class="line">sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 	</span><br><span class="line">100007660104sad</span><br></pre></td></tr></table></figure>
-<p>username:腾讯云账号，开通时已注册。输入密码后即登录完成。<img src="/Users/apple/Desktop/屏幕快照 2018-11-15 下午5.44.02.png" alt="屏幕快照 2018-11-15 下午5.44.02"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxv1otnpx4j30dk07d0t3.jpg" alt="image-20181115182444968"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1oukn07j30dv08qjrn.jpg" alt="image-20181115182457396"></p>
-<p>##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成</p>
-<p>####密码输入的时候先输入电脑root密码 z</p>
-<p>###再输入密码yhp836143</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1ov48d5j30q906vwfg.jpg" alt="image-20181115182649857"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ot5895j30u1027aak.jpg" alt="image-20181115182725221"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker tag  5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line">$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
-<p>密码输入 z 因为是sudo</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ovh1gkj30o80etgp4.jpg" alt="image-20181115183150585"></p>
-<h3 id="使用镜像—-下载镜像"><a href="#使用镜像—-下载镜像" class="headerlink" title="使用镜像—-下载镜像"></a>使用镜像—-下载镜像</h3><blockquote>
-<p>小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 </p>
-</blockquote>
+            <p>emmm。。。为什么图片可以使用 网上的地址？</p>
+<p><a href="https://www.jianshu.com/p/94c6e44ebd3c" target="_blank" rel="noopener">https://www.jianshu.com/p/94c6e44ebd3c</a></p>
+<p>不要使用https前缀， 负责会提示证书错误，</p>
 <blockquote>
-<p>登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境</p>
 </blockquote>
-<h2 id="https-cloud-tencent-com-developer-labs-lab-10054-console"><a href="#https-cloud-tencent-com-developer-labs-lab-10054-console" class="headerlink" title="### https://cloud.tencent.com/developer/labs/lab/10054/console"></a>### <a href="https://cloud.tencent.com/developer/labs/lab/10054/console" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10054/console</a></h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ou52xtj30nu0bnq5d.jpg" alt="image-20181115185616768"></p>
-<p>在本机上远程腾讯云 搭建Docker环境</p>
-<p>登录到镜像仓库，需输入密码。</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username=[username] ccr.ccs.tencentyun.com</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>下载镜像。</p>
-<ul>
-<li>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#⭐️Docker：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h1><blockquote>
-<p> <a href="https://www.w3cschool.cn/kxqhmy/suzagdn1.html" target="_blank" rel="noopener">https://www.w3cschool.cn/kxqhmy/suzagdn1.html</a></p>
-</blockquote>
-<p>查看是否存在进程：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux |grep docker1</span><br></pre></td></tr></table></figure>
-<p>停止进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo service docker stop1</span><br></pre></td></tr></table></figure>
-<p>重启docker：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dockerd</span><br></pre></td></tr></table></figure>
-<hr>
-<hr>
-<hr>
-<hr>
-<h1 id="Docker在云服务器上的安装"><a href="#Docker在云服务器上的安装" class="headerlink" title="Docker在云服务器上的安装"></a>Docker在云服务器上的安装</h1><blockquote>
-<p><a href="https://www.jianshu.com/p/ea3078dae4fb" target="_blank" rel="noopener">https://www.jianshu.com/p/ea3078dae4fb</a> 简书 </p>
-</blockquote>
-<p>1.登陆到服务器上面 通过终端 </p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1osadhhj30x402rmxk.jpg" alt="image-20181117182934398"></p>
-<p>或者云主机登陆</p>
-<p>2.开始操作</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxv1oslvouj313t03adhb.jpg" alt="image-20181117183003800"></p>
-<p>3.<a href="https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions</a> 官网</p>
+<h1 id="Version-requires"><a href="#Version-requires" class="headerlink" title="Version requires:"></a>Version requires:</h1><h2 id="Docker-for-MAC-version"><a href="#Docker-for-MAC-version" class="headerlink" title="- Docker for MAC version:"></a>- Docker for MAC version:</h2><p><img src="https:////upload-images.jianshu.io/upload_images/10517010-1617f9ee81621ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/569/format/webp" alt="img"></p>
+<p>docker version</p>
+<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS:"></a>STEPS:</h1><p>- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors</p>
+<p>添加：</p>
 <blockquote>
-<p> Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装</p>
+<p><a href="http://registry.docker-cn.com" target="_blank" rel="noopener">http://registry.docker-cn.com</a></p>
 </blockquote>
-<p>Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span><br></pre></td></tr></table></figure>
-<p>docker -d -p 8888：8080 </p>
-<p>先分配角色。在启动Docker </p>
-<p>如果端口播被占用了 先关闭Docker</p>
-<p>sudo service docker stop</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
-<p>在启动Doccur</p>
-<p>service docker start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
-<hr>
-<p>大佬指教。不是locaohostg 192.168.2.123</p>
-<p>是公网ip腾讯公网的ip–118.89.28.213</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ovw8kwj30d603emxg.jpg" alt="image-20181118104713199"></p>
-<p>加镜像名啊 兄die</p>
+<p>Note：不要使用https前缀， 负责会提示证书错误，</p>
+<blockquote>
+<p>“registry-mirrors” :</p>
+<p>  No certs for egitstry.docker.com</p>
+</blockquote>
+<p>导致dockerrestart failed。</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/10517010-37b53711599fae68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498/format/webp" alt="img"></p>
 
           
         
@@ -4229,234 +4404,6 @@ https://blog.csdn.net/liyuejin/article/details/78410586
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Docker/Docker-Idea/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/07/Docker/Docker-Idea/" itemprop="url">Docker-Idea</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T15:39:20+08:00">
-                2018-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/07/Docker/Docker-Idea/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/07/Docker/Docker-Idea/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###1.Docker 在Intellij中的使用</p>
-<ul>
-<li><p>Machine的安装</p>
-</li>
-<li><p>compose的安装</p>
-</li>
-<li><p>Docker的配置</p>
-<p><strong>首先学习什么东西都要用官网的东西</strong></p>
-<p><strong>安装Docker的插件-看网上教程</strong></p>
-<p><strong>看Docker插件的官网</strong> <a href="https://www.jetbrains.com/help/idea/docker.html" target="_blank" rel="noopener">hrer</a></p>
-<blockquote>
-<p>学习英文。任何东西官网都用详细说明的</p>
-</blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 学习Docker</li>
-<li style="list-style: none"><input type="checkbox" checked> 学习SpringBoot整合Docker</li>
-<li style="list-style: none"><input type="checkbox" checked> 学习运维</li>
-</ul>
-<p><strong>下面开始Docker的学习</strong></p>
-<p>1.现在插件</p>
-<p>2.看网址的教程</p>
-<p>3.安装machin和compose</p>
-<blockquote>
-<p>machine和compose的安装参考</p>
-<p>1.Gitbook书</p>
-<p><a href="https://yeasy.gitbooks.io/docker_practice/content/compose/install.html" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/content/compose/install.html</a></p>
-<p>2。官方文档（为主）</p>
-<p><a href="https://docs.docker.com/machine/install-machine/" target="_blank" rel="noopener">https://docs.docker.com/machine/install-machine/</a> ⭐️</p>
-<p>（为什么每次都要重新下载dockermachine）</p>
-</blockquote>
-<blockquote>
-<p>Docker-machine env 不能执行二进制文件 首先要 重新下载Dockermachihe</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;</span><br><span class="line">  curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/usr/local/bin/docker-machine &amp;&amp;</span><br><span class="line">  chmod +x /usr/local/bin/docker-machine</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>3.Github</p>
-<p><a href="https://github.com/docker/machine/releases" target="_blank" rel="noopener">https://github.com/docker/machine/releases</a></p>
-<p><a href="https://github.com/docker/machine" target="_blank" rel="noopener">https://github.com/docker/machine</a></p>
-</blockquote>
-<h1 id="2-有些东西放在了云收藏里面"><a href="#2-有些东西放在了云收藏里面" class="headerlink" title="2.有些东西放在了云收藏里面"></a>2.有些东西放在了云收藏里面</h1><h6 id="Docker的用户名是2018112"><a href="#Docker的用户名是2018112" class="headerlink" title="Docker的用户名是2018112"></a>Docker的用户名是2018112</h6><p>#####安装Docker插件要开VPN 还有访问Gitbub也要开VPN wiredes的</p>
-<h6 id="安装Docker要安装DookerToolBox"><a href="#安装Docker要安装DookerToolBox" class="headerlink" title="安装Docker要安装DookerToolBox"></a>安装Docker要安装DookerToolBox</h6></li>
-</ul>
-<h1 id="3-Docker"><a href="#3-Docker" class="headerlink" title="3.Docker"></a>3.Docker</h1><p>  ！！Docker真是一个恐怖的东西</p>
-<p>  ######Docker的学习资源GitBook里面的Docker的附录部分</p>
-<blockquote>
-<p><a href="https://blog.lab99.org/post/docker-2016-07-14-faq.html" target="_blank" rel="noopener">https://blog.lab99.org/post/docker-2016-07-14-faq.html</a></p>
-</blockquote>
-<h4 id="1-无独有偶通过Docker-SpirngBoot的学习了解了TCP-socker-Engine-API-URL的填写"><a href="#1-无独有偶通过Docker-SpirngBoot的学习了解了TCP-socker-Engine-API-URL的填写" class="headerlink" title="1.无独有偶通过Docker-SpirngBoot的学习了解了TCP socker Engine API URL的填写"></a>1.无独有偶通过Docker-SpirngBoot的学习了解了TCP socker Engine API URL的填写</h4><blockquote>
-<p> Docker开启远程访问这是过程中产生的问题 安装了socket 以后想办法删除</p>
-<p>PS：Docker服务中进程间通信通过/var/run/docker.sock实现，默认服务不提供监听端口，因此使用docker remote api 需要手动绑定端口。方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; `# service docker stop``# docker -d -H unix:``///var/run/docker.sock -H tcp://0.0.0.0:2375`</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>  ###2.点击+号添加一个docker配置，输入Name和Engine API URL，URL是docker服务地址，需要docker开启远程连接功能。CentOS中在docker启动参数里添加如下配置即可开启远程连接。</p>
-<pre><code>-H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
-</code></pre><hr>
-<p>   <em>下面是docker在idea中的安装</em></p>
-<ul>
-<li><p>clouds里面没有Docker。在Docker中配置 TCP：tcp：//127.0.0.1:2376</p>
-</li>
-<li><p>注意这个是通过终端命令得到的</p>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker-machine env cloudcomb</span><br><span class="line">export DOCKER_TLS_VERIFY=&quot;1&quot;</span><br><span class="line">export DOCKER_HOST=&quot;tcp://192.168.99.101:2376&quot;</span><br><span class="line">export DOCKER_CERT_PATH=&quot;/Users/apple/.docker/machine/machines/cloudcomb&quot;</span><br><span class="line">export DOCKER_MACHINE_NAME=&quot;cloudcomb&quot;</span><br><span class="line"># Run this command to configure your shell:</span><br><span class="line"># eval $(docker-machine env cloudcomb)</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxv1ndoklwj30u602yt9n.jpg" alt="image-20181107213000670"></p>
-</li>
-<li><p>将前面的端口换成本地的 tcp:127.0.0.1:2376</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1nbu2afj30i90f8751.jpg" alt="image-20181107213056424"></p>
-</li>
-</ul>
-<ul>
-<li style="list-style: none"><input type="checkbox"> emm睡一觉起来VPN打开要等一会</li>
-<li style="list-style: none"><input type="checkbox"> <img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxv1ncn0rpj30hz0b4aal.jpg" alt="image-20181108064320954"></li>
-</ul>
-<p>在终端输入dockerversion</p>
-<p>docker-machine env—Host is not running</p>
-<h5 id="学习资源：通过Github的搜索功能🔍-发现一些学习资料"><a href="#学习资源：通过Github的搜索功能🔍-发现一些学习资料" class="headerlink" title="#学习资源：通过Github的搜索功能🔍 发现一些学习资料"></a>#学习资源：通过Github的搜索功能🔍 发现一些学习资料</h5><p><a href="https://www.jetbrains.com/help/idea/docker.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/idea/docker.html</a></p>
-<p>alip1<code>sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FROM java:8</span><br><span class="line">VOLUME /tmp</span><br><span class="line"></span><br><span class="line">sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest</span><br><span class="line"></span><br><span class="line">COPY target/tran4spd-1.0-SNAPSHOT.jar resource.jar</span><br><span class="line">RUN bash -c &quot;touch /resource.jar&quot;</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;resource.jar&quot;]</span><br><span class="line"></span><br><span class="line"># docker run -d -p 18080:8099 --name docker-resource leesia/resource:1.0</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -4509,7 +4456,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
