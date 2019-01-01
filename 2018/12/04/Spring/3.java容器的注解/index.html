@@ -79,33 +79,29 @@
 
 
 
-<meta name="description" content="问大家一个问题 Spring中注册的bean 在xml中配置 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢">
+<meta name="description" content="https://www.imooc.com/learn/196 后续更新       1.实战     总结">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Spring依赖注入的一些理解">
-<meta property="og:url" content="http://yoursite.com/2018/12/31/Spring/Spring依赖注入/index.html">
+<meta property="og:title" content="基于java的容器注解 @Bean⭐️">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/Spring/3.java容器的注解/index.html">
 <meta property="og:site_name" content="Freemana2017">
-<meta property="og:description" content="问大家一个问题 Spring中注册的bean 在xml中配置 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢">
+<meta property="og:description" content="https://www.imooc.com/learn/196 后续更新       1.实战     总结">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6f1kqabj30ay074q3m.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6f94ci7j30h003mt9x.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fdbss4j306u01hjrd.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fkgl8nj30g807bmyp.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ftrupnj30fu0ej409.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6gtoi1jj30h10bjgng.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6gzslxmj30gb0dvq4j.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6h8uvmlj30fu0ett9x.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6heo3jfj30g50exabn.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6hqvp8vj30tw04wgot.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ipntk3j30oz0amth2.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6j3r701j30qi0cctgd.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6l2y3lmj30rv2lnh6x.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6pky66bj30sl0ltak7.jpg">
-<meta property="og:updated_time" content="2018-12-31T12:08:48.229Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuv0qprn8j30nv0dcgre.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuv2d19skj30oi0cy7ak.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuv43u23nj30ny0dc79d.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvp6dsvzj30cs02tjrn.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuvpctkgrj30g304r75k.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvrdwi46j30jw075gof.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvs2pwwcj30na07dtcj.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvslg7l2j30ru03tgnb.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuvswk6mqj30rj040jt0.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvtib226j30px107zvv.jpg">
+<meta property="og:updated_time" content="2019-01-01T03:16:32.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Spring依赖注入的一些理解">
-<meta name="twitter:description" content="问大家一个问题 Spring中注册的bean 在xml中配置 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6f1kqabj30ay074q3m.jpg">
+<meta name="twitter:title" content="基于java的容器注解 @Bean⭐️">
+<meta name="twitter:description" content="https://www.imooc.com/learn/196 后续更新       1.实战     总结">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuv0qprn8j30nv0dcgre.jpg">
 
 
 
@@ -135,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/31/Spring/Spring依赖注入/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/04/Spring/3.java容器的注解/">
 
 
 
 
 
-  <title>关于Spring依赖注入的一些理解 | Freemana2017</title>
+  <title>基于java的容器注解 @Bean⭐️ | Freemana2017</title>
   
 
 
@@ -288,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/31/Spring/Spring依赖注入/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/Spring/3.java容器的注解/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -305,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于Spring依赖注入的一些理解</h1>
+          <h1 class="post-title" itemprop="name headline">基于java的容器注解 @Bean⭐️</h1>
         
 
         <div class="post-meta">
@@ -317,8 +313,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-31T19:57:10+08:00">
-                2018-12-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T17:46:45+08:00">
+                2018-12-04
               </time>
             
 
@@ -336,8 +332,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/31/Spring/Spring依赖注入/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/31/Spring/Spring依赖注入/" itemprop="commentCount"></span>
+                <a href="/2018/12/04/Spring/3.java容器的注解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/Spring/3.java容器的注解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -366,22 +362,21 @@
 
       
         <blockquote>
-<p>问大家一个问题 Spring中注册的bean 在xml中配置<bean id="xxx" class="com.xxx.xxxx"> 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢</bean></p>
+<p><a href="https://www.imooc.com/learn/196" target="_blank" rel="noopener">https://www.imooc.com/learn/196</a> 后续更新</p>
 </blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6f1kqabj30ay074q3m.jpg" alt="image-20181231195838700"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6f94ci7j30h003mt9x.jpg" alt="image-20181231195850611"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fdbss4j306u01hjrd.jpg" alt="image-20181231195857665"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fkgl8nj30g807bmyp.jpg" alt="image-20181231195908137"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ftrupnj30fu0ej409.jpg" alt="image-20181231195923728"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6gtoi1jj30h10bjgng.jpg" alt="image-20181231200021653"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6gzslxmj30gb0dvq4j.jpg" alt="image-20181231200031517"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6h8uvmlj30fu0ett9x.jpg" alt="image-20181231200042180"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6heo3jfj30g50exabn.jpg" alt="image-20181231200055212"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6hqvp8vj30tw04wgot.jpg" alt="image-20181231200114736"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ipntk3j30oz0amth2.jpg" alt="image-20181231200210436"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6j3r701j30qi0cctgd.jpg" alt="image-20181231200233053"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6l2y3lmj30rv2lnh6x.jpg" alt="image-20181231200426578"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6pky66bj30sl0ltak7.jpg" alt="image-20181231200846542"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuv0qprn8j30nv0dcgre.jpg" alt="image-20181204175147599"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuv2d19skj30oi0cy7ak.jpg" alt="image-20181204175321123"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuv43u23nj30ny0dc79d.jpg" alt="image-20181204175502296"></p>
+<hr>
+<h1 id="1-实战"><a href="#1-实战" class="headerlink" title="1.实战"></a>1.实战</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvp6dsvzj30cs02tjrn.jpg" alt="image-20181204181516838"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxuvpctkgrj30g304r75k.jpg" alt="image-20181204181526748"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvrdwi46j30jw075gof.jpg" alt="image-20181204181724768"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvs2pwwcj30na07dtcj.jpg" alt="image-20181204181804335"></p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvslg7l2j30ru03tgnb.jpg" alt="image-20181204181833868"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuvswk6mqj30rj040jt0.jpg" alt="image-20181204181851831"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuvtib226j30px107zvv.jpg" alt="image-20181204181926966"></p>
 
       
     </div>
@@ -412,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/25/RabbitMQ/Rabbit MQ/" rel="next" title="RabbitMQ 千峰教育笔记">
-                <i class="fa fa-chevron-left"></i> RabbitMQ 千峰教育笔记
+              <a href="/2018/12/04/Spring/5.bean的配置作用域/" rel="next" title="Spring Bean装配 基于xml形式">
+                <i class="fa fa-chevron-left"></i> Spring Bean装配 基于xml形式
               </a>
             
           </div>
@@ -421,6 +416,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/04/java基础/反射/" rel="prev" title="java反射">
+                java反射 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -482,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -545,6 +553,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-实战"><span class="nav-number">1.</span> <span class="nav-text">1.实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -730,9 +754,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/12/31/Spring/Spring依赖注入/';
-          this.page.identifier = '2018/12/31/Spring/Spring依赖注入/';
-          this.page.title = '关于Spring依赖注入的一些理解';
+          this.page.url = 'http://yoursite.com/2018/12/04/Spring/3.java容器的注解/';
+          this.page.identifier = '2018/12/04/Spring/3.java容器的注解/';
+          this.page.title = '基于java的容器注解 @Bean⭐️';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[关于Spring依赖注入的一些理解]]></title>
-    <url>%2F2018%2F12%2F31%2FSpring%2FSpring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%2F</url>
+    <url>%2F2018%2F12%2F31%2FSpring%2F2.Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%2F</url>
     <content type="text"><![CDATA[问大家一个问题 Spring中注册的bean 在xml中配置 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢]]></content>
       <tags>
         <tag>Spring</tag>
@@ -120,8 +120,8 @@
   </entry>
   <entry>
     <title><![CDATA[Spring IOC 及bean容器 注入]]></title>
-    <url>%2F2018%2F12%2F10%2FSpring%2FSpringBean%20%E8%A3%85%E9%85%8D%2F</url>
-    <content type="text"><![CDATA[##Spring Bean 装配之Bean的定义及其作用域的注解实现 &lt; context:component-scan&gt; 例子123&lt;context:component-scan base-package="bean.BeanAnnotation"&gt; &lt;context:component-scan/&gt; 1234567package bean;@Componentpublic class BeanAnnotation &#123; public void say()&#123; System,out.print("Hello Spring"); &#125;&#125; 1234 @Test BeanAnnotation bean=super.getBean("beanAnnotation");//类名小写 bean.say("This is Tese");&#125;]]></content>
+    <url>%2F2018%2F12%2F10%2FSpring%2F4.SpringBean%20%E8%A3%85%E9%85%8D%2F</url>
+    <content type="text"><![CDATA[1 Spring Bean 装配之Bean的定义及其作用域的注解实现 ​ &lt; context:component-scan&gt; 例子123&lt;context:component-scan base-package="bean.BeanAnnotation"&gt; &lt;context:component-scan/&gt; 1234567package bean;@Componentpublic class BeanAnnotation &#123; public void say()&#123; System,out.print("Hello Spring"); &#125;&#125; 1234 @Test BeanAnnotation bean=super.getBean("beanAnnotation");//类名小写 bean.say("This is Tese");&#125; 2 Spring装配 基于java容器的注解说明 @importResource和@Value 123456789public class MyDriverManager &#123; public MyDriverManager(String url, String userName, String password) &#123; System.out.print(url); System.out.print(userName); System.out.print(password); &#125;&#125; 123456789101112131415161718@Configuration@ImportResource("classpath:config.xml")public class StoreConfig &#123; @Value("$&#123;jdbc.url&#125;") private String url; @Value("$&#123;jdbc.username&#125;") private String username; @Value("$&#123;jdbc.password&#125;") private String password; @Bean public MyDriverManager myDriverManager() &#123; return new MyDriverManager(url, username, password); &#125;&#125; 12345678public class Test &#123; @Test public void testMyDreiverManager() &#123; MyDriverManager myDriverManager = super.getBean("myDriverManager"); myDriverManager.getClass().getName(); &#125;&#125; 123jdbc.password=rootjdbc.url=127.0.0.1jdbc.username=root 3@Bean 和@Scope 4基于泛型的自动装配 Aware 和Autowiring]]></content>
       <tags>
         <tag>Spring</tag>
       </tags>
@@ -193,8 +193,8 @@
     <content type="text"><![CDATA[java反射机制完全详解#1.反射源头 —Class类 1.1 取得Class类对象 ⭐️1234567public class Demo &#123; public static void main(String[] args) &#123; Date date = new Date(); Class&lt;? extends Date&gt; class1 = date.getClass();//取得class类对象 System.out.println(class1);//class java.util.Date &#125;&#125; 12345678//利用类.class获得反射的是实例划对象public class Demo1 &#123; public static void main(String[] args) &#123; Date date = new Date(); Class&lt;? extends Date&gt; class1 = java.util.Date.class ;//取得class类对象 System.out.println(class1);//class java.util.Date &#125;&#125; 12345678//利用Class类提供的方法实例化对向public class Demo2 &#123; public static void main(String[] args) throws ClassNotFoundException &#123; Class&lt;?&gt; forName = Class.forName("java.util.Date"); System.out.println(forName);//class java.util.Date &#125;&#125; #2.利用反射实例化对象 2.1public T newInstacne ⭐️⭐️123456789101112131415161718public class Demo3 &#123; public Demo3() &#123; System.out.println("^^^^"); &#125; public String toString() &#123; return "######"; &#125;&#125;-------------------------------------------------------------------------------- public class Demo4 &#123; public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException &#123; Class&lt;?&gt; class1 = Class.forName("反射.Demo3"); Object object = class1.newInstance();// 实例化对象 // Demo3 demo3=new Demo3();//调用无参构造 System.out.println(class1); System.out.println(object); &#125;&#125; 2.2。工厂设计模式 3.取得类继承结构 123456789101112131415161718192021222324252627public class Demo3 extends Object implements Serializable &#123; public Demo3() &#123; System.out.println("^^^^"); &#125; public String toString() &#123; return "######"; &#125;&#125;-------------------------------------------------------------------------------- public class Demo4 &#123; public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException &#123; Class&lt;?&gt; class1 = Class.forName("反射.Demo3"); class1.getName();// 包名.类名 class1.getPackage();// package 包名 class1.getPackage().getName();// 包名 class1.getSimpleName();// 类名 class1.getSuperclass().getName();// 父类的包名 Class&lt;?&gt;[] icls = class1.getInterfaces();// [Ljava.lang.Class;@6bf256fa for (int i = 0; i &lt; icls.length; i++) &#123; System.out.println(icls[i].getSimpleName());//Serializable &#125; 4.反射取得构造方法（invoke） 5.反射取得方法 ⭐️⭐️⭐️ 1234567891011121314public class Demo5 &#123; public static void main(String[] args) throws ClassNotFoundException &#123; getMethodDemo(); &#125; // 获取指定Class中的公共函数 public static void getMethodDemo() throws ClassNotFoundException &#123; Class&lt;?&gt; clazz = Class.forName(&quot;反射.Persion&quot;); Method[] methods = clazz.getMethods(); for (int i = 0; i &lt; methods.length; i++) &#123; System.out.println(methods[i]); &#125; &#125; 6.Invoke –]]></content>
   </entry>
   <entry>
-    <title><![CDATA[基于java的容器注解 @Bean]]></title>
-    <url>%2F2018%2F12%2F04%2FSpring%2Fjava%E5%AE%B9%E5%99%A8%E7%9A%84%E6%B3%A8%E8%A7%A3%2F</url>
+    <title><![CDATA[基于java的容器注解 @Bean⭐️]]></title>
+    <url>%2F2018%2F12%2F04%2FSpring%2F3.java%E5%AE%B9%E5%99%A8%E7%9A%84%E6%B3%A8%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[https://www.imooc.com/learn/196 后续更新 1.实战 总结]]></content>
       <tags>
         <tag>Spring</tag>
@@ -202,7 +202,7 @@
   </entry>
   <entry>
     <title><![CDATA[Spring Bean装配 基于xml形式]]></title>
-    <url>%2F2018%2F12%2F04%2FSpring%2Fbean%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BD%9C%E7%94%A8%E5%9F%9F%2F</url>
+    <url>%2F2018%2F12%2F04%2FSpring%2F5.bean%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BD%9C%E7%94%A8%E5%9F%9F%2F</url>
     <content type="text"><![CDATA[Spring Awre 123456789public class MoocApplicationContext implements ApplicationContextAware &#123; @Override public void setApplicationContext(ApplicationContext applicationContext) throws BeansException &#123; System.out.println("MoocApplicationContext : " + applicationContext.getBean("moocApplicationContext").hashCode()); &#125; &#125; 1234567891011121314151617public class MoocBeanName implements BeanNameAware, ApplicationContextAware &#123; private String beanName; @Override public void setBeanName(String name) &#123; this.beanName = name; System.out.println("MoocBeanName : " + name); &#125; @Override public void setApplicationContext(ApplicationContext applicationContext) throws BeansException &#123; System.out.println("setApplicationContext : " + applicationContext.getBean(this.beanName).hashCode()); &#125;&#125; Autowiring 1234567public class AutoWiringDAO &#123; public void say(String word) &#123; System.out.println("AutoWiringDAO : " + word); &#125;&#125; 12345678910111213141516171819public class AutoWiringService &#123; private AutoWiringDAO autoWiringDAO; public AutoWiringService(AutoWiringDAO autoWiringDAO) &#123; System.out.println("AutoWiringService"); this.autoWiringDAO = autoWiringDAO; &#125; public void setAutoWiringDAO(AutoWiringDAO autoWiringDAO) &#123; System.out.println("setAutoWiringDAO"); this.autoWiringDAO = autoWiringDAO; &#125; public void say(String word) &#123; this.autoWiringDAO.say(word); &#125;&#125; 123456789101112&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="constructor"&gt; &lt;bean id="autoWiringService" class="com.imooc.autowiring.AutoWiringService" &gt;&lt;/bean&gt; &lt;bean class="com.imooc.autowiring.AutoWiringDAO" &gt;&lt;/bean&gt; &lt;/beans&gt;]]></content>
       <tags>
         <tag>Spring</tag>
@@ -215,7 +215,7 @@
   </entry>
   <entry>
     <title><![CDATA[Spring IOC 及bean容器 注入]]></title>
-    <url>%2F2018%2F12%2F04%2FSpring%2FSpringIOC%2F</url>
+    <url>%2F2018%2F12%2F04%2FSpring%2F1.SpringIOC%2F</url>
     <content type="text"><![CDATA[1.IOC及Bean容器 ​ 2.Spring 注入 &lt;必须要有get/set方法&gt; &lt; property name=”” ref=””&gt;⭐️ * name= 当前Bean中class所在的类的注入的属性的 成员变量名 * ref=表示引用 下一个的ID值 ** &lt;必须要有构造器方法&gt; 3.实战–IOC3.1传统的new 方式实现接口编程​ 3.2使用Bean开发 3.2 set注入1.Dao层 2.service层 3.3 构造方法注入]]></content>
       <tags>
         <tag>Spring</tag>
@@ -287,6 +287,11 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[Docker镜像加速]]></title>
+    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E5%8A%A0%E9%80%9F%2F</url>
+    <content type="text"><![CDATA[emmm。。。为什么图片可以使用 网上的地址？ https://www.jianshu.com/p/94c6e44ebd3c 不要使用https前缀， 负责会提示证书错误， Version requires:- Docker for MAC version: docker version STEPS:- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors 添加： http://registry.docker-cn.com Note：不要使用https前缀， 负责会提示证书错误， “registry-mirrors” : No certs for egitstry.docker.com 导致dockerrestart failed。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Docker上传到腾讯云服务器上]]></title>
     <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E4%B8%8A%E4%BC%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
     <content type="text"><![CDATA[https://cloud.tencent.com/document/product/457/9117 腾讯云 https://study.163.com/course/courseLearn.htm?courseId=1006018194#/learn/video?lessonId=1053398787&amp;courseId=1006018194 小D课堂 先选择容器服务 123sudo docker login --username=[username] ccr.ccs.tencentyun.com sudo docker login --username=100007660104 ccr.ccs.tencentyun.com 100007660104sad username:腾讯云账号，开通时已注册。输入密码后即登录完成。 ##注意 用户名 不是QQ号登陆的密码而是仓库的用户名 第一次自动生成 ####密码输入的时候先输入电脑root密码 z ###再输入密码yhp836143 12$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号] 12$ sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/freemana2017/atcrod:latest$ sudo docker push ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 密码输入 z 因为是sudo 使用镜像—-下载镜像 小D课堂 第62讲 mac远程登陆腾讯云服务器 然后在腾讯云服务器上使用push命令拉去镜像 然后使用run命令运行镜像 最后改成公网访问镜像 登陆到腾讯云的实验室 安装Docker环境 在本机上登陆SSH 然后搭建Docker环境 ### https://cloud.tencent.com/developer/labs/lab/10054/console 在本机上远程腾讯云 搭建Docker环境 登录到镜像仓库，需输入密码。 1$ sudo docker login --username=[username] ccr.ccs.tencentyun.com 下载镜像。 sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest 1$ sudo docker pull ccr.ccs.tencentyun.com/freemana2017/atcrod:latest ⭐️Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? https://www.w3cschool.cn/kxqhmy/suzagdn1.html 查看是否存在进程： 1$ ps aux |grep docker1 停止进程 1$sudo service docker stop1 重启docker： 1$dockerd Docker在云服务器上的安装 https://www.jianshu.com/p/ea3078dae4fb 简书 1.登陆到服务器上面 通过终端 或者云主机登陆 2.开始操作 3.https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions 官网 Docker的安装方式—腾讯云服务器上面 好像买的系统是Cents的 安装 CentOS 的安装 Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? 1Docker：Cannot connect to the Docker daemon. Is the docker daemon running on this host? docker -d -p 8888：8080 先分配角色。在启动Docker 如果端口播被占用了 先关闭Docker sudo service docker stop 1sudo service docker stop 在启动Doccur service docker start 1service docker start 大佬指教。不是locaohostg 192.168.2.123 是公网ip腾讯公网的ip–118.89.28.213 加镜像名啊 兄die]]></content>
@@ -294,11 +299,6 @@
         <tag>Docker</tag>
         <tag>腾讯云</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Docker镜像加速]]></title>
-    <url>%2F2018%2F11%2F11%2FDocker%2FDocker%E5%8A%A0%E9%80%9F%2F</url>
-    <content type="text"><![CDATA[emmm。。。为什么图片可以使用 网上的地址？ https://www.jianshu.com/p/94c6e44ebd3c 不要使用https前缀， 负责会提示证书错误， Version requires:- Docker for MAC version: docker version STEPS:- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors 添加： http://registry.docker-cn.com Note：不要使用https前缀， 负责会提示证书错误， “registry-mirrors” : No certs for egitstry.docker.com 导致dockerrestart failed。]]></content>
   </entry>
   <entry>
     <title><![CDATA[SpringBoot Docker 小D课堂]]></title>
