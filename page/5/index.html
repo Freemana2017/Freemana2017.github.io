@@ -269,6 +269,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker加速/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/Docker/Docker加速/" itemprop="url">Docker镜像加速</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T11:35:27+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/11/Docker/Docker加速/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker加速/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>emmm。。。为什么图片可以使用 网上的地址？</p>
+<p><a href="https://www.jianshu.com/p/94c6e44ebd3c" target="_blank" rel="noopener">https://www.jianshu.com/p/94c6e44ebd3c</a></p>
+<p>不要使用https前缀， 负责会提示证书错误，</p>
+<blockquote>
+</blockquote>
+<h1 id="Version-requires"><a href="#Version-requires" class="headerlink" title="Version requires:"></a>Version requires:</h1><h2 id="Docker-for-MAC-version"><a href="#Docker-for-MAC-version" class="headerlink" title="- Docker for MAC version:"></a>- Docker for MAC version:</h2><p><img src="https:////upload-images.jianshu.io/upload_images/10517010-1617f9ee81621ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/569/format/webp" alt="img"></p>
+<p>docker version</p>
+<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS:"></a>STEPS:</h1><p>- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors</p>
+<p>添加：</p>
+<blockquote>
+<p><a href="http://registry.docker-cn.com" target="_blank" rel="noopener">http://registry.docker-cn.com</a></p>
+</blockquote>
+<p>Note：不要使用https前缀， 负责会提示证书错误，</p>
+<blockquote>
+<p>“registry-mirrors” :</p>
+<p>  No certs for egitstry.docker.com</p>
+</blockquote>
+<p>导致dockerrestart failed。</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/10517010-37b53711599fae68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498/format/webp" alt="img"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/SpringBoot/Spring Boot尚硅谷/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1357,154 +1505,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.starter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    HelloProperties helloProperties;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HelloProperties <span class="title">getHelloProperties</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helloProperties;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHelloProperties</span><span class="params">(HelloProperties helloProperties)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.helloProperties = helloProperties;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sayHellAtguigu</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helloProperties.getPrefix()+<span class="string">"-"</span> +name + helloProperties.getSuffix();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.starter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.EnableConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ConditionalOnWebApplication</span> <span class="comment">//web应用才生效</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties</span>(HelloProperties.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServiceAutoConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    HelloProperties helloProperties;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HelloService <span class="title">helloService</span><span class="params">()</span></span>&#123;</span><br><span class="line">        HelloService service = <span class="keyword">new</span> HelloService();</span><br><span class="line">        service.setHelloProperties(helloProperties);</span><br><span class="line">        <span class="keyword">return</span> service;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="更多SpringBoot整合示例"><a href="#更多SpringBoot整合示例" class="headerlink" title="更多SpringBoot整合示例"></a>更多SpringBoot整合示例</h1><p><a href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples" target="_blank" rel="noopener">https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/Docker/Docker加速/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/Docker/Docker加速/" itemprop="url">Docker镜像加速</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T11:35:27+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/11/Docker/Docker加速/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/Docker/Docker加速/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>emmm。。。为什么图片可以使用 网上的地址？</p>
-<p><a href="https://www.jianshu.com/p/94c6e44ebd3c" target="_blank" rel="noopener">https://www.jianshu.com/p/94c6e44ebd3c</a></p>
-<p>不要使用https前缀， 负责会提示证书错误，</p>
-<blockquote>
-</blockquote>
-<h1 id="Version-requires"><a href="#Version-requires" class="headerlink" title="Version requires:"></a>Version requires:</h1><h2 id="Docker-for-MAC-version"><a href="#Docker-for-MAC-version" class="headerlink" title="- Docker for MAC version:"></a>- Docker for MAC version:</h2><p><img src="https:////upload-images.jianshu.io/upload_images/10517010-1617f9ee81621ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/569/format/webp" alt="img"></p>
-<p>docker version</p>
-<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS:"></a>STEPS:</h1><p>- Open docker -&gt;preference -&gt;Daemon-&gt;basic-&gt;Registry mirrors</p>
-<p>添加：</p>
-<blockquote>
-<p><a href="http://registry.docker-cn.com" target="_blank" rel="noopener">http://registry.docker-cn.com</a></p>
-</blockquote>
-<p>Note：不要使用https前缀， 负责会提示证书错误，</p>
-<blockquote>
-<p>“registry-mirrors” :</p>
-<p>  No certs for egitstry.docker.com</p>
-</blockquote>
-<p>导致dockerrestart failed。</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/10517010-37b53711599fae68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498/format/webp" alt="img"></p>
 
           
         
