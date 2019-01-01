@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Spring @AspectJ]]></title>
+    <url>%2F2019%2F01%2F01%2FSpring%2F9.%40Aspect%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F01%2FSpring%2F8.Spring%20AOP%20API%20imooc%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Spring Autpwired]]></title>
-    <url>%2F2019%2F01%2F01%2FSpring%2F6.%40Autowire%E6%B3%A8%E8%A7%A3%2F</url>
+    <url>%2F2019%2F01%2F01%2FSpring%2F6.%40Autowird%E6%B3%A8%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[Autowired]]></content>
       <tags>
         <tag>Spring</tag>

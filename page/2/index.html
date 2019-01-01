@@ -269,6 +269,289 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/Git Maven /Git/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/21/Git Maven /Git/" itemprop="url">Git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-21T08:03:47+08:00">
+                2018-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/21/Git Maven /Git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/21/Git Maven /Git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="GitHub创建仓库提示代码"><a href="#GitHub创建仓库提示代码" class="headerlink" title="GitHub创建仓库提示代码"></a>GitHub创建仓库提示代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# 项目名&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:qiubaiying/项目名.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>若仓库存在直接push:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:qiubaiying/test.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h1 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h1><h2 id="创建仓库（初始化"><a href="#创建仓库（初始化" class="headerlink" title="创建仓库（初始化)"></a>创建仓库（初始化)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在当前指定目录下创建</span><br><span class="line">git init</span><br><span class="line">新建一个仓库目录</span><br><span class="line">git init [project-name]</span><br><span class="line">克隆一个远程项目</span><br><span class="line">git clone [url]</span><br></pre></td></tr></table></figure>
+<p>##添加文件到缓存区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">添加所有变化的文件</span><br><span class="line"> 	git add .</span><br><span class="line"></span><br><span class="line">添加名称指定文件</span><br><span class="line">git add text.txt</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">设置提交代码时的用户信息</span><br><span class="line">git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">git config [--global] user.email &quot;[email address]&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">提交暂存区到仓库区</span><br><span class="line">git commit -m &quot;msg&quot;</span><br><span class="line"></span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">$ git commit -v</span><br><span class="line"></span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+<h2 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 下载远程仓库的所有变动</span><br><span class="line">$ git fetch [remote]</span><br><span class="line"></span><br><span class="line"># 显示所有远程仓库</span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"># 显示某个远程仓库的信息</span><br><span class="line">$ git remote show [remote]</span><br><span class="line"></span><br><span class="line"># 增加一个新的远程仓库，并命名</span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"># 取回远程仓库的变化，并与本地分支合并</span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 上传本地指定分支到远程仓库</span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line">$ git push [remote] --force</span><br><span class="line"></span><br><span class="line"># 推送所有分支到远程仓库</span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line"># 列出所有远程分支</span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"># 列出所有本地分支和远程分支</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向指定commit</span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 切换到指定分支，并更新工作区</span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"># 切换到上一个分支</span><br><span class="line">$ git checkout -</span><br><span class="line"></span><br><span class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">$ git merge [branch]</span><br><span class="line"></span><br><span class="line"># 选择一个commit，合并进当前分支</span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"># 删除分支</span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"># 删除远程分支</span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+<p>##标签Tags</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">添加标签 在当前commit</span><br><span class="line">git tag -a v1.0 -m &apos;xxx&apos; </span><br><span class="line"></span><br><span class="line">添加标签 在指定commit</span><br><span class="line">git tag v1.0 [commit]</span><br><span class="line"></span><br><span class="line">查看</span><br><span class="line">git tag</span><br><span class="line"></span><br><span class="line">删除</span><br><span class="line">git tag -d V1.0</span><br><span class="line"></span><br><span class="line">删除远程tag</span><br><span class="line">git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line">推送</span><br><span class="line">git push origin --tags</span><br><span class="line"></span><br><span class="line">拉取</span><br><span class="line">git fetch origin tag V1.0</span><br><span class="line"></span><br><span class="line">新建一个分支，指向某个tag</span><br><span class="line">git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+<h2 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># 显示有变更的文件</span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"># 显示当前分支的版本历史</span><br><span class="line">$ git log</span><br><span class="line"></span><br><span class="line"># 显示commit历史，以及每次commit发生变更的文件</span><br><span class="line">$ git log --stat</span><br><span class="line"></span><br><span class="line"># 搜索提交历史，根据关键词</span><br><span class="line">$ git log -S [keyword]</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line">$ git log [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span><br><span class="line">$ git log [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"># 显示某个文件的版本历史，包括文件改名</span><br><span class="line">$ git log --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"></span><br><span class="line"># 显示指定文件相关的每一次diff</span><br><span class="line">$ git log -p [file]</span><br><span class="line"></span><br><span class="line"># 显示过去5次提交</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"># 显示所有提交过的用户，按提交次数排序</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"># 显示指定文件是什么人在什么时间修改过</span><br><span class="line">$ git blame [file]</span><br><span class="line"></span><br><span class="line"># 显示暂存区和工作区的差异</span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"># 显示暂存区和上一个commit的差异</span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"></span><br><span class="line"># 显示工作区与当前分支最新commit之间的差异</span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"># 显示两次提交之间的差异</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"># 显示今天你写了多少行代码</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"></span><br><span class="line"># 显示某次提交的元数据和内容变化</span><br><span class="line">$ git show [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交发生变化的文件</span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交时，某个文件的内容</span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># 恢复暂存区的指定文件到工作区</span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">$ git reset [file]</span><br><span class="line"></span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">$ git reset [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert [commit]</span><br><span class="line"></span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 生成一个可供发布的压缩包</span><br><span class="line">$ git archives</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/JSP Servlet Thyme/Thymeleaf/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/19/JSP Servlet Thyme/Thymeleaf/" itemprop="url">Thymeleaf</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T11:04:35+08:00">
+                2018-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/19/JSP Servlet Thyme/Thymeleaf/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/19/JSP Servlet Thyme/Thymeleaf/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fybvk6385uj30wn09242o.jpg" alt="image-20181219110503930"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fybvkd7bu5j30qa0fedjx.jpg" alt="image-20181219110515437"></p>
+<p>#Thymeleaf中取值 reservation：$.   {reservations}其中${reservations}的值是modeandview里面的</p>
+<p>#reservation的值是随 便起的变量 放在reservation里面</p>
+<p>–表格</p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fybvnpodoqj30qz0pv7aq.jpg" alt="image-20181219110828202"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fye0zzxvecj30u00zpds2.jpg" alt="image-20181221074424165"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fye14qjnq5j30lx0d7wgk.jpg" alt="image-20181221074857759"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fye14zh81ij30hd0exgno.jpg" alt="image-20181221074912066"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/HTML+CSS+JS/HTML/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1457,329 +1740,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/Spring/4.SpringBean 装配/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/10/Spring/4.SpringBean 装配/" itemprop="url">Spring IOC 及bean容器 注入</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T21:27:09+08:00">
-                2018-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/10/Spring/4.SpringBean 装配/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/10/Spring/4.SpringBean 装配/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-Spring-Bean-装配之Bean的定义及其作用域的注解实现"><a href="#1-Spring-Bean-装配之Bean的定义及其作用域的注解实现" class="headerlink" title="1 Spring Bean 装配之Bean的定义及其作用域的注解实现"></a>1 Spring Bean 装配之Bean的定义及其作用域的注解实现</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1z08rk7tj30nz0d5782.jpg" alt="image-20181210212840333"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy1z1jad0qj30q00eojyc.jpg" alt="image-20181210212954628"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy1z2xf63aj30rv0gg47h.jpg" alt="image-20181210213111856"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1z3hw39yj30rv0gg47h.jpg" alt="image-20181210213147485"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy1z4nosfxj31ce0qz1kx.jpg" alt="image-20181210213253867"></p>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy1z55n43vj31a00pvqtu.jpg" alt="image-20181210213322203"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1z603aibj30qb02875s.jpg" alt="image-20181210213411097"></p>
-<p>​      &lt; context:component-scan&gt;</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy1z7mscfrj30rs0ep47x.jpg" alt="image-20181210213546087"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1z9yrb38j31dd0t2tru.jpg" alt="image-20181210213758849"></p>
-<hr>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy1zdy0gqmj30qz0eon3g.jpg" alt="image-20181210214149896"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy1zgdd2pfj31d30lnwgs.jpg" alt="--image-20181210214351012"></p>
-<hr>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"bean.BeanAnnotation"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">context:component-scan</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> bean;</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanAnnotation</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System,out.print(<span class="string">"Hello Spring"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    BeanAnnotation bean=<span class="keyword">super</span>.getBean(<span class="string">"beanAnnotation"</span>);<span class="comment">//类名小写</span></span><br><span class="line">        bean.say(<span class="string">"This is Tese"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1zreh9wkj30o404w77a.jpg" alt="image-20181210215434002"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy1zrf8fz5j30ep07uwg4.jpg" alt="image-20181210215444940"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1zrjtxh5j30pc04igon.jpg" alt="image-20181210215454617"></p>
-<hr>
-<h1 id="2-Spring装配-基于java容器的注解说明-importResource和-Value"><a href="#2-Spring装配-基于java容器的注解说明-importResource和-Value" class="headerlink" title="2 Spring装配 基于java容器的注解说明 @importResource和@Value"></a>2 Spring装配 基于java容器的注解说明 @importResource和@Value</h1><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyqxyuq02pj30xy0j4mzj.jpg" alt="image-20190101111946848"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyqx37jymzj30wa0ivk4t.jpg" alt="image-20190101112114768"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDriverManager</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDriverManager</span><span class="params">(String url, String userName, String password)</span> </span>&#123;</span><br><span class="line">        System.out.print(url);</span><br><span class="line">        System.out.print(userName);</span><br><span class="line">        System.out.print(password);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ImportResource</span>(<span class="string">"classpath:config.xml"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StoreConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.url&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.username&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.password&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MyDriverManager <span class="title">myDriverManager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MyDriverManager(url, username, password);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMyDreiverManager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        MyDriverManager myDriverManager = <span class="keyword">super</span>.getBean(<span class="string">"myDriverManager"</span>);</span><br><span class="line">        myDriverManager.getClass().getName();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jdbc.password=root</span><br><span class="line">jdbc.url=127.0.0.1</span><br><span class="line">jdbc.username=root</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyqy0l35pwj30ue09igo5.jpg" alt="image-20190101115330544"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyqy0wsc9fj30q80ivq7y.jpg" alt="image-20190101115349310"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyqy13991cj30u70adgo4.jpg" alt="image-20190101115400511"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyqy1e5h2lj3098043t9d.jpg" alt="image-20190101115417555"></p>
-<hr>
-<h1 id="3-Bean-和-Scope"><a href="#3-Bean-和-Scope" class="headerlink" title="3@Bean 和@Scope"></a>3@Bean 和@Scope</h1><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyqy25ad0dj30vs0icn5r.jpg" alt="image-20190101115501261"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyqy2z5yl2j30kg048q4a.jpg" alt="image-20190101115548740"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyqy45nwedj30kc04ign8.jpg" alt="image-20190101115657205"></p>
-<hr>
-<h1 id="4基于泛型的自动装配"><a href="#4基于泛型的自动装配" class="headerlink" title="4基于泛型的自动装配"></a>4基于泛型的自动装配</h1><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyqy5ckxj6j30w40ig12w.jpg" alt="image-20190101115805123"></p>
-<hr>
-<h1 id="Aware-和Autowiring"><a href="#Aware-和Autowiring" class="headerlink" title="Aware 和Autowiring"></a>Aware 和Autowiring</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyqyd1uxrwj30w10bzaes.jpg" alt="image-20190101120529150"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyqye07ai6j30uk0hp7f4.jpg" alt="image-20190101120624727"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyqyezo94bj30mz04xtc0.jpg" alt="image-20190101120721469"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyqyf6r71xj30k6084jx0.jpg" alt="image-20190101120731878"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyqyfqazuhj30uh0hltfo.jpg" alt="image-20190101120803833"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/java基础/java反射/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/10/java基础/java反射/" itemprop="url">java反射</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T17:31:33+08:00">
-                2018-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/10/java基础/java反射/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/10/java基础/java反射/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy1s79mxgyj30rc0ek787.jpg" alt="image-20181210173312356"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// Foo的实例对象如何表示</span></span><br><span class="line">		Foo foo1 = <span class="keyword">new</span> Foo();<span class="comment">// foo1就表示出来了</span></span><br><span class="line">		<span class="comment">// Foo 这个类 也是个实例对象 ，Class类的实列对象 如何表示呢</span></span><br><span class="line">		<span class="comment">// 任何一个类都是Class的实列对象 这个实列对象有三种表示方式</span></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * c1 c2表示了Foo类的类类型（class type）</span></span><br><span class="line"><span class="comment">		 *  万事万物皆对象</span></span><br><span class="line"><span class="comment">		 *  类也是对象 是Class类的实列对象</span></span><br><span class="line"><span class="comment">		 *  这个对象我们称为该类的lei lei</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="comment">// 第一种表示方式---&gt;实际在告诉我们任何一个类都以一个隐含的静态成员</span></span><br><span class="line">		Class c1=Foo.class;</span><br><span class="line">		<span class="comment">// 第二种表示方式--&gt;已经知道该类的对象通过getClass方法</span></span><br><span class="line">		Class c2 = foo1.getClass();</span><br><span class="line">		<span class="comment">//第三种方式</span></span><br><span class="line">		Class c3=Class.forName(<span class="string">"com.package.Foo"</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 我们完全可以通过类类型创建该类的对象实列</span></span><br><span class="line">	<span class="comment">// --&gt;通过c1 or c2 创建Foo的实例</span></span><br><span class="line">	Foo foo = (Foo) c1.newInstance();foo.print();</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1sq809zrj31170q7wrg.jpg" alt="image-20181210175126381"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1sqkhk81j30oc0bpwh6.jpg" alt="image-20181210175146126"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy1su2y72qj30n00c6tc2.jpg" alt="image-20181210175508741"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy1sv48n9kj30jd0cldix.jpg" alt="image-20181210175609088"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Class c1 = <span class="keyword">int</span>.class;<span class="comment">//int 的类类型</span></span><br><span class="line">		Class c2 = String.class;<span class="comment">//String类的类类型   String类字节码（自己发明的)</span></span><br><span class="line">		Class c3 = <span class="keyword">double</span>.class;</span><br><span class="line">		Class c4 = Double.class;</span><br><span class="line">		Class c5 = <span class="keyword">void</span>.class;</span><br><span class="line">		</span><br><span class="line">		System.out.println(c1.getName());</span><br><span class="line">		System.out.println(c2.getName());</span><br><span class="line">		System.out.println(c2.getSimpleName());<span class="comment">//不包含包名的类的名称</span></span><br><span class="line">		System.out.println(c5.getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//Foo的实例对象如何表示</span></span><br><span class="line">		Foo foo1 = <span class="keyword">new</span> Foo();<span class="comment">//foo1就表示出来了.</span></span><br><span class="line">		<span class="comment">//Foo这个类 也是一个实例对象，Class类的实例对象,如何表示呢</span></span><br><span class="line">		<span class="comment">//任何一个类都是Class的实例对象，这个实例对象有三种表示方式</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//第一种表示方式---&gt;实际在告诉我们任何一个类都有一个隐含的静态成员变量class</span></span><br><span class="line">		Class c1 = Foo.class;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//第二中表达方式  已经知道该类的对象通过getClass方法</span></span><br><span class="line">		Class c2 = foo1.getClass();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/*官网 c1 ,c2 表示了Foo类的类类型(class type)</span></span><br><span class="line"><span class="comment">		 * 万事万物皆对象，</span></span><br><span class="line"><span class="comment">		 * 类也是对象，是Class类的实例对象</span></span><br><span class="line"><span class="comment">		 * 这个对象我们称为该类的类类型</span></span><br><span class="line"><span class="comment">		 * </span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//不管c1  or c2都代表了Foo类的类类型，一个类只可能是Class类的一个实例对象</span></span><br><span class="line">		System.out.println(c1 == c2);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//第三种表达方式</span></span><br><span class="line">		Class c3 = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			c3 = Class.forName(<span class="string">"com.imooc.reflect.Foo"</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(c2==c3);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//我们完全可以通过类的类类型创建该类的对象实例----&gt;通过c1 or c2 or c3创建Foo的实例对象</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Foo foo = (Foo)c1.newInstance();<span class="comment">//需要有无参数的构造方法</span></span><br><span class="line">			foo.print();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"foo"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanUtil</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 根据标准javaBean对象的属性名获取其属性值</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> propertyName</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">getValueByPropertyName</span><span class="params">(Object obj, String propertyName)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 1.根据属性名称就可以获取其get方法</span></span><br><span class="line">		String getMethodName = <span class="string">"get"</span></span><br><span class="line">				+ propertyName.substring(<span class="number">0</span>, <span class="number">1</span>).toUpperCase()</span><br><span class="line">				+ propertyName.substring(<span class="number">1</span>);</span><br><span class="line">		<span class="comment">//2.获取方法对象</span></span><br><span class="line">		Class c = obj.getClass();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//get方法都是public的且无参数</span></span><br><span class="line">			Method m= c.getMethod(getMethodName);</span><br><span class="line">			<span class="comment">//3 通过方法的反射操作方法</span></span><br><span class="line">			Object value = m.invoke(obj);</span><br><span class="line">			<span class="keyword">return</span> value;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassUtil</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 打印类的信息，包括类的成员函数、成员变量(只获取成员函数)</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> obj 该对象所属类的信息</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printClassMethodMessage</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">		<span class="comment">//要获取类的信息  首先要获取类的类类型</span></span><br><span class="line">		Class c = obj.getClass();<span class="comment">//传递的是哪个子类的对象  c就是该子类的类类型</span></span><br><span class="line">		<span class="comment">//获取类的名称</span></span><br><span class="line">		System.out.println(<span class="string">"类的名称是:"</span>+c.getName());</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * Method类，方法对象</span></span><br><span class="line"><span class="comment">		 * 一个成员方法就是一个Method对象</span></span><br><span class="line"><span class="comment">		 * getMethods()方法获取的是所有的public的函数，包括父类继承而来的</span></span><br><span class="line"><span class="comment">		 * getDeclaredMethods()获取的是所有该类自己声明的方法，不问访问权限</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		Method[] ms = c.getMethods();<span class="comment">//c.getDeclaredMethods()</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ms.length;i++)&#123;</span><br><span class="line">			<span class="comment">//得到方法的返回值类型的类类型</span></span><br><span class="line">			Class returnType = ms[i].getReturnType();</span><br><span class="line">			System.out.print(returnType.getName()+<span class="string">" "</span>);</span><br><span class="line">			<span class="comment">//得到方法的名称</span></span><br><span class="line">			System.out.print(ms[i].getName()+<span class="string">"("</span>);</span><br><span class="line">			<span class="comment">//获取参数类型---&gt;得到的是参数列表的类型的类类型</span></span><br><span class="line">			Class[] paramTypes = ms[i].getParameterTypes();</span><br><span class="line">			<span class="keyword">for</span> (Class class1 : paramTypes) &#123;</span><br><span class="line">				System.out.print(class1.getName()+<span class="string">","</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(<span class="string">")"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取成员变量的信息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printFieldMessage</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		Class c = obj.getClass();</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * 成员变量也是对象</span></span><br><span class="line"><span class="comment">		 * java.lang.reflect.Field</span></span><br><span class="line"><span class="comment">		 * Field类封装了关于成员变量的操作</span></span><br><span class="line"><span class="comment">		 * getFields()方法获取的是所有的public的成员变量的信息</span></span><br><span class="line"><span class="comment">		 * getDeclaredFields获取的是该类自己声明的成员变量的信息</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="comment">//Field[] fs = c.getFields();</span></span><br><span class="line">		Field[] fs = c.getDeclaredFields();</span><br><span class="line">		<span class="keyword">for</span> (Field field : fs) &#123;</span><br><span class="line">			<span class="comment">//得到成员变量的类型的类类型</span></span><br><span class="line">			Class fieldType = field.getType();</span><br><span class="line">			String typeName = fieldType.getName();</span><br><span class="line">			<span class="comment">//得到成员变量的名称</span></span><br><span class="line">			String fieldName = field.getName();</span><br><span class="line">			System.out.println(typeName+<span class="string">" "</span>+fieldName);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 打印对象的构造函数的信息</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> obj</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printConMessage</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">		Class c = obj.getClass();</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * 构造函数也是对象</span></span><br><span class="line"><span class="comment">		 * java.lang. Constructor中封装了构造函数的信息</span></span><br><span class="line"><span class="comment">		 * getConstructors获取所有的public的构造函数</span></span><br><span class="line"><span class="comment">		 * getDeclaredConstructors得到所有的构造函数</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="comment">//Constructor[] cs = c.getConstructors();</span></span><br><span class="line">		Constructor[] cs = c.getDeclaredConstructors();</span><br><span class="line">		<span class="keyword">for</span> (Constructor constructor : cs) &#123;</span><br><span class="line">			System.out.print(constructor.getName()+<span class="string">"("</span>);</span><br><span class="line">			<span class="comment">//获取构造函数的参数列表---&gt;得到的是参数列表的类类型</span></span><br><span class="line">			Class[] paramTypes = constructor.getParameterTypes();</span><br><span class="line">			<span class="keyword">for</span> (Class class1 : paramTypes) &#123;</span><br><span class="line">				System.out.print(class1.getName()+<span class="string">","</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(<span class="string">")"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1832,7 +1792,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
