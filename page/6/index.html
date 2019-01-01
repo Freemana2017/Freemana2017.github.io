@@ -269,6 +269,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/开发遇到的问题/Iterm2配置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/09/开发遇到的问题/Iterm2配置/" itemprop="url">ITerm2的配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T09:58:44+08:00">
+                2018-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/09/开发遇到的问题/Iterm2配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/09/开发遇到的问题/Iterm2配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ITerm2的配置问题"><a href="#ITerm2的配置问题" class="headerlink" title="ITerm2的配置问题"></a>ITerm2的配置问题</h2><h1 id="每次vim的时候一定要source一下-啊-xiong-die"><a href="#每次vim的时候一定要source一下-啊-xiong-die" class="headerlink" title="每次vim的时候一定要source一下 啊 xiong die"></a>每次vim的时候一定要source一下 啊 xiong die</h1><blockquote>
+<p>学习资源</p>
+<p><a href="https://www.jianshu.com/p/9c3439cc3bdb" target="_blank" rel="noopener">https://www.jianshu.com/p/9c3439cc3bdb</a> 简书</p>
+<p><a href="https://github.com/sirius1024/iterm2-with-oh-my-zsh" target="_blank" rel="noopener">https://github.com/sirius1024/iterm2-with-oh-my-zsh</a> Github</p>
+<p><a href="https://www.cnblogs.com/xishuai/p/mac-iterm2.html" target="_blank" rel="noopener">https://www.cnblogs.com/xishuai/p/mac-iterm2.html</a> 博客园</p>
+<p><a href="https://blog.csdn.net/z3512498/article/details/51245853" target="_blank" rel="noopener">https://blog.csdn.net/z3512498/article/details/51245853</a> CSDN 改变用户名 </p>
+<blockquote>
+<p>必须要使用vim的命令修改配置</p>
+</blockquote>
+</blockquote>
+<h3 id="常见的命令"><a href="#常见的命令" class="headerlink" title="常见的命令"></a>常见的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br><span class="line">source ~/.zshrc  （soucre配置文件 让配置文件生效）</span><br><span class="line">文件放在itermgit下面 必须要在主题可以使用的情况下 进行以上的配置</span><br><span class="line">快捷键冲突 取词 copy失效</span><br></pre></td></tr></table></figure>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>安装完成后，在/bin目录下会多出一个zsh的文件。</li>
+</ul>
+<p>Mac系统默认使用dash作为终端，可以使用命令修改默认使用zsh：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+<p>如果想修改回默认dash，同样使用chsh命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/bash</span><br></pre></td></tr></table></figure>
+<p>export MAVEN_HOME=/Java/apache-maven-3.5.4 </p>
+<p>export PATH=${PATH}:${MAVEN_HOME}/bin </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/Docker/Docker-web/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1193,7 +1342,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

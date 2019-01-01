@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Spring IOC详解]]></title>
+    <url>%2F2019%2F01%2F01%2FSpring%20IOC%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[相当于@Bean注解和@Controller注解]]></content>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Spring @AspectJ]]></title>
     <url>%2F2019%2F01%2F01%2FSpring%2F9.%40Aspect%2F</url>
     <content type="text"><![CDATA[]]></content>
