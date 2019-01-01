@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="RabbitMQ,">
+  <meta name="keywords" content="Spring,">
 
 
 
@@ -79,23 +79,33 @@
 
 
 
-<meta name="keywords" content="RabbitMQ">
+<meta name="description" content="问大家一个问题 Spring中注册的bean 在xml中配置 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢">
+<meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RabbitMQ Exchange">
-<meta property="og:url" content="http://yoursite.com/2018/12/25/6.Exchange/index.html">
+<meta property="og:title" content="关于Spring依赖注入的一些理解">
+<meta property="og:url" content="http://yoursite.com/2018/12/31/Spring/Spring依赖注入/index.html">
 <meta property="og:site_name" content="Freemana2017">
+<meta property="og:description" content="问大家一个问题 Spring中注册的bean 在xml中配置 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj1sjd092j312g0oa1kx.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyj1ttyra6j30wh0h1wj6.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1uxhmw1j314o0bwafe.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj1wutzw7j31210ihalp.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1x4mw2hj310s0jpjyc.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyj1y2bncbj30pp06b0wq.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1zy0kd7j30o50b8aiv.jpg">
-<meta property="og:updated_time" content="2018-12-25T08:06:52.413Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6f1kqabj30ay074q3m.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6f94ci7j30h003mt9x.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fdbss4j306u01hjrd.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fkgl8nj30g807bmyp.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ftrupnj30fu0ej409.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6gtoi1jj30h10bjgng.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6gzslxmj30gb0dvq4j.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6h8uvmlj30fu0ett9x.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6heo3jfj30g50exabn.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6hqvp8vj30tw04wgot.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ipntk3j30oz0amth2.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6j3r701j30qi0cctgd.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6l2y3lmj30rv2lnh6x.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6pky66bj30sl0ltak7.jpg">
+<meta property="og:updated_time" content="2018-12-31T12:08:48.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RabbitMQ Exchange">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj1sjd092j312g0oa1kx.jpg">
+<meta name="twitter:title" content="关于Spring依赖注入的一些理解">
+<meta name="twitter:description" content="问大家一个问题 Spring中注册的bean 在xml中配置 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6f1kqabj30ay074q3m.jpg">
 
 
 
@@ -125,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/25/6.Exchange/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/31/Spring/Spring依赖注入/">
 
 
 
 
 
-  <title>RabbitMQ Exchange | Freemana2017</title>
+  <title>关于Spring依赖注入的一些理解 | Freemana2017</title>
   
 
 
@@ -278,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/6.Exchange/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/31/Spring/Spring依赖注入/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -295,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RabbitMQ Exchange</h1>
+          <h1 class="post-title" itemprop="name headline">关于Spring依赖注入的一些理解</h1>
         
 
         <div class="post-meta">
@@ -307,8 +317,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-25T15:58:33+08:00">
-                2018-12-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-31T19:57:10+08:00">
+                2018-12-31
               </time>
             
 
@@ -326,8 +336,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/25/6.Exchange/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/25/6.Exchange/" itemprop="commentCount"></span>
+                <a href="/2018/12/31/Spring/Spring依赖注入/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/31/Spring/Spring依赖注入/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -355,19 +365,23 @@
       
 
       
-        <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj1sjd092j312g0oa1kx.jpg" alt="image-20181225155936857"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyj1ttyra6j30wh0h1wj6.jpg" alt="image-20181225160053086"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1uxhmw1j314o0bwafe.jpg" alt="image-20181225160157263"></p>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyj1wutzw7j31210ihalp.jpg" alt="image-20181225160348696"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1x4mw2hj310s0jpjyc.jpg" alt="image-20181225160404374"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyj1y2bncbj30pp06b0wq.jpg" alt="image-20181225160458534"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyj1zy0kd7j30o50b8aiv.jpg" alt="image-20181225160646411"></p>
-<hr>
+        <blockquote>
+<p>问大家一个问题 Spring中注册的bean 在xml中配置<bean id="xxx" class="com.xxx.xxxx"> 我看写的程序中没有调用 xxx.getBean(“xxx”)。那在程序中是如何使用这个bean的呢</bean></p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6f1kqabj30ay074q3m.jpg" alt="image-20181231195838700"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6f94ci7j30h003mt9x.jpg" alt="image-20181231195850611"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fdbss4j306u01hjrd.jpg" alt="image-20181231195857665"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6fkgl8nj30g807bmyp.jpg" alt="image-20181231195908137"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ftrupnj30fu0ej409.jpg" alt="image-20181231195923728"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6gtoi1jj30h10bjgng.jpg" alt="image-20181231200021653"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6gzslxmj30gb0dvq4j.jpg" alt="image-20181231200031517"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6h8uvmlj30fu0ett9x.jpg" alt="image-20181231200042180"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6heo3jfj30g50exabn.jpg" alt="image-20181231200055212"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq6hqvp8vj30tw04wgot.jpg" alt="image-20181231200114736"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6ipntk3j30oz0amth2.jpg" alt="image-20181231200210436"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6j3r701j30qi0cctgd.jpg" alt="image-20181231200233053"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq6l2y3lmj30rv2lnh6x.jpg" alt="image-20181231200426578"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq6pky66bj30sl0ltak7.jpg" alt="image-20181231200846542"></p>
 
       
     </div>
@@ -385,7 +399,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/RabbitMQ/" rel="tag"># RabbitMQ</a>
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
           
         </div>
       
@@ -398,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/23/SSM整合/" rel="next" title="SSM整合">
-                <i class="fa fa-chevron-left"></i> SSM整合
+              <a href="/2018/12/25/RabbitMQ/Rabbit MQ/" rel="next" title="RabbitMQ 千峰教育笔记">
+                <i class="fa fa-chevron-left"></i> RabbitMQ 千峰教育笔记
               </a>
             
           </div>
@@ -407,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/25/Rabbit MQ/" rel="prev" title="RabbitMQ 千峰教育笔记">
-                RabbitMQ 千峰教育笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -555,7 +565,7 @@
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -720,9 +730,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/12/25/6.Exchange/';
-          this.page.identifier = '2018/12/25/6.Exchange/';
-          this.page.title = 'RabbitMQ Exchange';
+          this.page.url = 'http://yoursite.com/2018/12/31/Spring/Spring依赖注入/';
+          this.page.identifier = '2018/12/31/Spring/Spring依赖注入/';
+          this.page.title = '关于Spring依赖注入的一些理解';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
