@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/开发遇到的问题/项目问题总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/蓝桥杯/辅导资料/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -288,7 +288,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/01/开发遇到的问题/项目问题总结/" itemprop="url">项目开发常见问题总结</a></h1>
+                <a class="post-title-link" href="/2019/02/11/蓝桥杯/辅导资料/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-01T11:32:04+08:00">
-                2019-02-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T10:19:55+08:00">
+                2019-02-11
               </time>
             
 
@@ -319,159 +319,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/01/开发遇到的问题/项目问题总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/01/开发遇到的问题/项目问题总结/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-ResponseBody"><a href="#1-ResponseBody" class="headerlink" title="1. @ResponseBody"></a>1. @ResponseBody</h1><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzqrn1vzymj3127057q48.jpg" alt="屏幕快照 2019-02-01 上午11.25.22"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fzqrnug0f6j30p00crq89.jpg" alt="image-20190201113400805"></p>
-<hr>
-<ol start="2">
-<li>在你的controller层对应的方法返回html路径及名称时，在前面多加了一个/ 。</li>
-</ol>
-<p>例如return “/index”，正式这个/导致报错的，解决：去掉返回前面的/即可，例如return “/index” 。</p>
-<ol start="3">
-<li>在使用springboot的过程中，如果使用thymeleaf作为模板文件，则要求HTML格式必须为严格的html5格式，必须有结束标签，否则会报错。</li>
-</ol>
-<p>解决办法如下：</p>
-<p>在application.yml中添加以下配置</p>
-<p>spring.thymeleaf.content-type: text/html<br>spring.thymeleaf.cache: false<br>spring.thymeleaf.mode: LEGACYHTML5</p>
-<p>再在pom.xml 添加以下依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt; </span><br><span class="line">&lt;groupId&gt;net.sourceforge.nekohtml&lt;/groupId&gt; </span><br><span class="line">&lt;artifactId&gt;nekohtml&lt;/artifactId&gt; </span><br><span class="line">&lt;version&gt;1.9.22&lt;/version&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>资源文件的路径被修改，如果你其他的请求都正常返回则可忽略这条。</li>
-</ol>
-<p>解决：在pom.xml文件的<build></build>中加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;resource&gt;</span><br><span class="line"> &lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">&lt;/resource&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="添加-ResponseBody注解-然后返回JSON格式。后端是无法查看的-要通过前端Google检查元素查看？"><a href="#添加-ResponseBody注解-然后返回JSON格式。后端是无法查看的-要通过前端Google检查元素查看？" class="headerlink" title="添加@ResponseBody注解 然后返回JSON格式。后端是无法查看的 要通过前端Google检查元素查看？"></a>添加@ResponseBody注解 然后返回JSON格式。后端是无法查看的 要通过前端Google检查元素查看？</h2><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzqrq22mjnj30s70fcwgi.jpg" alt="image-20190201113602438"></p>
-<hr>
-<h3 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/技术栈/Redis集成SpringBoot封装utils/RedisUtils/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/31/技术栈/Redis集成SpringBoot封装utils/RedisUtils/" itemprop="url">Redis+SPringBoot Utils</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-31T19:21:40+08:00">
-                2019-01-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/31/技术栈/Redis集成SpringBoot封装utils/RedisUtils/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/31/技术栈/Redis集成SpringBoot封装utils/RedisUtils/" itemprop="commentCount"></span>
+                <a href="/2019/02/11/蓝桥杯/辅导资料/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/蓝桥杯/辅导资料/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -549,7 +398,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/java基础/static关键字/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/蓝桥杯/历届真题3/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -568,7 +417,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/31/java基础/static关键字/" itemprop="url">static关键字</a></h1>
+                <a class="post-title-link" href="/2019/02/11/蓝桥杯/历届真题3/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -580,8 +429,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-31T18:58:21+08:00">
-                2019-01-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T10:19:54+08:00">
+                2019-02-11
               </time>
             
 
@@ -599,8 +448,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/31/java基础/static关键字/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/31/java基础/static关键字/" itemprop="commentCount"></span>
+                <a href="/2019/02/11/蓝桥杯/历届真题3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/蓝桥杯/历届真题3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -630,7 +479,7 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class ClassTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int age = ClassTest.classTest.age;</span><br><span class="line">        System.out.println(age);</span><br><span class="line">        String name = ClassTest.classTest.name;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(ClassTest.classTest);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line">    static ClassTest classTest = new ClassTest(&quot;yhp&quot;, 23);</span><br><span class="line"></span><br><span class="line">    public ClassTest(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public ClassTest(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public ClassTest(String name, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br></pre></td></tr></table></figure>
+            
           
         
       
@@ -678,7 +527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/技术栈/统一封装返回信息 前后端分离/统一封装返回信息{code,msg,data}/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/蓝桥杯/历届真题2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -697,7 +546,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/31/技术栈/统一封装返回信息 前后端分离/统一封装返回信息{code,msg,data}/" itemprop="url">统一封装返回信息</a></h1>
+                <a class="post-title-link" href="/2019/02/11/蓝桥杯/历届真题2/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -709,8 +558,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-31T18:08:41+08:00">
-                2019-01-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T10:19:53+08:00">
+                2019-02-11
               </time>
             
 
@@ -728,8 +577,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/31/技术栈/统一封装返回信息 前后端分离/统一封装返回信息{code,msg,data}/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/31/技术栈/统一封装返回信息 前后端分离/统一封装返回信息{code,msg,data}/" itemprop="commentCount"></span>
+                <a href="/2019/02/11/蓝桥杯/历届真题2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/蓝桥杯/历届真题2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -759,9 +608,265 @@
       
         
           
-            <h1 id="1-Result"><a href="#1-Result" class="headerlink" title="1 Result"></a>1 Result</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">package com.imooc.miaosha.result;</span><br><span class="line">public class Result&lt;T&gt; &#123;</span><br><span class="line">    private int code;</span><br><span class="line">    private String msg;</span><br><span class="line">    private T data;</span><br><span class="line"></span><br><span class="line">    //⭐️</span><br><span class="line">    private Result(CodeMsg cm) &#123;</span><br><span class="line">        if (cm == null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.code = cm.getCode();</span><br><span class="line">        this.msg = cm.getMsg();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private Result(T data) &#123;</span><br><span class="line">        this.code = 0;</span><br><span class="line">        this.msg = &quot;success&quot;;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 失败的时候调用</span><br><span class="line">     */</span><br><span class="line">    public static &lt;T&gt; Result&lt;T&gt; error(CodeMsg cm) &#123;</span><br><span class="line">        return new Result&lt;T&gt;(cm);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 成功的时候调用</span><br><span class="line">     *</span><br><span class="line">     * @param code</span><br><span class="line">     */</span><br><span class="line">    public static &lt;T&gt; Result&lt;T&gt; success(T data) &#123;</span><br><span class="line">        return new Result&lt;T&gt;(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //2 生成构造方法</span><br><span class="line">    public Result(int code) &#123;</span><br><span class="line">        this.code = code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Result(String msg) &#123;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //3。get/set方法</span><br><span class="line">    public int getCode() &#123;</span><br><span class="line">        return code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCode(int code) &#123;</span><br><span class="line">        this.code = code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getMsg() &#123;</span><br><span class="line">        return msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setMsg(String msg) &#123;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public T getData() &#123;</span><br><span class="line">        return data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setData(T data) &#123;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="2-CodeMsg"><a href="#2-CodeMsg" class="headerlink" title="2 CodeMsg"></a>2 CodeMsg</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.result;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeMsg</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> code;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">    <span class="comment">//通用异常</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> CodeMsg SUCCESS = <span class="keyword">new</span> CodeMsg(<span class="number">0</span>, <span class="string">"success"</span>);</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> CodeMsg SERVER_NAME = <span class="keyword">new</span> CodeMsg(<span class="number">50001</span>, <span class="string">"服务端异常"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//登录模块 5002XX</span></span><br><span class="line">    <span class="comment">//商品模块 5003XX</span></span><br><span class="line">    <span class="comment">//订单模块 5004XX</span></span><br><span class="line">    <span class="comment">//秒杀模块 5005XX</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">CodeMsg</span><span class="params">(<span class="keyword">int</span> code, String msg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.code = code;</span><br><span class="line">        <span class="keyword">this</span>.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CodeMsg <span class="title">getSUCCESS</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CodeMsg <span class="title">getServerName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SERVER_NAME;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3-调用要➕-ResponseBody注解"><a href="#3-调用要➕-ResponseBody注解" class="headerlink" title="3 调用要➕@ResponseBody注解"></a>3 调用<em>要➕@ResponseBody注解</em></h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/resultsuccess"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Result&lt;String&gt; <span class="title">resultsuccess</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//⭐️⭐️⭐️⭐️⭐️</span></span><br><span class="line">    <span class="comment">/**1.返回成功的时候调用</span></span><br><span class="line"><span class="comment">     *  public static &lt;T&gt; Result&lt;T&gt; success(T data) &#123;</span></span><br><span class="line"><span class="comment">     *             return new Result&lt;T&gt;(data);</span></span><br><span class="line"><span class="comment">     *         &#125;</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  private Result(T data) &#123;</span></span><br><span class="line"><span class="comment">     *         this.code = 0;</span></span><br><span class="line"><span class="comment">     *         this.msg = "success";</span></span><br><span class="line"><span class="comment">     *         this.data = data;</span></span><br><span class="line"><span class="comment">     *     &#125;</span></span><br><span class="line"><span class="comment">     *         1.Result.success(data);</span></span><br><span class="line"><span class="comment">     *         结果：</span></span><br><span class="line"><span class="comment">     *          &#123;</span></span><br><span class="line"><span class="comment">     *              "code": 0,</span></span><br><span class="line"><span class="comment">     *              "msg": "success",</span></span><br><span class="line"><span class="comment">     *              "data": "hello immooc"</span></span><br><span class="line"><span class="comment">     *          &#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Result.success(<span class="string">"hello immooc"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">===================================</span><br><span class="line"></span><br><span class="line">===================================</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/resulterror"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Result&lt;String&gt; <span class="title">resultError</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 2。失败的时候调用</span></span><br><span class="line"><span class="comment">     *  public static &lt;T&gt; Result&lt;T&gt; error(CodeMsg cm) &#123;</span></span><br><span class="line"><span class="comment">     *         return new Result&lt;T&gt;(cm);</span></span><br><span class="line"><span class="comment">     *     &#125;</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  private Result(CodeMsg cm) &#123;</span></span><br><span class="line"><span class="comment">     *         if (cm == null) &#123;</span></span><br><span class="line"><span class="comment">     *             return;</span></span><br><span class="line"><span class="comment">     *         &#125;</span></span><br><span class="line"><span class="comment">     *         this.code = cm.getCode();</span></span><br><span class="line"><span class="comment">     *         this.msg = cm.getMsg();</span></span><br><span class="line"><span class="comment">     *     &#125;</span></span><br><span class="line"><span class="comment">     *     2 Result.error(CodeMsg.SERVER_NAME)</span></span><br><span class="line"><span class="comment">     *  public static CodeMsg SERVER_NAME = new CodeMsg(50001, "服务端异常");</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * 结果     &#123;</span></span><br><span class="line"><span class="comment">     *              "code": 50001,</span></span><br><span class="line"><span class="comment">     *              "msg": "服务端异常",</span></span><br><span class="line"><span class="comment">     *              "data": null</span></span><br><span class="line"><span class="comment">     *          &#125;</span></span><br><span class="line"><span class="comment">     *   分析：</span></span><br><span class="line"><span class="comment">     *   因为CodeMsg SUCCESS 用static修饰了</span></span><br><span class="line"><span class="comment">     *   public static CodeMsg SUCCESS = new CodeMsg(0, "success");</span></span><br><span class="line"><span class="comment">     *   所以可以使用类.属性.属性的方式获得</span></span><br><span class="line"><span class="comment">     *      CodeMsg.SUCCESS.code=50001</span></span><br><span class="line"><span class="comment">     *      CodeMsg.SUCCESS.msg="服务端异常"</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">return</span> Result.error(CodeMsg.SERVER_NAME);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/蓝桥杯/历届真题1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/11/蓝桥杯/历届真题1/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T10:19:51+08:00">
+                2019-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/11/蓝桥杯/历届真题1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/蓝桥杯/历届真题1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/蓝桥杯/去除重复因子/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/11/蓝桥杯/去除重复因子/" itemprop="url">蓝桥杯 去除重重复因子 不懂</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T10:08:05+08:00">
+                2019-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/11/蓝桥杯/去除重复因子/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/蓝桥杯/去除重复因子/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Code2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 给定一个正整数n，求一个正整数p，</span></span><br><span class="line">		<span class="comment">// 满足p仅包含n的所有素因子，且每个素因子的次数不大于1</span></span><br><span class="line">		Scanner ci = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">long</span> n = ci.nextLong();</span><br><span class="line">		<span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">long</span> x = n;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">2</span>; i &lt;= x; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (x % i == <span class="number">0</span>) &#123;</span><br><span class="line">				ans *= i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span> (x % i == <span class="number">0</span>) &#123;</span><br><span class="line">				x /= i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -810,7 +915,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/技术栈/分布式session/分布式Session/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -829,7 +934,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/" itemprop="url">两次MD5明文加密</a></h1>
+                <a class="post-title-link" href="/2019/02/05/技术栈/分布式session/分布式Session/" itemprop="url">分布式session</a></h1>
         
 
         <div class="post-meta">
@@ -841,8 +946,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-31T15:27:15+08:00">
-                2019-01-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-05T19:40:52+08:00">
+                2019-02-05
               </time>
             
 
@@ -860,8 +965,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/" itemprop="commentCount"></span>
+                <a href="/2019/02/05/技术栈/分布式session/分布式Session/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/05/技术栈/分布式session/分布式Session/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -891,11 +996,7 @@
       
         
           
-            <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzpsti37bhj30uy0e2whs.jpg" alt="image-20190131152823505"></p>
-<hr>
-<h1 id="1-依赖"><a href="#1-依赖" class="headerlink" title="1 .依赖"></a>1 .依赖</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/commons-codec/commons-codec --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-codec<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-codec<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">------------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-lang3<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.imooc.miaosha.utils;</span><br><span class="line"></span><br><span class="line">import org.apache.commons.codec.digest.DigestUtils;</span><br><span class="line"></span><br><span class="line">public class MD5Util &#123;</span><br><span class="line">    /*固定盐值*/</span><br><span class="line">    private static final String salt = &quot;1a2b3c4d&quot;;</span><br><span class="line"></span><br><span class="line">    //注意导包为codec中的DigestUtils类.codec.digest.DigestUtils;</span><br><span class="line">    public static String md5(String src) &#123;</span><br><span class="line">        //计算MD5摘要并以32个字符十六进制字符串的形式返回值。</span><br><span class="line">        return DigestUtils.md5Hex(src);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 第一次md5 ：</span><br><span class="line">     * 用于 通过输入的密码生成</span><br><span class="line">     * 传输的密码 ： 方法 通过固定盐值和明文密码之间的拼接在生成md5</span><br><span class="line">     */</span><br><span class="line">    public static String inputPassFormPass(String inputPass) &#123;</span><br><span class="line">        String str = &quot;&quot; + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(4);</span><br><span class="line">        return md5(str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 第二次md5 ：</span><br><span class="line">     */</span><br><span class="line">    public static String fromPassFormPass(String formpasss, String salt) &#123;</span><br><span class="line">        String str = &quot;&quot; + salt.charAt(0) + salt.charAt(2) + formpasss + salt.charAt(5) + salt.charAt(4);</span><br><span class="line">        return md5(str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //将密码封装到数据库中</span><br><span class="line">    public static String inputPassToDbPass(String input, String saltDB) &#123;</span><br><span class="line">        String s = inputPassFormPass(input);</span><br><span class="line">        String formPass = fromPassFormPass(s, saltDB);</span><br><span class="line">        return formPass;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[]) &#123;</span><br><span class="line">        //System.out.println(s);//d3b1294a61a07da9b49b6e22b2cbd7f9</span><br><span class="line">        //System.out.println(inputPassToDbPass(&quot;123456&quot;, &quot;1a2b3c4d&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h1>
+            <h1 id="分布式session"><a href="#分布式session" class="headerlink" title="分布式session"></a>分布式session</h1>
           
         
       
@@ -943,7 +1044,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/java秒杀系统方案优化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/Redis/SpringBoot Redis/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -962,7 +1063,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/30/java秒杀系统方案优化/" itemprop="url">java秒杀系统方案优化</a></h1>
+                <a class="post-title-link" href="/2019/02/05/Redis/SpringBoot Redis/" itemprop="url">SpringBoot整合Redis</a></h1>
         
 
         <div class="post-meta">
@@ -974,8 +1075,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-30T21:01:56+08:00">
-                2019-01-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-05T17:38:23+08:00">
+                2019-02-05
               </time>
             
 
@@ -993,8 +1094,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/30/java秒杀系统方案优化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/30/java秒杀系统方案优化/" itemprop="commentCount"></span>
+                <a href="/2019/02/05/Redis/SpringBoot Redis/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/05/Redis/SpringBoot Redis/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1024,309 +1125,21 @@
       
         
           
-            <p>！ </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/29/java基础/枚举/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/29/java基础/枚举/" itemprop="url">枚举</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-29T09:32:53+08:00">
-                2019-01-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/29/java基础/枚举/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/29/java基础/枚举/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-枚举"><a href="#1-枚举" class="headerlink" title="1.枚举"></a>1.枚举</h1><h2 id="用法一：常量"><a href="#用法一：常量" class="headerlink" title="用法一：常量"></a>用法一：常量</h2><p>在JDK1.5 之前，我们定义常量都是： public static final…. 。现在好了，有了枚举，可以把相关的常量分组到一个枚举类型里，而且枚举提供了比常量更多的方法。 </p>
-<p>Java代码 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum Color &#123;  </span><br><span class="line">  RED, GREEN, BLANK, YELLOW </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="用法三：向枚举中添加新方法"><a href="#用法三：向枚举中添加新方法" class="headerlink" title="用法三：向枚举中添加新方法"></a>用法三：向枚举中添加新方法</h2><p>如果打算自定义自己的方法，那么必须在enum实例序列的最后添加一个分号。而且 Java 要求必须先定义 enum 实例。 </p>
-<p>Java代码 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Color &#123;  </span><br><span class="line">    RED(<span class="string">"红色"</span>, <span class="number">1</span>), GREEN(<span class="string">"绿色"</span>, <span class="number">2</span>), BLANK(<span class="string">"白色"</span>, <span class="number">3</span>), YELLO(<span class="string">"黄色"</span>, <span class="number">4</span>);  </span><br><span class="line">    <span class="comment">// 成员变量  </span></span><br><span class="line">    <span class="keyword">private</span> String name;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> index;  </span><br><span class="line">    <span class="comment">// 构造方法  </span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Color</span><span class="params">(String name, <span class="keyword">int</span> index)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.name = name;  </span><br><span class="line">        <span class="keyword">this</span>.index = index;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">// 普通方法  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getName</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">for</span> (Color c : Color.values()) &#123;  </span><br><span class="line">            <span class="keyword">if</span> (c.getIndex() == index) &#123;  </span><br><span class="line">                <span class="keyword">return</span> c.name;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">// get set 方法  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> name;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.name = name;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> index;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIndex</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.index = index;  </span><br><span class="line">    &#125;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<blockquote>
-<p><a href="https://blog.csdn.net/qq_27093465/article/details/52180865" target="_blank" rel="noopener">https://blog.csdn.net/qq_27093465/article/details/52180865</a></p>
+            <h1 id="1-依赖"><a href="#1-依赖" class="headerlink" title="1 依赖"></a>1 依赖</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--redis纯洁的微笑--&gt;</span></span><br><span class="line">    </span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--redis 纯洁的微笑--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.6.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.netty<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>netty-codec<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.31.Final<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2 配置文件"></a>2 配置文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring.redis.database=1</span><br><span class="line">spring.redis.host=127.0.0.1</span><br><span class="line">spring.redis.port=6379</span><br><span class="line">spring.redis.password=</span><br><span class="line">spring.redis.lettuce.pool.max-active=8</span><br><span class="line">spring.redis.lettuce.pool.max-wait=-1</span><br><span class="line">spring.redis.lettuce.pool.max-idle=8</span><br><span class="line">spring.redis.lettuce.pool.min-idle=0</span><br></pre></td></tr></table></figure>
+<h1 id="3-RedisConfig"><a href="#3-RedisConfig" class="headerlink" title="3.RedisConfig"></a>3.RedisConfig</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package com.imooc.miaosha.Redis_new;</span><br><span class="line"></span><br><span class="line">import com.fasterxml.jackson.annotation.JsonAutoDetect;</span><br><span class="line">import com.fasterxml.jackson.annotation.PropertyAccessor;</span><br><span class="line">import com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line">import org.springframework.cache.annotation.CachingConfigurerSupport;</span><br><span class="line">import org.springframework.cache.annotation.EnableCaching;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line">import org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line">import org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line">import org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line">import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line">@EnableCaching//开启缓存</span><br><span class="line">public class RedisConfig extends CachingConfigurerSupport &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public RedisTemplate<span class="tag">&lt;<span class="name">String,</span> <span class="attr">String</span>&gt;</span> redisTemplate(RedisConnectionFactory factory) &#123;</span><br><span class="line">        StringRedisTemplate template = new StringRedisTemplate(factory);</span><br><span class="line">        Jackson2JsonRedisSerializer<span class="tag">&lt;<span class="name">Object</span>&gt;</span> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<span class="tag">&lt;&gt;</span>(Object.class);</span><br><span class="line">        ObjectMapper om = new ObjectMapper();</span><br><span class="line">        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class="line">        jackson2JsonRedisSerializer.setObjectMapper(om);</span><br><span class="line">        template.setValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        return template;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="4-Controller"><a href="#4-Controller" class="headerlink" title="4.Controller"></a>4.Controller</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/redis"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisTestController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate&lt;String, String&gt; redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/string"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">"neo"</span>, <span class="string">"redis"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/get"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        redisTemplate.opsForValue().get(<span class="string">"neo"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">"hhh"</span>, <span class="string">"hexo"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="RedisConfig（附录）"><a href="#RedisConfig（附录）" class="headerlink" title="RedisConfig（附录）"></a>RedisConfig（附录）</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.Redis_new;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonAutoDetect;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.PropertyAccessor;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.CacheManager;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.annotation.CachingConfigurerSupport;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.annotation.EnableCaching;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.interceptor.KeyGenerator;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheManager;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.time.Duration;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableCaching</span><span class="comment">//开启缓存</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> <span class="keyword">extends</span> <span class="title">CachingConfigurerSupport</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> KeyGenerator <span class="title">keyGenerator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> KeyGenerator() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">generate</span><span class="params">(Object target, Method method, Object... params)</span> </span>&#123;</span><br><span class="line">                StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">                sb.append(target.getClass().getName());</span><br><span class="line">                sb.append(method.getName());</span><br><span class="line">                <span class="keyword">for</span> (Object obj : params) &#123;</span><br><span class="line">                    sb.append(obj.toString());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> sb.toString();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CacheManager <span class="title">cacheManager</span><span class="params">(RedisConnectionFactory factory)</span> </span>&#123;</span><br><span class="line">        RedisCacheManager cacheManager = RedisCacheManager.create(factory);</span><br><span class="line">        <span class="keyword">return</span> cacheManager;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String, String&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory factory)</span> </span>&#123;</span><br><span class="line">        StringRedisTemplate template = <span class="keyword">new</span> StringRedisTemplate(factory);</span><br><span class="line">        Jackson2JsonRedisSerializer&lt;Object&gt; jackson2JsonRedisSerializer = <span class="keyword">new</span> Jackson2JsonRedisSerializer&lt;&gt;(Object.class);</span><br><span class="line">        ObjectMapper om = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class="line">        jackson2JsonRedisSerializer.setObjectMapper(om);</span><br><span class="line">        template.setValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> StringRedisTemplate <span class="title">stringRedisTemplate</span><span class="params">(RedisConnectionFactory factory)</span> </span>&#123;</span><br><span class="line">        StringRedisTemplate stringRedisTemplate = <span class="keyword">new</span> StringRedisTemplate();</span><br><span class="line">        stringRedisTemplate.setConnectionFactory(factory);</span><br><span class="line">        <span class="keyword">return</span> stringRedisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p><a href="https://blog.csdn.net/sy793314598/article/details/80719224" target="_blank" rel="noopener">https://blog.csdn.net/sy793314598/article/details/80719224</a></p>
 </blockquote>
 <blockquote>
-<p><a href="https://www.cnblogs.com/sister/p/4700702.html" target="_blank" rel="noopener">https://www.cnblogs.com/sister/p/4700702.html</a></p>
+<p><a href="https://blog.csdn.net/long290046464/article/details/76596103" target="_blank" rel="noopener">https://blog.csdn.net/long290046464/article/details/76596103</a></p>
+<p><a href="https://blog.csdn.net/long290046464/article/details/76596103" target="_blank" rel="noopener">https://blog.csdn.net/long290046464/article/details/76596103</a></p>
 </blockquote>
-<p><strong>1.values()获取存储枚举中所有常量实例的数组。常配合foreach完成遍历</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(ColorEnum temp:ColorEnum.values())&#123;</span><br><span class="line">        System.out.println(temp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>　　运行结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　RED</span><br><span class="line">　　GREEN</span><br><span class="line">　　BLUE</span><br></pre></td></tr></table></figure>
-<p> 　　2.构造方法，枚举的构造方法只能用private修饰符修饰，原因就不需要解释了……</p>
-<p>　　3.valueOf()通过常量名获取对应的枚举实例。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　ColorEnum red = ColorEnum.valueOf(&quot;RED&quot;);</span><br><span class="line">　　System.out.println(red);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/26/HTTP/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/26/HTTP/" itemprop="url">HTTP协议</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-26T18:04:09+08:00">
-                2019-01-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/26/HTTP/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/26/HTTP/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-HTTP"><a href="#1-HTTP" class="headerlink" title="1.HTTP"></a>1.HTTP</h1><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fzk5eptoxqj30x80fldkj.jpg" alt="image-20190126181037515"></p>
-<hr>
-<h1 id="2-网络协议分层"><a href="#2-网络协议分层" class="headerlink" title="2 .网络协议分层"></a>2 .网络协议分层</h1><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fzk629fngyj30qh0ihaba.jpg" alt="image-20190126183248271"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzk62qj5wkj30nc0drq69.jpg" alt="image-20190126183344447"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzkrlxigz1j30lf0ayq54.jpg" alt="image-20190127065844792"></p>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzkrmu9g9fj30m10dd76e.jpg" alt="image-20190127065939549"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fzkrr5cb9aj30nw0dpacs.jpg" alt="image-20190127070345471"></p>
-<p>#3  HTTP 三次握手</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fzks19vp2aj30qq0c8dgx.jpg" alt="image-20190127071331819"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzks1k9hx3j30lt0hdgon.jpg" alt="image-20190127071348307"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzks5gtfy4j3100045dne.jpg" alt="image-20190127071732438"></p>
-<h1 id="4-URI-URL-URN"><a href="#4-URI-URL-URN" class="headerlink" title="4 URI URL URN"></a>4 URI URL URN</h1><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzks6pm3v3j30me07oq3y.jpg" alt="image-20190127071844839"></p>
-<p>包括URL 和URN</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fzks82c62oj30t90bfjtp.jpg" alt="image-20190127072003375"></p>
-<p>ftp协议</p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzkscdtzipj30jv086mxw.jpg" alt="image-20190127072410668"></p>
-<h1 id="5-HTTP-报文"><a href="#5-HTTP-报文" class="headerlink" title="5 HTTP 报文"></a>5 HTTP 报文</h1><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzksdb5ptnj30rd07cwgk.jpg" alt="image-20190127072505398"></p>
-<hr>
-<h1 id="6Http客户端-CURL"><a href="#6Http客户端-CURL" class="headerlink" title="6Http客户端 CURL"></a>6Http客户端 CURL</h1><p><img src="../../../Users/apple/Library/Application%20Support/typora-user-images/image-20190129080152157.png" alt="image-20190129080152157"></p>
+<blockquote>
+<p><a href="https://segmentfault.com/q/1010000015203664/a-1020000015204174" target="_blank" rel="noopener">https://segmentfault.com/q/1010000015203664/a-1020000015204174</a></p>
+</blockquote>
 
           
         
@@ -1375,7 +1188,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/26/面试/面试Google/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/开发遇到的问题/Untitled/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -1394,7 +1207,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/26/面试/面试Google/" itemprop="url">慕课网Java校招面试 Google面试官亲授</a></h1>
+                <a class="post-title-link" href="/2019/02/05/开发遇到的问题/Untitled/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -1406,8 +1219,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-26T11:03:23+08:00">
-                2019-01-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-05T17:34:14+08:00">
+                2019-02-05
               </time>
             
 
@@ -1425,8 +1238,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/26/面试/面试Google/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/26/面试/面试Google/" itemprop="commentCount"></span>
+                <a href="/2019/02/05/开发遇到的问题/Untitled/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/05/开发遇到的问题/Untitled/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1504,7 +1317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/SSM /SSM整合3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/java基础/范型/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="袁海鹏">
@@ -1523,7 +1336,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/24/SSM /SSM整合3/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/02/05/java基础/范型/" itemprop="url">范型</a></h1>
         
 
         <div class="post-meta">
@@ -1535,8 +1348,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-24T20:04:46+08:00">
-                2019-01-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-05T11:30:57+08:00">
+                2019-02-05
               </time>
             
 
@@ -1554,8 +1367,137 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/24/SSM /SSM整合3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/24/SSM /SSM整合3/" itemprop="commentCount"></span>
+                <a href="/2019/02/05/java基础/范型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/05/java基础/范型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/04/java基础/extends/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/04/java基础/extends/" itemprop="url">extends关键字</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-04T09:36:40+08:00">
+                2019-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/04/java基础/extends/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/04/java基础/extends/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1624,7 +1566,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1672,7 +1614,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
