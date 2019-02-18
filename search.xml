@@ -11,7 +11,7 @@
   <entry>
     <title></title>
     <url>%2F2019%2F02%2F12%2FTest%2F</url>
-    <content type="text"><![CDATA[1 常用代码块1$&#123;pageContext.request.contextPath&#125;/xxx/xxx/xx]]></content>
+    <content type="text"><![CDATA[1 常用代码块1$&#123;pageContext.request.contextPath&#125;/xxx/xxx/xx 1mvn test]]></content>
   </entry>
   <entry>
     <title></title>
