@@ -269,6 +269,213 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/22/项目实战/SSM项目实战/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/22/项目实战/SSM项目实战/" itemprop="url">慕课网SSM到Spring Boot-从零开发校园商铺平台 o2o</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-22T21:39:53+08:00">
+                2018-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/22/项目实战/SSM项目实战/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/22/项目实战/SSM项目实战/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-实体类解析与表的创建"><a href="#1-实体类解析与表的创建" class="headerlink" title="1.实体类解析与表的创建"></a>1.实体类解析与表的创建</h1><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyfut153vnj31a10n34bj.jpg" alt="image-20181222214114017"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyfutkewbwj30wa0lfk0i.jpg" alt="image-20181222214145357"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fygb4crq2nj30zl0nltmf.jpg" alt="image-20181223070542815"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fygbpubdhlj31970kitj2.jpg" alt="image-20181223072622146"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fygdako38ij31290md7gy.jpg" alt="image-20181223082052754"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fygdiquim0j310y0mldtg.jpg" alt="image-20181223082844242"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fygen7t3jhj313p0ng7wh.jpg" alt="image-20181223090734422"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fygfb8s1ayj30gt06pwiq.jpg" alt="image-20181223093042614"></p>
+<p>$商品类别$：</p>
+<p>1:商品类别的id</p>
+<p>2:店铺id</p>
+<p>3:商品类别的名称</p>
+<p>4:商品类别的权重</p>
+<p>5:商品创建时间</p>
+<hr>
+<p>$详情图片：$</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fygfiq6krtj30dl07udk3.jpg" alt="image-20181223093754350"></p>
+<p>1:详情图片的id</p>
+<p>2.图片的地址</p>
+<p>3.图片显示的权重 大靠前显示</p>
+<p>4.创建时间</p>
+<p>5.属于那个商品的详情图片（多对一）的关系</p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fygfsaaqhvj31500n8ww5.jpg" alt="image-20181223094705247"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyggggjnobj319e0kjtm7.jpg" alt="image-20181223101020928"></p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fygghi0xzdj30ki0e30uu.jpg" alt="image-20181223101120198"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyggivml7pj30nh0c976v.jpg" alt="image-20181223101240234"></p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyggj4yctwj30gu0bj0uc.jpg" alt="image-20181223101255059"></p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyggoipqlqj30ut0u0neh.jpg" alt="image-20181223101804614"></p>
+<hr>
+<h1 id="2-项目1-0开发"><a href="#2-项目1-0开发" class="headerlink" title="2 项目1.0开发"></a>2 项目1.0开发</h1><p>##2.1 店铺注册</p>
+<h5 id="Thumbnailator图片压缩处理"><a href="#Thumbnailator图片压缩处理" class="headerlink" title="Thumbnailator图片压缩处理"></a>Thumbnailator图片压缩处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;net.coobird&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;thumbnailator&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.4.8&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://github.com/coobird/thumbnailator/wiki/Examples" target="_blank" rel="noopener">https://github.com/coobird/thumbnailator/wiki/Examples</a></p>
+</blockquote>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><h2 id="从图像文件创建缩略图"><a href="#从图像文件创建缩略图" class="headerlink" title="从图像文件创建缩略图"></a>从图像文件创建缩略图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Thumbnails.of(new File(&quot;original.jpg&quot;))</span><br><span class="line">        .size(160, 160)</span><br><span class="line">        .toFile(new File(&quot;thumbnail.jpg&quot;));</span><br></pre></td></tr></table></figure>
+<p>在此示例中，图像来自<code>original.jpg</code>调整大小，然后保存到<code>thumbnail.jpg</code>。</p>
+<p>或者，<em>Thumbnailator</em>将接受文件名作为<code>String</code>。<code>File</code>不需要使用对象指定图像文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Thumbnails.of(&quot;original.jpg&quot;)</span><br><span class="line">        .size(160, 160)</span><br><span class="line">        .toFile(&quot;thumbnail.jpg&quot;);</span><br></pre></td></tr></table></figure>
+<p>在编写快速原型代码或从脚本语言中使用<em>Thumbnailator</em>时，此表单非常有用。</p>
+<h2 id="使用旋转和水印创建缩略图"><a href="#使用旋转和水印创建缩略图" class="headerlink" title="使用旋转和水印创建缩略图"></a>使用旋转和水印创建缩略图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Thumbnails.of(new File(&quot;original.jpg&quot;))</span><br><span class="line">        .size(160, 160)</span><br><span class="line">        .rotate(90)</span><br><span class="line">        .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(&quot;watermark.png&quot;)), 0.5f)</span><br><span class="line">        .outputQuality(0.8)</span><br><span class="line">        .toFile(new File(&quot;image-with-watermark.jpg&quot;));</span><br></pre></td></tr></table></figure>
+<p>在此示例中，<code>original.jpg</code>调整图像大小，然后顺时针旋转90度，然后在右下角放置一个半透明水印，然后<code>image-with-watermark.jpg</code>以80％压缩质量设置保存。</p>
+<h2 id="创建缩略图并写入-OutputStream"><a href="#创建缩略图并写入-OutputStream" class="headerlink" title="创建缩略图并写入 OutputStream"></a>创建缩略图并写入 <code>OutputStream</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">OutputStream os = ...;</span><br><span class="line">		</span><br><span class="line">Thumbnails.of(&quot;large-picture.jpg&quot;)</span><br><span class="line">        .size(200, 200)</span><br><span class="line">        .outputFormat(&quot;png&quot;)</span><br><span class="line">        .toOutputStream(os);</span><br></pre></td></tr></table></figure>
+<p>在此示例中，将文件中的图像<code>large-picture.jpg</code>调整为最大尺寸200 x 200（保持原始图像的纵横比），并将其写入指定<code>OutputStream</code>的PNG图像。</p>
+<h2 id="创建固定大小的缩略图"><a href="#创建固定大小的缩略图" class="headerlink" title="创建固定大小的缩略图"></a>创建固定大小的缩略图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BufferedImage originalImage = ImageIO.read(new File(&quot;original.png&quot;));</span><br><span class="line"></span><br><span class="line">BufferedImage thumbnail = Thumbnails.of(originalImage)</span><br><span class="line">        .size(200, 200)</span><br><span class="line">        .asBufferedImage();</span><br></pre></td></tr></table></figure>
+<p>上面的代码采用图像<code>originalImage</code>并创建一个200像素乘200像素的缩略图，并使用并存储结果<code>thumbnail</code>。</p>
+<hr>
+<h2 id="https-github-com-FasterXML-jackson-databind"><a href="#https-github-com-FasterXML-jackson-databind" class="headerlink" title="https://github.com/FasterXML/jackson-databind"></a><a href="https://github.com/FasterXML/jackson-databind" target="_blank" rel="noopener">https://github.com/FasterXML/jackson-databind</a></h2><h1 id="用它！"><a href="#用它！" class="headerlink" title="用它！"></a>用它！</h1><p>可以从<a href="https://github.com/FasterXML/jackson-docs" target="_blank" rel="noopener">Jackson-docs</a>存储库中找到更全面的文档; 以及来自该项目的<a href="https://github.com/FasterXML/jackson-databind/wiki" target="_blank" rel="noopener">Wiki</a>。但这里有简要的介绍性教程，建议阅读顺序。</p>
+<h2 id="1分钟教程：POJO到JSON并返回"><a href="#1分钟教程：POJO到JSON并返回" class="headerlink" title="1分钟教程：POJO到JSON并返回"></a>1分钟教程：POJO到JSON并返回</h2><p>最常见的用法是使用JSON，并从中构造一个Plain Old Java Object（“POJO”）。那么让我们从那里开始。简单的2属性POJO像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//注意：也可以使用getter / setter; 这里我们直接使用公共字段：</span><br><span class="line">public  class  MyValue &#123;</span><br><span class="line">   public  String name;</span><br><span class="line">  公共 INT年龄;</span><br><span class="line">  //注意：如果使用getter / setter，可以保留字段`protected`或`private` </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们需要一个<code>com.fasterxml.jackson.databind.ObjectMapper</code>用于所有数据绑定的实例，所以让我们构造一个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ObjectMapper mapper =  new  ObjectMapper（）; //创建一次，重用</span><br></pre></td></tr></table></figure>
+<p>默认实例适合我们使用 - 稍后我们将了解如何在必要时配置映射器实例。用法很简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MyValue值= mapper 。readValue（新 文件（“ data.json ”），myvalue的。类）;</span><br><span class="line">//或： </span><br><span class="line">value = mapper 。readValue（新 URL（“ http://some.com/api/entry.json ”），MyValue 。类）;</span><br><span class="line">//或： </span><br><span class="line">value = mapper 。readValue（“ &#123; \” name \“：\” Bob \“，\ “年龄\”：13&#125; “， myvalue的。类）;</span><br></pre></td></tr></table></figure>
+<p>如果我们想写JSON，我们会做相反的事情：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">映射器。writeValue（新 文件（“ result.json ”），myResultObject）;</span><br><span class="line">//或：</span><br><span class="line">byte [] jsonBytes = mapper 。writeValueAsBytes（myResultObject）;</span><br><span class="line">//或：</span><br><span class="line">String jsonString = mapper 。writeValueAsString（myResultObject）;</span><br></pre></td></tr></table></figure>
+<p>到现在为止还挺好？</p>
+<h2 id="3分钟教程：通用集合，树模型"><a href="#3分钟教程：通用集合，树模型" class="headerlink" title="3分钟教程：通用集合，树模型"></a>3分钟教程：通用集合，树模型</h2><p>除了处理简单的Bean风格的POJO之外，您还可以处理JDK <code>List</code>，<code>Map</code>s：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map &lt; String，Integer &gt; scoreByName = mapper 。readValue（jsonSource，Map 。类）;</span><br><span class="line">List &lt; String &gt; names = mapper 。readValue（jsonSource，列表。类）;</span><br><span class="line"></span><br><span class="line">//显然可以写出 </span><br><span class="line">mapper。writeValue（ new  File（ “ names.json ”），names）;</span><br></pre></td></tr></table></figure>
+<p>只要JSON结构匹配，类型就很简单。如果您有POJO值，则需要指明实际类型（注意：对于具有<code>List</code>etc类型的POJO属性，这不是必需的）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Map &lt; String，ResultValue &gt; results = mapper 。readValue（jsonSource，</span><br><span class="line">    新 TypeReference &lt; 地图&lt; 字符串，ResultValue &gt; &gt;（）&#123;&#125;）;</span><br><span class="line">//为什么要额外工作？Java Type Erasure否则会阻止类型检测</span><br></pre></td></tr></table></figure>
+<p>（注意：无论通用类型如何，序列化都不需要额外的努力）</p>
+<p>可是等等！还有更多！</p>
+<p>虽然处理<code>Map</code>s，<code>List</code>s和其他“简单”对象类型（字符串，数字，布尔值）可能很简单，但对象遍历可能很麻烦。这就是Jackson’s <a href="https://github.com/FasterXML/jackson-databind/wiki/JacksonTreeModel" target="_blank" rel="noopener">Tree模型</a>可以派上用场的地方：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//可以读作通用的JsonNode，如果它可以是Object或Array; 或者，</span><br><span class="line">//如果已知为Object，则为ObjectNode，如果是array，ArrayNode等：</span><br><span class="line">ObjectNode root = mapper。readTree（ “ stuff.json ”）;</span><br><span class="line">字符串名称 = root。得到（ “名字”）。asText（）;</span><br><span class="line">int age = root。得到（ “年龄”）。asInt中（）;</span><br><span class="line"></span><br><span class="line">//也可以修改：这会将子对象添加为属性&apos;other&apos;，设置属性&apos; </span><br><span class="line">type&apos;root。与（ “其他”）。put（ “ type ”， “ student ”）;</span><br><span class="line">String json = mapper。writeValueAsString（根）;</span><br><span class="line"></span><br><span class="line">//与上面一样，我们最终得到像&apos;json&apos;字符串：</span><br><span class="line">// &#123; </span><br><span class="line">//    “name”：“Bob”，“age”：13，</span><br><span class="line">//    “other”：&#123; </span><br><span class="line">//       “type”：“学生“ </span><br><span class="line">//    &#125; </span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+<p>树模型比数据绑定更方便，特别是在结构高度动态或不能很好地映射到Java类的情况下。</p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/22/SpringBoot/SpringBoot小D课堂/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -3006,137 +3213,6 @@ export JAVA_HOME PATH CLASSPATH
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/13/Mybatis/级联操作/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/13/Mybatis/级联操作/" itemprop="url">test</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-13T15:57:03+08:00">
-                2018-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/13/Mybatis/级联操作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/13/Mybatis/级联操作/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy56bo2dc7j30ij0djwna.jpg" alt="image-20181213155828650"></p>
-<p>—<img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy59v8tt9vj30hi04m405.jpg" alt="image-20181213180108232"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3189,7 +3265,7 @@ export JAVA_HOME PATH CLASSPATH
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -3211,7 +3287,7 @@ export JAVA_HOME PATH CLASSPATH
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

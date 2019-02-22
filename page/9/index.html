@@ -269,6 +269,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/开发遇到的问题/常见问题总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/09/开发遇到的问题/常见问题总结/" itemprop="url">常见问题总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T17:14:16+08:00">
+                2018-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/09/开发遇到的问题/常见问题总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/09/开发遇到的问题/常见问题总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>前端向后端传值：</p>
+<ul>
+<li><p>Button 和form</p>
+</li>
+<li><ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goUpdatePage</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"$&#123;pageContext.request.contextPath&#125;/user/editcontroller?id="</span> + id;</span><br><span class="line">&#125;      </span><br><span class="line"> &lt;button type=<span class="string">"button"</span> onclick=<span class="string">"goUpdatePage($&#123;user.id&#125;)"</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary btn-xs"</span>&gt;</span><br><span class="line">    &lt;i</span><br><span class="line">            <span class="class"><span class="keyword">class</span></span>=<span class="string">" glyphicon glyphicon-pencil"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>开发中service层 必须要写 @service注解</p>
+</li>
+<li><p>⚠️service中不要加@service。在service的实现serviceiml中加@service注解</p>
+</li>
+<li><p>开发的顺序 从前端传值到Controller 再到 service 再到serviceimpl 再到userdao 再到mybatis.xml再到数据库 数据库返回前端页面</p>
+</li>
+<li><p>引入mybatis 的多个mapper的配置文件 mapper.xml  Spring Boot 的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mybatis.mapper-locations=classpath:mybatis/mapper/*.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>###idea警告：Field injection is not recommended</p>
+</li>
+<li><p>####Springboot开发 Dao中UserDao RoleDao中要加 @Mapper注解</p>
+<p># </p>
+</li>
+<li><h1 id=""><a href="#" class="headerlink" title=""></a><img src="/Users/apple/Desktop/屏幕快照 2018-11-14 下午1.19.50.png" alt="屏幕快照 2018-11-14 下午1.19.50"></h1></li>
+<li><p>import和open项目是不一样的 出现上面的情况要import一下啊 兄ide</p>
+</li>
+<li><h3 id="Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’"><a href="#Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’" class="headerlink" title="Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’"></a>Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’</h3></li>
+<li><p>Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Ca</p>
+<blockquote>
+<p> 看到那个<strong>resultType</strong>了么，就是它惹的祸，这里把<strong>resultType</strong>改为<strong>resultMap</strong>就OK啦，重启tomcat，木有异常啦</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtic1bppsj309801naa1.jpg" alt="image-20181114135152950"></p>
+<blockquote>
+<p>跳转视图 用字符串哈 </p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtic5ntolj305505g3yh.jpg" alt="image-20181117115951176"></p>
+<p>开发中前端的img要放到和框架的同一目录及下面哈。兄die</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection connection = ConnectionUtils.getConnection();</span><br></pre></td></tr></table></figure>
+<p>用类.方法（）.var 可以直接返回该对象的返回对象</p>
+<p>Sting s=”test”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(s);===s.sout</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../Users/apple/Library/Application Support/typora-user-images/image-20190131103713601.png" alt="image-20190131103713601"></p>
+<hr>
+<h1 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h1><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g008jkl0ryj30k40boq4n.jpg" alt="image-20190209160806502"></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_34160679/article/details/80651027" target="_blank" rel="noopener">https://blog.csdn.net/qq_34160679/article/details/80651027</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc.url     = jdbc:mysql:/xxx:3306/zhongfubang?useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Asia/Shanghai</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/开发遇到的问题/Iterm2配置/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1342,7 +1525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1364,7 +1547,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
