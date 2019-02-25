@@ -87,10 +87,22 @@
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="@Component1、@controller 控制器（注入服务） 用于标注控制层，相当于struts中的action层2、@service 服务（注入dao） 用于标注服务层，主要用来进行业务的逻辑处理3、@repository（实现dao访问） 用于标注数据访问层，也可以说用于标注数据访问组件，即DAO组件.4、@component （把普通pojo实例化到spring容器中，相当于配置文件中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-19T02:06:13.140Z">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:updated_time" content="2019-02-23T00:06:34.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring注解">
 <meta name="twitter:description" content="@Component1、@controller 控制器（注入服务） 用于标注控制层，相当于struts中的action层2、@service 服务（注入dao） 用于标注服务层，主要用来进行业务的逻辑处理3、@repository（实现dao访问） 用于标注数据访问层，也可以说用于标注数据访问组件，即DAO组件.4、@component （把普通pojo实例化到spring容器中，相当于配置文件中">
+<meta name="twitter:image" content="https://common.cnblogs.com/images/copycode.gif">
 
 
 
@@ -356,7 +368,53 @@
 <p>用于标注数据访问层，也可以说用于标注数据访问组件，即DAO组件.<br>4、@component （把普通pojo实例化到spring容器中，相当于配置文件中的 </p>
 <p><bean id="" class="">）</bean></p>
 <p>泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于@Controller、@Services等的时候），我们就可以使用@Component来标注这个类。<br>案例：<br>&lt;context:component-scan base-package=”com.*”&gt;<br>上面的这个例子是引入Component组件的例子，其中base-package表示为需要扫描的所有子包。 </p>
-<h2 id="共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理"><a href="#共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理" class="headerlink" title="共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理"></a>共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理</h2>
+<h2 id="共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理"><a href="#共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理" class="headerlink" title="共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理"></a>共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理</h2><hr>
+<h1 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h1><p>GET和POST请求传的参数会自动转换赋值到@RequestParam 所注解的变量上<br>\1. @RequestParam（org.springframework.web.bind.annotation.RequestParam）用于将指定的请求参数赋值给方法中的形参。<br>例：<br>(1) get请求：</p>
+<p>url请求：<a href="http://localhost:8080/WxProgram/findAllBookByTag?tagId=1&amp;pageIndex=3" target="_blank" rel="noopener">http://localhost:8080/WxProgram/findAllBookByTag?tagId=1&amp;pageIndex=3</a></p>
+<p>userTest.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/WxProgram/json/requestParamTest&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    requestParam Test&lt;br&gt;</span><br><span class="line">    用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;</span><br><span class="line">    用户昵称：&lt;input type=&quot;text&quot; name=&quot;usernick&quot;&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>UserController.java</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(@RequestParam(value=&quot;username&quot;) String userName, @RequestParam(value=&quot;usernick&quot;) String userNick)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + userName);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + userNick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>上述代码会将请求中的username参数的值赋给username变量。</p>
+<p>等价于：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(String username, HttpServletRequest request)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + username);</span><br><span class="line">    String usernick = request.getParameter(&quot;usernick&quot;);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + usernick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>也可以不使用@RequestParam，直接接收，此时要求controller方法中的参数名称要跟form中name名称一致</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(String username, String usernick)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + username);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + usernick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>总结：</p>
+<p>接收请求参数的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@RequestParam(value=&quot;username&quot;) String userName, @RequestParam(value=&quot;usernick&quot;) String userNick //value中的参数名称要跟name中参数名称一致</span><br><span class="line">String username, String usernick// 此时要参数名称一致</span><br><span class="line">HttpServletRequest request //request.getParameter(&quot;usernick&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="ResponseBody呢？"><a href="#ResponseBody呢？" class="headerlink" title="@ResponseBody呢？"></a>@ResponseBody呢？</h1><blockquote>
+<p>@ResponseBody是作用在方法上的，@ResponseBody 表示该方法的返回结果直接写入 HTTP response body 中，一般在异步获取数据时使用【也就是AJAX】，在使用 @RequestMapping后，返回值通常解析为跳转路径，但是加上 @ResponseBody 后返回结果不会被解析为跳转路径，而是直接写入 HTTP response body 中。 比如异步获取 json 数据，加上 @ResponseBody 后，会直接返回 json 数据。@RequestBody 将 HTTP 请求正文插入方法中，使用适合的 HttpMessageConverter 将请求体写入某个对象。</p>
+</blockquote>
+<p><strong>举个例子：</strong></p>
+<blockquote>
+<p>前台异步请求：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&gt; function loginAction() &#123;</span><br><span class="line">&gt; </span><br><span class="line">&gt;     // 获取用户输入的账号和密码</span><br><span class="line">&gt;     var name = $(&apos;#count&apos;).val();</span><br><span class="line">&gt;     var password = $(&apos;#password&apos;).val();</span><br><span class="line">&gt; </span><br><span class="line">&gt;     $.ajax(&#123;</span><br><span class="line">&gt;         url : &apos;account/login.do&apos;,</span><br><span class="line">&gt;         type : &apos;post&apos;,</span><br><span class="line">&gt;         // data对象中的属性名要和服务端控制器的参数名一致 login(name, password)</span><br><span class="line">&gt;         data : &#123;</span><br><span class="line">&gt;             &apos;name&apos; : name,</span><br><span class="line">&gt;             &apos;password&apos; : password</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         dataType : &apos;json&apos;,</span><br><span class="line">&gt;         success : function(result) &#123;</span><br><span class="line">&gt;             if (result.state == 0) &#123;</span><br><span class="line">&gt;                 // 登录成功，设置cookie并跳转edit.html</span><br><span class="line">&gt;                 addCookie(&apos;userId&apos;, result.data.id);</span><br><span class="line">&gt;                 addCookie(&apos;nick&apos;, result.data.nick);</span><br><span class="line">&gt;                 location.href = &apos;edit.html&apos;;</span><br><span class="line">&gt;             &#125; else &#123;</span><br><span class="line">&gt;                 // 登录失败</span><br><span class="line">&gt;                 var msg = result.message;</span><br><span class="line">&gt;                 $(&apos;#sig_in&apos;).next().html(msg);</span><br><span class="line">&gt;                 $(&apos;#sig_in&apos;).next().css(&quot;color&quot;, &quot;red&quot;);</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         error : function(e) &#123;</span><br><span class="line">&gt;             alert(&quot;系统异常&quot;);</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;);</span><br><span class="line">&gt;     $(&apos;#password&apos;).val(&quot;&quot;);</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>后台 Controller类中对应的方法：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     @RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">&gt;     @ResponseBody</span><br><span class="line">&gt;     public Object login(String name, String password, HttpSession session) &#123;</span><br><span class="line">&gt;         user = userService.checkLogin(name, password);</span><br><span class="line">&gt;         session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">&gt;         return new JsonResult(user);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+</blockquote>
+<h1 id="RequestBody呢"><a href="#RequestBody呢" class="headerlink" title="@RequestBody呢"></a>@RequestBody呢</h1><blockquote>
+<p>​      @RequestBody是作用在形参列表上，用于将前台发送过来固定格式的数据【xml 格式或者 json等】封装为对应的 JavaBean 对象，封装时使用到的一个对象是系统默认配置的 HttpMessageConverter进行解析，然后封装到形参上。</p>
+</blockquote>
+<p>比如上面的登录后台代码可以改为：</p>
+<blockquote>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     @RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">&gt;     @ResponseBody</span><br><span class="line">&gt;     public Object login(@RequestBody User loginUuser, HttpSession session) &#123;</span><br><span class="line">&gt;         user = userService.checkLogin(loginUser);</span><br><span class="line">&gt;         session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">&gt;         return new JsonResult(user);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></blockquote>
+
       
     </div>
     
@@ -395,6 +453,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/22/Spring Boot/SpringBoot雷丰阳/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -483,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -505,7 +567,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -538,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Component"><span class="nav-number">1.</span> <span class="nav-text">@Component</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理"><span class="nav-number">1.1.</span> <span class="nav-text">共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Component"><span class="nav-number">1.</span> <span class="nav-text">@Component</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理"><span class="nav-number">1.1.</span> <span class="nav-text">共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RequestParam"><span class="nav-number">2.</span> <span class="nav-text">@RequestParam</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ResponseBody呢？"><span class="nav-number">3.</span> <span class="nav-text">@ResponseBody呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RequestBody呢"><span class="nav-number">4.</span> <span class="nav-text">@RequestBody呢</span></a></li></ol></div>
             
 
           </div>

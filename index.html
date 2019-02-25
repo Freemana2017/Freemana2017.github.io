@@ -269,6 +269,282 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Dubbo/Zookeeper/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/23/Dubbo/Zookeeper/" itemprop="url">zookeeper的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-23T08:49:17+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/23/Dubbo/Zookeeper/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Dubbo/Zookeeper/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Zookeeper的使用"><a href="#Zookeeper的使用" class="headerlink" title="Zookeeper的使用"></a>Zookeeper的使用</h1><p><img src="../../../../Users/apple/Library/Application%20Support/typora-user-images/image-20190223090242719.png" alt="image-20190223090242719"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g0g35ccn65j30qt02k0uz.jpg" alt="image-20190223091027432"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g0g4vl3yxij30l50akjx3.jpg" alt="image-20190223101020564"></p>
+<h1 id="1-安装JDK"><a href="#1-安装JDK" class="headerlink" title="1 安装JDK"></a>1 安装JDK</h1><blockquote>
+<p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+</blockquote>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g0g4wi1vurj30dm00jdfr.jpg" alt="image-20190223101114804"></p>
+<h3 id="scp-Users-apple-Downloads-jdk-8u201-linux-x64-tar-gz-root-94-191-24-33"><a href="#scp-Users-apple-Downloads-jdk-8u201-linux-x64-tar-gz-root-94-191-24-33" class="headerlink" title="scp /Users/apple/Downloads/jdk-8u201-linux-x64.tar.gz  root@94.191.24.33:"></a>scp /Users/apple/Downloads/jdk-8u201-linux-x64.tar.gz  <a href="mailto:root@94.191.24.33" target="_blank" rel="noopener">root@94.191.24.33</a>:</h3><h3 id="vim-etc-profile"><a href="#vim-etc-profile" class="headerlink" title="vim /etc/profile"></a>vim /etc/profile</h3><p><code>export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL</code></p>
+<p><code>export ZOOKEEPER_HOME=/root/zookeeper-3.4.10</code><br><code>export JAVA_HOME=/root/jdk1.8.0_201</code></p>
+<p><code>export CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</code><br><code>export PATH=$PATH:$JAVA_HOME/bin</code></p>
+<hr>
+<h3 id="source-etc-profile"><a href="#source-etc-profile" class="headerlink" title="source /etc/profile"></a>source /etc/profile</h3><hr>
+<p>java环境配置</p>
+<p>export JAVA_HOME=/root/jdk1.8.0_201</p>
+<p>export CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar<br>export PATH=$PATH:​$JAVA_HOME/bin</p>
+<h1 id="2-安装zookeeper"><a href="#2-安装zookeeper" class="headerlink" title="2 安装zookeeper"></a>2 安装zookeeper</h1><p>#<code>export ZOOKEEPER_HOME=/root/zookeeper-3.4.10</code><br><code>export JAVA_HOME=/root/jdk1.8.0_201</code><br><code>export ZOOKEEPER_HOME=/root/zookeeper-3.4.10</code><br><code>export CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</code></p>
+<p>#<code>export PATH=$PATH:$JAVA_HOME/bin</code><br><code>export PATH=$PATH:​$ZOOKEEPER_HOME/bin:$JAVA_HOME/bin</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/Spring Boot/SpringBoot雷丰阳/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/22/Spring Boot/SpringBoot雷丰阳/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-22T09:08:04+08:00">
+                2019-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/22/Spring Boot/SpringBoot雷丰阳/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/22/Spring Boot/SpringBoot雷丰阳/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Spring/注解开发/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -356,7 +632,53 @@
 <p>用于标注数据访问层，也可以说用于标注数据访问组件，即DAO组件.<br>4、@component （把普通pojo实例化到spring容器中，相当于配置文件中的 </p>
 <p><bean id="" class="">）</bean></p>
 <p>泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于@Controller、@Services等的时候），我们就可以使用@Component来标注这个类。<br>案例：<br>&lt;context:component-scan base-package=”com.*”&gt;<br>上面的这个例子是引入Component组件的例子，其中base-package表示为需要扫描的所有子包。 </p>
-<h2 id="共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理"><a href="#共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理" class="headerlink" title="共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理"></a>共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理</h2>
+<h2 id="共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理"><a href="#共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理" class="headerlink" title="共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理"></a>共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理</h2><hr>
+<h1 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h1><p>GET和POST请求传的参数会自动转换赋值到@RequestParam 所注解的变量上<br>\1. @RequestParam（org.springframework.web.bind.annotation.RequestParam）用于将指定的请求参数赋值给方法中的形参。<br>例：<br>(1) get请求：</p>
+<p>url请求：<a href="http://localhost:8080/WxProgram/findAllBookByTag?tagId=1&amp;pageIndex=3" target="_blank" rel="noopener">http://localhost:8080/WxProgram/findAllBookByTag?tagId=1&amp;pageIndex=3</a></p>
+<p>userTest.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/WxProgram/json/requestParamTest&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    requestParam Test&lt;br&gt;</span><br><span class="line">    用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;</span><br><span class="line">    用户昵称：&lt;input type=&quot;text&quot; name=&quot;usernick&quot;&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>UserController.java</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(@RequestParam(value=&quot;username&quot;) String userName, @RequestParam(value=&quot;usernick&quot;) String userNick)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + userName);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + userNick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>上述代码会将请求中的username参数的值赋给username变量。</p>
+<p>等价于：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(String username, HttpServletRequest request)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + username);</span><br><span class="line">    String usernick = request.getParameter(&quot;usernick&quot;);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + usernick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>也可以不使用@RequestParam，直接接收，此时要求controller方法中的参数名称要跟form中name名称一致</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(String username, String usernick)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + username);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + usernick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>总结：</p>
+<p>接收请求参数的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@RequestParam(value=&quot;username&quot;) String userName, @RequestParam(value=&quot;usernick&quot;) String userNick //value中的参数名称要跟name中参数名称一致</span><br><span class="line">String username, String usernick// 此时要参数名称一致</span><br><span class="line">HttpServletRequest request //request.getParameter(&quot;usernick&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="ResponseBody呢？"><a href="#ResponseBody呢？" class="headerlink" title="@ResponseBody呢？"></a>@ResponseBody呢？</h1><blockquote>
+<p>@ResponseBody是作用在方法上的，@ResponseBody 表示该方法的返回结果直接写入 HTTP response body 中，一般在异步获取数据时使用【也就是AJAX】，在使用 @RequestMapping后，返回值通常解析为跳转路径，但是加上 @ResponseBody 后返回结果不会被解析为跳转路径，而是直接写入 HTTP response body 中。 比如异步获取 json 数据，加上 @ResponseBody 后，会直接返回 json 数据。@RequestBody 将 HTTP 请求正文插入方法中，使用适合的 HttpMessageConverter 将请求体写入某个对象。</p>
+</blockquote>
+<p><strong>举个例子：</strong></p>
+<blockquote>
+<p>前台异步请求：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&gt; function loginAction() &#123;</span><br><span class="line">&gt; </span><br><span class="line">&gt;     // 获取用户输入的账号和密码</span><br><span class="line">&gt;     var name = $(&apos;#count&apos;).val();</span><br><span class="line">&gt;     var password = $(&apos;#password&apos;).val();</span><br><span class="line">&gt; </span><br><span class="line">&gt;     $.ajax(&#123;</span><br><span class="line">&gt;         url : &apos;account/login.do&apos;,</span><br><span class="line">&gt;         type : &apos;post&apos;,</span><br><span class="line">&gt;         // data对象中的属性名要和服务端控制器的参数名一致 login(name, password)</span><br><span class="line">&gt;         data : &#123;</span><br><span class="line">&gt;             &apos;name&apos; : name,</span><br><span class="line">&gt;             &apos;password&apos; : password</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         dataType : &apos;json&apos;,</span><br><span class="line">&gt;         success : function(result) &#123;</span><br><span class="line">&gt;             if (result.state == 0) &#123;</span><br><span class="line">&gt;                 // 登录成功，设置cookie并跳转edit.html</span><br><span class="line">&gt;                 addCookie(&apos;userId&apos;, result.data.id);</span><br><span class="line">&gt;                 addCookie(&apos;nick&apos;, result.data.nick);</span><br><span class="line">&gt;                 location.href = &apos;edit.html&apos;;</span><br><span class="line">&gt;             &#125; else &#123;</span><br><span class="line">&gt;                 // 登录失败</span><br><span class="line">&gt;                 var msg = result.message;</span><br><span class="line">&gt;                 $(&apos;#sig_in&apos;).next().html(msg);</span><br><span class="line">&gt;                 $(&apos;#sig_in&apos;).next().css(&quot;color&quot;, &quot;red&quot;);</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         error : function(e) &#123;</span><br><span class="line">&gt;             alert(&quot;系统异常&quot;);</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;);</span><br><span class="line">&gt;     $(&apos;#password&apos;).val(&quot;&quot;);</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>后台 Controller类中对应的方法：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     @RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">&gt;     @ResponseBody</span><br><span class="line">&gt;     public Object login(String name, String password, HttpSession session) &#123;</span><br><span class="line">&gt;         user = userService.checkLogin(name, password);</span><br><span class="line">&gt;         session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">&gt;         return new JsonResult(user);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+</blockquote>
+<h1 id="RequestBody呢"><a href="#RequestBody呢" class="headerlink" title="@RequestBody呢"></a>@RequestBody呢</h1><blockquote>
+<p>​      @RequestBody是作用在形参列表上，用于将前台发送过来固定格式的数据【xml 格式或者 json等】封装为对应的 JavaBean 对象，封装时使用到的一个对象是系统默认配置的 HttpMessageConverter进行解析，然后封装到形参上。</p>
+</blockquote>
+<p>比如上面的登录后台代码可以改为：</p>
+<blockquote>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     @RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">&gt;     @ResponseBody</span><br><span class="line">&gt;     public Object login(@RequestBody User loginUuser, HttpSession session) &#123;</span><br><span class="line">&gt;         user = userService.checkLogin(loginUser);</span><br><span class="line">&gt;         session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">&gt;         return new JsonResult(user);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></blockquote>
+
           
         
       
@@ -1357,265 +1679,6 @@ public String regist(SysUser sysUser , @RequestParam(required=true,name=&quot;se
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/蓝桥杯/去除重复因子/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/11/蓝桥杯/去除重复因子/" itemprop="url">蓝桥杯 去除重重复因子 不懂</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T10:08:05+08:00">
-                2019-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/11/蓝桥杯/去除重复因子/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/蓝桥杯/去除重复因子/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Code2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 给定一个正整数n，求一个正整数p，</span></span><br><span class="line">		<span class="comment">// 满足p仅包含n的所有素因子，且每个素因子的次数不大于1</span></span><br><span class="line">		Scanner ci = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">long</span> n = ci.nextLong();</span><br><span class="line">		<span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">long</span> x = n;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">2</span>; i &lt;= x; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (x % i == <span class="number">0</span>) &#123;</span><br><span class="line">				ans *= i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span> (x % i == <span class="number">0</span>) &#123;</span><br><span class="line">				x /= i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/技术栈/分布式session/分布式Session/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/05/技术栈/分布式session/分布式Session/" itemprop="url">分布式session</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-05T19:40:52+08:00">
-                2019-02-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/05/技术栈/分布式session/分布式Session/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/05/技术栈/分布式session/分布式Session/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="分布式session"><a href="#分布式session" class="headerlink" title="分布式session"></a>分布式session</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1668,7 +1731,7 @@ public String regist(SysUser sysUser , @RequestParam(required=true,name=&quot;se
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1690,7 +1753,7 @@ public String regist(SysUser sysUser , @RequestParam(required=true,name=&quot;se
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

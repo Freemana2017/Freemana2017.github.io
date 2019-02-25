@@ -91,7 +91,9 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtic5ntolj305505g3yh.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/Users/apple/Library/Application%20Support/typora-user-images/image-20190131103713601.png">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g008jkl0ryj30k40boq4n.jpg">
-<meta property="og:updated_time" content="2019-02-09T08:09:08.178Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181204225756905.png">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1g0g5vwo6mtj30j6014mx0.jpg">
+<meta property="og:updated_time" content="2019-02-23T02:50:47.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见问题总结">
 <meta name="twitter:description" content="前端向后端传值：  Button 和form   1234567function goUpdatePage(id) &amp;#123;    window.location.href = &quot;$&amp;#123;pageContext.request.contextPath&amp;#125;/user/editcontroller?id=&quot; + id;&amp;#125;       &amp;lt;button type=&quot;bu">
@@ -361,7 +363,7 @@
 <li><p>Button 和form</p>
 </li>
 <li><ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goUpdatePage</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"$&#123;pageContext.request.contextPath&#125;/user/editcontroller?id="</span> + id;</span><br><span class="line">&#125;      </span><br><span class="line"> &lt;button type=<span class="string">"button"</span> onclick=<span class="string">"goUpdatePage($&#123;user.id&#125;)"</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary btn-xs"</span>&gt;</span><br><span class="line">    &lt;i</span><br><span class="line">            <span class="class"><span class="keyword">class</span></span>=<span class="string">" glyphicon glyphicon-pencil"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goUpdatePage</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"$&#123;pageContext.request.contextPath&#125;/user/editcontroller?id="</span> + id;</span><br><span class="line">&#125;      </span><br><span class="line"> &lt;button type=<span class="string">"button"</span> onclick=<span class="string">"goUpdatePage($&#123;user.id&#125;)"</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary btn-xs"</span>&gt;</span><br><span class="line">    &lt;i</span><br><span class="line">            <span class="class"><span class="keyword">class</span></span>=<span class="string">" glyphicon glyphicon-pencil"</span>&gt;&lt;/i&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -409,7 +411,11 @@
 <p><a href="https://blog.csdn.net/qq_34160679/article/details/80651027" target="_blank" rel="noopener">https://blog.csdn.net/qq_34160679/article/details/80651027</a></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc.url     = jdbc:mysql:/xxx:3306/zhongfubang?useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Asia/Shanghai</span><br></pre></td></tr></table></figure>
-
+<h1 id="Linux-无法使用命令"><a href="#Linux-无法使用命令" class="headerlink" title="Linux 无法使用命令"></a>Linux 无法使用命令</h1><h2 id="export-PATH-usr-local-sbin-usr-local-bin-sbin-bin-usr-sbin-usr-bin-root-bin"><a href="#export-PATH-usr-local-sbin-usr-local-bin-sbin-bin-usr-sbin-usr-bin-root-bin" class="headerlink" title="export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"></a>export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</h2><p>修改/etc/profile文件，配置maven环境变量时候出问题了，忘记加了 $PATH: 然后source /etc/profile 接下来就是 ll,ls,vim命令都用不了。。。害的我以为<a href="https://www.baidu.com/s?wd=xshell&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">xshell</a>我更新了呢，卸载重装了还是没用。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181204225756905.png" alt="img"></p>
+<p>解决办法如下图，执行这两条命令：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g0g5vwo6mtj30j6014mx0.jpg" alt="img"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span><br><span class="line"> </span><br><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -534,7 +540,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -556,7 +562,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -589,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’"><span class="nav-number">1.0.1.</span> <span class="nav-text">Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#时间问题"><span class="nav-number">2.</span> <span class="nav-text">时间问题</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’"><span class="nav-number">1.0.1.</span> <span class="nav-text">Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#时间问题"><span class="nav-number">2.</span> <span class="nav-text">时间问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-无法使用命令"><span class="nav-number">3.</span> <span class="nav-text">Linux 无法使用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#export-PATH-usr-local-sbin-usr-local-bin-sbin-bin-usr-sbin-usr-bin-root-bin"><span class="nav-number">3.1.</span> <span class="nav-text">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span></a></li></ol></li></div>
             
 
           </div>
