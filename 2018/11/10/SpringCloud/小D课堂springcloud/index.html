@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1g14gosv706j30k20cctf2.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1g14hezas8nj30ld0bkdie.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1g14jyoymi6j30f807m419.jpg">
-<meta property="og:updated_time" content="2019-03-16T05:06:36.351Z">
+<meta property="og:updated_time" content="2019-03-29T04:47:09.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小D课堂SpringCloud笔记">
 <meta name="twitter:description" content="##SpringCloud课程笔记  第一章 课程介绍和学习路线  1、微服务架构SpringCloud课程介绍​    简介：课程介绍和课程大纲讲解，讲课风格和重点内容理解技 2、技术选型和学后水平​    简介：课程所需基础和技术选型讲解，学完课程可以到达怎样的程度，​​    1、IDEA JDK8 Maven SpringBoot基础 Linux​​    2、理解掌握并开发SpringC">
@@ -395,11 +395,8 @@
 <p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g14hezas8nj30ld0bkdie.jpg" alt="image-20190316113743778"></p>
 <pre><code>consumer: 调用方  消费者 客户端 client 
 provider: 被调用方 服务者 服务端 service
-
-
-一个接口一般都会充当两个角色（不是同时充当）
-
-1、dubbo: zookeeper + dubbo + springmvc/springboot
+</code></pre><p>​<br>        一个接口一般都会充当两个角色（不是同时充当）</p>
+<pre><code>1、dubbo: zookeeper + dubbo + springmvc/springboot
     官方地址：http://dubbo.apache.org/#!/?lang=zh-cn
     配套
         通信方式：rpc
@@ -481,9 +478,7 @@ AP 满足的情况下，C不能满足的原因：
 参考：https://www.jianshu.com/p/d32ae141f680
      https://blog.csdn.net/zjcjava/article/details/78608892
 </code></pre><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1g14jyoymi6j30f807m419.jpg" alt="image-20190316130552646">–</p>
-<h3 id="5、服务注册和发现Eureka-Server搭建实战"><a href="#5、服务注册和发现Eureka-Server搭建实战" class="headerlink" title="5、服务注册和发现Eureka Server搭建实战"></a>5、服务注册和发现Eureka Server搭建实战</h3><p>​    简介：使用IDEA搭建Eureka服务中心Server端并启动，项目基本骨架介绍<br>​<br>​    官方文档：<a href="http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#spring-cloud-eureka-server" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#spring-cloud-eureka-server</a><br>​<br>​    第一步：创建项目<br>​    第二步: 添加注解 @EnableEurekaServer<br>​    第三步：增加配置application.yml<br>​            server:<br>​              port: 8761<br>​<br>​            eureka:<br>​              instance:<br>​                hostname: localhost<br>​              client:</p>
-<pre><code>#声明自己是个服务端
-</code></pre><p>​                registerWithEureka: false<br>​                fetchRegistry: false<br>​                serviceUrl:<br>​                  defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/<br>​    </p>
+<h3 id="5、服务注册和发现Eureka-Server搭建实战"><a href="#5、服务注册和发现Eureka-Server搭建实战" class="headerlink" title="5、服务注册和发现Eureka Server搭建实战"></a>5、服务注册和发现Eureka Server搭建实战</h3><p>​    简介：使用IDEA搭建Eureka服务中心Server端并启动，项目基本骨架介绍<br>​<br>​    官方文档：<a href="http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#spring-cloud-eureka-server" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#spring-cloud-eureka-server</a><br>​<br>​    第一步：创建项目<br>​    第二步: 添加注解 @EnableEurekaServer<br>​    第三步：增加配置application.yml<br>​            server:<br>​              port: 8761<br>​<br>​            eureka:<br>​              instance:<br>​                hostname: localhost<br>​              client:<br>​              #声明自己是个服务端<br>​                registerWithEureka: false<br>​                fetchRegistry: false<br>​                serviceUrl:<br>​                  defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/<br>​    </p>
 <pre><code>第四步：访问注册中心页面
 
 maven地址: https://www.cnblogs.com/sword-successful/p/6408281.html
@@ -535,8 +530,7 @@ Rest(Http):
 4、根据名称进行调用商品，获取商品详情
 </code></pre><p>3、高级篇幅之Ribbon负载均衡源码分析实战<br>​    简介: 讲解ribbon服务间调用负载均衡源码分析<br>​        1、完善下单接口<br>​        2、分析@LoadBalanced<br>​            1）首先从注册中心获取provider的列表<br>​            2）通过一定的策略选择其中一个节点</p>
 <pre><code>3）再返回给restTemplate调用
-</code></pre><p>=============================================<br>更多干货技术访问小D课堂官网 <a href="https://xdclass.net" target="_blank" rel="noopener">https://xdclass.net</a><br>小D老师个人微信：jack794666918</p>
-<h1 id="公众号搜索：小D课堂"><a href="#公众号搜索：小D课堂" class="headerlink" title="公众号搜索：小D课堂"></a>公众号搜索：小D课堂</h1><p>4、高级篇幅之服务间调用之负载均衡策略调整实战<br>​    简介：实战调整默认负载均衡策略实战</p>
+</code></pre><h1 id=""><a href="#" class="headerlink" title="============================================="></a>=============================================</h1><p>4、高级篇幅之服务间调用之负载均衡策略调整实战<br>​    简介：实战调整默认负载均衡策略实战</p>
 <pre><code>自定义负载均衡策略：http://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html#_customizing_the_ribbon_client_by_setting_properties
 
 在配置文件yml里面，自定义负载均衡策略
@@ -888,7 +882,7 @@ https://www.cnblogs.com/liuyisai/p/5990645.html
     推荐资料：
         https://blog.csdn.net/jrn1012/article/details/77837710
 </code></pre><p>=============================================<br>更多干货技术访问小D课堂官网 <a href="https://xdclass.net" target="_blank" rel="noopener">https://xdclass.net</a><br>小D老师个人微信：jack794666918</p>
-<h1 id="公众号搜索：小D课堂-1"><a href="#公众号搜索：小D课堂-1" class="headerlink" title="公众号搜索：小D课堂"></a>公众号搜索：小D课堂</h1><p>​<br>第八章 微服务核心知识分布式配置中心Config实战<br>​<br>​    1、微服务下的分布式配置中心<br>​        简介：讲解什么是配置中心及使用前后的好处 (画图)<br>​        什么是配置中心：<br>​            一句话：统一管理配置, 快速切换各个环境的配置<br>​<br>​        相关产品：<br>​            百度的disconf<br>​                地址:<a href="https://github.com/knightliao/disconf" target="_blank" rel="noopener">https://github.com/knightliao/disconf</a><br>​<br>​            阿里的diamand<br>​                地址：<a href="https://github.com/takeseem/diamond" target="_blank" rel="noopener">https://github.com/takeseem/diamond</a><br>​<br>​            springcloud的configs-server:<br>​                地址：<a href="http://cloud.spring.io/spring-cloud-config/" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/</a></p>
+<h1 id="公众号搜索：小D课堂"><a href="#公众号搜索：小D课堂" class="headerlink" title="公众号搜索：小D课堂"></a>公众号搜索：小D课堂</h1><p>​<br>第八章 微服务核心知识分布式配置中心Config实战<br>​<br>​    1、微服务下的分布式配置中心<br>​        简介：讲解什么是配置中心及使用前后的好处 (画图)<br>​        什么是配置中心：<br>​            一句话：统一管理配置, 快速切换各个环境的配置<br>​<br>​        相关产品：<br>​            百度的disconf<br>​                地址:<a href="https://github.com/knightliao/disconf" target="_blank" rel="noopener">https://github.com/knightliao/disconf</a><br>​<br>​            阿里的diamand<br>​                地址：<a href="https://github.com/takeseem/diamond" target="_blank" rel="noopener">https://github.com/takeseem/diamond</a><br>​<br>​            springcloud的configs-server:<br>​                地址：<a href="http://cloud.spring.io/spring-cloud-config/" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/</a></p>
 <pre><code>    推荐干货文章：http://jm.taobao.org/2016/09/28/an-article-about-config-center/
 
 
@@ -1065,7 +1059,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
                 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
                 &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;
             &lt;/dependency&gt;
-</code></pre><p>​<br>​            官方文档：<a href="http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint</a><br>​            文档里面 暴露端点 management.endpoints.web.exposure.include=bus-refresh<br>​<br>​            2、在配置文件中增加关于RabbitMQ的连接(如果是本机，则可以直接启动，采用默认连接配置)<br>​                spring:<br>​                  rabbitmq:<br>​                    host: localhost<br>​                    port: 5672<br>​                    username: guest<br>​                    password: guest<br>​<br>​                #暴露全部的监控信息<br>​                management:<br>​                  endpoints:<br>​                    web:<br>​                      exposure:<br>​                        include: “*”<br>​<br>​            3、需要刷新配置的地方，增加注解<br>​                @RefreshScope<br>​<br>            4、访问验证 post方式：<br>                <a href="http://localhost:8773/actuator/bus-refresh" target="_blank" rel="noopener">http://localhost:8773/actuator/bus-refresh</a></p>
+</code></pre><p>​<br>​            官方文档：<a href="http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint</a><br>​            文档里面 暴露端点 management.endpoints.web.exposure.include=bus-refresh<br>​<br>​            2、在配置文件中增加关于RabbitMQ的连接(如果是本机，则可以直接启动，采用默认连接配置)<br>​                spring:<br>​                  rabbitmq:<br>​                    host: localhost<br>​                    port: 5672<br>​                    username: guest<br>​                    password: guest<br>​<br>​                #暴露全部的监控信息<br>​                management:<br>​                  endpoints:<br>​                    web:<br>​                      exposure:<br>​                        include: “*”<br>​<br>​            3、需要刷新配置的地方，增加注解<br>​                @RefreshScope<br>​<br>​            4、访问验证 post方式：<br>​                <a href="http://localhost:8773/actuator/bus-refresh" target="_blank" rel="noopener">http://localhost:8773/actuator/bus-refresh</a></p>
 <pre><code>        5、动态刷新配置: 在开发和测试环境使用，尽量少在生产环境使用
 
 
@@ -1093,7 +1087,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
         web:
           exposure:
             include: &quot;*&quot;
-</code></pre><p>​<br>​    2、项目里面添加maven依赖<br>​<br>​        <!--配置中心客户端--><br>​        <dependency><br>​            <groupid>org.springframework.cloud</groupid><br>​            <artifactid>spring-cloud-config-client</artifactid><br>​        </dependency><br>​<br>​        <!--config server--><br>​<br>​        <dependency><br>​            <groupid>org.springframework.boot</groupid><br>​            <artifactid>spring-boot-starter-actuator</artifactid><br>​        </dependency><br>​<br>        <dependency><br>            <groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-starter-bus-amqp</artifactid><br>        </dependency></p>
+</code></pre><p>​<br>​    2、项目里面添加maven依赖<br>​<br>​        <!--配置中心客户端--><br>​        <dependency><br>​            <groupid>org.springframework.cloud</groupid><br>​            <artifactid>spring-cloud-config-client</artifactid><br>​        </dependency><br>​<br>​        <!--config server--><br>​<br>​        <dependency><br>​            <groupid>org.springframework.boot</groupid><br>​            <artifactid>spring-boot-starter-actuator</artifactid><br>​        </dependency><br>​<br>​        <dependency><br>​            <groupid>org.springframework.cloud</groupid><br>​            <artifactid>spring-cloud-starter-bus-amqp</artifactid><br>​        </dependency></p>
 <pre><code>3、修改application.properties为bootstrap.yml 并拷贝配置文件
 
         #指定注册中心地址
@@ -1170,10 +1164,8 @@ https://blog.csdn.net/liyuejin/article/details/78410586
 
 3、配置域名解析到服务器
 </code></pre><p>​    </p>
-<p>​<br>第十二章 微服务必备技能Docker容器基础篇幅<br>​<br>​    1、微服务下的Docker介绍和使用场景<br>​        简介：Docker介绍和使用场景<br>​<br>​        1、什么是Dokcer<br>​            百科:一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口；<br>​<br>​            使用go语言编写，在LCX（linux容器）基础上进行的封装<br>​<br>​            简单来说：<br>​                1）就是可以快速部署启动应用<br>​                2）实现虚拟化，完整资源隔离<br>​                3）一次编写，四处运行（有一定的限制，比如Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用）<br>​<br>        2、为什么要用<br>            1、提供一次性的环境，假如需要安装Mysql，则需要安装很多依赖库、版本等，如果使用Docker则通过镜像就可以直接启动运行   </p>
-<pre><code>        2、快速动态扩容，使用docker部署了一个应用，可以制作成镜像，然后通过Dokcer快速启动
-
-        3、组建微服务架构，可以在一个机器上模拟出多个微服务，启动多个应用
+<p>​<br>第十二章 微服务必备技能Docker容器基础篇幅<br>​<br>​    1、微服务下的Docker介绍和使用场景<br>​        简介：Docker介绍和使用场景<br>​<br>​        1、什么是Dokcer<br>​            百科:一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口；<br>​<br>​            使用go语言编写，在LCX（linux容器）基础上进行的封装<br>​<br>​            简单来说：<br>​                1）就是可以快速部署启动应用<br>​                2）实现虚拟化，完整资源隔离<br>​                3）一次编写，四处运行（有一定的限制，比如Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用）<br>​<br>​        2、为什么要用<br>​            1、提供一次性的环境，假如需要安装Mysql，则需要安装很多依赖库、版本等，如果使用Docker则通过镜像就可以直接启动运行<br>​<br>            2、快速动态扩容，使用docker部署了一个应用，可以制作成镜像，然后通过Dokcer快速启动</p>
+<pre><code>        3、组建微服务架构，可以在一个机器上模拟出多个微服务，启动多个应用
 
         4、更好的资源隔离和共享
 
@@ -1373,7 +1365,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
     Spotify 的 docker-maven-plugin 插件是用maven插件方式构建docker镜像的。
     ${project.build.finalName} 产出物名称，缺省为${project.artifactId}-${project.version}
 </code></pre><p>=============================================<br>更多干货技术访问小D课堂官网 <a href="https://xdclass.net" target="_blank" rel="noopener">https://xdclass.net</a><br>小D老师个人微信：jack794666918</p>
-<h1 id="公众号搜索：小D课堂-2"><a href="#公众号搜索：小D课堂-2" class="headerlink" title="公众号搜索：小D课堂"></a>公众号搜索：小D课堂</h1><pre><code>第2课 高级篇幅之构建SpringBoot应用docker镜像下集
+<h1 id="公众号搜索：小D课堂-1"><a href="#公众号搜索：小D课堂-1" class="headerlink" title="公众号搜索：小D课堂"></a>公众号搜索：小D课堂</h1><pre><code>第2课 高级篇幅之构建SpringBoot应用docker镜像下集
 
         简介:打包SpringCloud镜像并上传私有仓库并部署
 
@@ -1745,7 +1737,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-count">122</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1767,7 +1759,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1800,7 +1792,7 @@ https://blog.csdn.net/liyuejin/article/details/78410586
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、微服务架构SpringCloud课程介绍"><span class="nav-number">1.</span> <span class="nav-text">1、微服务架构SpringCloud课程介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、技术选型和学后水平"><span class="nav-number">2.</span> <span class="nav-text">2、技术选型和学后水平</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、传统架构演进到分布式架构"><span class="nav-number">3.</span> <span class="nav-text">1、传统架构演进到分布式架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、微服务核心基础讲解"><span class="nav-number">4.</span> <span class="nav-text">2、微服务核心基础讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、常见的微服务框架"><span class="nav-number">5.</span> <span class="nav-text">3、常见的微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、微服务下电商项目基础模块设计"><span class="nav-number">6.</span> <span class="nav-text">4、微服务下电商项目基础模块设计</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-SpringCloud核心组件注册中心"><span class="nav-number"></span> <span class="nav-text">第三章 SpringCloud核心组件注册中心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、什么是微服务的注册中心"><span class="nav-number">1.</span> <span class="nav-text">1、什么是微服务的注册中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、分布式应用知识CAP理论知识"><span class="nav-number">2.</span> <span class="nav-text">2、分布式应用知识CAP理论知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、SpringCloud微服务核心组件Eureka介绍和闭源后影响"><span class="nav-number">3.</span> <span class="nav-text">4、SpringCloud微服务核心组件Eureka介绍和闭源后影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、服务注册和发现Eureka-Server搭建实战"><span class="nav-number">4.</span> <span class="nav-text">5、服务注册和发现Eureka Server搭建实战</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂"><span class="nav-number"></span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-1"><span class="nav-number"></span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-2"><span class="nav-number"></span> <span class="nav-text">公众号搜索：小D课堂</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、微服务架构SpringCloud课程介绍"><span class="nav-number">1.</span> <span class="nav-text">1、微服务架构SpringCloud课程介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、技术选型和学后水平"><span class="nav-number">2.</span> <span class="nav-text">2、技术选型和学后水平</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、传统架构演进到分布式架构"><span class="nav-number">3.</span> <span class="nav-text">1、传统架构演进到分布式架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、微服务核心基础讲解"><span class="nav-number">4.</span> <span class="nav-text">2、微服务核心基础讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、常见的微服务框架"><span class="nav-number">5.</span> <span class="nav-text">3、常见的微服务框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、微服务下电商项目基础模块设计"><span class="nav-number">6.</span> <span class="nav-text">4、微服务下电商项目基础模块设计</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-SpringCloud核心组件注册中心"><span class="nav-number"></span> <span class="nav-text">第三章 SpringCloud核心组件注册中心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、什么是微服务的注册中心"><span class="nav-number">1.</span> <span class="nav-text">1、什么是微服务的注册中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、分布式应用知识CAP理论知识"><span class="nav-number">2.</span> <span class="nav-text">2、分布式应用知识CAP理论知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、SpringCloud微服务核心组件Eureka介绍和闭源后影响"><span class="nav-number">3.</span> <span class="nav-text">4、SpringCloud微服务核心组件Eureka介绍和闭源后影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、服务注册和发现Eureka-Server搭建实战"><span class="nav-number">4.</span> <span class="nav-text">5、服务注册和发现Eureka Server搭建实战</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text">=============================================</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂"><span class="nav-number"></span> <span class="nav-text">公众号搜索：小D课堂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公众号搜索：小D课堂-1"><span class="nav-number"></span> <span class="nav-text">公众号搜索：小D课堂</span></a></li></div>
             
 
           </div>
