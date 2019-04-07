@@ -269,819 +269,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/java基础/for循环讲解/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/15/java基础/for循环讲解/" itemprop="url">for 循环</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T08:22:37+08:00">
-                2018-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/15/java基础/for循环讲解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/15/java基础/for循环讲解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="for-循环-大圈套小圈"><a href="#for-循环-大圈套小圈" class="headerlink" title="for 循环 大圈套小圈"></a>for 循环 大圈套小圈</h2><p>#1.1for循环思想</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code4</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; <span class="number">3</span>; x++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y &lt; <span class="number">4</span>; y++) &#123;</span><br><span class="line">				System.out.println(<span class="string">"ok"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy74z95rqtj30rq0bc0zt.jpg" alt="image-20181215084305163"></p>
-<hr>
-<p>读第一个for循环初始化一个x 变量x=0：</p>
-<p>​         先执行x=0; 执行x&lt;3满足条件—&gt;</p>
-<p>执行第二个for循环语句初始化一个变量y=0;</p>
-<p>​       先执行y=0;执行y&lt;4满足条件–&gt;打印一次ok</p>
-<p>当内循环没有结束时循环出不去执行–&gt;y++;打印四次ok；</p>
-<p>y++=4时候y&lt;4不成立 跳出循环 y在内存中消失 –&gt;执行–x++</p>
-<p>满足条件 又产生一个y=0,内循环继续循环四次 所以一共打印12个ok</p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy751mjh1pj30lo0fhgrh.jpg" alt="image-20181215084525009"></p>
-<hr>
-<p>#1.2验证doc命令行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code5</span> </span>&#123;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * for循环基本思想demo1</span></span><br><span class="line"><span class="comment"> * 输出： </span></span><br><span class="line"><span class="comment"> * 		 *****</span></span><br><span class="line"><span class="comment"> * 		 *****</span></span><br><span class="line"><span class="comment"> * 		 *****</span></span><br><span class="line"><span class="comment"> *       *****</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy758fljzcj30vk0pktec.jpg" alt="image-20181215085157010"></p>
-<blockquote>
-<p>i 控制行 第一个for循环</p>
-<p>j控制列 第二个for循环 （每一列的个数）</p>
-</blockquote>
-<p>#1.3验证doc命令行 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code6</span> </span>&#123;</span><br><span class="line">	<span class="comment">/** 输出doc界面：</span></span><br><span class="line"><span class="comment">	 *  *****</span></span><br><span class="line"><span class="comment">	 *  ****</span></span><br><span class="line"><span class="comment">	 *  ***</span></span><br><span class="line"><span class="comment">	 *  **</span></span><br><span class="line"><span class="comment">	 *  *</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; <span class="number">5</span>; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy75o9qvhij30uj0oxn2q.jpg" alt="image-20181215090711158"></p>
-<p>分析：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy75pwaov3j30q00fmq9w.jpg" alt="image-20181215090844549"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy75q9siifj30gn08ego3.jpg" alt="image-20181215090906622"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy75qmx5l8j30ep0cqq6d.jpg" alt="image-20181215090927631"></p>
-<hr>
-<p>#1.4验证doc</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code7</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * * </span></span><br><span class="line"><span class="comment">	 * ** </span></span><br><span class="line"><span class="comment">	 * *** </span></span><br><span class="line"><span class="comment">	 * **** </span></span><br><span class="line"><span class="comment">	 * *****</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy767w90r2j30ru0kfwkj.jpg" alt="image-20181215092601659"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy7688y7vqj30q00cn0xy.jpg" alt="image-20181215092622770"></p>
-<hr>
-<p>#1.5验证doc⭐️</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code8</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 54321 </span></span><br><span class="line"><span class="comment">	 * 5432 </span></span><br><span class="line"><span class="comment">	 * 543 </span></span><br><span class="line"><span class="comment">	 * 54 </span></span><br><span class="line"><span class="comment">	 * 5</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">5</span>; j &gt; i; j--) &#123;</span><br><span class="line">				System.out.print(j);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy76uq68l0j30tu0m40zs.jpg" alt="image-20181215094758361"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy770n4jd6j30sp0l2tjb.jpg" alt="image-20181215095339271"></p>
-<blockquote>
-<p>int j=5 j&gt;i j– 其中j—是关键</p>
-</blockquote>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code9</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 1 </span></span><br><span class="line"><span class="comment">	 * 22 </span></span><br><span class="line"><span class="comment">	 * 333 </span></span><br><span class="line"><span class="comment">	 * 4444 </span></span><br><span class="line"><span class="comment">	 * 55555</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;=i; j++) &#123;</span><br><span class="line">				System.out.print(i);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy77fs68fvj30ut0lcaev.jpg" alt="image-20181215100813415"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy77h058syj30dd076gmt.jpg" alt="image-20181215100923906"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code10</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 *  * * * * *</span></span><br><span class="line"><span class="comment">	 *  -* * * * </span></span><br><span class="line"><span class="comment">	 *  --* * * </span></span><br><span class="line"><span class="comment">	 *  ---* * </span></span><br><span class="line"><span class="comment">	 *  ----* </span></span><br><span class="line"><span class="comment">	 *  由两个图形组成一个由向下的*组成</span></span><br><span class="line"><span class="comment">	 *   一个由向上的——组成</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">				System.out.print(<span class="string">" "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> z = i; z&lt;=<span class="number">5</span>  ; z++) &#123;</span><br><span class="line">				System.out.print(<span class="string">"* "</span>);</span><br><span class="line">			&#125;System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy78ca2b97j30rt0yv45w.jpg" alt="image-20181215103926561"></p>
-<blockquote>
-<p>分析：</p>
-</blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy78cpz0o4j30730btjrx.jpg" alt="image-20181215103952180"></p>
-<hr>
-<p>#1.6作 业：打印</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy78f5ce0sj305k07t74x.jpg" alt="image-20181215104212818"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy78fh0wxkj307v07pdgg.jpg" alt="image-20181215104231193"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code8</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 54321 </span></span><br><span class="line"><span class="comment">	 * 5432 </span></span><br><span class="line"><span class="comment">	 * 543 </span></span><br><span class="line"><span class="comment">	 * 54 </span></span><br><span class="line"><span class="comment">	 * 5</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">5</span>; j &gt;i; j--) &#123;</span><br><span class="line">				System.out.print(j);</span><br><span class="line">			&#125;System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	 </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy78qkb6snj30r40izgoj.jpg" alt="image-20181215105144545"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy78qoqjdwj30rr0jv79w.jpg" alt="image-20181215105317814"></p>
-<h1 id="规律：for内循环-如果ji-并且让j–"><a href="#规律：for内循环-如果ji-并且让j–" class="headerlink" title="规律：for内循环 如果ji 并且让j–"></a>规律：for内循环 如果j<i 不成立="" 改成j="">i 并且让j–</i></h1><hr>
-<hr>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy78vv9n43j30vn0kk7ax.jpg" alt="image-20181215105815854"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">code9</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 1 </span></span><br><span class="line"><span class="comment">	 * 22 </span></span><br><span class="line"><span class="comment">	 * 333 </span></span><br><span class="line"><span class="comment">	 * 4444 </span></span><br><span class="line"><span class="comment">	 * 55555</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=<span class="number">5</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">				System.out.print(i);</span><br><span class="line">			&#125;System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/前端/Jquery学习1/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/14/前端/Jquery学习1/" itemprop="url">Jquery</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-14T16:54:38+08:00">
-                2018-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/14/前端/Jquery学习1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/14/前端/Jquery学习1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-获取Jquery对象"><a href="#1-获取Jquery对象" class="headerlink" title="1.获取Jquery对象"></a>1.获取Jquery对象</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"username"</span> value=<span class="string">"jack"</span>/&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//jquery获得数据 语法$&#123;"选择器"&#125;==Jquery（"选择器"）</span></span><br><span class="line">    <span class="keyword">var</span> usernmae = $(<span class="string">"#username"</span>);</span><br><span class="line">    <span class="comment">//val() 函数 用于获得value属性的值 jack</span></span><br><span class="line">    alert(usernmae.val());</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy6f57gxk6j30uj0dpdkk.jpg" alt="image-20181214174914025"></p>
-<h1 id="2-Jquery与Dom对象的互相转换"><a href="#2-Jquery与Dom对象的互相转换" class="headerlink" title="2.Jquery与Dom对象的互相转换"></a>2.Jquery与Dom对象的互相转换</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"username"</span> value=<span class="string">"jack"</span>/&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//Jquery对象和Dom对象的转换</span></span><br><span class="line">    <span class="comment">//1。使用Javascripe获取value的值</span></span><br><span class="line">    <span class="keyword">var</span> username = <span class="built_in">document</span>.getElementById(<span class="string">"username"</span>);</span><br><span class="line">    alert(username.value);<span class="comment">//jack用的是属性</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//2。将dom对象 转换为Jquery对象</span></span><br><span class="line">    <span class="comment">//# 语法：$(dom对象)</span></span><br><span class="line">    <span class="comment">//# 建议 ：Jquery对象变量名字 建议以$开头</span></span><br><span class="line">    <span class="keyword">var</span> $username = $(username);</span><br><span class="line">    alert($username.val());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.将jquery对象转为Dom对象</span></span><br><span class="line">    <span class="comment">//3.1 Jquery对象内部使用数组存放所有的数据 可以通过数组的下标获取（索引）</span></span><br><span class="line">    <span class="keyword">var</span> username2 = $username[<span class="number">0</span>];</span><br><span class="line">    alert(username2.value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.2Jquery提供函数get()转换为dom对象</span></span><br><span class="line">    <span class="keyword">var</span> username3 = $username.get(<span class="number">0</span>);</span><br><span class="line">    alert(username3.value);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy6kuqovt1j30rj0od7cj.jpg" alt="image-20181214210647995"></p>
-<h1 id="3-选择器"><a href="#3-选择器" class="headerlink" title="3. 选择器"></a>3. 选择器</h1><h2 id="3-1-基本选择器【重要】"><a href="#3-1-基本选择器【重要】" class="headerlink" title="3.1 基本选择器【重要】"></a>3.1 基本选择器【重要】</h2><ul>
-<li><p>id ,id选择器 <xxx id=""> 通过id 值获得元素</xxx></p>
-</li>
-<li><p>element，标签选择器 <xxx> 通过标签名获得元素</xxx></p>
-</li>
-<li><p>.class 类选择器 <xxx class=""> 通过class值获得元素。注意：使用点开头</xxx></p>
-</li>
-<li><p>s1,s2,…  多选择器，将多个选择器的结果添加一个数组中。</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//window.onload=function()&#123;...&#125;匿名函数</span></span><br><span class="line">    <span class="comment">//jquery 页面加载--&gt;function()匿名函数</span></span><br><span class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//id选择器 为id绑定一个事件 然后传递一个函数</span></span><br><span class="line">    $(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#one"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#ff0"</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//类选择器</span></span><br><span class="line">    $(<span class="string">".btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#ff0"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//元素选择器</span></span><br><span class="line">    $(<span class="string">"div"</span>).background = <span class="string">"#ff2"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="button" id="btn1" value="选择id为one的元素"&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="button" class="btn2" value="选择id为one的元素"&gt;</span></span><br></pre></td></tr></table></figure>
-<p> <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy6lx4kpddj30qv0ppahp.jpg" alt="image-20181214214342463"></p>
-<h2 id="3-2层级选择器"><a href="#3-2层级选择器" class="headerlink" title="3.2层级选择器"></a>3.2层级选择器</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy79q7tek6j30hh08kgo5.jpg" alt="image-20181215112727120"></p>
-<h2 id="3-3基本过滤选择器——“：关键字“"><a href="#3-3基本过滤选择器——“：关键字“" class="headerlink" title="3.3基本过滤选择器——“：关键字“"></a>3.3基本过滤选择器——“：关键字“</h2><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fz873ryqfqj30qe1yuk0c.jpg" alt="image-20181216091014781"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;label <span class="keyword">for</span>=<span class="string">"username"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"username"</span> value=<span class="string">"jack"</span>/&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">// &lt;input type="text" value="请输入账号" defaultValue="请输入账号"&gt;</span></span><br><span class="line">    $(<span class="string">"input[type='text']"</span>).on(<span class="string">"blur focus"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//1.获得默认值</span></span><br><span class="line">        <span class="keyword">var</span> attr = $(<span class="keyword">this</span>).attr(<span class="string">"defaultValue"</span>);</span><br><span class="line">        <span class="comment">//2.判断是否获得焦点</span></span><br><span class="line">        <span class="keyword">if</span> ($(<span class="keyword">this</span>).is(<span class="string">":focus"</span>)) &#123;</span><br><span class="line">            <span class="comment">//2.1 获得焦点，清空value值 ，this 当前执行对象  是dom对象用$(this)转为jquery对象</span></span><br><span class="line">            <span class="keyword">if</span> ($(<span class="keyword">this</span>).val() === attr) &#123;</span><br><span class="line">                $(<span class="keyword">this</span>).val(<span class="string">""</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//2.2失去焦点  设置默认值</span></span><br><span class="line">            <span class="keyword">if</span> ($(<span class="keyword">this</span>).val() === <span class="string">""</span>) &#123;</span><br><span class="line">                $(<span class="keyword">this</span>).val(attr);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;label&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="text" value="请输入账号" defaultValue="请输入账号"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="text" value="请输入账号" defaultValue="请输入密码"&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>label&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy8ryvjoscj30to0pgths.jpg" alt="image-20181216184406335"></p>
-<h2 id="3-4内容过滤"><a href="#3-4内容过滤" class="headerlink" title="3.4内容过滤"></a>3.4内容过滤</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy8s5db3q2j30iz07zdhs.jpg" alt="image-20181216185020697"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy8s3tkbqwj30pi032mys.jpg" alt="image-20181216184851872"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy8s6915z0j30oc09d0xg.jpg" alt="image-20181216185112383"></p>
-<h2 id="3-5可见性过滤-（重要）"><a href="#3-5可见性过滤-（重要）" class="headerlink" title="3.5可见性过滤 （重要）"></a>3.5可见性过滤 （重要）</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy8s94kuebj30sf06hjst.jpg" alt="image-20181216185358024"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ &lt;input type="button" value="选取所有可见的div元素" id="bt1"&gt;</span></span><br><span class="line"><span class="regexp">$("#b1").click(function () &#123;</span></span><br><span class="line"><span class="regexp">    $("div:hidden").css("background-color", "#ff0");</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ &lt;input type="button" value="选取所有不可见的元素利用jquery中的show（）将他们显示出来" id="bt2"&gt;</span></span><br><span class="line"><span class="regexp">$("#bt2").click(function () &#123;</span></span><br><span class="line"><span class="regexp">    $("div:hidden").css("background-color", "#ff0");</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-6实战"><a href="#3-6实战" class="headerlink" title="3.6实战"></a>3.6实战</h2><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz873lkbkbj312n09edh8.jpg" alt="image-20181216214851469"></p>
-<h2 id="3-7属性选择器（掌握）"><a href="#3-7属性选择器（掌握）" class="headerlink" title="3.7属性选择器（掌握）"></a>3.7属性选择器（掌握）</h2><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyp3ktxibdj30k3080789.jpg" alt="image-20181230213448062"></p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="js/</span>jquery<span class="number">-2.1</span><span class="number">.0</span>.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;!--1 ⭐️&lt;input type="</span>button<span class="string">" value="</span>选取含有属性title的div元素<span class="string">" id="</span>btn1<span class="string">"/&gt;--&gt;</span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">        $(document).ready(function () &#123;</span></span><br><span class="line">            $("#btn1").click(function () &#123;</span><br><span class="line">                <span class="comment">//&lt;xx title=""&gt;  &lt;xxx title="yyy"&gt; &lt;xxx title&gt;</span></span><br><span class="line">                $(<span class="string">"div[title]"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#fff0"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;!--2&lt;input type="button" value="选取属性title值等于"test"的div元素" id="btn2"/</span>&gt;--&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//&lt;xx title=""&gt;  &lt;xxx title="yyy"&gt; &lt;xxx title&gt;</span></span><br><span class="line">                $(<span class="string">"div[title='test']"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#fff0"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;!--3 &lt;input type="button" value="选取属性title值不等于"test"的div元素（没有title属性的也会被选中）" id="btn3"/</span>&gt;--&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//&lt;xx title=""&gt;  &lt;xxx title="yyy"&gt; &lt;xxx title&gt;</span></span><br><span class="line">                $(<span class="string">"div[title！='test']"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#fff0"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!--4 &lt;input type="button" value="选取属性title值 以"te"开始的div元素（没有title属性的也会被选中）" id="btn4"/</span>&gt;--&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//&lt;xx title=""&gt;  &lt;xxx title="yyy"&gt; &lt;xxx title&gt;</span></span><br><span class="line">                $(<span class="string">"div[title^='te']"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#fff0"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!--5 &lt;input type="button" value="选取属性title值 以"est"结束的div元素（没有title属性的也会被选中）" id="btn5"/</span>&gt;--&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//&lt;xx title=""&gt;  &lt;xxx title="yyy"&gt; &lt;xxx title&gt;</span></span><br><span class="line">                $(<span class="string">"div[title$='est']"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#fff0"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!--6 &lt;input type="button" value="选取属性title值  含有"es"的div元素（没有title属性的也会被选中）" id="btn5"/</span>&gt;--&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//&lt;xx title=""&gt;  &lt;xxx title="yyy"&gt; &lt;xxx title&gt;</span></span><br><span class="line">                $(<span class="string">"div[title*='es']"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#fff0"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!--⭐️7&lt;input type="button" value="组合属性选择器 首先选取有属性id的div元素。然后在结果中 选取title</span></span><br><span class="line"><span class="regexp">    值含有"es"的元素"）" id="btn5"/</span>&gt;--&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn5"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//&lt;xx title=""&gt;  &lt;xxx title="yyy"&gt; &lt;xxx title&gt;</span></span><br><span class="line">                $(<span class="string">"div[id][title*='es']"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#fff0"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fypn66smnyj30u02071kx.jpg" alt="image-20181231085241966"></p>
-<h2 id="3-8选择器-（子元素过滤）"><a href="#3-8选择器-（子元素过滤）" class="headerlink" title="3.8选择器 （子元素过滤）"></a>3.8选择器 （子元素过滤）</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fypn8gjv4dj30dn06lta4.jpg" alt="image-20181231085455447"></p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-<span class="number">-1</span> &lt;input type=<span class="string">"button"</span> value=<span class="string">"选取每个class为one的div父元素下的第2个子元素"</span> id=<span class="string">"btn1"</span>&gt;--&gt;</span><br><span class="line"> &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">     $(<span class="string">"btn1"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="comment">//子元素 选择使用前提 表达式前面必须是元素 如：$(div:nth-child(2))</span></span><br><span class="line">         <span class="comment">//如果元素上添加 条件 必须使用空格 如$("div[class='one'] :nth-child(2)")</span></span><br><span class="line">         $(<span class="string">"div[class='one'] :nth-child(2)"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#ff0"</span>);</span><br><span class="line"></span><br><span class="line">         $(<span class="string">"div.one :nth-child(2)"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#ff0"</span>);</span><br><span class="line">     &#125;);</span><br><span class="line">     <span class="comment">/**</span></span><br><span class="line"><span class="comment">      * 对比：</span></span><br><span class="line"><span class="comment">      * $("div.one") 所有的div自己的样式为one</span></span><br><span class="line"><span class="comment">      * $("div .one") 所有的div中后代元素 样式为one 空格</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line"> &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fypno32qjuj30yg0hmgsp.jpg" alt="image-20181231090956569"></p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">       $(<span class="string">"btn1"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           $(<span class="string">"div.one :first-child"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#ff0"</span>);</span><br><span class="line">       &#125;);</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">   &lt;!--&lt;input type="button" value="如果class为one的div父元素下的第一个子元素 " id="bt4"&gt;--&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">       $("</span>btn4<span class="string">").click(function () &#123;</span></span><br><span class="line">           $("div.one :first-child").css("background-color", "#ff0");</span><br><span class="line">       &#125;);</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">   &lt;!--&lt;input type="button" value="如果class为one的div父元素下的最后一个子元素 " id="bt4"&gt;--&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">       $("</span>btn4<span class="string">").click(function () &#123;</span></span><br><span class="line">           $("div.one :last-child").css("background-color", "#ff0");</span><br><span class="line">       &#125;);</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">   &lt;!--&lt;input type="button" value="如果class为one的div父元素下的仅仅只有一个子元素 " id="bt4"&gt;--&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">       $("</span>btn4<span class="string">").click(function () &#123;</span></span><br><span class="line">           $("div.one :only-child").css("background-color", "#ff0");</span><br><span class="line">       &#125;);</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fypt7m9z2fj30y00u0tj4.jpg" alt="image-20181231122142393"></p>
-<hr>
-<h2 id="3-9表单过滤选择器"><a href="#3-9表单过滤选择器" class="headerlink" title="3.9表单过滤选择器"></a>3.9表单过滤选择器</h2><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq5tv7lhij304r05rmxm.jpg" alt="image-20181231193817491"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq5yp3f2rj30q007jjuu.jpg" alt="image-20181231194255420"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyq5z2j09yj30ki03nq41.jpg" alt="image-20181231194317789"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyq6dbt8qlj30ra1it7px.jpg" alt="image-20181231195659745"></p>
-<h1 id="4-表单对象属性过滤"><a href="#4-表单对象属性过滤" class="headerlink" title="4 表单对象属性过滤"></a>4 表单对象属性过滤</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyq7etv7t2j30nr06stac.jpg" alt="image-20181231203301742"></p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">    &lt;script src=<span class="string">"js/jquery-2.1.0.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        <span class="comment">//1. &lt;button id="btn1"&gt;对表单内 可用input enable 赋值操作.&lt;/button&gt;</span></span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"input:enabled"</span>).val(<span class="string">"enabled"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">// 2 &lt;button id="btn2"&gt;对表单内 不可用input 赋值操作.&lt;/button&gt;</span></span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"input:disabled"</span>).val(<span class="string">"disabled"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">// 3 &lt;button id="btn3"&gt;获取多选框选中的个数.&lt;/button&gt;</span></span><br><span class="line">        <span class="comment">// &lt;input type="checkbox" name="newsletter" checked="checked" value="test1"/&gt;test1</span></span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> s1 = $(<span class="string">"[name='newsletter']:checked"</span>).length;</span><br><span class="line">            <span class="comment">// var s2 = $("[name='newsletter']:checked").size();</span></span><br><span class="line">            alert(s1)</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">// &lt;button id="btn4"&gt;获取下拉框选中的内容.&lt;/button&gt;</span></span><br><span class="line">        $(<span class="string">":selected"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//val()获得&lt;option &gt;如果没有value值 将获得text的值</span></span><br><span class="line">            <span class="comment">//html（）获得标签体的内容</span></span><br><span class="line">            $(<span class="string">"#selectDivId"</span>).append($(<span class="keyword">this</span>).val());</span><br><span class="line">            <span class="comment">//  $("#selectDivId").append($(this).html());</span></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    ------------    ------------    ------------    ------------    ------------</span></span><br><span class="line"><span class="regexp">    &lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h3&gt; 表单对象属性过滤选择器.&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">&lt;button type="reset"&gt;重置所有表单元素&lt;/</span>button&gt;</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> id=<span class="string">"isreset"</span> checked=<span class="string">"checked"</span>/&gt;<span class="xml"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"isreset"</span>&gt;</span>点击下列按钮时先自动重置页面<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line">&lt;br/&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">&lt;button id=<span class="string">"btn1"</span>&gt;对表单内 可用input 赋值操作.&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button id="btn2"&gt;对表单内 不可用input 赋值操作.&lt;/</span>button&gt;</span><br><span class="line">&lt;button id=<span class="string">"btn3"</span>&gt;获取多选框选中的个数.&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button id="btn4"&gt;获取下拉框选中的内容.&lt;/</span>button&gt;</span><br><span class="line"></span><br><span class="line">&lt;br/&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">可用元素：&lt;input name=<span class="string">"add"</span> value=<span class="string">"可用文本框"</span>/&gt; <span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">不可用元素：&lt;input name=<span class="string">"email"</span> disabled=<span class="string">"disabled"</span> value=<span class="string">"不可用文本框"</span>/&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">可用元素： &lt;input name=<span class="string">"che"</span> value=<span class="string">"可用文本框"</span>/&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">不可用元素：&lt;input name=<span class="string">"name"</span> disabled=<span class="string">"disabled"</span> value=<span class="string">"不可用文本框"</span>/&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">&lt;br/&gt;</span><br><span class="line">多选框：&lt;br/&gt;</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"newsletter"</span> checked=<span class="string">"checked"</span> value=<span class="string">"test1"</span>/&gt;test1</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"newsletter"</span> value=<span class="string">"test2"</span>/&gt;test2</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"newsletter"</span> value=<span class="string">"test3"</span>/&gt;test3</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"newsletter"</span> checked=<span class="string">"checked"</span> value=<span class="string">"test4"</span>/&gt;test4</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"newsletter"</span> value=<span class="string">"test5"</span>/&gt;test5</span><br><span class="line">&lt;div id=<span class="string">"checkboxDivId"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;br/&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">下拉列表<span class="number">1</span>：&lt;br/&gt;</span><br><span class="line">&lt;select name=<span class="string">"test"</span> multiple=<span class="string">"multiple"</span> style=<span class="string">"height:100px"</span>&gt;</span><br><span class="line">    &lt;option&gt;浙江&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option selected="selected"&gt;湖南&lt;/</span>option&gt;</span><br><span class="line">    &lt;option&gt;北京&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option selected="selected"&gt;天津&lt;/</span>option&gt;</span><br><span class="line">    &lt;option&gt;广州&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option&gt;湖北&lt;/</span>option&gt;</span><br><span class="line">&lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;br/</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">下拉列表<span class="number">2</span>：&lt;br/&gt;</span><br><span class="line">&lt;select name=<span class="string">"test2"</span>&gt;</span><br><span class="line">    &lt;option&gt;浙江&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option&gt;湖南&lt;/</span>option&gt;</span><br><span class="line">    &lt;option selected=<span class="string">"selected"</span>&gt;北京&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option&gt;天津&lt;/</span>option&gt;</span><br><span class="line">    &lt;option&gt;广州&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option&gt;湖北&lt;/</span>option&gt;</span><br><span class="line">&lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">&lt;br/</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"selectDivId"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq7po9qeqj30u00u6qfd.jpg" alt="image-20181231204327347"></p>
-<h1 id="5-选择器案例"><a href="#5-选择器案例" class="headerlink" title="5 选择器案例"></a>5 选择器案例</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//从第5个开始 不要最后一个控制显示和隐藏</span></span><br><span class="line">            <span class="comment">//1 隐藏</span></span><br><span class="line">            <span class="keyword">var</span> $allLi = $(<span class="string">"li:gt(4):not(:last)"</span>);</span><br><span class="line">            $allLi.hide();</span><br><span class="line"><span class="comment">//2 点击显示</span></span><br><span class="line">            $(<span class="string">"span"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//$allLi.show();</span></span><br><span class="line">                <span class="comment">//   $allLi.toggle();</span></span><br><span class="line">                <span class="keyword">if</span> ($allLi.is(<span class="string">":hidden"</span>)) &#123;</span><br><span class="line">                    $allLi.show();</span><br><span class="line">                    $(<span class="keyword">this</span>).html(<span class="string">"隐藏"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    $allLi.hide();</span><br><span class="line">                    $(<span class="keyword">this</span>).html(<span class="string">"显示"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyq81l6oruj30m10o7wjp.jpg" alt="image-20181231205454330"></p>
-<h1 id="6-属性-CSS"><a href="#6-属性-CSS" class="headerlink" title="6 属性 CSS"></a>6 属性 CSS</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyrwscb5uvj30fi090mzb.jpg" alt="image-20190102075633089"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//1.设置姓名文本框不可用</span></span><br><span class="line">        <span class="comment">// &lt;input type="text" name="username" class="textClass" value="jack"/&gt;</span></span><br><span class="line">        $(<span class="string">"[name='username']"</span>).attr(<span class="string">"disabled"</span>, <span class="string">"disabled"</span>);</span><br><span class="line">        <span class="comment">// 2 .设置姓名文本框可用 移除属性</span></span><br><span class="line">        $(<span class="string">"[name='username']"</span>).removeAttr(<span class="string">"disabled"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyrwt4qis2j30vj09rjv3.jpg" alt="image-20190102075719371"></p>
-<hr>
-<p>CSS 类</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyrwvkq7g7j30f809p40k.jpg" alt="image-20190102075940233"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyrx5rytmqj30od08h40n.jpg" alt="image-20190102080928087"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">     <span class="comment">//text /html</span></span><br><span class="line">        alert($(<span class="string">"div"</span>).text());<span class="comment">// 未满18慎进</span></span><br><span class="line">        alert($(<span class="string">"div"</span>).html());<span class="comment">//&lt;a&gt;未满18慎进&lt;/a&gt;alert($("div").html());//&lt;a&gt;未满18慎进&lt;/a&gt;</span></span><br><span class="line"></span><br><span class="line">        $(<span class="string">"div"</span>).text(<span class="string">"&lt;a href='Demo5.html'&gt;你点我呀&lt;/a&gt;"</span>);<span class="comment">// 未满18慎进</span></span><br><span class="line">        $(<span class="string">"div"</span>).html(<span class="string">"&lt;a href='Demo5.html'&gt;你点我呀&lt;/a&gt;"</span>);<span class="comment">//&lt;a&gt;未满18慎进&lt;/a&gt;</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyrx872pg2j30yg07ljuw.jpg" alt="image-20190102081147878"></p>
-<h1 id="7-CSS"><a href="#7-CSS" class="headerlink" title="7 CSS"></a>7 CSS</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/设置CSS</span><br><span class="line">            $(<span class="string">"div"</span>).css(&#123;</span><br><span class="line">                <span class="string">"width"</span>: <span class="string">"200px"</span>,</span><br><span class="line">                <span class="string">"height"</span>: <span class="string">"222px"</span>,</span><br><span class="line">                <span class="string">"font-size"</span>: <span class="string">"60px"</span>,</span><br><span class="line">                <span class="string">"color"</span>: <span class="string">"#f00"</span>,</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz873km9wlj30cd09xgm1.jpg" alt="image-20190102081930562"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyrxhwy0w5j30gz0bzmzn.jpg" alt="image-20190102082108017"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyrxkuor2pj309201wgm0.jpg" alt="image-20190102082357066"></p>
-<hr>
-<h1 id="8-文档处理"><a href="#8-文档处理" class="headerlink" title="8 文档处理"></a>8 文档处理</h1><h2 id="8-1-内部插入「掌握」"><a href="#8-1-内部插入「掌握」" class="headerlink" title="8.1 内部插入「掌握」"></a>8.1 内部插入「掌握」</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyrxq7k2xlj30ej09tq4d.jpg" alt="image-20190102082906153"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyrxrcd4plj30i909igne.jpg" alt="image-20190102083011214"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyry0klx7qj30ex0bt76m.jpg" alt="image-20190102083904151"></p>
-<p>实战：</p>
-<p> <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyryhc55doj30d7054gmv.jpg" alt="image-20190102085511091"></p>
-<p> <img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyryhio0iqj305c05k74d.jpg" alt="image-20190102085520549"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyrygp2ygpj30ef034q3r.jpg" alt="image-20190102085433394"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyryhrpdfjj304w05nglk.jpg" alt="image-20190102085451166"></p>
-<h3 id="8-2-外部插入「掌握」"><a href="#8-2-外部插入「掌握」" class="headerlink" title="8.2 外部插入「掌握」"></a>8.2 外部插入「掌握」</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyry0zaqugj30dg0b6dhy.jpg" alt="image-20190102083924244"> </p>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyry2nbho8j30df0b4q5g.jpg" alt="image-20190102084102997"></p>
-<hr>
-<p>实战：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyrymtswfxj30f8093ac8.jpg" alt="image-20190102090027238"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fyryn0aefij306f06fdg5.jpg" alt="image-20190102090037894"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyrynv9oouj30fx08qwg4.jpg" alt="image-20190102090127401"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyryoc5pqxj306d0650t1.jpg" alt="image-20190102090154135"></p>
-<h3 id="8-3-删除-「掌握」"><a href="#8-3-删除-「掌握」" class="headerlink" title="8.3 删除 「掌握」"></a>8.3 删除 「掌握」</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyryq5ls30j307m05qwfd.jpg" alt="image-20190102090339509"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyryr4rcpgj30l605awgm.jpg" alt="image-20190102090435876"></p>
-<hr>
-<ul>
-<li style="list-style: none"><input type="checkbox"> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//将city移除 在追加到body后面</span></span><br><span class="line">    <span class="comment">//1.绑定事件</span></span><br><span class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//2.绑定数据</span></span><br><span class="line">        $(<span class="string">"#city"</span>).data(<span class="string">"ithe"</span>, <span class="string">"厉害"</span>);</span><br><span class="line">        <span class="comment">//1。移除</span></span><br><span class="line">        <span class="keyword">var</span> $city = $(<span class="string">"#city"</span>).remove();</span><br><span class="line">        <span class="comment">//var $city = $("#city").detach();//保留绑定的事件</span></span><br><span class="line">        <span class="comment">//2 追加</span></span><br><span class="line">        $(<span class="string">"body"</span>).append($city);</span><br><span class="line">        <span class="comment">//3 获得绑定的数据</span></span><br><span class="line">        alert($(<span class="string">"#city"</span>).data(<span class="string">"ithe"</span>));</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fyt5ewlv2jj30ni0gdn22.jpg" alt="image-20190103094033579"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fyt5fj45vnj30b103pglx.jpg" alt="image-20190103094112365"></p>
-<h1 id="9-文档处理-克隆-替换包裹"><a href="#9-文档处理-克隆-替换包裹" class="headerlink" title="9.文档处理 克隆 替换包裹"></a>9.文档处理 克隆 替换包裹</h1><p> <img src="https://ws1.sinaimg.cn/large/006tNc79gy1fyt5ilbek0j30j708bq4n.jpg" alt="image-20190103094408549"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fyt5johwt9j30fh042q49.jpg" alt="image-20190103094511923"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fyt5k8huiyj30db07edh1.jpg" alt="image-20190103094543202"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fyt5kl89o9j30c602nmxw.jpg" alt="image-20190103094603955"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fyt5mhcfsvj30fr0bydik.jpg" alt="image-20190103094752632"></p>
-<hr>
-<h1 id="Day-02"><a href="#Day-02" class="headerlink" title="Day 02"></a>Day 02</h1><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fyt5zv60hij30lw0admzc.jpg" alt="image-20190103100043820"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fyt61xxp72j30n4078mze.jpg" alt="image-20190103100244699"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fyt637giz2j30d80533zg.jpg" alt="image-20190103100350572"></p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">            $(<span class="string">"#left1"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"#leftSelectId option:first"</span>).appendTo(<span class="string">"#rightSelectId"</span>)</span><br><span class="line">            &#125;);</span><br><span class="line">            $(<span class="string">"#left2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//选中哪一个 就过哪一个</span></span><br><span class="line">                $(<span class="string">"#leftSelectId option:selected"</span>).appendTo(<span class="string">"#rightSelectId"</span>)</span><br><span class="line">            &#125;);</span><br><span class="line">            $(<span class="string">"#left3"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    $(<span class="string">"#leftSelectId option"</span>).appendTo(<span class="string">"#rightSelectId"</span>)</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fyu9lj8atnj30tq0h7jx0.jpg" alt="image-20190104085050456"></p>
-<hr>
-<h1 id="10-筛选"><a href="#10-筛选" class="headerlink" title="10 筛选"></a>10 筛选</h1><h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><ul>
-<li>选择器可以完成功能 筛选提供相同的函数</li>
-<li><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fyu9qgxpcwj30mf057t9k.jpg" alt="image-20190104085540047"></li>
-</ul>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fyu9v4qw0ij30ku076dhj.jpg" alt="image-20190104090007508"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fyu9wj0m10j30ah02f74p.jpg" alt="image-20190104090127809"></p>
-<hr>
-<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz42fl9697j30980chjru.jpg" alt="image-20190112201707265"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz42jzcwtrj30hz06cta9.jpg" alt="image-20190112202251804"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz42mmrj6bj30mx07kq4w.jpg" alt="image-20190112202524134"></p>
-<hr>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz42sl09hej30x006pace.jpg" alt="image-20190112203108760"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz42v0uxjvj30wb03875k.jpg" alt="image-20190112203323807"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz43jsd3r9j30w50gs46z.jpg" alt="image-20190112205718671"></p>
-<hr>
-<h3 id="串联"><a href="#串联" class="headerlink" title="串联"></a>串联</h3><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz43kdaz00j306903n0sx.jpg" alt="image-20190112205751599"></p>
-<p><em>将多条语句改成一条 <strong>得瑟代码</strong></em>  </p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz43pkwagkj30e40a6jtu.jpg" alt="image-20190112210251196"> </p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz43qaou07j30n502stal.jpg" alt="image-20190112210334296"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz43qzb9b3j30p503540j.jpg" alt="image-20190112210413068"></p>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fz43s7e65bj30ys04gjwl.jpg" alt="image-20190112210523448"></p>
-<hr>
-<p> 案例：QQ分组</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz43vvpe33j30b50bngnf.jpg" alt="image-20190112210855207"></p>
-<hr>
-<h1 id="11-事件"><a href="#11-事件" class="headerlink" title="11 事件"></a>11 事件</h1><h2 id="常见事件"><a href="#常见事件" class="headerlink" title="常见事件"></a>常见事件</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4qvvnu3fj307r0ce77j.jpg" alt="image-20190113102442714"></p>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fz4qxehv6dj30vi0bi7a4.jpg" alt="image-20190113102610279"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz4qzuhs3bj30jg04wt9x.jpg" alt="image-20190113102831166"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4r12lndgj30mg09htbm.jpg" alt="image-20190113102941828"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4r1razwjj30mb05mjt2.jpg" alt="image-20190113103021477"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4r3duz43j30or0chtcf.jpg" alt="image-20190113103155136"></p>
-<hr>
-<h2 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz86nfgkw4j30ne07ngnw.jpg" alt="image-20190116094643318"></p>
-<p> <img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz86nr1pzrj30af0403yr.jpg" alt="image-20190116094710564"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz86ucgwvoj30eg02ba9z.jpg" alt="image-20190116095146110"></p>
-<h2 id="事件绑定-重要"><a href="#事件绑定-重要" class="headerlink" title="事件绑定[重要]"></a>事件绑定[重要]</h2><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz86ushrkej308g05ngml.jpg" alt="image-20190116095356313"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz86ybwr58j30m304ygm8.jpg" alt="image-20190116095653201"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz8700lim6j30o101t3zm.jpg" alt="image-20190116095857913"></p>
-<h2 id="委派"><a href="#委派" class="headerlink" title="委派"></a>委派</h2><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fz8715as8jj305p02sq3g.jpg" alt="image-20190116100003128"></p>
-<p><img src="../../../Users/apple/Library/Application%20Support/typora-user-images/image-20190116100118945.png" alt="image-20190116100118945"></p>
-<h2 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h2><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz8748wdv4j30kq06fgni.jpg" alt="image-20190116100301259"></p>
-<h1 id="12-动画效果"><a href="#12-动画效果" class="headerlink" title="12 动画效果"></a>12 动画效果<img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz8r066i94j30km07umyj.jpg" alt="image-20190116213104140"></h1><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fz8r10zt99j30ee06udgu.jpg" alt="image-20190116213154462"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz8r1r22nuj30dl085abd.jpg" alt="image-20190116213235489"></p>
-<hr>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz8r35ctidj30g7081q4r.jpg" alt="image-20190116213357010"></p>
-<hr>
-<h1 id="13-Ajax「重要-掌握」"><a href="#13-Ajax「重要-掌握」" class="headerlink" title="13 Ajax「重要 掌握」"></a>13 Ajax「重要 掌握」</h1><ul>
-<li>异步刷新</li>
-</ul>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz44fmhn7pj30r408sdh4.jpg" alt="image-20190112212754438"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz44lrvtckj309z04875a.jpg" alt="image-20190112213349243"></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz44onflgmj30jp04x75v.jpg" alt="image-20190112213635084"></p>
-<hr>
-<h2 id="Load-函数"><a href="#Load-函数" class="headerlink" title="Load()函数"></a>Load()函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"input"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> url = <span class="string">"/"</span>;</span><br><span class="line">                <span class="keyword">var</span> params = &#123;<span class="string">"username"</span>: <span class="string">"jack"</span>, <span class="string">"password"</span>: <span class="string">"1234"</span>&#125;;</span><br><span class="line">                <span class="comment">/**</span></span><br><span class="line"><span class="comment">                 * load()函数 必须使用jquery对象</span></span><br><span class="line"><span class="comment">                 * 格式load(url,[data],[callback])</span></span><br><span class="line"><span class="comment">                 * 参数1：url 请求路径</span></span><br><span class="line"><span class="comment">                 * 参数2：data 请求参数</span></span><br><span class="line"><span class="comment">                 * 参数3：callback 回调函数</span></span><br><span class="line"><span class="comment">                 *   *如果没有请求参数 发送的GET请求</span></span><br><span class="line"><span class="comment">                 *   *如果有请求参数 发送的POST请求 请求没有中文乱码；</span></span><br><span class="line"><span class="comment">                 *回调函数的参数</span></span><br><span class="line"><span class="comment">                 *          ：参数1 data响应数据 load()永远获得字符串 如果需要使用</span></span><br><span class="line"><span class="comment">                 *          必须手动转换成json格式；</span></span><br><span class="line"><span class="comment">                 *</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                $(<span class="keyword">this</span>).load(url, params, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                    <span class="comment">//转换JSON对象</span></span><br><span class="line">                    <span class="keyword">var</span> jsonData = <span class="built_in">eval</span>(<span class="string">"("</span> + data + <span class="string">")"</span>);</span><br><span class="line">                    alert(jsonData.message);</span><br><span class="line">                &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4ovfntwpj30v70r4aii.jpg" alt="image-20190113091505279"></p>
-<hr>
-<h2 id="post-get"><a href="#post-get" class="headerlink" title="$.post $.$.get"></a>$.post $.$.get</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         *  $.get() 全局函数 发送get请求</span></span><br><span class="line"><span class="comment">         *    *格式 jquery.get(URl,[data],[callback],[type])</span></span><br><span class="line"><span class="comment">         *      *参数4 type</span></span><br><span class="line"><span class="comment">         *      *GET请求不适合发送中文数据 存放请求的中文乱码</span></span><br><span class="line"><span class="comment">         *      必须手动解码 new String(username,getBytes("ISO-8859-1",UTF-8"))</span></span><br><span class="line"><span class="comment">         响应数据 如果使用application/json；charset=UTF-8,jquery自动将数据转换JSON对象</span></span><br><span class="line"><span class="comment">         响应数据 如果使用text/html；charset=UTF-8 ，回调函数获得字符串数据 需要手动转换</span></span><br><span class="line"><span class="comment">         使用"参数4" 设置"json" Jquery将字符串 转换为json对象</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        $.get(url, params, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(data);</span><br><span class="line">        &#125;, <span class="string">"json"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * post()全局函数 发送post请求</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         格式：jquery.post(url,data[],[callback],[type])</span></span><br><span class="line"><span class="comment">         $.post(url,params,function(data)&#123;</span></span><br><span class="line"><span class="comment">            alert(data);</span></span><br><span class="line"><span class="comment">            &#125;,"json")</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        $.post(utl, params, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">            alert(data);</span><br><span class="line">        &#125;, <span class="string">"json"</span>)</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fz4pi8m9hrj30tw0z67dq.jpg" alt="image-20190113093659468"></p>
-<hr>
-<p>$.ajax()$</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           $(<span class="string">"input"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               <span class="comment">/**</span></span><br><span class="line"><span class="comment">                * 4.$.ajax() 底层功能最强大的</span></span><br><span class="line"><span class="comment">                * 格式 Jquery.ajax（[settings]）</span></span><br><span class="line"><span class="comment">                *  参数 settings:设置所有的参数</span></span><br><span class="line"><span class="comment">                *   url:发送请求的地址</span></span><br><span class="line"><span class="comment">                *   data:发送到服务器的数据 请求参数，</span></span><br><span class="line"><span class="comment">                *   type: 请求方式（"POST"或"GET"），</span></span><br><span class="line"><span class="comment">                *</span></span><br><span class="line"><span class="comment">                *   success:成功的回调函数</span></span><br><span class="line"><span class="comment">                *   error 错误函数</span></span><br><span class="line"><span class="comment">                *   dateType:响应数据类型</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">                */</span></span><br><span class="line">               $.ajax(&#123;</span><br><span class="line">                   <span class="string">"url"</span>: <span class="string">"/"</span>,</span><br><span class="line">                   <span class="string">"data"</span>: <span class="string">"params"</span>,</span><br><span class="line">                   <span class="string">"type"</span>: <span class="string">"POST"</span>,</span><br><span class="line">                   <span class="string">"success"</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                       alert(data);</span><br><span class="line">                   &#125;,</span><br><span class="line">                   <span class="string">"error"</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                       alert(<span class="string">"服务器繁忙"</span>)</span><br><span class="line">                   &#125;,</span><br><span class="line">                   <span class="string">"dateType"</span>: <span class="string">"json"</span></span><br><span class="line">               &#125;);</span><br><span class="line">           &#125;);</span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4purn2xvj30ml10bjyn.jpg" alt="image-20190113094858475"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4pv1qc2oj30kd07h40k.jpg" alt="image-20190113094918130"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz8763cripj30ct0bsq65.jpg" alt="image-20190116100448013"></p>
-<h2 id="处理实战"><a href="#处理实战" class="headerlink" title="处理实战"></a>处理实战</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// &lt;input id="h01" type="button" value="1只能点击一次，之后失效"/&gt;</span></span><br><span class="line">            $(<span class="string">"#h01"</span>).one(<span class="string">"click.a"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"你只能看到我一次"</span>);<span class="comment">//继续点击失效</span></span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// &lt;input id="h02" type="button" value="2可以点击多次"/&gt;</span></span><br><span class="line">            $(<span class="string">"#h02"</span>).bind(<span class="string">"click.b"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"每次都是你"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// &lt;input id="h03" type="button" value="3解绑2"/&gt;</span></span><br><span class="line">            $(<span class="string">"#h03"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"#h02"</span>).unbind(<span class="string">"click.b"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// &lt;input type="button" value="4 添加一个按钮，样式为myClass，且拥有相同的事件" class="myClass"/&gt;</span></span><br><span class="line">            $(<span class="string">".myClass"</span>).live(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"body"</span>).append(<span class="string">"&lt;input type='button' class='myClass'&gt;"</span>)</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// &lt;input id="h05" type="button" value="5 解绑4"/&gt;</span></span><br><span class="line">            $(<span class="string">"#h05"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">".myClass"</span>).die(<span class="string">"click"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">//切换</span></span><br><span class="line">            $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"#e01"</span>).toggle(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"报数1"</span>);</span><br><span class="line">                &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"报数2"</span>);</span><br><span class="line">                &#125;);</span><br><span class="line"></span><br><span class="line">                $(<span class="string">"#e02"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    $(<span class="string">"#divMsg"</span>).html(<span class="string">"over"</span>);</span><br><span class="line">                &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    $(<span class="string">"#divMsg"</span>).html(<span class="string">"out"</span>);</span><br><span class="line">                &#125;)</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz87oxrcj9j30u012xgz8.jpg" alt="image-20190116102254251"></p>
-<h1 id="14-其他"><a href="#14-其他" class="headerlink" title="14 其他"></a>14 其他</h1><h3 id="表单序列化"><a href="#表单序列化" class="headerlink" title="表单序列化"></a>表单序列化</h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz873mwfcsj30ji080abf.jpg" alt="image-20190113095911001"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fz4q5o48dsj30hn05qmy8.jpg" alt="image-20190113095931330"></p>
-<hr>
-<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz4q9z8pqaj30hn09jdid.jpg" alt="image-20190113100338880"></p>
-<hr>
-<h3 id="浏览器默认的动作行为"><a href="#浏览器默认的动作行为" class="headerlink" title="浏览器默认的动作行为"></a>浏览器默认的动作行为</h3><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz4qbjwhzzj30h706pq4j.jpg" alt="image-20190113100510108"></p>
-<p>Jquery文档1.8.3</p>
-<p> <img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy79uf2mgej304g08x3z6.jpg" alt="image-20181215113129106"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/蓝桥杯/蓝桥杯/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/14/蓝桥杯/蓝桥杯/" itemprop="url">蓝桥杯随笔</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-14T07:50:27+08:00">
-                2018-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/14/蓝桥杯/蓝桥杯/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/14/蓝桥杯/蓝桥杯/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="一些笔记"><a href="#一些笔记" class="headerlink" title="一些笔记"></a>一些笔记</h1><p>1.<a href="https://www.cnblogs.com/shootercheng/p/6022411.html" target="_blank" rel="noopener">Java整型与字符串相互转换(转)</a></p>
-<p>####1如何将字串 String 转换成整数 int?</p>
-<ul>
-<li>有两个方法:</li>
-</ul>
-<blockquote>
-<p>1) int i = Integer.parseInt([String]);  </p>
-</blockquote>
-<blockquote>
-<p>​          i = Integer.parseInt([String],[int radix]);</p>
-</blockquote>
-<blockquote>
-<p>2). int i = Integer.valueOf(my_str).intValue();</p>
-</blockquote>
-<p>　　注: 字串转成 Double, Float, L</p>
-<p>#####2 如何将整数 int 转换成字串 String ?</p>
-<p>　　A. 有叁种方法:</p>
-<p>　　1.) String s = String.valueOf(i);</p>
-<p>　　2.) String s = Integer.toString(i);</p>
-<p>　　3.) String s = “” + i;</p>
-<p>　　注: Double, Float, Long 转成字串的方法大同小异.</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy5xxsdd2nj30gu0nl44n.jpg" alt="image-20181214075357771"></p>
-<hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy5y9o1a6nj30h709h75j.jpg" alt="image-20181214080522537"></p>
-<h1 id="amp-amp-逻辑与-当前仅当两个操作数都为真的时候条件才为真"><a href="#amp-amp-逻辑与-当前仅当两个操作数都为真的时候条件才为真" class="headerlink" title="&amp;&amp; : 逻辑与 当前仅当两个操作数都为真的时候条件才为真"></a>&amp;&amp; : 逻辑与 当前仅当两个操作数都为真的时候条件才为真</h1><h1 id="：-逻辑或-如果任何两个操作数任何一个为真-条件为真"><a href="#：-逻辑或-如果任何两个操作数任何一个为真-条件为真" class="headerlink" title="|| ： 逻辑或 如果任何两个操作数任何一个为真 条件为真"></a>|| ： 逻辑或 如果任何两个操作数任何一个为真 条件为真</h1><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy5yrkoep3j30jq044mxu.jpg" alt="image-20181214082234800"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy5yuade5hj314d0dbgtv.jpg" alt="image-20181214082512514"></p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/13/Mybatis/级联操作/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/13/Mybatis/级联操作/" itemprop="url">test</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-13T15:57:03+08:00">
-                2018-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/13/Mybatis/级联操作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/13/Mybatis/级联操作/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy56bo2dc7j30ij0djwna.jpg" alt="image-20181213155828650"></p>
-<p>—<img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy59v8tt9vj30hi04m405.jpg" alt="image-20181213180108232"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/java基础/动态代理 /">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2006,11 +1193,584 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/引用传递/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/java基础/引用传递/" itemprop="url">java引用传递</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T21:36:47+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/java基础/引用传递/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/引用传递/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h3 id="（show（）方法出栈-栈里面只有成员变量）"><a href="#（show（）方法出栈-栈里面只有成员变量）" class="headerlink" title="（show（）方法出栈 栈里面只有成员变量）"></a>（show（）方法出栈 栈里面只有成员变量）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//基本数据类型参数传递</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">		show(x);<span class="comment">//⭐️x=3 show（）方法出栈 栈里面只有3 </span></span><br><span class="line">		System.out.println(<span class="string">"x="</span> + x); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		x = <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzhm7oth9j30wa0fnwk8.jpg" alt="image-20181208175552226"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzhmhdeiij30so09076n.jpg" alt="image-20181208175608090"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//基本数据类型参数传递</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">		show(x);<span class="comment">// 答案x=4 执行的是show 里面的方法</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		x = <span class="number">4</span>;</span><br><span class="line">		System.out.println(<span class="string">"x="</span> + x); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzhog1xp1j30kl0b377t.jpg" alt="image-20181208175756626"></p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzhpcgg6aj30j10c577j.jpg" alt="image-20181208175849677"></p>
+<hr>
+<hr>
+<hr>
+<h1 id="引用数据类型参数传递"><a href="#引用数据类型参数传递" class="headerlink" title="引用数据类型参数传递"></a>引用数据类型参数传递</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzi3ii8g7j30i90cu0w6.jpg" alt="image-20181208181230101"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"><span class="comment">//引用数据类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo2 demo2 = <span class="keyword">new</span> Demo2();</span><br><span class="line">		demo2.x=<span class="number">9</span>;</span><br><span class="line">		show(demo2);<span class="comment">// ⭐️ x=4</span></span><br><span class="line">		System.out.println(demo2.x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Demo2 d)</span> </span>&#123;</span><br><span class="line">		d.x = <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzi44iftuj31330gvwku.jpg" alt="image-20181208181304546"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzi49xiv8j30in0dpmxr.jpg" alt="image-20181208181313939"></p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzi70mk3yj318h0p8n7x.jpg" alt="image-20181208181550692"></p>
+<hr>
+<h2 id="引用数据类型传递详解"><a href="#引用数据类型传递详解" class="headerlink" title="引用数据类型传递详解"></a>引用数据类型传递详解</h2><ul>
+<li><p>栈内存：保存所有的对象名称 d(保存了引用堆内存空间的地址）</p>
+</li>
+<li><p>堆内存空间。保存具体对象的具体属性</p>
+</li>
+<li><p>全局数据区：保存static类型的属性</p>
+</li>
+<li><p>全局代码区：保存所有的方法定义</p>
+<h1 id="java的引用传递-同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址"><a href="#java的引用传递-同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址" class="headerlink" title="java的引用传递 同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址"></a>java的引用传递 同一块堆内存空间，同时被多个栈内存指向，不同的栈可以修改同一块堆内存空间的地址</h1></li>
+</ul>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> data = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo1</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.data = data;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.data;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.data = data;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo1 demo1 = <span class="keyword">new</span> Demo1();</span><br><span class="line">		fun(demo1);<span class="comment">//</span></span><br><span class="line">		System.out.println(demo1.getData());<span class="comment">//30</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo1 temp)</span> </span>&#123; <span class="comment">// 接受引用</span></span><br><span class="line">		temp.setData(<span class="number">30</span>);<span class="comment">// 修改属性内容</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzitjhmtkj30qn0uxgsh.jpg" alt="image-20181208183729045"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzitz8xyvj313l0n3475.jpg" alt="image-20181208183756336"></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/lym152898/article/details/54411956" target="_blank" rel="noopener">https://blog.csdn.net/lym152898/article/details/54411956</a></p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxziwzqdcdj30rj394kae.jpg" alt="image-20181208184049245"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzixhog6pj30rb12jdnc.jpg" alt="image-20181208184118821"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxziy77tthj30ri44n4qp.jpg" alt="image-20181208184158837"></p>
+<hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxzizum77rj30mo6cu7wi.jpg" alt="image-20181208184333093"></p>
+<hr>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxzj0hc314j30ir03babl.jpg" alt="image-20181208184410426"></p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxzj48hz9aj30o00mxwmv.jpg" alt="image-20181208184746357"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxzj5y8hpaj30s6254wzo.jpg" alt="image-20181208184926276"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/RabbitMQ/3.管控台/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/RabbitMQ/3.管控台/" itemprop="url">RabbitMQ管控台</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:58:33+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/RabbitMQ/3.管控台/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/RabbitMQ/3.管控台/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="不积跬步-无以至千里-养成写博客理解的习惯"><a href="#不积跬步-无以至千里-养成写博客理解的习惯" class="headerlink" title="不积跬步 无以至千里 养成写博客理解的习惯"></a>不积跬步 无以至千里 养成写博客理解的习惯</h4><h3 id="博客在学习的时候写-看最好的视频-写做好的博客-cheerUP"><a href="#博客在学习的时候写-看最好的视频-写做好的博客-cheerUP" class="headerlink" title="#博客在学习的时候写 看最好的视频 写做好的博客 cheerUP"></a>#博客在学习的时候写 看最好的视频 写做好的博客 cheerUP</h3><hr>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvw1csyrnj30s11wrk1k.jpg" alt="image-20181205150907065"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxvvyn2vssj30r844yb29.jpg" alt="image-20181205150956171"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxvw1dt0onj30jdawb1ky.jpg" alt="image-20181205151144586"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/RabbitMQ/Rabbit MQ命令总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/RabbitMQ/Rabbit MQ命令总结/" itemprop="url">Rabbit MQ命令总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:37:35+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/RabbitMQ/Rabbit MQ命令总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/RabbitMQ/Rabbit MQ命令总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="命令总结-RabbitMQ"><a href="#命令总结-RabbitMQ" class="headerlink" title="命令总结 RabbitMQ"></a>命令总结 RabbitMQ</h1><h1 id="不积跬步无以至千里"><a href="#不积跬步无以至千里" class="headerlink" title="不积跬步无以至千里"></a>不积跬步无以至千里</h1><h5 id="1-lsof-i-5672-查看有没有启动成功"><a href="#1-lsof-i-5672-查看有没有启动成功" class="headerlink" title="1.lsof -i :5672 查看有没有启动成功"></a>1.lsof -i :5672 查看有没有启动成功</h5><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxuwjxdarpj30ma02rabn.jpg" alt="image-20181204184449441"></p>
+<h5 id="2-rabbitmq"><a href="#2-rabbitmq" class="headerlink" title="2.rabbitmq"></a>2.rabbitmq</h5><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuwmg4ed4j30ma01maax.jpg" alt="image-20181204184714442"></p>
+<h5 id="3-rabbitmqctl-list-queues-查看所有队列的名称"><a href="#3-rabbitmqctl-list-queues-查看所有队列的名称" class="headerlink" title="3.rabbitmqctl list_queues 查看所有队列的名称"></a>3.rabbitmqctl list_queues 查看所有队列的名称</h5><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuwnj1pccj30gq02kmxu.jpg" alt="image-20181204184817578"></p>
+<h5 id="4-rabbitmqctl-list-vhosts"><a href="#4-rabbitmqctl-list-vhosts" class="headerlink" title="4.rabbitmqctl list_vhosts"></a>4.rabbitmqctl list_vhosts</h5><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxuwoqqncfj30gp025dgh.jpg" alt="image-20181204184926639"></p>
+<h5 id="5-rabbitmqctl-status-查看当前节点的状态"><a href="#5-rabbitmqctl-status-查看当前节点的状态" class="headerlink" title="5.rabbitmqctl status 查看当前节点的状态"></a>5.rabbitmqctl status 查看当前节点的状态</h5><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxuwqc7fy4j30ex03wgnf.jpg" alt="image-20181204185059365"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/集合/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/java基础/集合/" itemprop="url">javaSE 总结 IO 集合 线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:24:04+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/java基础/集合/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/集合/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-集合"><a href="#1-集合" class="headerlink" title="1.集合"></a>1.集合</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2058,7 +1818,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">122</span>
+                  <span class="site-state-item-count">118</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
