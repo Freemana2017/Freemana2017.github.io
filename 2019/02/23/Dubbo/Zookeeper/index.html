@@ -88,11 +88,11 @@
 <meta property="og:description" content="Zookeeper的使用    1 安装JDK https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   scp /Users/apple/Downloads/jdk-8u201-linux-x64.tar.gz  root@94.191.24.33:vim /etc/profile">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/Users/apple/Library/Application%20Support/typora-user-images/image-20190223090242719.png">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1g0g35ccn65j30qt02k0uz.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1g0g4vl3yxij30l50akjx3.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1g0g4wi1vurj30dm00jdfr.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1g0xktavujoj30ph07pmz7.jpg">
-<meta property="og:updated_time" content="2019-03-10T04:34:05.376Z">
+<meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023755.jpg">
+<meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023757.jpg">
+<meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023758.jpg">
+<meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023804.jpg">
+<meta property="og:updated_time" content="2019-04-29T03:08:30.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zookeeper的使用">
 <meta name="twitter:description" content="Zookeeper的使用    1 安装JDK https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   scp /Users/apple/Downloads/jdk-8u201-linux-x64.tar.gz  root@94.191.24.33:vim /etc/profile">
@@ -358,19 +358,19 @@
       
         <h1 id="Zookeeper的使用"><a href="#Zookeeper的使用" class="headerlink" title="Zookeeper的使用"></a>Zookeeper的使用</h1><p><img src="../../../../Users/apple/Library/Application%20Support/typora-user-images/image-20190223090242719.png" alt="image-20190223090242719"></p>
 <hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g0g35ccn65j30qt02k0uz.jpg" alt="image-20190223091027432"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g0g4vl3yxij30l50akjx3.jpg" alt="image-20190223101020564"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023755.jpg" alt="image-20190223091027432"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023757.jpg" alt="image-20190223101020564"></p>
 <h1 id="1-安装JDK"><a href="#1-安装JDK" class="headerlink" title="1 安装JDK"></a>1 安装JDK</h1><blockquote>
 <p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
 </blockquote>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g0g4wi1vurj30dm00jdfr.jpg" alt="image-20190223101114804"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023758.jpg" alt="image-20190223101114804"></p>
 <h3 id="scp-Users-apple-Downloads-jdk-8u201-linux-x64-tar-gz-root-94-191-24-33"><a href="#scp-Users-apple-Downloads-jdk-8u201-linux-x64-tar-gz-root-94-191-24-33" class="headerlink" title="scp /Users/apple/Downloads/jdk-8u201-linux-x64.tar.gz  root@94.191.24.33:"></a>scp /Users/apple/Downloads/jdk-8u201-linux-x64.tar.gz  <a href="mailto:root@94.191.24.33" target="_blank" rel="noopener">root@94.191.24.33</a>:</h3><h3 id="vim-etc-profile"><a href="#vim-etc-profile" class="headerlink" title="vim /etc/profile"></a>vim /etc/profile</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL`</span><br><span class="line"></span><br><span class="line">`export ZOOKEEPER_HOME=/root/zookeeper-3.4.10`</span><br><span class="line">`export JAVA_HOME=/root/jdk1.8.0_201`</span><br><span class="line"></span><br><span class="line">`export CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar`</span><br><span class="line">`export PATH=$PATH:$JAVA_HOME/bin`</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="source-etc-profile"><a href="#source-etc-profile" class="headerlink" title="source /etc/profile"></a>source /etc/profile</h3><hr>
 <p>java环境配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/root/jdk1.8.0_201</span><br><span class="line"></span><br><span class="line">export CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br></pre></td></tr></table></figure>
 <h1 id="2-安装zookeeper"><a href="#2-安装zookeeper" class="headerlink" title="2 安装zookeeper"></a>2 安装zookeeper</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># export ZOOKEEPER_HOME=/root/zookeeper-3.4.10`</span><br><span class="line"> `export CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar`</span><br><span class="line">`export JAVA_HOME=/root/jdk1.8.0_201`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">`export ZOOKEEPER_HOME=/root/zookeeper-3.4.10`</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"># `export PATH=$PATH:$JAVA_HOME/bin`</span><br><span class="line"></span><br><span class="line">`export PATH=$PATH:$ZOOKEEPER_HOME/bin:$JAVA_HOME/bin`</span><br></pre></td></tr></table></figure>
-<h1 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h1><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g0xktavujoj30ph07pmz7.jpg" alt="image-20190310121617720"></p>
+<h1 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023804.jpg" alt="image-20190310121617720"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. uname -a </span><br><span class="line"> </span><br><span class="line">上图中i686表明系统安装的是32位的，但是这个结果并不明显，对linux系统不熟的是无法分辨出是32位还是64位的。</span><br><span class="line"></span><br><span class="line">2. getconf LONG_BIT（推荐使用）</span><br><span class="line"> 32 bit</span><br><span class="line">结果非常直观明显。</span><br></pre></td></tr></table></figure>
 <hr>
 
@@ -504,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">118</span>
+                  <span class="site-state-item-count">125</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -526,7 +526,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

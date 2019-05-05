@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="DOM创建节点及节点属性本文向大家介绍一下如何使用JavaScript创建div节点元素，主要包括创建div节点元素的属性和创建div节点元素的样式两大部分内容 创建流程比较简单，大体如下：  创建节点(常见的：元素、属性和文本) 添加节点的一些属性 加入到文档中  流程中涉及的一点方法：  创建元素：document.createElement 设置属性：setAttribute 添加文本：in">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1g0yknmk9afj30fg051jsf.jpg">
-<meta property="og:updated_time" content="2019-03-11T03:08:02.120Z">
+<meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025536.jpg">
+<meta property="og:updated_time" content="2019-04-29T03:08:31.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jquery基础篇（二）-DOM篇章">
 <meta name="twitter:description" content="DOM创建节点及节点属性本文向大家介绍一下如何使用JavaScript创建div节点元素，主要包括创建div节点元素的属性和创建div节点元素的样式两大部分内容 创建流程比较简单，大体如下：  创建节点(常见的：元素、属性和文本) 添加节点的一些属性 加入到文档中  流程中涉及的一点方法：  创建元素：document.createElement 设置属性：setAttribute 添加文本：in">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1g0yknmk9afj30fg051jsf.jpg">
+<meta name="twitter:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025536.jpg">
 
 
 
@@ -388,7 +388,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $body = $(<span class="string">'body'</span>);</span><br><span class="line">  $body.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">//通过jQuery生成div元素节点</span></span><br><span class="line">      </span><br><span class="line">      <span class="keyword">var</span> div = $(<span class="string">"&lt;div class='right'&gt;&lt;div class='aaron'&gt;动态创建DIV元素节点&lt;/div&gt;&lt;/div&gt;"</span>)</span><br><span class="line">      </span><br><span class="line">      $body.append(div)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <h1 id="DOM内部插入append-与appendTo"><a href="#DOM内部插入append-与appendTo" class="headerlink" title="DOM内部插入append()与appendTo()"></a>DOM内部插入append()与appendTo()</h1><p>动态创建的元素是不够的，它只是临时存放在内存中，最终我们需要放到页面文档并呈现出来。那么问题来了，怎么放到文档上？</p>
 <p>这里就涉及到一个位置关系，常见的就是把这个新创建的元素，当作页面某一个元素的子元素放到其内部。针对这样的处理，jQuery就定义2个操作的方法</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g0yknmk9afj30fg051jsf.jpg" alt="image-20190311085625447"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025536.jpg" alt="image-20190311085625447"></p>
 <p>append：这个操作与对指定的元素执行原生的appendChild方法，将它们添加到文档中的情况类似。</p>
 <p>appendTo：实际上，使用这个方法是颠倒了常规的$(A).append(B)的操作，即不是把B追加到A中，而是把A追加到B中。</p>
 <p>简单的总结就是：</p>
@@ -399,13 +399,13 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    $("#bt1").on('click', function() &#123;</span><br><span class="line">		//.append(), 内容在方法的后面，</span><br><span class="line">		//参数是将要插入的内容。</span><br><span class="line">		$(".content").append('<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"append"</span>&gt;</span>通过append方法添加的元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span>')</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">	$(<span class="string">"#bt2"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="comment">//.appendTo()刚好相反，内容在方法前面，</span></span></span><br><span class="line"><span class="javascript">		<span class="comment">//无论是一个选择器表达式 或创建作为标记上的标记</span></span></span><br><span class="line"><span class="javascript">		<span class="comment">//它都将被插入到目标容器的末尾。</span></span></span><br><span class="line"><span class="javascript">		$(<span class="string">'&lt;div class="appendTo"&gt;通过appendTo方法添加的元素&lt;/div&gt;'</span>).appendTo($(<span class="string">".content"</span>))</span></span><br><span class="line"><span class="undefined">	&#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311090109502](https://ws4.sinaimg.cn/large/006tKfTcgy1g0yksicn8fj308r03zjs4.jpg)
+![image-20190311090109502](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025541.jpg)
 
 # DOM外部插入after()与before()
 
 节点与节点之前有各种关系，除了父子，祖辈关系，还可以是兄弟关系。之前我们在处理节点插入的时候，接触到了内部插入的几个方法，这节我们开始讲外部插入的处理，也就是兄弟之间的关系处理，这里jQuery引入了2个方法，可以用来在匹配I的元素前后插入内容
 
-![image-20190311090216128](https://ws4.sinaimg.cn/large/006tKfTcgy1g0ykto07ttj30hw06q3z9.jpg)
+![image-20190311090216128](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025546.jpg)
 
 - before与after都是用来对相对选中元素外部增加相邻的兄弟节点
 - 2个方法都是都可以接收HTML字符串，DOM 元素，元素数组，或者jQuery对象，用来插入到集合中每个匹配元素的前面或者后面
@@ -422,7 +422,7 @@
 
 ---
 
-![image-20190311090518464](https://ws3.sinaimg.cn/large/006tKfTcgy1g0ykwtw3k3j30aw0cd75o.jpg)
+![image-20190311090518464](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025548.jpg)
 
 ---
 
@@ -430,7 +430,7 @@
 
 在元素内部进行操作的方法，除了在被选元素的结尾（仍然在内部）通过append与appendTo插入指定内容外，相应的还可以在被选元素之前插入，jQuery提供的方法是prepend与prependTo
 
-![image-20190311090618510](https://ws1.sinaimg.cn/large/006tKfTcgy1g0ykxvctkkj30h706kmxp.jpg)
+![image-20190311090618510](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025559.jpg)
 
 ---
 
@@ -456,11 +456,11 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    $(<span class="string">"#bt2"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//找到class="aaron2"的div节点</span></span><br><span class="line">        <span class="comment">//然后通过prependTo内部的首位置添加一个新的p节点</span></span><br><span class="line">        $(<span class="string">'&lt;p&gt;prependTo增加的p元素&lt;/p&gt;'</span>)</span><br><span class="line">            .prependTo($(<span class="string">'.aaron2'</span>))</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 
-![image-20190311090917184](https://ws1.sinaimg.cn/large/006tKfTcgy1g0yl0yp2qfj30ci0bmwfy.jpg)
+![image-20190311090917184](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025604.jpg)
 
 ---
 
-![image-20190311093931113](https://ws3.sinaimg.cn/large/006tKfTcgy1g0ylwfmkkij30m60s3dmh.jpg)
+![image-20190311093931113](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025607.jpg)
 
 ---
 
@@ -468,7 +468,7 @@
 
 与内部插入处理一样，jQuery由于内容目标的位置不同，然增加了2个新的方法insertAfter与insertBefore
 
-![image-20190311094156294](https://ws1.sinaimg.cn/large/006tKfTcgy1g0ylyxpozyj30hu08aq3l.jpg)
+![image-20190311094156294](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025610.jpg)
 
 ---
 
@@ -488,7 +488,7 @@
 
 ---
 
-![image-20190311094448653](https://ws2.sinaimg.cn/large/006tKfTcgy1g0ym1xg9tjj30cy0aujtf.jpg)
+![image-20190311094448653](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025613.jpg)
 
 ---
 
@@ -510,11 +510,11 @@ empty 顾名思义，清空方法，但是与删除又有点不一样，因为�
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;通过empty移除元素&lt;/h2&gt;</span><br><span class="line">&lt;div id=<span class="string">"test"</span>&gt;</span><br><span class="line">    &lt;p&gt;p元素1&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;p元素2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;button&gt;点击通过jQuery的empty移除元素&lt;/button&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">$(<span class="string">"button"</span>).on(<span class="string">'click'</span>, function() &#123;</span><br><span class="line">    <span class="comment">//通过empty移除了当前div元素下的所有p元素</span></span><br><span class="line">    <span class="comment">//但是本身id=test的div元素没有被删除</span></span><br><span class="line">    $(<span class="string">"#test"</span>).empty()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-![image-20190311095432041](https://ws4.sinaimg.cn/large/006tKfTcgy1g0ymc1u2d0j30au05a0t3.jpg)
+![image-20190311095432041](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025618.jpg)
 
 ---
 
-![image-20190311095442913](https://ws2.sinaimg.cn/large/006tKfTcgy1g0ymc8bkjoj308c03d3yo.jpg)
+![image-20190311095442913](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025619.jpg)
 
 ---
 
@@ -548,11 +548,11 @@ remove比empty好用的地方就是可以传递一个选择器表达式用来过
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button:last"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//找到所有p元素中，包含了3的元素</span></span><br><span class="line">    <span class="comment">//这个也是一个过滤器的处理</span></span><br><span class="line">    $(<span class="string">"p"</span>).remove(<span class="string">":contains('3')"</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-![image-20190311095903962](https://ws2.sinaimg.cn/large/006tKfTcgy1g0ymgrvd7ej30c90bbdgp.jpg)
+![image-20190311095903962](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025621.jpg)
 
 ---
 
-![image-20190311095915688](https://ws4.sinaimg.cn/large/006tKfTcgy1g0ymgyumsrj30d1077js0.jpg)
+![image-20190311095915688](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025626.jpg)
 
 ---
 
@@ -564,9 +564,9 @@ remove比empty好用的地方就是可以传递一个选择器表达式用来过
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    $(<span class="string">"#bt1"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//删除了2个p元素，但是本着没有删除 </span></span><br><span class="line">        $(<span class="string">"#test1"</span>).empty()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"#bt2"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//删除整个节点</span></span><br><span class="line">        $(<span class="string">"#test2"</span>).remove()</span><br><span class="line">    &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311100126080](https://ws3.sinaimg.cn/large/006tKfTcgy1g0ymj8dn5nj30cp07oaav.jpg)
+![image-20190311100126080](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025627.jpg)
 
-![image-20190311100139394](https://ws4.sinaimg.cn/large/006tKfTcgy1g0ymjgtr9bj30c5082wez.jpg)
+![image-20190311100139394](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025630.jpg)
 
 ---
 
@@ -591,7 +591,7 @@ detach从字面上就很容易理解。让一个web元素托管。即从当前�
 
 ---
 
-![image-20190311101545162](https://ws1.sinaimg.cn/large/006tKfTcgy1g0ymy49xqbj309804l74v.jpg)
+![image-20190311101545162](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025633.jpg)
 
 > 通过 $("p").detach()把所有的P元素删除后
 
@@ -599,7 +599,7 @@ detach从字面上就很容易理解。让一个web元素托管。即从当前�
 
 remove()和detach()可能就是其中的一个，可能remove()我们用得比较多，而detach()就可能会很少了
 
-![image-20190311101654121](https://ws3.sinaimg.cn/large/006tKfTcgy1g0ymzbdwjhj30jh04gt9y.jpg)
+![image-20190311101654121](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025645.jpg)
 
 **remove****：**移除节点
 
@@ -638,13 +638,13 @@ clone方法比较简单就是克隆节点，但是需要注意，如果节点有
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">//只克隆节点</span></span></span><br><span class="line"><span class="javascript">    	<span class="comment">//不克隆事件</span></span></span><br><span class="line"><span class="javascript">	    $(<span class="string">".aaron1"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">	        $(<span class="string">".left"</span>).append( $(<span class="keyword">this</span>).clone().css(<span class="string">'color'</span>,<span class="string">'red'</span>) )</span></span><br><span class="line"><span class="undefined">	    &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311102443530](https://ws4.sinaimg.cn/large/006tKfTcgy1g0yn7ggedej304307jaab.jpg)
+![image-20190311102443530](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025648.jpg)
 
 ---
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  	<span class="comment">//克隆节点</span></span><br><span class="line">  	<span class="comment">//克隆事件</span></span><br><span class="line">   $(<span class="string">".aaron2"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">       $(<span class="string">".left"</span>).append( $(<span class="keyword">this</span>).clone(<span class="literal">true</span>).css(<span class="string">'color'</span>,<span class="string">'blue'</span>) )</span><br><span class="line">   &#125;)</span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311102510959](https://ws3.sinaimg.cn/large/006tKfTcgy1g0yn7xtr2sj307u0f5jtm.jpg)
+![image-20190311102510959](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025654.jpg)
 
 ---
 
@@ -718,7 +718,7 @@ clone方法比较简单就是克隆节点，但是需要注意，如果节点有
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">   $(<span class="string">".aaron1"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">       <span class="comment">//给所有p元素，增加父容器div</span></span></span><br><span class="line"><span class="javascript">       $(<span class="string">'p'</span>).wrap(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>)</span></span><br><span class="line"><span class="undefined">   &#125;)</span></span><br><span class="line"><span class="undefined">   </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">   $(<span class="string">".aaron2"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">       $(<span class="string">'a'</span>).wrap(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">return</span> <span class="string">'&lt;div class="'</span> + $(<span class="keyword">this</span>).text() + <span class="string">'" /&gt;'</span>;</span></span><br><span class="line"><span class="undefined">       &#125;)</span></span><br><span class="line"><span class="undefined">   &#125;)</span></span><br><span class="line"><span class="undefined">   </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311103309520](https://ws4.sinaimg.cn/large/006tKfTcgy1g0yng8jw6uj309j06rq3h.jpg)
+![image-20190311103309520](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025658.jpg)
 
 ---
 
@@ -754,7 +754,7 @@ jQuery提供了一个unwrap()方法 ，作用与wrap方法是相反的。将匹�
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  $(<span class="string">".aaron1"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//找到所有p元素，删除父容器div</span></span></span><br><span class="line"><span class="javascript">      $(<span class="string">'p'</span>).unwrap(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>)</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  $(<span class="string">".aaron2"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//找到所有p元素，删除父容器div</span></span></span><br><span class="line"><span class="javascript">      $(<span class="string">'a'</span>).unwrap(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">return</span> <span class="string">'&lt;div&gt;&lt;/div&gt;'</span>;</span></span><br><span class="line"><span class="undefined">      &#125;)</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311103603895](https://ws4.sinaimg.cn/large/006tKfTcgy1g0ynj96ichj309s0dbabi.jpg)
+![image-20190311103603895](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025701.jpg)
 
 ---
 
@@ -811,7 +811,7 @@ wrap是针对单个dom元素处理，如果要将**集****合中**的元素用�
     </div>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">   $(<span class="string">".aaron1"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="comment">//给所有p元素，增加父容器div</span></span><br><span class="line">       $(<span class="string">'p'</span>).wrapAll(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);</span><br><span class="line">   &#125;)</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">   $("</span>.aaron2<span class="string">").on('click', function() &#123;</span></span><br><span class="line"><span class="string">       //wrapAll接受一个回调函数</span></span><br><span class="line"><span class="string">       //每一次遍历this都指向了合集中每一个a元素</span></span><br><span class="line"><span class="string">       $('a').wrapAll(function() &#123;</span></span><br><span class="line"><span class="string">           return '&lt;div&gt;&lt;/div&gt;'</span></span><br><span class="line"><span class="string">       &#125;)</span></span><br><span class="line"><span class="string">   &#125;)</span></span><br><span class="line"><span class="string">   &lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311103935500](https://ws3.sinaimg.cn/large/006tKfTcgy1g0ynmxu671j30bj0hi0uq.jpg)
+![image-20190311103935500](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025702.jpg)
 
 ---
 
@@ -821,7 +821,7 @@ wrap是针对单个dom元素处理，如果要将**集****合中**的元素用�
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">   $(<span class="string">".aaron1"</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="comment">//给所有class=right1的div元素，增加内部包裹父容器p</span></span><br><span class="line">      $(<span class="string">'.right1'</span>).wrapInner(<span class="string">'&lt;p&gt;&lt;/p&gt;'</span>);</span><br><span class="line">   &#125;)</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">   $("</span>.aaron2<span class="string">").on('click', function() &#123;</span></span><br><span class="line"><span class="string">       //wrapInner接受一个回调函数</span></span><br><span class="line"><span class="string">       //每一次遍历this都指向了合集中每一个class=left1的div元素</span></span><br><span class="line"><span class="string">       $('.left1').wrapInner(function() &#123;</span></span><br><span class="line"><span class="string">           return '&lt;a&gt;&lt;/a&gt;'</span></span><br><span class="line"><span class="string">       &#125;)</span></span><br><span class="line"><span class="string">   &#125;)</span></span><br><span class="line"><span class="string">   &lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-![image-20190311104323744](https://ws2.sinaimg.cn/large/006tKfTcgy1g0ynqw1onpj30a10hx76c.jpg)
+![image-20190311104323744](http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025713.jpg)
 
 ----
 
@@ -1180,7 +1180,7 @@ jQuery是一个合集对象，通过$()方法找到指定的元素合集后可�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">118</span>
+                  <span class="site-state-item-count">125</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1202,7 +1202,7 @@ jQuery是一个合集对象，通过$()方法找到指定的元素合集后可�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
