@@ -269,6 +269,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/Spring/4.SpringBean 装配/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/10/Spring/4.SpringBean 装配/" itemprop="url">Spring IOC 及bean容器 注入</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T21:27:09+08:00">
+                2018-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/10/Spring/4.SpringBean 装配/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/10/Spring/4.SpringBean 装配/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-Spring-Bean-装配之Bean的定义及其作用域的注解实现"><a href="#1-Spring-Bean-装配之Bean的定义及其作用域的注解实现" class="headerlink" title="1 Spring Bean 装配之Bean的定义及其作用域的注解实现"></a>1 Spring Bean 装配之Bean的定义及其作用域的注解实现</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030207.jpg" alt="image-20181210212840333"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030211.jpg" alt="image-20181210212954628"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030214.jpg" alt="image-20181210213111856"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030217.jpg" alt="image-20181210213147485"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-30220.jpg" alt="image-20181210213253867"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030231.jpg" alt="image-20181210213322203"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030234.jpg" alt="image-20181210213411097"></p>
+<p>​      &lt; context:component-scan&gt;</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030240.jpg" alt="image-20181210213546087"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030242.jpg" alt="image-20181210213758849"></p>
+<hr>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030245.jpg" alt="image-20181210214149896"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030249.jpg" alt="--image-20181210214351012"></p>
+<hr>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"bean.BeanAnnotation"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">context:component-scan</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> bean;</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanAnnotation</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System,out.print(<span class="string">"Hello Spring"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    BeanAnnotation bean=<span class="keyword">super</span>.getBean(<span class="string">"beanAnnotation"</span>);<span class="comment">//类名小写</span></span><br><span class="line">        bean.say(<span class="string">"This is Tese"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030251.jpg" alt="image-20181210215434002"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030303.jpg" alt="image-20181210215444940"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030314.jpg" alt="image-20181210215454617"></p>
+<hr>
+<h1 id="2-Spring装配-基于java容器的注解说明-importResource和-Value"><a href="#2-Spring装配-基于java容器的注解说明-importResource和-Value" class="headerlink" title="2 Spring装配 基于java容器的注解说明 @importResource和@Value"></a>2 Spring装配 基于java容器的注解说明 @importResource和@Value</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030325.jpg" alt="image-20190101111946848"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030337.jpg" alt="image-20190101112114768"></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDriverManager</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDriverManager</span><span class="params">(String url, String userName, String password)</span> </span>&#123;</span><br><span class="line">        System.out.print(url);</span><br><span class="line">        System.out.print(userName);</span><br><span class="line">        System.out.print(password);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ImportResource</span>(<span class="string">"classpath:config.xml"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StoreConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.url&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.username&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;jdbc.password&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MyDriverManager <span class="title">myDriverManager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MyDriverManager(url, username, password);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMyDreiverManager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        MyDriverManager myDriverManager = <span class="keyword">super</span>.getBean(<span class="string">"myDriverManager"</span>);</span><br><span class="line">        myDriverManager.getClass().getName();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jdbc.password=root</span><br><span class="line">jdbc.url=127.0.0.1</span><br><span class="line">jdbc.username=root</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030348.jpg" alt="image-20190101115330544"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030400.jpg" alt="image-20190101115349310"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030404.jpg" alt="image-20190101115400511"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030408.jpg" alt="image-20190101115417555"></p>
+<hr>
+<h1 id="3-Bean-和-Scope"><a href="#3-Bean-和-Scope" class="headerlink" title="3@Bean 和@Scope"></a>3@Bean 和@Scope</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030422.jpg" alt="image-20190101115501261"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030424.jpg" alt="image-20190101115548740"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030426.jpg" alt="image-20190101115657205"></p>
+<hr>
+<h1 id="4基于泛型的自动装配"><a href="#4基于泛型的自动装配" class="headerlink" title="4基于泛型的自动装配"></a>4基于泛型的自动装配</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030428.jpg" alt="image-20190101115805123"></p>
+<hr>
+<h1 id="Aware-和Autowiring"><a href="#Aware-和Autowiring" class="headerlink" title="Aware 和Autowiring"></a>Aware 和Autowiring</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030430.jpg" alt="image-20190101120529150"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030431.jpg" alt="image-20190101120624727"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030433.jpg" alt="image-20190101120721469"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030440.jpg" alt="image-20190101120731878"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030450.jpg" alt="image-20190101120803833"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/java基础/java反射/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1617,151 +1798,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/Spring/3.java容器的注解/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/Spring/3.java容器的注解/" itemprop="url">基于java的容器注解 @Bean⭐️</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T17:46:45+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/Spring/3.java容器的注解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/Spring/3.java容器的注解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><a href="https://www.imooc.com/learn/196" target="_blank" rel="noopener">https://www.imooc.com/learn/196</a> 后续更新</p>
-</blockquote>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025903.jpg" alt="image-20181204175147599"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025905.jpg" alt="image-20181204175321123"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025907.jpg" alt="image-20181204175502296"></p>
-<hr>
-<h1 id="1-实战"><a href="#1-实战" class="headerlink" title="1.实战"></a>1.实战</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025919.jpg" alt="image-20181204181516838"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025928.jpg" alt="image-20181204181526748"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025931.jpg" alt="image-20181204181724768"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025934.jpg" alt="image-20181204181804335"></p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025937.jpg" alt="image-20181204181833868"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025938.jpg" alt="image-20181204181851831"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025939.jpg" alt="image-20181204181926966"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1814,7 +1850,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1836,7 +1872,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
