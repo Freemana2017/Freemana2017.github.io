@@ -269,6 +269,281 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/工具类🔧/JsonUtil/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/15/工具类🔧/JsonUtil/" itemprop="url">JsonUtil</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T14:21:13+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/15/工具类🔧/JsonUtil/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/15/工具类🔧/JsonUtil/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.leyou.httpdemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.type.TypeReference;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.lang.Nullable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: HuYi.Zhang</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-04-24 17:20</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> ObjectMapper mapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(JsonUtils.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">serialize</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (obj.getClass() == String.class) &#123;</span><br><span class="line">            <span class="keyword">return</span> (String) obj;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.writeValueAsString(obj);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JsonProcessingException e) &#123;</span><br><span class="line">            logger.error(<span class="string">"json序列化出错："</span> + obj, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">parse</span><span class="params">(String json, Class&lt;T&gt; tClass)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.readValue(json, tClass);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            logger.error(<span class="string">"json解析出错："</span> + json, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;E&gt; <span class="function">List&lt;E&gt; <span class="title">parseList</span><span class="params">(String json, Class&lt;E&gt; eClass)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.readValue(json, mapper.getTypeFactory().constructCollectionType(List.class, eClass));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            logger.error(<span class="string">"json解析出错："</span> + json, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;K, V&gt; <span class="function">Map&lt;K, V&gt; <span class="title">parseMap</span><span class="params">(String json, Class&lt;K&gt; kClass, Class&lt;V&gt; vClass)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.readValue(json, mapper.getTypeFactory().constructMapType(Map.class, kClass, vClass));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            logger.error(<span class="string">"json解析出错："</span> + json, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">nativeRead</span><span class="params">(String json, TypeReference&lt;T&gt; type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.readValue(json, type);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            logger.error(<span class="string">"json解析出错："</span> + json, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/工具类🔧/HttpClient/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/15/工具类🔧/HttpClient/" itemprop="url">HttpClient</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T14:17:20+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/15/工具类🔧/HttpClient/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/15/工具类🔧/HttpClient/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h1><h3 id="pom"><a href="#pom" class="headerlink" title="pom"></a>pom</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;httpclient&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;<span class="number">4.5</span>.<span class="number">1</span>&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"> <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="comment">// 用户名</span></span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="comment">// 密码</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="comment">// 姓名</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@SpringBootTest</span>(classes = HttpDemoApplication.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpDemoApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">httpGet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		User user = <span class="keyword">this</span>.restTemplate.getForObject(<span class="string">"http://localhost/hello"</span>, User.class);</span><br><span class="line">		System.out.println(user);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpTests</span> </span>&#123;</span><br><span class="line">    CloseableHttpClient httpClient;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        httpClient = HttpClients.createDefault();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testGet</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        HttpGet request = <span class="keyword">new</span> HttpGet(<span class="string">"http://www.baidu.com"</span>);</span><br><span class="line">        String response = <span class="keyword">this</span>.httpClient.execute(request, <span class="keyword">new</span> BasicResponseHandler());</span><br><span class="line">        System.out.println(response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPost</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        HttpGet request = <span class="keyword">new</span> HttpGet(<span class="string">"http://www.oschina.net/"</span>);</span><br><span class="line">        request.setHeader(<span class="string">"User-Agent"</span>,</span><br><span class="line">                <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"</span>);</span><br><span class="line">        String response = <span class="keyword">this</span>.httpClient.execute(request, <span class="keyword">new</span> BasicResponseHandler());</span><br><span class="line">        System.out.println(response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testGetPojo</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        HttpGet request = <span class="keyword">new</span> HttpGet(<span class="string">"http://localhost/hello"</span>);</span><br><span class="line">        String response = <span class="keyword">this</span>.httpClient.execute(request, <span class="keyword">new</span> BasicResponseHandler());</span><br><span class="line">        System.out.println(response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/375be5929bed" target="_blank" rel="noopener">https://www.jianshu.com/p/375be5929bed</a></p>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-021835.jpg" alt="image-20190315142433207"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-021837.jpg" alt="image-20190315142521530"></p>
+<p>—-</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/ITtangtang/p/3968093.html" target="_blank" rel="noopener">https://www.cnblogs.com/ITtangtang/p/3968093.html</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.cnblogs.com/bethunebtj/p/8493379.html" target="_blank" rel="noopener">https://www.cnblogs.com/bethunebtj/p/8493379.html</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/Dubbo/尚硅谷 Dubbo 雷丰阳讲义/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1407,358 +1682,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/前端/Jquery基础(三)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/12/前端/Jquery基础(三)/" itemprop="url">Jquery基础篇 （三） 事件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T07:38:23+08:00">
-                2019-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/12/前端/Jquery基础(三)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/12/前端/Jquery基础(三)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="jQuery鼠标事件之click与dbclick事件"><a href="#jQuery鼠标事件之click与dbclick事件" class="headerlink" title="jQuery鼠标事件之click与dbclick事件"></a>jQuery鼠标事件之click与dbclick事件</h1><p>用交互操作中，最简单直接的操作就是点击操作。jQuery提供了两个方法一个是click方法用于监听用户单击操作，另一个方法是dbclick方法用于监听用户双击操作。这两个方法的用法是类似的，下面以click()事件为例</p>
-<p>使用上非常简单：</p>
-<p><strong>方法一：$ele.click()</strong></p>
-<p>绑定$ele元素，不带任何参数一般是用来指定触发一个事件，用的比较少</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test&quot;&gt;点击触发&lt;div&gt;</span><br><span class="line">$(&quot;ele&quot;).click(function()&#123;</span><br><span class="line">    alert(&apos;触发指定事件&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">$(&quot;#test&quot;).click(function()&#123;</span><br><span class="line">     $(&quot;ele&quot;).click()  //手动指定触发事件 </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>方法二：$ele.click( handler(eventObject) )</strong></p>
-<p>绑定$ele元素，每次$ele元素触发点击操作会执行回调 handler函数，这样可以针对事件的反馈做很多操作了，方法中的this是指向了绑定事件的元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test&quot;&gt;点击触发&lt;div&gt;</span><br><span class="line">$(&quot;#test&quot;).click(function() &#123;</span><br><span class="line">    //this指向 div元素</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>方法三：$ele.click( [eventData ], handler(eventObject) )</strong></p>
-<p>使用与方法二一致，不过可以接受一个数据参数，这样的处理是为了解决不同作用域下数据传递的问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test&quot;&gt;点击触发&lt;div&gt;</span><br><span class="line">$(&quot;#test&quot;).click(11111,function(e) &#123;</span><br><span class="line">    //this指向 div元素</span><br><span class="line">    //e.data  =&gt; 11111 传递数据</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>dbclick()的用法和click()的用法是类似的，可以参考以上click()的用法。</p>
-<p><strong>dbclick与click事件不同的是：</strong></p>
-<p><strong>click事件触发需要以下几点：</strong></p>
-<ul>
-<li>click事件其实是由mousedown与mouseup 2个动作构成，所以点击的动作只有在松手后才触发</li>
-</ul>
-<p>PS:mousedown和mouseup下一节会讲到</p>
-<p><strong>dbclick**</strong>事件触发需要以下几点：**</p>
-<p>dbclick又是由2个click叠加而来的，所以dbclick事件只有在满足以下条件的情况下才能被触发</p>
-<ul>
-<li>鼠标指针在元素里面时点击。</li>
-<li>鼠标指针在元素里面时释放。</li>
-<li>鼠标指针在元素里面时再次点击，点击间隔时间，是系统而定。</li>
-<li>鼠标指针在元素里面时再次释放。</li>
-</ul>
-<p><strong>注意：</strong>在同一元素上同时绑定 click 和 dbclick 事件是不可取的。各个浏览器事件触发的顺序是不同的，一些浏览器在dbclick之前接受两个 click 事件 ，而一些浏览器只接受一个 click 事件。用户往往可通过不同的操作系统和浏览器配置双击灵敏度</p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;.click()方法&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;h4&gt;测试一&lt;/</span>h4&gt;</span><br><span class="line">&lt;button&gt;元素绑定事件,弹出回调中的<span class="keyword">this</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    //this指向button元素</span></span><br><span class="line"><span class="string">     $("</span>button:eq(<span class="number">0</span>)<span class="string">").click(function() &#123;</span></span><br><span class="line"><span class="string">        alert(this)</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;h4&gt;测试二&lt;<span class="regexp">/h4&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="test2"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p&gt;$('button:first').click(function(e) &#123;alert(this)&#125;)&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;button&gt;指定触发事件&lt;/</span>button&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    $(<span class="string">'p'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        alert(e.target.textContent)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">//this指向button元素</span></span><br><span class="line">    $(<span class="string">"button:eq(1)"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">'p'</span>).click() <span class="comment">//指定触发绑定的事件</span></span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;h4&gt;测试三&lt;<span class="regexp">/h4&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="test3"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p&gt;$('.right').click(1111, set)&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;button&gt;不同函数传递数据&lt;/</span>button&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//不同函数传递数据</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">data</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        alert(e.data) <span class="comment">//1111</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"button:eq(2)"</span>).click(<span class="number">1111</span>, data)</span><br><span class="line">    &#125;</span><br><span class="line">    a();</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="jQuery鼠标事件之mousedown与mouseup事件"><a href="#jQuery鼠标事件之mousedown与mouseup事件" class="headerlink" title="jQuery鼠标事件之mousedown与mouseup事件"></a>jQuery鼠标事件之mousedown与mouseup事件</h1><blockquote>
-<p><a href="https://www.imooc.com/code/9717" target="_blank" rel="noopener">https://www.imooc.com/code/9717</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/前端/Jquery Ajax/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/11/前端/Jquery Ajax/" itemprop="url">Jquery Ajax</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-11T12:23:20+08:00">
-                2019-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/11/前端/Jquery Ajax/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/11/前端/Jquery Ajax/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="使用load-方法异步请求数据"><a href="#使用load-方法异步请求数据" class="headerlink" title="使用load()方法异步请求数据"></a>使用load()方法异步请求数据</h1><p>使用<code>load()</code>方法通过Ajax请求加载服务器中的数据，并把返回的数据放置到指定的元素中，它的调用格式为：</p>
-<p><strong>load(url,[data],[callback])</strong></p>
-<p>参数url为加载服务器地址，可选项data参数为请求时发送的数据，callback参数为数据请求成功后，执行的回调函数</p>
-<p>例如，点击“加载”按钮时，向服务器请求加载一个指定页面的内容，加载成功后，将数据内容显示在<div>元素中，并将加载按钮变为不可用。如下图所示：</div></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024903.jpg" alt="img"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024904.jpg" alt="img"></p>
-<p>从图中可以看出，当点击“加载”按钮时，通过调用<code>load()</code>方法向服务器请求加载fruit.html文件中的内容，当加载成功后，先显示数据，并将按钮变为不可用。</p>
-<h1 id="2-⭐️使用getJSON-方法异步加载JSON格式数据"><a href="#2-⭐️使用getJSON-方法异步加载JSON格式数据" class="headerlink" title="2 ⭐️使用getJSON()方法异步加载JSON格式数据"></a>2 ⭐️使用getJSON()方法异步加载JSON格式数据</h1><p>使用<code>getJSON()</code>方法可以通过Ajax异步请求的方式，获取服务器中的数据，并对获取的数据进行解析，显示在页面中，它的调用格式为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**jQuery.getJSON(url,[data],[callback])**`**或**`**$.getJSON(url,[data],[callback])**</span><br></pre></td></tr></table></figure>
-<p>其中，url参数为请求加载json格式文件的服务器地址，可选项data参数为请求时发送的数据，callback参数为数据请求成功后，执行的回调函数</p>
-<p>例如，点击页面中的“加载”按钮，调用<code>getJSON()</code>方法获取服务器中JSON格式文件中的数据，并遍历数据，将指定的字段名内容显示在页面中。如下图所示：</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024905.jpg" alt="img"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024906.jpg" alt="image-20190311124356496"></p>
-<p>从图中可以看出，当点击“加载”按钮时，通过<code>getJSON()</code>方法调用服务器中的sport.json文件，获取返回的data文件数据，并遍历该数据对象，以<code>data[“name”]</code>取出数据中指定的内容，显示在页面中。</p>
-<h1 id="3-使用getScript-方法异步加载并执行js文件"><a href="#3-使用getScript-方法异步加载并执行js文件" class="headerlink" title="3 使用getScript()方法异步加载并执行js文件"></a>3 使用getScript()方法异步加载并执行js文件</h1><p>使用<code>getScript()</code>方法异步请求并执行服务器中的JavaScript格式的文件，它的调用格式如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.getScript(url,[callback])`或`$.getScript(url,[callback])</span><br></pre></td></tr></table></figure>
-<p>参数url为服务器请求地址，可选项callback参数为请求成功后执行的回调函数。</p>
-<p>例如，点击“加载”按钮，调用<code>getScript()</code>加载并执行服务器中指定名称的JavaScript格式的文件，并在页面中显示加载后的数据内容，如下图所示：</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024907.jpg" alt="img"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024908.jpg" alt="image-20190311155356246"></p>
-<p>从图中可以看出，当点击“加载”按钮调用<code>getScript()</code>方法加载服务器中的JavaScript格式文件后，自动执行文件代码，将数据内容显示在<ul>元素中</ul></p>
-<h1 id="使用get-方法以GET方式从服务器获取数据"><a href="#使用get-方法以GET方式从服务器获取数据" class="headerlink" title="使用get()方法以GET方式从服务器获取数据"></a>使用get()方法以GET方式从服务器获取数据</h1><h1 id="使用get-方法以GET方式从服务器获取数据-1"><a href="#使用get-方法以GET方式从服务器获取数据-1" class="headerlink" title="使用get()方法以GET方式从服务器获取数据"></a>使用get()方法以GET方式从服务器获取数据</h1><p>使用<code>get()</code>方法时，采用GET方式向服务器请求数据，并通过方法中回调函数的参数返回请求的数据，它的调用格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.get(url,[callback])</span><br></pre></td></tr></table></figure>
-<p>参数url为服务器请求地址，可选项callback参数为请求成功后执行的回调函数。</p>
-<p>例如，当点击“加载”按钮时，调用<code>get()</code>方法向服务器中的一个.php文件以GET方式请求数据，并将返回的数据内容显示在页面中，如下图所示：</p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024910.jpg" alt="img"></p>
-<hr>
-<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024911.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024911.jpg" alt="img"></a></p>
-<p>从图中可以看出，通过<code>$.get()</code>方法向服务器成功请求数据后，在回调函数中通过data参数传回请求的数据，并以data.name格式访问数据中各项的内容。</p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">          $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              $(<span class="string">"#btnShow"</span>).bind(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                  <span class="keyword">var</span> $<span class="keyword">this</span> = $(<span class="keyword">this</span>);</span><br><span class="line">                  $.get(<span class="string">"http://www.imooc.com/data/info_f.php"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">                      $<span class="keyword">this</span>.attr(<span class="string">"disabled"</span>, <span class="string">"true"</span>);</span><br><span class="line">                      $(<span class="string">"ul"</span>).append(<span class="string">"&lt;li&gt;我的名字叫："</span> + data.name + <span class="string">"&lt;/li&gt;"</span>);</span><br><span class="line">                      $(<span class="string">"ul"</span>).append(<span class="string">"&lt;li&gt;男朋友对我说："</span> + data.say + <span class="string">"&lt;/li&gt;"</span>);</span><br><span class="line">                  &#125;, <span class="string">"json"</span>);</span><br><span class="line">              &#125;)</span><br><span class="line">          &#125;);</span><br><span class="line">      &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"name"</span>: <span class="string">"白富美"</span>,</span><br><span class="line"><span class="string">"say"</span>: <span class="string">"咱们结婚吧!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="使用post-方法以POST方式从服务器发送数据"><a href="#使用post-方法以POST方式从服务器发送数据" class="headerlink" title="使用post()方法以POST方式从服务器发送数据"></a>使用post()方法以POST方式从服务器发送数据</h1><p>与<code>get()</code>方法相比，<code>post()</code>方法多用于以POST方式向服务器发送数据，服务器接收到数据之后，进行处理，并将处理结果返回页面，调用格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.post(url,[data],[callback])</span><br></pre></td></tr></table></figure>
-<p>参数url为服务器请求地址，可选项data为向服务器请求时发送的数据，可选项callback参数为请求成功后执行的回调函数。</p>
-<p>例如，在输入框中录入一个数字，点击“检测”按钮，调用<code>post()</code>方法向服务器以POST方式发送请求，检测输入值的奇偶性，并显示在页面中，如下图所示：</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024918.jpg" alt="img"></p>
-<hr>
-<p>在浏览器中显示的效果：</p>
-<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024919.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024919.jpg" alt="img"></a></p>
-<p>从图中可以看出，当点击“检测”按钮时，获取输入框中的值，并将该值使用<code>$.post()</code>方法一起发送给服务器，服务器接收该值后并进行处理，最后返回处理结果。</p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">            $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               $(<span class="string">"#btnCheck"</span>).bind(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                   $.post(<span class="string">"http://www.imooc.com/data/check_f.php"</span>,&#123;<span class="attr">name</span>:$(<span class="string">"#txtNumber"</span>).val()&#125;,</span><br><span class="line">                   <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                       $(<span class="string">"ul"</span>).append(<span class="string">"&lt;li&gt;你输入的&lt;b&gt;  "</span></span><br><span class="line">                       + $(<span class="string">"#txtNumber"</span>).val() + <span class="string">" &lt;/b&gt;是&lt;b&gt; "</span></span><br><span class="line">                       + data + <span class="string">" &lt;/b&gt;&lt;/li&gt;"</span>);</span><br><span class="line">                   &#125;);</span><br><span class="line">               &#125;)</span><br><span class="line">           &#125;);</span><br><span class="line">       &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="使用serialize-方法序列化表单元素值"><a href="#使用serialize-方法序列化表单元素值" class="headerlink" title="使用serialize()方法序列化表单元素值"></a>使用serialize()方法序列化表单元素值</h1><p>使用<code>serialize()</code>方法可以将表单中有name属性的元素值进行序列化，生成标准URL编码文本字符串，直接可用于ajax请求，它的调用格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**$(selector).serialize()**</span><br></pre></td></tr></table></figure>
-<p>其中selector参数是一个或多个表单中的元素或表单元素本身。</p>
-<p>例如，在表单中添加多个元素，点击“序列化”按钮后，调用<code>serialize()</code>方法，将表单元素序列化后的标准URL编码文本字符串显示在页面中，如下图所示：</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024924.jpg" alt="img"></p>
-<h1 id="使用ajax-方法加载服务器数据"><a href="#使用ajax-方法加载服务器数据" class="headerlink" title="使用ajax()方法加载服务器数据"></a>使用ajax()方法加载服务器数据</h1><p>使用<code>ajax()</code>方法是最底层、功能最强大的请求服务器数据的方法，它不仅可以获取服务器返回的数据，还能向服务器发送请求并传递数值，它的调用格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**jQuery.ajax([settings])**`**或**`**$.ajax([settings])**</span><br></pre></td></tr></table></figure>
-<p>其中参数settings为发送ajax请求时的配置对象，在该对象中，url表示服务器请求的路径，data为请求时传递的数据，dataType为服务器返回的数据类型，success为请求成功的执行的回调函数，type为发送数据请求的方式，默认为get。</p>
-<p>例如，点击页面中的“加载”按钮，调用<code>ajax()</code>方法向服务器请求加载一个txt文件，并将返回的文件中的内容显示在页面，如下图所示：</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024927.jpg" alt="img"></p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">            $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"#btnCheck"</span>).bind(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    $.ajax(&#123;</span><br><span class="line">                        url: <span class="string">"http://www.imooc.com/data/check.php"</span>,</span><br><span class="line">                        data: &#123; <span class="attr">num</span>: $(<span class="string">"#txtNumber"</span>).val() &#125;,</span><br><span class="line">                        type: <span class="string">'POST'</span>,</span><br><span class="line">                        success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                            $(<span class="string">"ul"</span>).append(<span class="string">"&lt;li&gt;你输入的&lt;b&gt;  "</span></span><br><span class="line">                            + $(<span class="string">"#txtNumber"</span>).val() + <span class="string">" &lt;/b&gt;是&lt;b&gt; "</span></span><br><span class="line">                            + data + <span class="string">" &lt;/b&gt;&lt;/li&gt;"</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;);</span><br><span class="line">        &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1811,7 +1734,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-count">129</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

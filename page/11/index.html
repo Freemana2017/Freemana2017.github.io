@@ -269,6 +269,307 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/集合/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/java基础/集合/" itemprop="url">javaSE 总结 IO 集合 线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:24:04+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/java基础/集合/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/集合/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-集合"><a href="#1-集合" class="headerlink" title="1.集合"></a>1.集合</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/java基础/反射/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/java基础/反射/" itemprop="url">java反射</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T18:23:54+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/java基础/反射/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/04/java基础/反射/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong><img src="../../../../Users/apple/Library/Application Support/typora-user-images/image-20181209133251466.png" alt="image-20181209133251466"></strong></p>
+<h1 id="java反射机制完全详解"><a href="#java反射机制完全详解" class="headerlink" title="java反射机制完全详解"></a>java反射机制完全详解</h1><p>#1.反射源头 —Class类</p>
+<h3 id="1-1-取得Class类对象-⭐️"><a href="#1-1-取得Class类对象-⭐️" class="headerlink" title="1.1 取得Class类对象 ⭐️"></a>1.1 取得Class类对象 ⭐️</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Date date = <span class="keyword">new</span> Date();</span><br><span class="line">		Class&lt;? extends Date&gt; class1 = date.getClass();<span class="comment">//取得class类对象</span></span><br><span class="line">		System.out.println(class1);<span class="comment">//class java.util.Date</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用类.class获得反射的是实例划对象</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Date date = <span class="keyword">new</span> Date();</span><br><span class="line">		Class&lt;? extends Date&gt; class1 = java.util.Date.class ;<span class="comment">//取得class类对象</span></span><br><span class="line">		System.out.println(class1);<span class="comment">//class java.util.Date</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用Class类提供的方法实例化对向</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; forName = Class.forName(<span class="string">"java.util.Date"</span>);</span><br><span class="line">		System.out.println(forName);<span class="comment">//class java.util.Date</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022026.jpg" alt="image-20181209065531027"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022028.jpg" alt="image-20181209065552031"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022029.jpg" alt="image-20181209065610108"></p>
+<p>#2.利用反射实例化对象</p>
+<h2 id="2-1public-T-newInstacne-⭐️⭐️"><a href="#2-1public-T-newInstacne-⭐️⭐️" class="headerlink" title="2.1public T newInstacne ⭐️⭐️"></a>2.1public T newInstacne ⭐️⭐️</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"^^^^"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"######"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, InstantiationException, IllegalAccessException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; class1 = Class.forName(<span class="string">"反射.Demo3"</span>);</span><br><span class="line">		Object object = class1.newInstance();<span class="comment">// 实例化对象</span></span><br><span class="line">		<span class="comment">// Demo3 demo3=new Demo3();//调用无参构造</span></span><br><span class="line">		System.out.println(class1);</span><br><span class="line">		System.out.println(object);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022032.jpg" alt="image-20181209071201967"></p>
+<hr>
+<h3 id="2-2。工厂设计模式"><a href="#2-2。工厂设计模式" class="headerlink" title="2.2。工厂设计模式"></a>2.2。工厂设计模式</h3><hr>
+<h1 id="3-取得类继承结构"><a href="#3-取得类继承结构" class="headerlink" title="3.取得类继承结构"></a>3.取得类继承结构</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022034.jpg" alt="image-20181209072002912"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022037.jpg" alt="image-20181209072038753"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022039.jpg" alt="image-20181209072101490"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> <span class="keyword">extends</span> <span class="title">Object</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Demo3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"^^^^"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"######"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ClassNotFoundException, InstantiationException, IllegalAccessException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; class1 = Class.forName(<span class="string">"反射.Demo3"</span>);</span><br><span class="line">		class1.getName();<span class="comment">// 包名.类名</span></span><br><span class="line">		class1.getPackage();<span class="comment">// package 包名</span></span><br><span class="line">		class1.getPackage().getName();<span class="comment">// 包名</span></span><br><span class="line">		class1.getSimpleName();<span class="comment">// 类名</span></span><br><span class="line"></span><br><span class="line">		class1.getSuperclass().getName();<span class="comment">// 父类的包名</span></span><br><span class="line">		Class&lt;?&gt;[] icls = class1.getInterfaces();<span class="comment">// [Ljava.lang.Class;@6bf256fa</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; icls.length; i++) &#123;</span><br><span class="line">			System.out.println(icls[i].getSimpleName());<span class="comment">//Serializable</span></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022040.jpg" alt="image-20181209073242823"></p>
+<p> <img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022041.jpg" alt="image-20181209073335835"></p>
+<h1 id="4-反射取得构造方法（invoke）"><a href="#4-反射取得构造方法（invoke）" class="headerlink" title="4.反射取得构造方法（invoke）"></a>4.反射取得构造方法（invoke）</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022044.jpg" alt="image-20181209091731678"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022046.jpg" alt="image-20181209091744030"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022048.jpg" alt="image-20181209091924296"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22049.jpg" alt="image-20181209092434006"></p>
+<h1 id="5-反射取得方法-⭐️⭐️⭐️"><a href="#5-反射取得方法-⭐️⭐️⭐️" class="headerlink" title="5.反射取得方法 ⭐️⭐️⭐️"></a>5.反射取得方法 ⭐️⭐️⭐️</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022050.jpg" alt="image-20181209092707626"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022051.jpg" alt="image-20181209092730947"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022053.jpg" alt="image-20181209092742987"></p>
+<blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022054.jpg" alt="image-20181209092955657"></p>
+</blockquote>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022057.jpg" alt="image-20181209093048728"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Demo5 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) throws ClassNotFoundException &#123;</span><br><span class="line">		 getMethodDemo();</span><br><span class="line">	&#125;</span><br><span class="line">	// 获取指定Class中的公共函数</span><br><span class="line">	public  static void getMethodDemo() throws ClassNotFoundException &#123;</span><br><span class="line">		Class&lt;?&gt; clazz = Class.forName(&quot;反射.Persion&quot;);</span><br><span class="line">		Method[] methods = clazz.getMethods();</span><br><span class="line">		for (int i = 0; i &lt; methods.length; i++) &#123;</span><br><span class="line">			System.out.println(methods[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022058.jpg" alt="image-20181209094546727"></p>
+<hr>
+<h1 id="6-Invoke"><a href="#6-Invoke" class="headerlink" title="6.Invoke"></a>6.Invoke</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022101.jpg" alt="image-20181209094620520"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022102.jpg" alt="image-20181209095804423"></p>
+<p>–</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy09hq5dz4j30m3060abh.jpg" alt="image-20181209100015073"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/Spring/3.java容器的注解/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1498,348 +1799,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/Linux/云服务器/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/02/Linux/云服务器/" itemprop="url">云服务器linux awd云</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-02T08:42:07+08:00">
-                2018-12-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/02/Linux/云服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/02/Linux/云服务器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="登录Linux云服务器"><a href="#登录Linux云服务器" class="headerlink" title="登录Linux云服务器"></a>登录Linux云服务器</h3><p>浏览器 WebShell 方式登录 </p>
-<p>支持复制粘贴、中文输入法，需要开启 SSH 端口（TCP:22） 立即登录</p>
-<p>标准登录方式 </p>
-<ul>
-<li><p>使用 Windows 系统的电脑</p>
-<p>1、下载安装 Windows SSH 和 Telnet 客户端工具 Putty。  <a href="http://www.putty.org/" target="_blank" rel="noopener">下载Putty</a></p>
-<p>2、用户名：  root，Host：  94.191.24.33</p>
-<p>3、按照 Putty 使用帮助进行登录。  <a href="https://cloud.tencent.com/doc/product/213/2029" target="_blank" rel="noopener">Putty 密码方式使用帮助 </a></p>
-</li>
-<li><p>使用 Linux/Mac OS X 系统的电脑（使用密码登录）</p>
-<p>1、打开 SSH 客户端（Mac可使用系统自带的终端） </p>
-<p>2、输入  ssh -q -l root -p 22 94.191.24.33</p>
-<p>3、输入 CVM 实例密码进行登录。</p>
-</li>
-<li><p>使用 Linux/Mac OS X 系统的电脑（使用密钥登录）</p>
-<p>1、打开 SSH 客户端（Mac可使用系统自带的终端）。 </p>
-<p>2、查找您云服务器关联的 SSH 密钥文件本地存放地址。 </p>
-<p>3、您的密钥必须不公开可见，SSH 才能工作。请使用此命令：  chmod 400 [密钥文件路径]。 </p>
-<p>4、输入命令：  ssh [-i 密钥文件路径] <a href="mailto:root@94.191.24.33" target="_blank" rel="noopener">root@94.191.24.33</a>。</p>
-</li>
-</ul>
-<p>浏览器 VNC 方式登录 <em>不推荐</em></p>
-<p>暂不支持复制粘贴、中文输入法。 立即登录</p>
-<p>提示：采用VNC方式登录，请务必开启 MFA 二次验证提高安全保障级别</p>
-<p><a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a>:GoodMrY/mmall_learning.git</p>
-<p><a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a>:<a href="mailto:GoodMrY/mmall_learning.gitgit@gitee.com" target="_blank" rel="noopener">GoodMrY/mmall_learning.gitgit@gitee.com</a>:<a href="mailto:GoodMrY/mmall_learning.gitgit@gitee.com" target="_blank" rel="noopener">GoodMrY/mmall_learning.gitgit@gitee.com</a>:<a href="mailto:GoodMrY/mmall_learning.gitgit@gitee.com" target="_blank" rel="noopener">GoodMrY/mmall_learning.gitgit@gitee.com</a>:GoodMrY/mmall_learning.git</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/Linux/Linux小结/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/Linux/Linux小结/" itemprop="url">Linux 学习 防火墙 端口号 Centos7</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T17:40:44+08:00">
-                2018-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/01/Linux/Linux小结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/01/Linux/Linux小结/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-Linux-防火墙-端口号-相关操作"><a href="#1-Linux-防火墙-端口号-相关操作" class="headerlink" title="1 Linux 防火墙 端口号 相关操作"></a>1 Linux 防火墙 端口号 相关操作</h1><blockquote>
-<p> CentOS 7默认使用的是firewall作为防火墙</p>
-</blockquote>
-<p>在虚拟机centos7上安装nginx之后虚拟机内能访问，真机不能访问，修改iptables配置也不起作用，最后上网查找了资料后才发现centos的防火墙改成了firewall,不再叫iptables,开放端口的方法如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=<span class="keyword">public</span> --add-port=<span class="number">80</span>/tcp --permanent</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">命令含义：</span><br><span class="line"></span><br><span class="line">–zone #作用域</span><br><span class="line"></span><br><span class="line">–add-port=80/tcp #添加端口，格式为：端口/通讯协议</span><br><span class="line"></span><br><span class="line">–permanent #永久生效，没有此参数重启后失效</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="1-重启防火墙："><a href="#1-重启防火墙：" class="headerlink" title="1 重启防火墙："></a>1 重启防火墙：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service  </span><br><span class="line">systemctl start firewalld.service  </span><br><span class="line">systemctl restart firewalld.service # 重启防火墙</span><br></pre></td></tr></table></figure>
-<h3 id="2-添加端口号"><a href="#2-添加端口号" class="headerlink" title="2 添加端口号"></a>2 添加端口号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=端口号/tcp --permanent</span><br></pre></td></tr></table></figure>
-<hr>
-<blockquote>
-<p><a href="https://filezilla-project.org/download.php?type=client" target="_blank" rel="noopener">https://filezilla-project.org/download.php?type=client</a></p>
-<h1 id="FileZilla-Client"><a href="#FileZilla-Client" class="headerlink" title="FileZilla Client"></a>FileZilla Client</h1></blockquote>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023552.jpg" alt="image-20190331093008740"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解压zip文件到当前目录</span><br><span class="line">unzip filename.zip</span><br></pre></td></tr></table></figure>
-<p><img src="../../../../Users/apple/Library/Application%20Support/typora-user-images/image-20190331094807801.png" alt="image-20190331094807801"></p>
-<blockquote>
-<p>上面这个不是Centos7的</p>
-</blockquote>
-<p><img src="../../../../Users/apple/Library/Application%20Support/typora-user-images/image-20190331094938981.png" alt="image-20190331094938981"></p>
-<blockquote>
-<p>上面这个不是Centos7的</p>
-</blockquote>
-<h3 id="3-CentOs7关闭防火墙的命令"><a href="#3-CentOs7关闭防火墙的命令" class="headerlink" title="3 CentOs7关闭防火墙的命令!"></a>3 CentOs7关闭防火墙的命令!</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">下面是red hat/CentOs7关闭防火墙的命令!</span><br><span class="line"></span><br><span class="line">1:查看防火状态</span><br><span class="line"></span><br><span class="line">systemctl status firewalld</span><br><span class="line"></span><br><span class="line">service  iptables status</span><br><span class="line"></span><br><span class="line">2:暂时关闭防火墙</span><br><span class="line"></span><br><span class="line">systemctl stop firewalld</span><br><span class="line"></span><br><span class="line">service  iptables stop</span><br><span class="line"></span><br><span class="line">3:永久关闭防火墙</span><br><span class="line"></span><br><span class="line">systemctl disable firewalld</span><br><span class="line"></span><br><span class="line">chkconfig iptables off</span><br><span class="line"></span><br><span class="line">4:重启防火墙</span><br><span class="line"></span><br><span class="line">systemctl enable firewalld</span><br><span class="line"></span><br><span class="line">service iptables restart  </span><br><span class="line"></span><br><span class="line">5:永久关闭后重启</span><br><span class="line"></span><br><span class="line">//暂时还没有试过</span><br><span class="line"></span><br><span class="line">chkconfig iptables on</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="Centos-7-开启端口"><a href="#Centos-7-开启端口" class="headerlink" title="Centos 7 开启端口"></a><a href="https://www.cnblogs.com/mliudong/p/4529612.html" target="_blank" rel="noopener">Centos 7 开启端口</a></h1><p>CentOS 7 默认没有使用iptables，所以通过编辑iptables的配置文件来开启80端口是不可以的</p>
-<p>CentOS 7 采用了 firewalld 防火墙</p>
-<p>如要查询是否开启80端口则：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`[root@joe-pc ~]``# firewall-cmd --query-port=80/tcp``no`</span><br></pre></td></tr></table></figure>
-<p>显然80端口没有开启</p>
-<p>下面我们开启80端口：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`[root@joe-pc ~]``# firewall-cmd --add-port=80/tcp``success`</span><br></pre></td></tr></table></figure>
-<h3 id="小记"><a href="#小记" class="headerlink" title="小记"></a>小记</h3><ul>
-<li>通过systemctl status firewalld查看firewalld状态，发现当前是dead状态，即防火墙未开启。</li>
-</ul>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023601.jpg" alt="image-20190331095315857"></p>
-<ul>
-<li>通过systemctl start firewalld开启防火墙，没有任何提示即开启成功。</li>
-</ul>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023605.jpg" alt="image-20190331095335255"></p>
-<ul>
-<li>再次执行执行firewall-cmd –permanent –zone=public –add-port=3306/tcp，提示success，表示设置成功，这样就可以继续后面的设置了</li>
-</ul>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023606.jpg" alt="image-20190331095404655"></p>
-<hr>
-<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h3 id="linux如何查看nginx是否启动"><a href="#linux如何查看nginx是否启动" class="headerlink" title="linux如何查看nginx是否启动"></a>linux如何查看nginx是否启动</h3><p> <strong>ps -ef | grep nginx</strong> 就可以看到Nginx进程是否存在了</p>
-<p><strong>ps -C nginx -o pid</strong></p>
-<p><strong>netstat -anp | grep :80</strong>命令来判断Nginx是否启动</p>
-<p><strong>lsof -i:80</strong> 也可以查到80端口进程是否有进程在运行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">（1）查看对外开放的端口状态</span><br><span class="line">查询已开放的端口 netstat -anp</span><br><span class="line">查询指定端口是否已开 firewall-cmd --query-port=666/tcp</span><br><span class="line">提示 yes，表示开启；no表示未开启。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（3）对外开发端口</span><br><span class="line">查看想开的端口是否已开：</span><br><span class="line">firewall-cmd --query-port=6379/tcp</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">添加指定需要开放的端口：</span><br><span class="line">firewall-cmd --add-port=123/tcp --permanent</span><br><span class="line">重载入添加的端口：</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">查询指定端口是否开启成功：</span><br><span class="line">firewall-cmd --query-port=123/tcp</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">移除指定端口：</span><br><span class="line">firewall-cmd --permanent --remove-port=123/tcp</span><br></pre></td></tr></table></figure>
-<h3 id="Linux-ifconfig"><a href="#Linux-ifconfig" class="headerlink" title="Linux ifconfig"></a>Linux ifconfig</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023610.jpg" alt="image-20190331172143785"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">第一步：进入到/etc/sysconfig/network-scripts/目录下，</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用ls命令查看网卡配置文件名（在CENTOS7中网卡名貌似变成了随机数字，所以每台机器的网卡名并不相同）</span><br><span class="line"></span><br><span class="line">ifcfg-eno6777736</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">用vi命令编辑文件 将最后一行的ONBOOT=NO修改为yes，最后输入：wq 保存并退出。</span><br><span class="line"></span><br><span class="line">将最后一行的ONBOOT=NO修改为yes，最后输入：wq 保存并退出。</span><br><span class="line"></span><br><span class="line">ping www.baidu.com出现下图说明网络通了</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023612.jpg" alt="image-20190331172318573"></p>
-<h3 id="Linux-文件权限系统-慕课网"><a href="#Linux-文件权限系统-慕课网" class="headerlink" title="Linux 文件权限系统 慕课网"></a>Linux 文件权限系统 慕课网</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1892,7 +1851,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-count">129</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
