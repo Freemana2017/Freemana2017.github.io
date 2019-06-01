@@ -269,6 +269,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/前端/Jquery学习2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/03/前端/Jquery学习2/" itemprop="url">Jquery2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T21:31:27+08:00">
+                2019-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/03/前端/Jquery学习2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/03/前端/Jquery学习2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-getJson"><a href="#1-getJson" class="headerlink" title="1 $.getJson()"></a>1 $.getJson()</h1><p>jQuery中的$.getJSON( )方法函数主要用来从服务器加载json编码的数据，它使用的是GET HTTP请求。使用方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.getJSON( url [, data ] [, success(data, textStatus, jqXHR) ] )</span><br></pre></td></tr></table></figure>
+<p>url是必选参数，表示json数据的地址；<br>data是可选参数，用于请求数据时发送数据参数；<br>success是可参数，这是一个回调函数，用于处理请求到的数据。</p>
+<p>获取json数据举例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.getJson(<span class="string">'test.json'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;data.rows.length;i++)&#123;</span><br><span class="line">	$(<span class="string">'#test'</span>).append(<span class="string">'&lt;p&gt;'</span>+data.rows[i].realName+<span class="string">'&lt;/p&gt;'</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>　在WEB开发中异步请求方式普遍使用，ajax技术减少程序员的工作量，也提升用户交互体验。AJAX的四种异步请求方式都能实现基本需求，闲话不多说，直接切入正题。</p>
+<p><strong>.$.getJSON</strong></p>
+<p>　　$.getJSON()是专门为ajax获取json数据而设置的，并且支持跨域调用，其语法的格式为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> $.getJSON(</span><br><span class="line"><span class="number">2</span>       url,                 <span class="comment">//请求URL</span></span><br><span class="line"><span class="number">3</span>       [data],           <span class="comment">//传参，可选参数</span></span><br><span class="line"><span class="number">4</span>       [callback]       <span class="comment">//回调函数，可选参数</span></span><br><span class="line"><span class="number">5</span>   　);</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url：string类型， 发送请求地址 </span><br><span class="line">　　data ：可选参数， 待发送 Key/value 参数 ，同get，post类型的data</span><br><span class="line">　　callback ：可选参数，载入成功时回调函数，同get，post类型的callback</span><br></pre></td></tr></table></figure>
+<p>4.<strong>$.ajax</strong></p>
+<p>　　<strong>$.ajax</strong>是一种常用的普通封装异步方式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 $.ajax(options)；</span><br></pre></td></tr></table></figure>
+<p>　options是一个object类型，它指明了本次ajax调用的具体参数。呈上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//示例</span></span><br><span class="line">.ajax(</span><br><span class="line">            url: <span class="string">"/legalconsult/layer/update-info"</span>,</span><br><span class="line">            datatype:<span class="string">"json"</span>,</span><br><span class="line">            type:<span class="string">'post'</span>,</span><br><span class="line">            beforeSend:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                            <span class="comment">//函数体，数据发送前执行。</span></span><br><span class="line">                     &#125;</span><br><span class="line">                      success：<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                            <span class="comment">//函数体，数据发送成功回调</span></span><br><span class="line">                      　　　　&#125;</span><br><span class="line">                      error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                            <span class="comment">//函数体，数据发送错误时执行</span></span><br><span class="line">                      　　    &#125;</span><br><span class="line">         );</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.cnblogs.com/dongsh/p/3235487.html" target="_blank" rel="noopener">https://www.cnblogs.com/dongsh/p/3235487.html</a></p>
+</blockquote>
+<p> 1.服务器返回的Json数据必须严格符合JSIN语法，例如：所有属性名称必须加双引号，所有字符串值必须加双引号（不可以是单引号）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line"></span><br><span class="line">　　Jquery.getJSON( url [,data][,success])</span><br><span class="line"></span><br><span class="line">　　url: <span class="built_in">String</span>类型 指定请求的目标URL</span><br><span class="line"></span><br><span class="line">　　data:可选  发送请求传递的数据</span><br><span class="line"></span><br><span class="line">　　success: 请求成功时执行的回调函数。 函数有三个参数：一  是请求返回的数据  二 请求状态文本（例如<span class="string">"success"</span>,<span class="string">"notmodified"</span>）,三 当前jqXHR对象</span><br></pre></td></tr></table></figure>
+<p>2 JQuery.getJSON(url,data,success);</p>
+<p>//等价于</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"></span><br><span class="line">　　url:url,</span><br><span class="line"></span><br><span class="line">　　type:<span class="string">"GET"</span>,</span><br><span class="line"></span><br><span class="line">　　data:data,</span><br><span class="line"></span><br><span class="line">　　success:success,</span><br><span class="line"></span><br><span class="line">　　datatype:<span class="string">"json"</span></span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/javaWeb/HttpServletRequest介绍/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1576,136 +1729,6 @@ public String regist(SysUser sysUser , @RequestParam(required=true,name=&quot;se
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/12/Test/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/12/Test/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-12T10:46:50+08:00">
-                2019-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/12/Test/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/12/Test/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="17100621962密码dh93258"><a href="#17100621962密码dh93258" class="headerlink" title="17100621962密码dh93258"></a>17100621962密码dh93258</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mvn test# 17100621962密码dh93258</span><br><span class="line"># 17100621962密码dh93258</span><br><span class="line"></span><br><span class="line"># 17100621962密码dh93258</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1758,7 +1781,7 @@ public String regist(SysUser sysUser , @RequestParam(required=true,name=&quot;se
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">129</span>
+                  <span class="site-state-item-count">130</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
