@@ -269,6 +269,502 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/Spring Boot/SpringBoot雷丰阳/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/22/Spring Boot/SpringBoot雷丰阳/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-22T09:08:04+08:00">
+                2019-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/22/Spring Boot/SpringBoot雷丰阳/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/22/Spring Boot/SpringBoot雷丰阳/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Spring/注解开发/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/19/Spring/注解开发/" itemprop="url">Spring注解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T10:05:03+08:00">
+                2019-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/19/Spring/注解开发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/19/Spring/注解开发/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h1><p>1、@controller 控制器（注入服务）</p>
+<p>用于标注控制层，相当于struts中的action层<br>2、@service 服务（注入dao）</p>
+<p>用于标注服务层，主要用来进行业务的逻辑处理<br>3、@repository（实现dao访问）</p>
+<p>用于标注数据访问层，也可以说用于标注数据访问组件，即DAO组件.<br>4、@component （把普通pojo实例化到spring容器中，相当于配置文件中的 </p>
+<p><bean id="" class="">）</bean></p>
+<p>泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于@Controller、@Services等的时候），我们就可以使用@Component来标注这个类。<br>案例：<br>&lt;context:component-scan base-package=”com.*”&gt;<br>上面的这个例子是引入Component组件的例子，其中base-package表示为需要扫描的所有子包。 </p>
+<h2 id="共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理"><a href="#共同点：被-controller-、-service、-repository-、-component-注解的类，都会把这些类纳入进spring容器中进行管理" class="headerlink" title="共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理"></a>共同点：被@controller 、@service、@repository 、@component 注解的类，都会把这些类纳入进spring容器中进行管理</h2><hr>
+<h1 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h1><p>GET和POST请求传的参数会自动转换赋值到@RequestParam 所注解的变量上<br>\1. @RequestParam（org.springframework.web.bind.annotation.RequestParam）用于将指定的请求参数赋值给方法中的形参。<br>例：<br>(1) get请求：</p>
+<p>url请求：<a href="http://localhost:8080/WxProgram/findAllBookByTag?tagId=1&amp;pageIndex=3" target="_blank" rel="noopener">http://localhost:8080/WxProgram/findAllBookByTag?tagId=1&amp;pageIndex=3</a></p>
+<p>userTest.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/WxProgram/json/requestParamTest&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    requestParam Test&lt;br&gt;</span><br><span class="line">    用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;</span><br><span class="line">    用户昵称：&lt;input type=&quot;text&quot; name=&quot;usernick&quot;&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>UserController.java</p>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(@RequestParam(value=&quot;username&quot;) String userName, @RequestParam(value=&quot;usernick&quot;) String userNick)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + userName);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + userNick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<p>上述代码会将请求中的username参数的值赋给username变量。</p>
+<p>等价于：</p>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(String username, HttpServletRequest request)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + username);</span><br><span class="line">    String usernick = request.getParameter(&quot;usernick&quot;);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + usernick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<p>也可以不使用@RequestParam，直接接收，此时要求controller方法中的参数名称要跟form中name名称一致</p>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/requestParamTest&quot;, method = RequestMethod.GET)</span><br><span class="line">public String requestParamTest(String username, String usernick)&#123;</span><br><span class="line">    System.out.println(&quot;requestParam Test&quot;);</span><br><span class="line">    System.out.println(&quot;username: &quot; + username);</span><br><span class="line">    System.out.println(&quot;usernick: &quot; + usernick);</span><br><span class="line">    return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<p>总结：</p>
+<p>接收请求参数的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@RequestParam(value=&quot;username&quot;) String userName, @RequestParam(value=&quot;usernick&quot;) String userNick //value中的参数名称要跟name中参数名称一致</span><br><span class="line">String username, String usernick// 此时要参数名称一致</span><br><span class="line">HttpServletRequest request //request.getParameter(&quot;usernick&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="ResponseBody呢？"><a href="#ResponseBody呢？" class="headerlink" title="@ResponseBody呢？"></a>@ResponseBody呢？</h1><blockquote>
+<p>@ResponseBody是作用在方法上的，@ResponseBody 表示该方法的返回结果直接写入 HTTP response body 中，一般在异步获取数据时使用【也就是AJAX】，在使用 @RequestMapping后，返回值通常解析为跳转路径，但是加上 @ResponseBody 后返回结果不会被解析为跳转路径，而是直接写入 HTTP response body 中。 比如异步获取 json 数据，加上 @ResponseBody 后，会直接返回 json 数据。@RequestBody 将 HTTP 请求正文插入方法中，使用适合的 HttpMessageConverter 将请求体写入某个对象。</p>
+</blockquote>
+<p><strong>举个例子：</strong></p>
+<blockquote>
+<p>前台异步请求：</p>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&gt; function loginAction() &#123;</span><br><span class="line">&gt; </span><br><span class="line">&gt;     // 获取用户输入的账号和密码</span><br><span class="line">&gt;     var name = $(&apos;#count&apos;).val();</span><br><span class="line">&gt;     var password = $(&apos;#password&apos;).val();</span><br><span class="line">&gt; </span><br><span class="line">&gt;     $.ajax(&#123;</span><br><span class="line">&gt;         url : &apos;account/login.do&apos;,</span><br><span class="line">&gt;         type : &apos;post&apos;,</span><br><span class="line">&gt;         // data对象中的属性名要和服务端控制器的参数名一致 login(name, password)</span><br><span class="line">&gt;         data : &#123;</span><br><span class="line">&gt;             &apos;name&apos; : name,</span><br><span class="line">&gt;             &apos;password&apos; : password</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         dataType : &apos;json&apos;,</span><br><span class="line">&gt;         success : function(result) &#123;</span><br><span class="line">&gt;             if (result.state == 0) &#123;</span><br><span class="line">&gt;                 // 登录成功，设置cookie并跳转edit.html</span><br><span class="line">&gt;                 addCookie(&apos;userId&apos;, result.data.id);</span><br><span class="line">&gt;                 addCookie(&apos;nick&apos;, result.data.nick);</span><br><span class="line">&gt;                 location.href = &apos;edit.html&apos;;</span><br><span class="line">&gt;             &#125; else &#123;</span><br><span class="line">&gt;                 // 登录失败</span><br><span class="line">&gt;                 var msg = result.message;</span><br><span class="line">&gt;                 $(&apos;#sig_in&apos;).next().html(msg);</span><br><span class="line">&gt;                 $(&apos;#sig_in&apos;).next().css(&quot;color&quot;, &quot;red&quot;);</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         error : function(e) &#123;</span><br><span class="line">&gt;             alert(&quot;系统异常&quot;);</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;);</span><br><span class="line">&gt;     $(&apos;#password&apos;).val(&quot;&quot;);</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<p>后台 Controller类中对应的方法：</p>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     @RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">&gt;     @ResponseBody</span><br><span class="line">&gt;     public Object login(String name, String password, HttpSession session) &#123;</span><br><span class="line">&gt;         user = userService.checkLogin(name, password);</span><br><span class="line">&gt;         session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">&gt;         return new JsonResult(user);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+</blockquote>
+<h1 id="RequestBody呢"><a href="#RequestBody呢" class="headerlink" title="@RequestBody呢"></a>@RequestBody呢</h1><blockquote>
+<p>​      @RequestBody是作用在形参列表上，用于将前台发送过来固定格式的数据【xml 格式或者 json等】封装为对应的 JavaBean 对象，封装时使用到的一个对象是系统默认配置的 HttpMessageConverter进行解析，然后封装到形参上。</p>
+</blockquote>
+<p>比如上面的登录后台代码可以改为：</p>
+<blockquote>
+<p><a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-030003.jpg" target="_blank" rel="noopener"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-025942.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;     @RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">&gt;     @ResponseBody</span><br><span class="line">&gt;     public Object login(@RequestBody User loginUuser, HttpSession session) &#123;</span><br><span class="line">&gt;         user = userService.checkLogin(loginUser);</span><br><span class="line">&gt;         session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">&gt;         return new JsonResult(user);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/13/Spring MVC/注解@PathParam/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/Spring MVC/注解@PathParam/" itemprop="url">PathVariabl和@RequestParam用法与区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T11:48:11+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/Spring MVC/注解@PathParam/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/13/Spring MVC/注解@PathParam/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="【1】params"><a href="#【1】params" class="headerlink" title="【1】params"></a>【1】params</h1><p>params： 指定request中必须包含某些参数值是，才让该方法处理。</p>
+<pre><code>@RequestMapping(value = &quot;testParamsAndHeaders&quot;, params = { &quot;username&quot;,&quot;age!=10&quot; })
+public String testParamsAndHeaders() {
+    System.out.println(&quot;testParamsAndHeaders&quot;);
+    return SUCCESS;
+}
+</code></pre><h3 id="params-只是判断url-或者-form-data-中的参数是否复合params的定义，并不会直接绑定数据到方法的参数中！"><a href="#params-只是判断url-或者-form-data-中的参数是否复合params的定义，并不会直接绑定数据到方法的参数中！" class="headerlink" title="params 只是判断url 或者 form data 中的参数是否复合params的定义，并不会直接绑定数据到方法的参数中！"></a>params 只是判断url 或者 form data 中的参数是否复合params的定义，并不会直接绑定数据到方法的参数中！</h3><h1 id="2-PathVariabl"><a href="#2-PathVariabl" class="headerlink" title="2 @PathVariabl"></a>2 @PathVariabl</h1><p>绑定路径中的占位符参数到方法参数变量中；只能绑定路径中的占位符参数，且路径中必须有参数。无论是 GET 或者POST 只要 URL中有参数即可！实例如下：GET<br>Request URL:<a href="http://localhost:8080/SpringMVC-1/springmvc/testPathVariable/1" target="_blank" rel="noopener">http://localhost:8080/SpringMVC-1/springmvc/testPathVariable/1</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;springmvc/testPathVariable/1&quot; method=&quot;POST&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;age&quot; value=&quot;&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;sex&quot; value=&quot;&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; value=&quot;submit&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p> 【注意】如果URL中无参数，将会出错；如果URL有参数，但是没有使用@PathVariabl该注解，那么URL的参数不会默认与方法参数绑定！方法里的参数会默认绑定表单里面对应的参数！</p>
+<p>后台code</p>
+<h2 id="如果参数名与占位符一致，则可直接使用-PathVariable；如果不一致，则在-PathVariable-括号内绑定占位符。"><a href="#如果参数名与占位符一致，则可直接使用-PathVariable；如果不一致，则在-PathVariable-括号内绑定占位符。" class="headerlink" title="如果参数名与占位符一致，则可直接使用@PathVariable；如果不一致，则在@PathVariable( )括号内绑定占位符。"></a>如果参数名与占位符一致，则可直接使用@PathVariable；如果不一致，则在@PathVariable( )括号内绑定占位符。</h2><pre><code>@RequestMapping(&quot;/testPathVariable/{id}&quot;)
+public String testPathVariable(@PathVariable(&quot;id&quot;) Integer id2) {
+    System.out.println(&quot;testPathVariable: &quot; + id2);
+    return SUCCESS;
+}
+</code></pre><hr>
+<p>【3】@RequestParam<br>该注解相关属性如下：</p>
+<p>value：参数key，可以不写，默认为””；</p>
+<p>name：和value作用一样；</p>
+<p>required：默认值为true，可以不写；</p>
+<p>获取URL或者 form data 中的参数</p>
+<p>前台请求实例如下：</p>
+<p>GET</p>
+<p><a href="springmvc/testRequestParam?userName=tom&age=11&sex=boy"><br>1<br>POST</a></p>
+<pre><code>&lt;form action=&quot;springmvc/testRequestParam&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;userName&quot; value=&quot;&quot;/&gt;
+    &lt;input type=&quot;text&quot; name=&quot;age&quot; value=&quot;&quot;/&gt;
+    &lt;input type=&quot;text&quot; name=&quot;sex&quot; value=&quot;&quot;/&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;submit&quot;/&gt;
+&lt;/form&gt;
+</code></pre><p>注意 ：</p>
+<p>GET中的参数形式为：username=tom&amp;age=11&amp;sex=boy</p>
+<p>POST中的参数形式为：以键值对形式保存在form data</p>
+<p>后台代码示例：</p>
+<pre><code>@RequestMapping(value=&quot;/regist&quot;,produces=&quot;application/json;charset=utf-8&quot;)
+@ResponseBody
+public String regist(SysUser sysUser , @RequestParam(required=true,name=&quot;sex&quot;) String sex){
+    String userName = sysUser.getUserName();
+    String age = sysUser.getAge();
+    //...
+    return &quot;regist success&quot;;
+}
+</code></pre><p> 总得来说，均是键值对形式，与@PathVariabl中的占位符形式不同！！！</p>
+<p>#@RequestParam注解</p>
+<p><strong>@RequestParam</strong>注解比较简单，它用于将请求参数区数据映射到功能处理方法的参数上，自SpringMVC4.2之后，@RequestParam注解内部有4个参数：</p>
+<ul>
+<li>String name</li>
+<li>String value</li>
+<li>boolean required</li>
+<li>String defaultValue</li>
+</ul>
+<p>1.name与value属性，其中name和value分别是URL参数的名称，即二者没区别，我个人比较喜欢用name，因为在HTML的表单中我们都是用name属性来设置URL参数名称的，所以在注解上也使用name这个属性的话，会更直观一些。示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zero01.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"test.do"</span>)</span><br><span class="line">    <span class="comment">// 指定将username参数的值传递到该方法的name参数上</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(@RequestParam(name = <span class="string">"username"</span>)</span> String name) </span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"user.do"</span>)</span><br><span class="line">    <span class="comment">// 指定将username参数的值传递到该方法的user参数上，alias参数的值则传递到该方法的a参数上</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">userAndAlias</span><span class="params">(@RequestParam(name = <span class="string">"username"</span>)</span>String user, @<span class="title">RequestParam</span><span class="params">(name = <span class="string">"alias"</span>)</span>String a) </span>&#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.required属性，该属性用于指定某个参数是否是必须的，默认值为true，表示请求中一定要有相应的参数，否则将报404错误码，示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zero01.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"test.do"</span>)</span><br><span class="line">    <span class="comment">// 指定username参数是必须的，如果url上没有的话就会报错</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(@RequestParam(name = <span class="string">"username"</span>, required = <span class="keyword">true</span>)</span> String name) </span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"user.do"</span>)</span><br><span class="line">    <span class="comment">// 指定username与alias参数不是必须的，即便url上没有也不会报错</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">userAndAlias</span><span class="params">(@RequestParam(name = <span class="string">"username"</span>, required = <span class="keyword">false</span>)</span> String user, @<span class="title">RequestParam</span><span class="params">(name = <span class="string">"alias"</span>, required = <span class="keyword">false</span>)</span> String a) </span>&#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.defaultValue属性，该属性用于指定参数的默认值，表示如果请求中没有同名参数时的默认值，默认值可以是SpEL表达式，如“#{systemProperties[‘java.vm.version’]}”。示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zero01.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"test.do"</span>)</span><br><span class="line">    <span class="comment">// url上没有username参数时，给它设置一个默认值为nothing</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(@RequestParam(name = <span class="string">"username"</span>, defaultValue = <span class="string">"nothing"</span>)</span> String name) </span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"user.do"</span>)</span><br><span class="line">    <span class="comment">// url上没有username以及alias参数时，给它设置一个默认值为nothing</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">userAndAlias</span><span class="params">(@RequestParam(name = <span class="string">"username"</span>, defaultValue = <span class="string">"nothing"</span>)</span> String user, @<span class="title">RequestParam</span><span class="params">(name = <span class="string">"alias"</span>, defaultValue = <span class="string">"nothing"</span>)</span> String a) </span>&#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/12/项目实战/大众点评慕课网实战项目/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1192,603 +1688,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/04/java基础/This/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/04/java基础/This/" itemprop="url">this关键字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-04T09:24:57+08:00">
-                2019-02-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/04/java基础/This/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/04/java基础/This/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Java中this关键字在构造方法中的使用"><a href="#Java中this关键字在构造方法中的使用" class="headerlink" title="Java中this关键字在构造方法中的使用"></a><a href="https://www.cnblogs.com/kuillldan/p/5899881.html" target="_blank" rel="noopener">Java中this关键字在构造方法中的使用</a></h1><p>\1. Java中this关键字代表对象本身。用this关键字可以在类的内部调用属性和方法，这样代码的可读性比较高，因为它明确的指出了这个属性或方法的来源。</p>
-<p>\2. 同时在构造函数中也可以使用this关键字调用本类中的其它构造函数，但有几点需要注意：</p>
-<ul>
-<li>构造函数调用其它构造函数，需要将this写在构造函数的第一行。</li>
-<li>构造函数不可递归，防止死循环。</li>
-</ul>
-<p>\3. 一个类的构造函数分为无参和有参构造函数。通常做法是指定写好一个包含所有字段的构造函数，然后其它构造函数可以直接调用该函数，实现代码重用</p>
-<blockquote>
-<p> <a href="https://www.cnblogs.com/yougewe/p/9468960.html" target="_blank" rel="noopener">https://www.cnblogs.com/yougewe/p/9468960.html</a></p>
-</blockquote>
-<p>说到抽象，想必大家第一个联想到的就是抽象画，基本上看不懂画的是啥，只能说它在表达某个概念。<br>在java中我们中abstract关键字来表达抽象。举个例子：<br>我们说车子都可以跑(run)。但有几个轮子，怎么跑，对于不同的车有不同的结果。自行车需要人踩着跑，汽车发动机推动跑等等，那么我们可以车表达为抽象类。</p>
-<p>/**</p>
-<ul>
-<li><p>车子类<br> */<br> public abstract class Car {</p>
-<p> public abstract void run();<br> }<br> /**</p>
-</li>
-<li><p>自行车<br> */<br> class Bicycle extends Car{</p>
-<p> @Override<br> public void run() {</p>
-<pre><code>System.out.println(&quot;人踩着跑。。。&quot;);
-</code></pre><p> }</p>
-</li>
-</ul>
-<p>}<br>/***</p>
-<ul>
-<li><p>汽车<br> */<br> class Automobile extends Car{</p>
-<p> @Override<br> public void run() {</p>
-<pre><code>System.out.println(&quot;发动机驱动跑。。。&quot;);
-</code></pre><p> }</p>
-</li>
-</ul>
-<p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>假如后面各种车，倒着跑、悬在空中跑随你怎么跑，只需要继承抽象类实现自己的业务就行了。相信大家对java抽象已有一个初步的印象了。</p>
-<p>抽象方法：</p>
-<p>1、从上面的例子中我们可以看到抽象方法跟普通方法是有区别的，它没有自己的主体（没有{}包起来的<br>业务逻辑），跟接口中的方法有点类似。所以我们没法直接调用抽象方法</p>
-<p>2、抽象方法不能用private修饰，因为抽象方法必须被子类实现（覆写），而private权限对于子类来<br>说是不能访问的，所以就会产生矛盾</p>
-<p>3、抽象方法也不能用static修饰，试想一下，如果用static修饰了，那么我们可以直接通过类名调<br>用，而抽象方法压根就没有主体，没有任何业务逻辑，这样就毫无意义了。<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>抽象类：</p>
-<p>1、用abstract关键字来表达的类，其表达形式为：（public）abstract class 类名{}</p>
-<p>2、抽象类不能被实例化，也就是说我们没法直接new 一个抽象类。抽象类本身就代表了一个类型，无法<br>确定为一个具体的对象，所以不能实例化就合乎情理了，只能有它的继承类实例化。</p>
-<p>3、抽象类虽然不能被实例化，但有自己的构造方法（这个后面再讨论）</p>
-<p>4、抽象类与接口（interface）有很大的不同之处，接口中不能有实例方法去实现业务逻辑，而抽象类<br>中可以有实例方法，并实现业务逻辑，比如我们可以在抽象类中创建和销毁一个线程池。</p>
-<p>5、抽象类不能使用finally关键字修饰，因为finally修饰的类是无法被继承，而对于抽象类来说就是<br>需要通过继承去实现抽象方法，这又会产生矛盾。（后面将写一篇关于finally的文章详细讨论）<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>抽象类与抽象方法的关联：</p>
-<p>如果一个类中至少有一个抽象方法，那么这个类一定是抽象类，但反之则不然。也就是说一个抽象类中可<br>以没有抽象方法。这样做的目的是为了此类不能被实例化。</p>
-<p>如果一个类继承了一个抽象类，那么它必须全部覆写抽象类中的抽象方法，当然也可以不全部覆写，如果<br>不覆写全部抽象方法则这个子类也必须是抽象类（这样做就无意义了）<br>1<br>2<br>3<br>4<br>5<br>public abstract class Car {</p>
-<pre><code>public void mothod1(){
-
-}
-public abstract void mothod2();
-
-public abstract void method3();
-</code></pre><p>}<br>class Bicycle extends Car{</p>
-<pre><code>@Override
-public void mothod2() {//需要覆写抽象方法mothod2
-
-}
-@Override
-public void method3() {//需要覆写抽象方法mothod3
-
-}
-</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>抽象类的构造器：</p>
-<p>先来看一个例子：</p>
-<p>public abstract class Car {</p>
-<pre><code>Car(){
-    System.out.println(&quot;抽象方法无参构造函数&quot;);
-}
-Car(String a){
-    System.out.println(&quot;抽象有参构造方法&quot;);
-}
-public void mothod1(){
-    System.out.println(this.getClass());
-    System.out.println(&quot;抽象类的实例方法&quot;);
-}
-
-public abstract void mothod2();
-</code></pre><p>}<br>/**</p>
-<ul>
-<li><p>自行车<br> */<br> class Bicycle extends Car{</p>
-<p> Bicycle(){</p>
-<pre><code>System.out.println(&quot;子类无参构造函数&quot;);
-</code></pre><p> }</p>
-<p> @Override<br> public void mothod2() {//需要覆写抽象方法mothod2</p>
-<p> }<br> }<br> /<strong>另一个包的测试类</strong>/<br> public class Test {</p>
-<p> public static void main(String[] args) {</p>
-<pre><code>Bicycle b = new Bicycle();
-b.mothod1();
-</code></pre><p> }<br> }<br> 结果：<br> 抽象方法无参构造函数<br> 子类无参构造函数<br> class com.shaolin.service.impl.Bicycle<br> 抽象类的实例方法<br> 1<br> 2<br> 3<br> 4<br> 5<br> 6<br> 7<br> 8<br> 9<br> 10<br> 11<br> 12<br> 13<br> 14<br> 15<br> 16<br> 17<br> 18<br> 19<br> 20<br> 21<br> 22<br> 23<br> 24<br> 25<br> 26<br> 27<br> 28<br> 29<br> 30<br> 31<br> 32<br> 33<br> 34<br> 35<br> 36<br> 37<br> 38<br> 39<br> 40<br> 41<br> 42<br> 43<br> 从上面的例子中可以看出：</p>
-</li>
-</ul>
-<p>1、抽象类是有构造方法的（当然如果我们不写，编译器会自动默认一个无参构造方法）。而且从结果来看，和普通的继承类一样，在new 一个子类对象时会优先调用父类（这里指的是抽象类Car）的构造器初始化，然后再调用子类的构造器。至此相信大家都会有这样一个疑问，为什么抽象方法不能实例化却有构造器呢？ 对于这个问题网上也中说纷纭，没有确定答案。<br>我是这样想的：既然它也属于继承的范畴，那么当子类创建对象时必然要优先初始化父类的属性变量和实例方法，不然子类怎么继承和调用呢？而它本身不能实例化，因为它本身就是不确定的一个对象，如果它能被实例化，那么我们通过它的对象来调用它本身的抽象方法是不是有问题。所以不能实例化有在情理之中。因此大家只要记住这个规定就行。</p>
-<p>2、对于抽象类中的非statci(静态)和非abstract(抽象)方法中的this关键字（静态方法中不能有关键字this之前已经讨论过可以参考 关于静态static那些事）代表的是它的继承类，而非抽象类本身，这个好理解，因为抽象类本身不能被实例化。如果有多个继承类，谁调用this就代表谁。</p>
-<p>抽象类有什么好处呢？<br>1、由于抽象类不能被实例化，最大的好处就是通过方法的覆盖来实现多态的属性。也就是运行期绑定<br>2、抽象类将事物的共性的东西提取出来，由子类继承去实现，代码易扩展、易维护。 </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/03/代码snip/snip1/登陆模块的设计/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/03/代码snip/snip1/登陆模块的设计/" itemprop="url">登陆模块的设计</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-03T07:34:35+08:00">
-                2019-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/03/代码snip/snip1/登陆模块的设计/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/03/代码snip/snip1/登陆模块的设计/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-统一消息处理-前后端分离"><a href="#1-统一消息处理-前后端分离" class="headerlink" title="1.统一消息处理 前后端分离"></a>1.统一消息处理 前后端分离</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Result</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> code;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">    <span class="keyword">private</span> T data;</span><br><span class="line"></span><br><span class="line"><span class="comment">//失败的时候调用</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Result</span><span class="params">(CodeMsg cm)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cm=<span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">          <span class="keyword">this</span>.code=cm.getCode();</span><br><span class="line">          <span class="keyword">this</span>.msg=cm.getMsg();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//成功的时候调用</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Result</span><span class="params">(T data)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.code=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.msg=<span class="string">"SUCCESS"</span>;</span><br><span class="line">        <span class="keyword">this</span>.data=data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//失败的时候调用</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">Result&lt;T&gt; <span class="title">Error</span><span class="params">(CodeMsg cm)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">new</span> Result&lt;T&gt;(cm);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//成功的时候调用</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">Result&lt;T&gt; <span class="title">Success</span><span class="params">(T data)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Result&lt;T&gt;(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//生成构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Result</span><span class="params">(<span class="keyword">int</span> code)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.code=code;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Result</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.msg=msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生成set/get方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCode</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> code;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCode</span><span class="params">(<span class="keyword">int</span> code)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.code=code;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMsg</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> msg;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMsg</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.msg=msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getData</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(T data)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.data=data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeMsg</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> code;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通用异常</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> CodeMsg SUCCESS=<span class="keyword">new</span> CodeMsg(<span class="number">0</span>, <span class="string">"success"</span>);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> CodeMsg ERROR =<span class="keyword">new</span> CodeMsg(-<span class="number">1</span>, <span class="string">"error"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">CodeMsg</span><span class="params">(<span class="keyword">int</span> code,String msg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.code=code;</span><br><span class="line">        <span class="keyword">this</span>.msg=msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCode</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String  <span class="title">getMsg</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="2-在Controller中使用-ResponseBody注解-返回JSON数据-return"><a href="#2-在Controller中使用-ResponseBody注解-返回JSON数据-return" class="headerlink" title="2 在Controller中使用@ResponseBody注解 返回JSON数据 return"></a>2 在Controller中使用@ResponseBody注解 返回JSON数据 return</h1><hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoTestController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line"><span class="comment">//通常用来返回JSON数据或者是XML/</span></span><br><span class="line">    <span class="function">String <span class="title">home</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello world"</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023843.jpg" alt="image-20190203092808595"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/resultsuccess"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Result&lt;String&gt; <span class="title">resultsuccess</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//⭐️⭐️⭐️⭐️⭐️</span></span><br><span class="line">    <span class="comment">/**1.返回成功的时候调用</span></span><br><span class="line"><span class="comment">     *  public static &lt;T&gt; Result&lt;T&gt; success(T data) &#123;</span></span><br><span class="line"><span class="comment">     *             return new Result&lt;T&gt;(data);</span></span><br><span class="line"><span class="comment">     *         &#125;</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  private Result(T data) &#123;</span></span><br><span class="line"><span class="comment">     *         this.code = 0;</span></span><br><span class="line"><span class="comment">     *         this.msg = "success";</span></span><br><span class="line"><span class="comment">     *         this.data = data;</span></span><br><span class="line"><span class="comment">     *     &#125;</span></span><br><span class="line"><span class="comment">     *         1.Result.success(data);</span></span><br><span class="line"><span class="comment">     *         结果：</span></span><br><span class="line"><span class="comment">     *          &#123;</span></span><br><span class="line"><span class="comment">     *              "code": 0,</span></span><br><span class="line"><span class="comment">     *              "msg": "success",</span></span><br><span class="line"><span class="comment">     *              "data": "hello immooc"</span></span><br><span class="line"><span class="comment">     *          &#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Result.success(<span class="string">"hello immooc"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023846.jpg" alt="image-20190203093050758"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/resulterror"</span>)</span><br><span class="line">   <span class="meta">@ResponseBody</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Result&lt;String&gt; <span class="title">resultError</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * 2。失败的时候调用</span></span><br><span class="line"><span class="comment">        *  public static &lt;T&gt; Result&lt;T&gt; error(CodeMsg cm) &#123;</span></span><br><span class="line"><span class="comment">        *         return new Result&lt;T&gt;(cm);</span></span><br><span class="line"><span class="comment">        *     &#125;</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        *  private Result(CodeMsg cm) &#123;</span></span><br><span class="line"><span class="comment">        *         if (cm == null) &#123;</span></span><br><span class="line"><span class="comment">        *             return;</span></span><br><span class="line"><span class="comment">        *         &#125;</span></span><br><span class="line"><span class="comment">        *         this.code = cm.getCode();</span></span><br><span class="line"><span class="comment">        *         this.msg = cm.getMsg();</span></span><br><span class="line"><span class="comment">        *     &#125;</span></span><br><span class="line"><span class="comment">        *     2 Result.error(CodeMsg.SERVER_NAME)</span></span><br><span class="line"><span class="comment">        *  public static CodeMsg SERVER_NAME = new CodeMsg(50001, "服务端异常");</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * 结果     &#123;</span></span><br><span class="line"><span class="comment">        *              "code": 50001,</span></span><br><span class="line"><span class="comment">        *              "msg": "服务端异常",</span></span><br><span class="line"><span class="comment">        *              "data": null</span></span><br><span class="line"><span class="comment">        *          &#125;</span></span><br><span class="line"><span class="comment">        *   分析：</span></span><br><span class="line"><span class="comment">        *   因为CodeMsg SUCCESS 用static修饰了</span></span><br><span class="line"><span class="comment">        *   public static CodeMsg SUCCESS = new CodeMsg(0, "success");</span></span><br><span class="line"><span class="comment">        *   所以可以使用类.属性.属性的方式获得</span></span><br><span class="line"><span class="comment">        *      CodeMsg.SUCCESS.code=50001</span></span><br><span class="line"><span class="comment">        *      CodeMsg.SUCCESS.msg="服务端异常"</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">return</span> Result.error(CodeMsg.SERVER_NAME);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023847.jpg" alt="image-20190203093139520"></p>
-<hr>
-<h1 id="3-前后的分离的分析"><a href="#3-前后的分离的分析" class="headerlink" title="3 前后的分离的分析"></a>3 前后的分离的分析</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023849.jpg" alt="image-20190203093624571"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023853.jpg" alt="image-20190203093752553"></p>
-<hr>
-<h1 id="4-Controller-层的代码编写-snip"><a href="#4-Controller-层的代码编写-snip" class="headerlink" title="4 Controller 层的代码编写 snip"></a>4 Controller 层的代码编写 snip</h1><h3 id="LoginController"><a href="#LoginController" class="headerlink" title="LoginController"></a>LoginController</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/login"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">    <span class="comment">//self4日志处理</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(LoginController.class);</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MiaoShaoUserServiceImpl miaoShaoUserService;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/to_login"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toLogin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"login"</span>;<span class="comment">//跳转到登陆页面login.html</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/do_login"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="comment">//loginVo用户登陆的POJO</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Result <span class="title">doLogin</span><span class="params">(@Valid LoginVo loginVo)</span> </span>&#123;</span><br><span class="line">        logger.info(loginVo.toString());</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//核心代码 ⭐️⭐️</span></span><br><span class="line">        miaoShaoUserService.login(loginVo);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> Result.success(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="POJO-loginVo"><a href="#POJO-loginVo" class="headerlink" title="POJO loginVo"></a>POJO loginVo</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.domain;</span><br><span class="line"><span class="keyword">import</span> com.imooc.miaosha.validate.IsMobile;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.validator.constraints.Length;</span><br><span class="line"><span class="keyword">import</span> javax.validation.constraints.NotNull;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginVo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotNull</span></span><br><span class="line">    <span class="comment">//自定义validator</span></span><br><span class="line">    <span class="meta">@IsMobile</span></span><br><span class="line">    <span class="keyword">private</span> String mobile;</span><br><span class="line">    <span class="meta">@NotNull</span></span><br><span class="line">    <span class="meta">@Length</span>(min = <span class="number">32</span>)</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMobile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mobile;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMobile</span><span class="params">(String mobile)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mobile = mobile;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"LoginVo&#123;"</span> +</span><br><span class="line">                <span class="string">"mobile='"</span> + mobile + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", password='"</span> + password + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="MiaoShaoUserService"><a href="#MiaoShaoUserService" class="headerlink" title="MiaoShaoUserService."></a>MiaoShaoUserService.</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MiaoShaoUserServiceImpl</span> <span class="keyword">implements</span> <span class="title">MiaoShaoUserService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MiaoshaUserMapper miaoshaUserMapper;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="comment">//得到数据库里面的User用户的所有字段 getById(long id)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MiaoshaUser <span class="title">getById</span><span class="params">(<span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> miaoshaUserMapper.selectByPrimaryKey(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//检测是否登陆 loginVo和前端ajax data绑定了</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">login</span><span class="params">(LoginVo loginVo)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (loginVo == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> GlobalException(CodeMsg.SERVER_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 拿到页面中的手机号码</span></span><br><span class="line">        String form_mobile = loginVo.getMobile();</span><br><span class="line">          <span class="comment">// 拿到页面中的密码</span></span><br><span class="line">        String form_Password = loginVo.getPassword();</span><br><span class="line">        <span class="comment">//判断手机号是否存在getById==selectByPrimaryKey(id) 看看数据库中存不存在这个数据</span></span><br><span class="line">        <span class="comment">//将查询出来的数据变成miaoshaUser</span></span><br><span class="line">        MiaoshaUser miaoshaUser = getById(Long.parseLong(form_mobile));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (miaoshaUser == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> GlobalException(CodeMsg.MOBILE_NOT_EXIST);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果用户存在</span></span><br><span class="line">        <span class="comment">//1 验证密码</span></span><br><span class="line">        <span class="comment">//数据库里面的密码  dbPassword   b7797cce01b4b131b433b6acf4add 449</span></span><br><span class="line">        String dbPassword = miaoshaUser.getPassword();<span class="comment">//Md5Utils.inputPassToDbPass()=dbPass</span></span><br><span class="line">        <span class="comment">//数据库里面的盐值</span></span><br><span class="line">        String dbSalt = miaoshaUser.getSalt();</span><br><span class="line">        <span class="comment">//经过计算得到的密码 原密码 123456 calcpass= d3b1294a61a07da9b49b6e22b2cbd7 f9</span></span><br><span class="line">        String calcPass = MD5Util.fromPassToDBPass(form_Password, dbSalt);</span><br><span class="line">         <span class="comment">//==inputPassToDbPass=calcPass</span></span><br><span class="line">        <span class="keyword">if</span> (!calcPass.equals(dbPassword)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> GlobalException(CodeMsg.PASSWORED_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="MiaoshaUserMapper–selectByPrimaryKey"><a href="#MiaoshaUserMapper–selectByPrimaryKey" class="headerlink" title="MiaoshaUserMapper–selectByPrimaryKey"></a>MiaoshaUserMapper–selectByPrimaryKey</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MiaoshaUserMapper</span> </span>&#123;</span><br><span class="line">    		<span class="comment">//id=手机号码 返回一个MiaoshaUser对象</span></span><br><span class="line">            <span class="function">MiaoshaUser <span class="title">selectByPrimaryKey</span><span class="params">(Long id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectByPrimaryKey"</span> <span class="attr">parameterType</span>=<span class="string">"java.lang.Long"</span> <span class="attr">resultMap</span>=<span class="string">"BaseResultMap"</span>&gt;</span></span><br><span class="line">   select </span><br><span class="line">   id, nickname, `password`, salt, head, registerr_date, login_count</span><br><span class="line">   from miaosha_user</span><br><span class="line">   where id = #&#123;id,jdbcType=BIGINT&#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="MD5Utils-密码加密"><a href="#MD5Utils-密码加密" class="headerlink" title="MD5Utils 密码加密"></a>MD5Utils 密码加密</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.codec.digest.DigestUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MD5Util</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        System.out.println(inputPassToFormPass(<span class="string">"123456"</span>));           <span class="comment">//d3b1294a61a07da9b49b6e22b2cbd7  f9</span></span><br><span class="line">        System.out.println(fromPassToDBPass(<span class="string">"123456"</span>, <span class="string">"1a2b3c4d"</span>));    				      <span class="comment">//d3b1294a61a07da9b49b6e22b2cbd7  f9</span></span><br><span class="line">        System.out.println(inputPassToDbPass(<span class="string">"123456"</span>,<span class="string">"1a2b3c4d"</span>));</span><br><span class="line">        <span class="comment">//b7797cce01b4b131b433b6acf4add  449</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*固定盐值*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String salt = <span class="string">"1a2b3c4d"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//注意导包为codec中的DigestUtils类.codec.digest.DigestUtils;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">md5</span><span class="params">(String src)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//计算MD5摘要并以32个字符十六进制字符串的形式返回值。</span></span><br><span class="line">        <span class="keyword">return</span> DigestUtils.md5Hex(src);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 第一次md5 ：</span></span><br><span class="line"><span class="comment">     * 用于 通过输入的密码生成</span></span><br><span class="line"><span class="comment">     * 传输的密码 ： 方法 通过固定盐值和明文密码之间的拼接在生成md5</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">inputPassToFormPass</span><span class="params">(String inputPass)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">""</span> + salt.charAt(<span class="number">0</span>) + salt.charAt(<span class="number">2</span>) + inputPass + salt.charAt(<span class="number">5</span>) + salt.charAt(<span class="number">4</span>);</span><br><span class="line">        <span class="keyword">return</span> md5(str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 第二次md5 ：</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">fromPassToDBPass</span><span class="params">(String formpasss, String salt)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">""</span> + salt.charAt(<span class="number">0</span>) + salt.charAt(<span class="number">2</span>) + formpasss + salt.charAt(<span class="number">5</span>) + salt.charAt(<span class="number">4</span>);</span><br><span class="line">        <span class="keyword">return</span> md5(str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将密码封装到数据库中</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">inputPassToDbPass</span><span class="params">(String input, String saltDB)</span> </span>&#123;</span><br><span class="line">        String s = inputPassToFormPass(input);</span><br><span class="line">        String formPass = fromPassToDBPass(s, saltDB);</span><br><span class="line">        <span class="keyword">return</span> formPass;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doLogin</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    ..密码处理</span><br><span class="line">    <span class="keyword">var</span> inputpass = $(<span class="string">"#password"</span>).val();</span><br><span class="line">    <span class="keyword">var</span> salt = <span class="string">"1a2b3c4d"</span>;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">""</span> + salt.charAt(<span class="number">0</span>) + salt.charAt(<span class="number">2</span>) + inputpass + salt.charAt(<span class="number">5</span>) + salt.charAt(<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">var</span> password = md5(str);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url: <span class="string">"/login/do_login"</span>,</span><br><span class="line">        type: <span class="string">"POST"</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            mobile: $(<span class="string">"#mobile"</span>).val(),</span><br><span class="line">            password: password</span><br><span class="line">        &#125;,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">            layer.closeAll();</span><br><span class="line">            <span class="keyword">if</span> (data.code == <span class="number">0</span>) &#123;</span><br><span class="line">                layer.msg(<span class="string">"成功"</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                layer.msg(data.msg);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(data);</span><br><span class="line">        &#125;,</span><br><span class="line">        error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            layer.closeAll();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="MD5-min-js"><a href="#MD5-min-js" class="headerlink" title="MD5.min.js"></a>MD5.min.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * [js-md5]&#123;@link https://github.com/emn178/js-md5&#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @namespace md5</span></span><br><span class="line"><span class="comment"> * @version 0.7.2</span></span><br><span class="line"><span class="comment"> * @author Chen, Yi-Cyuan [emn178@gmail.com]</span></span><br><span class="line"><span class="comment"> * @copyright Chen, Yi-Cyuan 2014-2017</span></span><br><span class="line"><span class="comment"> * @license MIT</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">!<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Md5</span>(<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (t) blocks[<span class="number">0</span>] = blocks[<span class="number">16</span>] = blocks[<span class="number">1</span>] = blocks[<span class="number">2</span>] = blocks[<span class="number">3</span>] = blocks[<span class="number">4</span>] = blocks[<span class="number">5</span>] = blocks[<span class="number">6</span>] = blocks[<span class="number">7</span>] = blocks[<span class="number">8</span>] = blocks[<span class="number">9</span>] = blocks[<span class="number">10</span>] = blocks[<span class="number">11</span>] = blocks[<span class="number">12</span>] = blocks[<span class="number">13</span>] = blocks[<span class="number">14</span>] = blocks[<span class="number">15</span>] = <span class="number">0</span>, <span class="keyword">this</span>.blocks = blocks, <span class="keyword">this</span>.buffer8 = buffer8; <span class="keyword">else</span> <span class="keyword">if</span> (ARRAY_BUFFER) &#123;</span><br><span class="line">            <span class="keyword">var</span> r = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">68</span>);</span><br><span class="line">            <span class="keyword">this</span>.buffer8 = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(r), <span class="keyword">this</span>.blocks = <span class="keyword">new</span> <span class="built_in">Uint32Array</span>(r)</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">this</span>.blocks = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>];</span><br><span class="line">        <span class="keyword">this</span>.h0 = <span class="keyword">this</span>.h1 = <span class="keyword">this</span>.h2 = <span class="keyword">this</span>.h3 = <span class="keyword">this</span>.start = <span class="keyword">this</span>.bytes = <span class="keyword">this</span>.hBytes = <span class="number">0</span>, <span class="keyword">this</span>.finalized = <span class="keyword">this</span>.hashed = !<span class="number">1</span>, <span class="keyword">this</span>.first = !<span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> ERROR = <span class="string">"input is invalid type"</span>, WINDOW = <span class="string">"object"</span> == <span class="keyword">typeof</span> <span class="built_in">window</span>, root = WINDOW ? <span class="built_in">window</span> : &#123;&#125;;</span><br><span class="line">    root.JS_MD5_NO_WINDOW &amp;&amp; (WINDOW = !<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> WEB_WORKER = !WINDOW &amp;&amp; <span class="string">"object"</span> == <span class="keyword">typeof</span> self,</span><br><span class="line">        NODE_JS = !root.JS_MD5_NO_NODE_JS &amp;&amp; <span class="string">"object"</span> == <span class="keyword">typeof</span> process &amp;&amp; process.versions &amp;&amp; process.versions.node;</span><br><span class="line">    NODE_JS ? root = global : WEB_WORKER &amp;&amp; (root = self);</span><br><span class="line">    <span class="keyword">var</span> COMMON_JS = !root.JS_MD5_NO_COMMON_JS &amp;&amp; <span class="string">"object"</span> == <span class="keyword">typeof</span> <span class="built_in">module</span> &amp;&amp; <span class="built_in">module</span>.exports,</span><br><span class="line">        AMD = <span class="string">"function"</span> == <span class="keyword">typeof</span> define &amp;&amp; define.amd,</span><br><span class="line">        ARRAY_BUFFER = !root.JS_MD5_NO_ARRAY_BUFFER &amp;&amp; <span class="string">"undefined"</span> != <span class="keyword">typeof</span> <span class="built_in">ArrayBuffer</span>,</span><br><span class="line">        HEX_CHARS = <span class="string">"0123456789abcdef"</span>.split(<span class="string">""</span>), EXTRA = [<span class="number">128</span>, <span class="number">32768</span>, <span class="number">8388608</span>, <span class="number">-2147483648</span>], SHIFT = [<span class="number">0</span>, <span class="number">8</span>, <span class="number">16</span>, <span class="number">24</span>],</span><br><span class="line">        OUTPUT_TYPES = [<span class="string">"hex"</span>, <span class="string">"array"</span>, <span class="string">"digest"</span>, <span class="string">"buffer"</span>, <span class="string">"arrayBuffer"</span>, <span class="string">"base64"</span>],</span><br><span class="line">        BASE64_ENCODE_CHAR = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span>.split(<span class="string">""</span>), blocks = [],</span><br><span class="line">        buffer8;</span><br><span class="line">    <span class="keyword">if</span> (ARRAY_BUFFER) &#123;</span><br><span class="line">        <span class="keyword">var</span> buffer = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">68</span>);</span><br><span class="line">        buffer8 = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(buffer), blocks = <span class="keyword">new</span> <span class="built_in">Uint32Array</span>(buffer)</span><br><span class="line">    &#125;</span><br><span class="line">    (root.JS_MD5_NO_NODE_JS || !<span class="built_in">Array</span>.isArray) &amp;&amp; (<span class="built_in">Array</span>.isArray = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"[object Array]"</span> === <span class="built_in">Object</span>.prototype.toString.call(t)</span><br><span class="line">    &#125;), !ARRAY_BUFFER || !root.JS_MD5_NO_ARRAY_BUFFER_IS_VIEW &amp;&amp; <span class="built_in">ArrayBuffer</span>.isView || (<span class="built_in">ArrayBuffer</span>.isView = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"object"</span> == <span class="keyword">typeof</span> t &amp;&amp; t.buffer &amp;&amp; t.buffer.constructor === <span class="built_in">ArrayBuffer</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">var</span> createOutputMethod = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">r</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Md5(!<span class="number">0</span>).update(r)[t]()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, createMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> t = createOutputMethod(<span class="string">"hex"</span>);</span><br><span class="line">        NODE_JS &amp;&amp; (t = nodeWrap(t)), t.create = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Md5</span><br><span class="line">        &#125;, t.update = <span class="function"><span class="keyword">function</span> (<span class="params">r</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> t.create().update(r)</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> r = <span class="number">0</span>; r &lt; OUTPUT_TYPES.length; ++r) &#123;</span><br><span class="line">            <span class="keyword">var</span> e = OUTPUT_TYPES[r];</span><br><span class="line">            t[e] = createOutputMethod(e)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t</span><br><span class="line">    &#125;, nodeWrap = <span class="function"><span class="keyword">function</span> (<span class="params">method</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> crypto = <span class="built_in">eval</span>(<span class="string">"require('crypto')"</span>), Buffer = <span class="built_in">eval</span>(<span class="string">"require('buffer').Buffer"</span>), nodeMethod = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">"string"</span> == <span class="keyword">typeof</span> t) <span class="keyword">return</span> crypto.createHash(<span class="string">"md5"</span>).update(t, <span class="string">"utf8"</span>).digest(<span class="string">"hex"</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="literal">null</span> === t || <span class="keyword">void</span> <span class="number">0</span> === t) <span class="keyword">throw</span> ERROR;</span><br><span class="line">            <span class="keyword">return</span> t.constructor === <span class="built_in">ArrayBuffer</span> &amp;&amp; (t = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(t)), <span class="built_in">Array</span>.isArray(t) || <span class="built_in">ArrayBuffer</span>.isView(t) || t.constructor === Buffer ? crypto.createHash(<span class="string">"md5"</span>).update(<span class="keyword">new</span> Buffer(t)).digest(<span class="string">"hex"</span>) : method(t)</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> nodeMethod</span><br><span class="line">    &#125;;</span><br><span class="line">    Md5.prototype.update = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>.finalized) &#123;</span><br><span class="line">            <span class="keyword">var</span> r, e = <span class="keyword">typeof</span> t;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">"string"</span> !== e) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="string">"object"</span> !== e) <span class="keyword">throw</span> ERROR;</span><br><span class="line">                <span class="keyword">if</span> (<span class="literal">null</span> === t) <span class="keyword">throw</span> ERROR;</span><br><span class="line">                <span class="keyword">if</span> (ARRAY_BUFFER &amp;&amp; t.constructor === <span class="built_in">ArrayBuffer</span>) t = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(t); <span class="keyword">else</span> <span class="keyword">if</span> (!(<span class="built_in">Array</span>.isArray(t) || ARRAY_BUFFER &amp;&amp; <span class="built_in">ArrayBuffer</span>.isView(t))) <span class="keyword">throw</span> ERROR;</span><br><span class="line">                r = !<span class="number">0</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> s, i, o = <span class="number">0</span>, h = t.length, f = <span class="keyword">this</span>.blocks, a = <span class="keyword">this</span>.buffer8; h &gt; o;) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.hashed &amp;&amp; (<span class="keyword">this</span>.hashed = !<span class="number">1</span>, f[<span class="number">0</span>] = f[<span class="number">16</span>], f[<span class="number">16</span>] = f[<span class="number">1</span>] = f[<span class="number">2</span>] = f[<span class="number">3</span>] = f[<span class="number">4</span>] = f[<span class="number">5</span>] = f[<span class="number">6</span>] = f[<span class="number">7</span>] = f[<span class="number">8</span>] = f[<span class="number">9</span>] = f[<span class="number">10</span>] = f[<span class="number">11</span>] = f[<span class="number">12</span>] = f[<span class="number">13</span>] = f[<span class="number">14</span>] = f[<span class="number">15</span>] = <span class="number">0</span>), r) <span class="keyword">if</span> (ARRAY_BUFFER) <span class="keyword">for</span> (i = <span class="keyword">this</span>.start; h &gt; o &amp;&amp; <span class="number">64</span> &gt; i; ++o) a[i++] = t[o]; <span class="keyword">else</span> <span class="keyword">for</span> (i = <span class="keyword">this</span>.start; h &gt; o &amp;&amp; <span class="number">64</span> &gt; i; ++o) f[i &gt;&gt; <span class="number">2</span>] |= t[o] &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++]; <span class="keyword">else</span> <span class="keyword">if</span> (ARRAY_BUFFER) <span class="keyword">for</span> (i = <span class="keyword">this</span>.start; h &gt; o &amp;&amp; <span class="number">64</span> &gt; i; ++o) s = t.charCodeAt(o), <span class="number">128</span> &gt; s ? a[i++] = s : <span class="number">2048</span> &gt; s ? (a[i++] = <span class="number">192</span> | s &gt;&gt; <span class="number">6</span>, a[i++] = <span class="number">128</span> | <span class="number">63</span> &amp; s) : <span class="number">55296</span> &gt; s || s &gt;= <span class="number">57344</span> ? (a[i++] = <span class="number">224</span> | s &gt;&gt; <span class="number">12</span>, a[i++] = <span class="number">128</span> | s &gt;&gt; <span class="number">6</span> &amp; <span class="number">63</span>, a[i++] = <span class="number">128</span> | <span class="number">63</span> &amp; s) : (s = <span class="number">65536</span> + ((<span class="number">1023</span> &amp; s) &lt;&lt; <span class="number">10</span> | <span class="number">1023</span> &amp; t.charCodeAt(++o)), a[i++] = <span class="number">240</span> | s &gt;&gt; <span class="number">18</span>, a[i++] = <span class="number">128</span> | s &gt;&gt; <span class="number">12</span> &amp; <span class="number">63</span>, a[i++] = <span class="number">128</span> | s &gt;&gt; <span class="number">6</span> &amp; <span class="number">63</span>, a[i++] = <span class="number">128</span> | <span class="number">63</span> &amp; s); <span class="keyword">else</span> <span class="keyword">for</span> (i = <span class="keyword">this</span>.start; h &gt; o &amp;&amp; <span class="number">64</span> &gt; i; ++o) s = t.charCodeAt(o), <span class="number">128</span> &gt; s ? f[i &gt;&gt; <span class="number">2</span>] |= s &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++] : <span class="number">2048</span> &gt; s ? (f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">192</span> | s &gt;&gt; <span class="number">6</span>) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++], f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">128</span> | <span class="number">63</span> &amp; s) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++]) : <span class="number">55296</span> &gt; s || s &gt;= <span class="number">57344</span> ? (f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">224</span> | s &gt;&gt; <span class="number">12</span>) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++], f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">128</span> | s &gt;&gt; <span class="number">6</span> &amp; <span class="number">63</span>) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++], f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">128</span> | <span class="number">63</span> &amp; s) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++]) : (s = <span class="number">65536</span> + ((<span class="number">1023</span> &amp; s) &lt;&lt; <span class="number">10</span> | <span class="number">1023</span> &amp; t.charCodeAt(++o)), f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">240</span> | s &gt;&gt; <span class="number">18</span>) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++], f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">128</span> | s &gt;&gt; <span class="number">12</span> &amp; <span class="number">63</span>) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++], f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">128</span> | s &gt;&gt; <span class="number">6</span> &amp; <span class="number">63</span>) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++], f[i &gt;&gt; <span class="number">2</span>] |= (<span class="number">128</span> | <span class="number">63</span> &amp; s) &lt;&lt; SHIFT[<span class="number">3</span> &amp; i++]);</span><br><span class="line">                <span class="keyword">this</span>.lastByteIndex = i, <span class="keyword">this</span>.bytes += i - <span class="keyword">this</span>.start, i &gt;= <span class="number">64</span> ? (<span class="keyword">this</span>.start = i - <span class="number">64</span>, <span class="keyword">this</span>.hash(), <span class="keyword">this</span>.hashed = !<span class="number">0</span>) : <span class="keyword">this</span>.start = i</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.bytes &gt; <span class="number">4294967295</span> &amp;&amp; (<span class="keyword">this</span>.hBytes += <span class="keyword">this</span>.bytes / <span class="number">4294967296</span> &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.bytes = <span class="keyword">this</span>.bytes % <span class="number">4294967296</span>), <span class="keyword">this</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, Md5.prototype.finalize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>.finalized) &#123;</span><br><span class="line">            <span class="keyword">this</span>.finalized = !<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">var</span> t = <span class="keyword">this</span>.blocks, r = <span class="keyword">this</span>.lastByteIndex;</span><br><span class="line">            t[r &gt;&gt; <span class="number">2</span>] |= EXTRA[<span class="number">3</span> &amp; r], r &gt;= <span class="number">56</span> &amp;&amp; (<span class="keyword">this</span>.hashed || <span class="keyword">this</span>.hash(), t[<span class="number">0</span>] = t[<span class="number">16</span>], t[<span class="number">16</span>] = t[<span class="number">1</span>] = t[<span class="number">2</span>] = t[<span class="number">3</span>] = t[<span class="number">4</span>] = t[<span class="number">5</span>] = t[<span class="number">6</span>] = t[<span class="number">7</span>] = t[<span class="number">8</span>] = t[<span class="number">9</span>] = t[<span class="number">10</span>] = t[<span class="number">11</span>] = t[<span class="number">12</span>] = t[<span class="number">13</span>] = t[<span class="number">14</span>] = t[<span class="number">15</span>] = <span class="number">0</span>), t[<span class="number">14</span>] = <span class="keyword">this</span>.bytes &lt;&lt; <span class="number">3</span>, t[<span class="number">15</span>] = <span class="keyword">this</span>.hBytes &lt;&lt; <span class="number">3</span> | <span class="keyword">this</span>.bytes &gt;&gt; <span class="number">29</span>, <span class="keyword">this</span>.hash()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, Md5.prototype.hash = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> t, r, e, s, i, o, h = <span class="keyword">this</span>.blocks;</span><br><span class="line">        <span class="keyword">this</span>.first ? (t = h[<span class="number">0</span>] - <span class="number">680876937</span>, t = (t &lt;&lt; <span class="number">7</span> | t &gt;&gt;&gt; <span class="number">25</span>) - <span class="number">271733879</span> &lt;&lt; <span class="number">0</span>, s = (<span class="number">-1732584194</span> ^ <span class="number">2004318071</span> &amp; t) + h[<span class="number">1</span>] - <span class="number">117830708</span>, s = (s &lt;&lt; <span class="number">12</span> | s &gt;&gt;&gt; <span class="number">20</span>) + t &lt;&lt; <span class="number">0</span>, e = (<span class="number">-271733879</span> ^ s &amp; (<span class="number">-271733879</span> ^ t)) + h[<span class="number">2</span>] - <span class="number">1126478375</span>, e = (e &lt;&lt; <span class="number">17</span> | e &gt;&gt;&gt; <span class="number">15</span>) + s &lt;&lt; <span class="number">0</span>, r = (t ^ e &amp; (s ^ t)) + h[<span class="number">3</span>] - <span class="number">1316259209</span>, r = (r &lt;&lt; <span class="number">22</span> | r &gt;&gt;&gt; <span class="number">10</span>) + e &lt;&lt; <span class="number">0</span>) : (t = <span class="keyword">this</span>.h0, r = <span class="keyword">this</span>.h1, e = <span class="keyword">this</span>.h2, s = <span class="keyword">this</span>.h3, t += (s ^ r &amp; (e ^ s)) + h[<span class="number">0</span>] - <span class="number">680876936</span>, t = (t &lt;&lt; <span class="number">7</span> | t &gt;&gt;&gt; <span class="number">25</span>) + r &lt;&lt; <span class="number">0</span>, s += (e ^ t &amp; (r ^ e)) + h[<span class="number">1</span>] - <span class="number">389564586</span>, s = (s &lt;&lt; <span class="number">12</span> | s &gt;&gt;&gt; <span class="number">20</span>) + t &lt;&lt; <span class="number">0</span>, e += (r ^ s &amp; (t ^ r)) + h[<span class="number">2</span>] + <span class="number">606105819</span>, e = (e &lt;&lt; <span class="number">17</span> | e &gt;&gt;&gt; <span class="number">15</span>) + s &lt;&lt; <span class="number">0</span>, r += (t ^ e &amp; (s ^ t)) + h[<span class="number">3</span>] - <span class="number">1044525330</span>, r = (r &lt;&lt; <span class="number">22</span> | r &gt;&gt;&gt; <span class="number">10</span>) + e &lt;&lt; <span class="number">0</span>), t += (s ^ r &amp; (e ^ s)) + h[<span class="number">4</span>] - <span class="number">176418897</span>, t = (t &lt;&lt; <span class="number">7</span> | t &gt;&gt;&gt; <span class="number">25</span>) + r &lt;&lt; <span class="number">0</span>, s += (e ^ t &amp; (r ^ e)) + h[<span class="number">5</span>] + <span class="number">1200080426</span>, s = (s &lt;&lt; <span class="number">12</span> | s &gt;&gt;&gt; <span class="number">20</span>) + t &lt;&lt; <span class="number">0</span>, e += (r ^ s &amp; (t ^ r)) + h[<span class="number">6</span>] - <span class="number">1473231341</span>, e = (e &lt;&lt; <span class="number">17</span> | e &gt;&gt;&gt; <span class="number">15</span>) + s &lt;&lt; <span class="number">0</span>, r += (t ^ e &amp; (s ^ t)) + h[<span class="number">7</span>] - <span class="number">45705983</span>, r = (r &lt;&lt; <span class="number">22</span> | r &gt;&gt;&gt; <span class="number">10</span>) + e &lt;&lt; <span class="number">0</span>, t += (s ^ r &amp; (e ^ s)) + h[<span class="number">8</span>] + <span class="number">1770035416</span>, t = (t &lt;&lt; <span class="number">7</span> | t &gt;&gt;&gt; <span class="number">25</span>) + r &lt;&lt; <span class="number">0</span>, s += (e ^ t &amp; (r ^ e)) + h[<span class="number">9</span>] - <span class="number">1958414417</span>, s = (s &lt;&lt; <span class="number">12</span> | s &gt;&gt;&gt; <span class="number">20</span>) + t &lt;&lt; <span class="number">0</span>, e += (r ^ s &amp; (t ^ r)) + h[<span class="number">10</span>] - <span class="number">42063</span>, e = (e &lt;&lt; <span class="number">17</span> | e &gt;&gt;&gt; <span class="number">15</span>) + s &lt;&lt; <span class="number">0</span>, r += (t ^ e &amp; (s ^ t)) + h[<span class="number">11</span>] - <span class="number">1990404162</span>, r = (r &lt;&lt; <span class="number">22</span> | r &gt;&gt;&gt; <span class="number">10</span>) + e &lt;&lt; <span class="number">0</span>, t += (s ^ r &amp; (e ^ s)) + h[<span class="number">12</span>] + <span class="number">1804603682</span>, t = (t &lt;&lt; <span class="number">7</span> | t &gt;&gt;&gt; <span class="number">25</span>) + r &lt;&lt; <span class="number">0</span>, s += (e ^ t &amp; (r ^ e)) + h[<span class="number">13</span>] - <span class="number">40341101</span>, s = (s &lt;&lt; <span class="number">12</span> | s &gt;&gt;&gt; <span class="number">20</span>) + t &lt;&lt; <span class="number">0</span>, e += (r ^ s &amp; (t ^ r)) + h[<span class="number">14</span>] - <span class="number">1502002290</span>, e = (e &lt;&lt; <span class="number">17</span> | e &gt;&gt;&gt; <span class="number">15</span>) + s &lt;&lt; <span class="number">0</span>, r += (t ^ e &amp; (s ^ t)) + h[<span class="number">15</span>] + <span class="number">1236535329</span>, r = (r &lt;&lt; <span class="number">22</span> | r &gt;&gt;&gt; <span class="number">10</span>) + e &lt;&lt; <span class="number">0</span>, t += (e ^ s &amp; (r ^ e)) + h[<span class="number">1</span>] - <span class="number">165796510</span>, t = (t &lt;&lt; <span class="number">5</span> | t &gt;&gt;&gt; <span class="number">27</span>) + r &lt;&lt; <span class="number">0</span>, s += (r ^ e &amp; (t ^ r)) + h[<span class="number">6</span>] - <span class="number">1069501632</span>, s = (s &lt;&lt; <span class="number">9</span> | s &gt;&gt;&gt; <span class="number">23</span>) + t &lt;&lt; <span class="number">0</span>, e += (t ^ r &amp; (s ^ t)) + h[<span class="number">11</span>] + <span class="number">643717713</span>, e = (e &lt;&lt; <span class="number">14</span> | e &gt;&gt;&gt; <span class="number">18</span>) + s &lt;&lt; <span class="number">0</span>, r += (s ^ t &amp; (e ^ s)) + h[<span class="number">0</span>] - <span class="number">373897302</span>, r = (r &lt;&lt; <span class="number">20</span> | r &gt;&gt;&gt; <span class="number">12</span>) + e &lt;&lt; <span class="number">0</span>, t += (e ^ s &amp; (r ^ e)) + h[<span class="number">5</span>] - <span class="number">701558691</span>, t = (t &lt;&lt; <span class="number">5</span> | t &gt;&gt;&gt; <span class="number">27</span>) + r &lt;&lt; <span class="number">0</span>, s += (r ^ e &amp; (t ^ r)) + h[<span class="number">10</span>] + <span class="number">38016083</span>, s = (s &lt;&lt; <span class="number">9</span> | s &gt;&gt;&gt; <span class="number">23</span>) + t &lt;&lt; <span class="number">0</span>, e += (t ^ r &amp; (s ^ t)) + h[<span class="number">15</span>] - <span class="number">660478335</span>, e = (e &lt;&lt; <span class="number">14</span> | e &gt;&gt;&gt; <span class="number">18</span>) + s &lt;&lt; <span class="number">0</span>, r += (s ^ t &amp; (e ^ s)) + h[<span class="number">4</span>] - <span class="number">405537848</span>, r = (r &lt;&lt; <span class="number">20</span> | r &gt;&gt;&gt; <span class="number">12</span>) + e &lt;&lt; <span class="number">0</span>, t += (e ^ s &amp; (r ^ e)) + h[<span class="number">9</span>] + <span class="number">568446438</span>, t = (t &lt;&lt; <span class="number">5</span> | t &gt;&gt;&gt; <span class="number">27</span>) + r &lt;&lt; <span class="number">0</span>, s += (r ^ e &amp; (t ^ r)) + h[<span class="number">14</span>] - <span class="number">1019803690</span>, s = (s &lt;&lt; <span class="number">9</span> | s &gt;&gt;&gt; <span class="number">23</span>) + t &lt;&lt; <span class="number">0</span>, e += (t ^ r &amp; (s ^ t)) + h[<span class="number">3</span>] - <span class="number">187363961</span>, e = (e &lt;&lt; <span class="number">14</span> | e &gt;&gt;&gt; <span class="number">18</span>) + s &lt;&lt; <span class="number">0</span>, r += (s ^ t &amp; (e ^ s)) + h[<span class="number">8</span>] + <span class="number">1163531501</span>, r = (r &lt;&lt; <span class="number">20</span> | r &gt;&gt;&gt; <span class="number">12</span>) + e &lt;&lt; <span class="number">0</span>, t += (e ^ s &amp; (r ^ e)) + h[<span class="number">13</span>] - <span class="number">1444681467</span>, t = (t &lt;&lt; <span class="number">5</span> | t &gt;&gt;&gt; <span class="number">27</span>) + r &lt;&lt; <span class="number">0</span>, s += (r ^ e &amp; (t ^ r)) + h[<span class="number">2</span>] - <span class="number">51403784</span>, s = (s &lt;&lt; <span class="number">9</span> | s &gt;&gt;&gt; <span class="number">23</span>) + t &lt;&lt; <span class="number">0</span>, e += (t ^ r &amp; (s ^ t)) + h[<span class="number">7</span>] + <span class="number">1735328473</span>, e = (e &lt;&lt; <span class="number">14</span> | e &gt;&gt;&gt; <span class="number">18</span>) + s &lt;&lt; <span class="number">0</span>, r += (s ^ t &amp; (e ^ s)) + h[<span class="number">12</span>] - <span class="number">1926607734</span>, r = (r &lt;&lt; <span class="number">20</span> | r &gt;&gt;&gt; <span class="number">12</span>) + e &lt;&lt; <span class="number">0</span>, i = r ^ e, t += (i ^ s) + h[<span class="number">5</span>] - <span class="number">378558</span>, t = (t &lt;&lt; <span class="number">4</span> | t &gt;&gt;&gt; <span class="number">28</span>) + r &lt;&lt; <span class="number">0</span>, s += (i ^ t) + h[<span class="number">8</span>] - <span class="number">2022574463</span>, s = (s &lt;&lt; <span class="number">11</span> | s &gt;&gt;&gt; <span class="number">21</span>) + t &lt;&lt; <span class="number">0</span>, o = s ^ t, e += (o ^ r) + h[<span class="number">11</span>] + <span class="number">1839030562</span>, e = (e &lt;&lt; <span class="number">16</span> | e &gt;&gt;&gt; <span class="number">16</span>) + s &lt;&lt; <span class="number">0</span>, r += (o ^ e) + h[<span class="number">14</span>] - <span class="number">35309556</span>, r = (r &lt;&lt; <span class="number">23</span> | r &gt;&gt;&gt; <span class="number">9</span>) + e &lt;&lt; <span class="number">0</span>, i = r ^ e, t += (i ^ s) + h[<span class="number">1</span>] - <span class="number">1530992060</span>, t = (t &lt;&lt; <span class="number">4</span> | t &gt;&gt;&gt; <span class="number">28</span>) + r &lt;&lt; <span class="number">0</span>, s += (i ^ t) + h[<span class="number">4</span>] + <span class="number">1272893353</span>, s = (s &lt;&lt; <span class="number">11</span> | s &gt;&gt;&gt; <span class="number">21</span>) + t &lt;&lt; <span class="number">0</span>, o = s ^ t, e += (o ^ r) + h[<span class="number">7</span>] - <span class="number">155497632</span>, e = (e &lt;&lt; <span class="number">16</span> | e &gt;&gt;&gt; <span class="number">16</span>) + s &lt;&lt; <span class="number">0</span>, r += (o ^ e) + h[<span class="number">10</span>] - <span class="number">1094730640</span>, r = (r &lt;&lt; <span class="number">23</span> | r &gt;&gt;&gt; <span class="number">9</span>) + e &lt;&lt; <span class="number">0</span>, i = r ^ e, t += (i ^ s) + h[<span class="number">13</span>] + <span class="number">681279174</span>, t = (t &lt;&lt; <span class="number">4</span> | t &gt;&gt;&gt; <span class="number">28</span>) + r &lt;&lt; <span class="number">0</span>, s += (i ^ t) + h[<span class="number">0</span>] - <span class="number">358537222</span>, s = (s &lt;&lt; <span class="number">11</span> | s &gt;&gt;&gt; <span class="number">21</span>) + t &lt;&lt; <span class="number">0</span>, o = s ^ t, e += (o ^ r) + h[<span class="number">3</span>] - <span class="number">722521979</span>, e = (e &lt;&lt; <span class="number">16</span> | e &gt;&gt;&gt; <span class="number">16</span>) + s &lt;&lt; <span class="number">0</span>, r += (o ^ e) + h[<span class="number">6</span>] + <span class="number">76029189</span>, r = (r &lt;&lt; <span class="number">23</span> | r &gt;&gt;&gt; <span class="number">9</span>) + e &lt;&lt; <span class="number">0</span>, i = r ^ e, t += (i ^ s) + h[<span class="number">9</span>] - <span class="number">640364487</span>, t = (t &lt;&lt; <span class="number">4</span> | t &gt;&gt;&gt; <span class="number">28</span>) + r &lt;&lt; <span class="number">0</span>, s += (i ^ t) + h[<span class="number">12</span>] - <span class="number">421815835</span>, s = (s &lt;&lt; <span class="number">11</span> | s &gt;&gt;&gt; <span class="number">21</span>) + t &lt;&lt; <span class="number">0</span>, o = s ^ t, e += (o ^ r) + h[<span class="number">15</span>] + <span class="number">530742520</span>, e = (e &lt;&lt; <span class="number">16</span> | e &gt;&gt;&gt; <span class="number">16</span>) + s &lt;&lt; <span class="number">0</span>, r += (o ^ e) + h[<span class="number">2</span>] - <span class="number">995338651</span>, r = (r &lt;&lt; <span class="number">23</span> | r &gt;&gt;&gt; <span class="number">9</span>) + e &lt;&lt; <span class="number">0</span>, t += (e ^ (r | ~s)) + h[<span class="number">0</span>] - <span class="number">198630844</span>, t = (t &lt;&lt; <span class="number">6</span> | t &gt;&gt;&gt; <span class="number">26</span>) + r &lt;&lt; <span class="number">0</span>, s += (r ^ (t | ~e)) + h[<span class="number">7</span>] + <span class="number">1126891415</span>, s = (s &lt;&lt; <span class="number">10</span> | s &gt;&gt;&gt; <span class="number">22</span>) + t &lt;&lt; <span class="number">0</span>,e += (t ^ (s | ~r)) + h[<span class="number">14</span>] - <span class="number">1416354905</span>,e = (e &lt;&lt; <span class="number">15</span> | e &gt;&gt;&gt; <span class="number">17</span>) + s &lt;&lt; <span class="number">0</span>,r += (s ^ (e | ~t)) + h[<span class="number">5</span>] - <span class="number">57434055</span>,r = (r &lt;&lt; <span class="number">21</span> | r &gt;&gt;&gt; <span class="number">11</span>) + e &lt;&lt; <span class="number">0</span>,t += (e ^ (r | ~s)) + h[<span class="number">12</span>] + <span class="number">1700485571</span>,t = (t &lt;&lt; <span class="number">6</span> | t &gt;&gt;&gt; <span class="number">26</span>) + r &lt;&lt; <span class="number">0</span>,s += (r ^ (t | ~e)) + h[<span class="number">3</span>] - <span class="number">1894986606</span>,s = (s &lt;&lt; <span class="number">10</span> | s &gt;&gt;&gt; <span class="number">22</span>) + t &lt;&lt; <span class="number">0</span>,e += (t ^ (s | ~r)) + h[<span class="number">10</span>] - <span class="number">1051523</span>,e = (e &lt;&lt; <span class="number">15</span> | e &gt;&gt;&gt; <span class="number">17</span>) + s &lt;&lt; <span class="number">0</span>,r += (s ^ (e | ~t)) + h[<span class="number">1</span>] - <span class="number">2054922799</span>,r = (r &lt;&lt; <span class="number">21</span> | r &gt;&gt;&gt; <span class="number">11</span>) + e &lt;&lt; <span class="number">0</span>,t += (e ^ (r | ~s)) + h[<span class="number">8</span>] + <span class="number">1873313359</span>,t = (t &lt;&lt; <span class="number">6</span> | t &gt;&gt;&gt; <span class="number">26</span>) + r &lt;&lt; <span class="number">0</span>,s += (r ^ (t | ~e)) + h[<span class="number">15</span>] - <span class="number">30611744</span>,s = (s &lt;&lt; <span class="number">10</span> | s &gt;&gt;&gt; <span class="number">22</span>) + t &lt;&lt; <span class="number">0</span>,e += (t ^ (s | ~r)) + h[<span class="number">6</span>] - <span class="number">1560198380</span>,e = (e &lt;&lt; <span class="number">15</span> | e &gt;&gt;&gt; <span class="number">17</span>) + s &lt;&lt; <span class="number">0</span>,r += (s ^ (e | ~t)) + h[<span class="number">13</span>] + <span class="number">1309151649</span>,r = (r &lt;&lt; <span class="number">21</span> | r &gt;&gt;&gt; <span class="number">11</span>) + e &lt;&lt; <span class="number">0</span>,t += (e ^ (r | ~s)) + h[<span class="number">4</span>] - <span class="number">145523070</span>,t = (t &lt;&lt; <span class="number">6</span> | t &gt;&gt;&gt; <span class="number">26</span>) + r &lt;&lt; <span class="number">0</span>,s += (r ^ (t | ~e)) + h[<span class="number">11</span>] - <span class="number">1120210379</span>,s = (s &lt;&lt; <span class="number">10</span> | s &gt;&gt;&gt; <span class="number">22</span>) + t &lt;&lt; <span class="number">0</span>,e += (t ^ (s | ~r)) + h[<span class="number">2</span>] + <span class="number">718787259</span>,e = (e &lt;&lt; <span class="number">15</span> | e &gt;&gt;&gt; <span class="number">17</span>) + s &lt;&lt; <span class="number">0</span>,r += (s ^ (e | ~t)) + h[<span class="number">9</span>] - <span class="number">343485551</span>,r = (r &lt;&lt; <span class="number">21</span> | r &gt;&gt;&gt; <span class="number">11</span>) + e &lt;&lt; <span class="number">0</span>,<span class="keyword">this</span>.first ? (<span class="keyword">this</span>.h0 = t + <span class="number">1732584193</span> &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.h1 = r - <span class="number">271733879</span> &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.h2 = e - <span class="number">1732584194</span> &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.h3 = s + <span class="number">271733878</span> &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.first = !<span class="number">1</span>) : (<span class="keyword">this</span>.h0 = <span class="keyword">this</span>.h0 + t &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.h1 = <span class="keyword">this</span>.h1 + r &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.h2 = <span class="keyword">this</span>.h2 + e &lt;&lt; <span class="number">0</span>, <span class="keyword">this</span>.h3 = <span class="keyword">this</span>.h3 + s &lt;&lt; <span class="number">0</span>)</span><br><span class="line">    &#125;, Md5.prototype.hex = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.finalize();</span><br><span class="line">        <span class="keyword">var</span> t = <span class="keyword">this</span>.h0, r = <span class="keyword">this</span>.h1, e = <span class="keyword">this</span>.h2, s = <span class="keyword">this</span>.h3;</span><br><span class="line">        <span class="keyword">return</span> HEX_CHARS[t &gt;&gt; <span class="number">4</span> &amp; <span class="number">15</span>] + HEX_CHARS[<span class="number">15</span> &amp; t] + HEX_CHARS[t &gt;&gt; <span class="number">12</span> &amp; <span class="number">15</span>] + HEX_CHARS[t &gt;&gt; <span class="number">8</span> &amp; <span class="number">15</span>] + HEX_CHARS[t &gt;&gt; <span class="number">20</span> &amp; <span class="number">15</span>] + HEX_CHARS[t &gt;&gt; <span class="number">16</span> &amp; <span class="number">15</span>] + HEX_CHARS[t &gt;&gt; <span class="number">28</span> &amp; <span class="number">15</span>] + HEX_CHARS[t &gt;&gt; <span class="number">24</span> &amp; <span class="number">15</span>] + HEX_CHARS[r &gt;&gt; <span class="number">4</span> &amp; <span class="number">15</span>] + HEX_CHARS[<span class="number">15</span> &amp; r] + HEX_CHARS[r &gt;&gt; <span class="number">12</span> &amp; <span class="number">15</span>] + HEX_CHARS[r &gt;&gt; <span class="number">8</span> &amp; <span class="number">15</span>] + HEX_CHARS[r &gt;&gt; <span class="number">20</span> &amp; <span class="number">15</span>] + HEX_CHARS[r &gt;&gt; <span class="number">16</span> &amp; <span class="number">15</span>] + HEX_CHARS[r &gt;&gt; <span class="number">28</span> &amp; <span class="number">15</span>] + HEX_CHARS[r &gt;&gt; <span class="number">24</span> &amp; <span class="number">15</span>] + HEX_CHARS[e &gt;&gt; <span class="number">4</span> &amp; <span class="number">15</span>] + HEX_CHARS[<span class="number">15</span> &amp; e] + HEX_CHARS[e &gt;&gt; <span class="number">12</span> &amp; <span class="number">15</span>] + HEX_CHARS[e &gt;&gt; <span class="number">8</span> &amp; <span class="number">15</span>] + HEX_CHARS[e &gt;&gt; <span class="number">20</span> &amp; <span class="number">15</span>] + HEX_CHARS[e &gt;&gt; <span class="number">16</span> &amp; <span class="number">15</span>] + HEX_CHARS[e &gt;&gt; <span class="number">28</span> &amp; <span class="number">15</span>] + HEX_CHARS[e &gt;&gt; <span class="number">24</span> &amp; <span class="number">15</span>] + HEX_CHARS[s &gt;&gt; <span class="number">4</span> &amp; <span class="number">15</span>] + HEX_CHARS[<span class="number">15</span> &amp; s] + HEX_CHARS[s &gt;&gt; <span class="number">12</span> &amp; <span class="number">15</span>] + HEX_CHARS[s &gt;&gt; <span class="number">8</span> &amp; <span class="number">15</span>] + HEX_CHARS[s &gt;&gt; <span class="number">20</span> &amp; <span class="number">15</span>] + HEX_CHARS[s &gt;&gt; <span class="number">16</span> &amp; <span class="number">15</span>] + HEX_CHARS[s &gt;&gt; <span class="number">28</span> &amp; <span class="number">15</span>] + HEX_CHARS[s &gt;&gt; <span class="number">24</span> &amp; <span class="number">15</span>]</span><br><span class="line">    &#125;, Md5.prototype.toString = Md5.prototype.hex, Md5.prototype.digest = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.finalize();</span><br><span class="line">        <span class="keyword">var</span> t = <span class="keyword">this</span>.h0, r = <span class="keyword">this</span>.h1, e = <span class="keyword">this</span>.h2, s = <span class="keyword">this</span>.h3;</span><br><span class="line">        <span class="keyword">return</span> [<span class="number">255</span> &amp; t, t &gt;&gt; <span class="number">8</span> &amp; <span class="number">255</span>, t &gt;&gt; <span class="number">16</span> &amp; <span class="number">255</span>, t &gt;&gt; <span class="number">24</span> &amp; <span class="number">255</span>, <span class="number">255</span> &amp; r, r &gt;&gt; <span class="number">8</span> &amp; <span class="number">255</span>, r &gt;&gt; <span class="number">16</span> &amp; <span class="number">255</span>, r &gt;&gt; <span class="number">24</span> &amp; <span class="number">255</span>, <span class="number">255</span> &amp; e, e &gt;&gt; <span class="number">8</span> &amp; <span class="number">255</span>, e &gt;&gt; <span class="number">16</span> &amp; <span class="number">255</span>, e &gt;&gt; <span class="number">24</span> &amp; <span class="number">255</span>, <span class="number">255</span> &amp; s, s &gt;&gt; <span class="number">8</span> &amp; <span class="number">255</span>, s &gt;&gt; <span class="number">16</span> &amp; <span class="number">255</span>, s &gt;&gt; <span class="number">24</span> &amp; <span class="number">255</span>]</span><br><span class="line">    &#125;, Md5.prototype.array = Md5.prototype.digest, Md5.prototype.arrayBuffer = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.finalize();</span><br><span class="line">        <span class="keyword">var</span> t = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">16</span>), r = <span class="keyword">new</span> <span class="built_in">Uint32Array</span>(t);</span><br><span class="line">        <span class="keyword">return</span> r[<span class="number">0</span>] = <span class="keyword">this</span>.h0, r[<span class="number">1</span>] = <span class="keyword">this</span>.h1, r[<span class="number">2</span>] = <span class="keyword">this</span>.h2, r[<span class="number">3</span>] = <span class="keyword">this</span>.h3, t</span><br><span class="line">    &#125;, Md5.prototype.buffer = Md5.prototype.arrayBuffer, Md5.prototype.base64 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> t, r, e, s = <span class="string">""</span>, i = <span class="keyword">this</span>.array(), o = <span class="number">0</span>; <span class="number">15</span> &gt; o;) t = i[o++], r = i[o++], e = i[o++], s += BASE64_ENCODE_CHAR[t &gt;&gt;&gt; <span class="number">2</span>] + BASE64_ENCODE_CHAR[<span class="number">63</span> &amp; (t &lt;&lt; <span class="number">4</span> | r &gt;&gt;&gt; <span class="number">4</span>)] + BASE64_ENCODE_CHAR[<span class="number">63</span> &amp; (r &lt;&lt; <span class="number">2</span> | e &gt;&gt;&gt; <span class="number">6</span>)] + BASE64_ENCODE_CHAR[<span class="number">63</span> &amp; e];</span><br><span class="line">        <span class="keyword">return</span> t = i[o], s += BASE64_ENCODE_CHAR[t &gt;&gt;&gt; <span class="number">2</span>] + BASE64_ENCODE_CHAR[t &lt;&lt; <span class="number">4</span> &amp; <span class="number">63</span>] + <span class="string">"=="</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> exports = createMethod();</span><br><span class="line">    COMMON_JS ? <span class="built_in">module</span>.exports = exports : (root.md5 = exports, AMD &amp;&amp; define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> exports</span><br><span class="line">    &#125;))</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
-<h1 id="5-MD5-Utils加密"><a href="#5-MD5-Utils加密" class="headerlink" title="5 MD5 Utils加密"></a>5 MD5 Utils加密</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将查询出来的数据变成miaoshaUser</span></span><br><span class="line">       MiaoshaUser miaoshaUser = getById(Long.parseLong(form_mobile));</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (miaoshaUser == <span class="keyword">null</span>) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> GlobalException(CodeMsg.MOBILE_NOT_EXIST);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//如果用户存在</span></span><br><span class="line">       <span class="comment">//1 验证密码</span></span><br><span class="line">       <span class="comment">//数据库里面的密码  dbPassword   b7797cce01b4b131b433b6acf4add 449</span></span><br><span class="line">       String dbPassword = miaoshaUser.getPassword();<span class="comment">//Md5Utils.inputPassToDbPass()=dbPass</span></span><br><span class="line">       <span class="comment">//数据库里面的盐值</span></span><br><span class="line">       String dbSalt = miaoshaUser.getSalt();</span><br><span class="line">       <span class="comment">//经过计算得到的密码 原密码 123456 calcpass= d3b1294a61a07da9b49b6e22b2cbd7 f9</span></span><br><span class="line">       String calcPass = MD5Util.fromPassToDBPass(form_Password, dbSalt);</span><br><span class="line">        <span class="comment">//==inputPassToDbPass=calcPass</span></span><br><span class="line">       <span class="keyword">if</span> (!calcPass.equals(dbPassword)) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> GlobalException(CodeMsg.PASSWORED_ERROR);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//验证密码</span></span><br><span class="line"><span class="comment">//数据库里面的密码  bPassword</span></span><br><span class="line">String dbPassword = miaoshaUser.getPassword();</span><br><span class="line"><span class="comment">//数据库里面的盐值</span></span><br><span class="line">String dbSalt = miaoshaUser.getSalt();</span><br><span class="line">String calcPass = MD5Util.fromPassToDBPass(form_Password, dbSalt);</span><br><span class="line"><span class="comment">//d3b1294a61a07da9b49b6e22b2cbd7f9</span></span><br><span class="line">System.err.println(<span class="string">"============"</span>);</span><br><span class="line">System.err.println(form_mobile + <span class="string">"form_mobile  ajax  md5加密的密码"</span>);</span><br><span class="line">System.err.println(dbPassword + <span class="string">"dbPassword数据库里面的密码"</span>);</span><br><span class="line">System.err.println(calcPass + <span class="string">"calcPass经过计算的密码 fromPassToDBPass(form_Password, dbSalt)"</span>);</span><br><span class="line">System.err.println(<span class="string">"inputPassToFormPass="</span> + <span class="string">"d3b1294a61a07da9b49b6e22b2cbd7f9"</span>);</span><br><span class="line">System.err.println(<span class="string">"fromPassToDBPass="</span> + <span class="string">"d3b1294a61a07da9b49b6e22b2cbd7f9"</span>);</span><br><span class="line">System.err.println(<span class="string">"inputPassToDbPass="</span> + <span class="string">"b7797cce01b4b131b433b6acf4add449"</span>);</span><br><span class="line">System.err.println(<span class="string">"============"</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023855.jpg" alt="image-20190203101433598"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023857.jpg" alt="image-20190203102816120"></p>
-<ul>
-<li>inputPassToFormPass(String input). Md5Utils===md5(str). Ajax</li>
-<li>inputPassToDbPass(String input ,String saltDb) =====Md5Utils.fomPassDBPass(form_password),dbSalt);</li>
-<li>两次MD5封装 其本质是一样的。</li>
-</ul>
-<h1 id="6-JSR-303-校验"><a href="#6-JSR-303-校验" class="headerlink" title="6  JSR 303 校验"></a>6  JSR 303 校验</h1><h4 id="1dependency"><a href="#1dependency" class="headerlink" title="1dependency"></a>1dependency</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-validation<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-Valid"><a href="#2-Valid" class="headerlink" title="2 .@Valid"></a>2 .@Valid</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/do_login"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Result <span class="title">doLogin</span><span class="params">(@Valid LoginVo loginVo)</span> </span>&#123;</span><br><span class="line">    logger.info(loginVo.toString());</span><br><span class="line">    miaoShaoUserService.login(loginVo);</span><br><span class="line">    <span class="keyword">return</span> Result.success(<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-POJO"><a href="#3-POJO" class="headerlink" title="3 POJO"></a>3 POJO</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginVo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotNull</span></span><br><span class="line">    <span class="comment">//自定义validator</span></span><br><span class="line">    <span class="meta">@IsMobile</span></span><br><span class="line">    <span class="keyword">private</span> String mobile;</span><br><span class="line">    <span class="meta">@NotNull</span></span><br><span class="line">    <span class="meta">@Length</span>(min = <span class="number">32</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="4-自定义的-IsMobile"><a href="#4-自定义的-IsMobile" class="headerlink" title="4 自定义的     @IsMobile"></a>4 自定义的     @IsMobile</h4><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023859.jpg" alt="image-20190203103632449"></p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.validate;</span><br><span class="line"><span class="keyword">import</span> javax.validation.Constraint;</span><br><span class="line"><span class="keyword">import</span> javax.validation.Payload;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Documented;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Repeatable;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.annotation.ElementType.*;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.annotation.ElementType.TYPE_USE;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.annotation.RetentionPolicy.RUNTIME;</span><br><span class="line"><span class="meta">@Target</span>(&#123;METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Constraint</span>(validatedBy = &#123;IsMobileValidator.class&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> IsMobile &#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">required</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">true</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">message</span><span class="params">()</span> <span class="keyword">default</span> "手机号不正确~~  -,- ~~~~"</span>;</span><br><span class="line">    Class&lt;?&gt;[] groups() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line">    Class&lt;? extends Payload&gt;[] payload() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.validate;</span><br><span class="line"><span class="keyword">import</span> javax.validation.ConstraintValidator;</span><br><span class="line"><span class="keyword">import</span> javax.validation.ConstraintValidatorContext;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"><span class="comment">//手机号码的validator校验</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IsMobileValidator</span> <span class="keyword">implements</span> <span class="title">ConstraintValidator</span>&lt;<span class="title">IsMobile</span>, <span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> required;</span><br><span class="line">    <span class="comment">// 重写initialize方法获取注解实例</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initialize</span><span class="params">(IsMobile ca)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 重注解实例中获信息</span></span><br><span class="line">        required = ca.required();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String value, ConstraintValidatorContext context)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// value就是要校验的数据了</span></span><br><span class="line">        <span class="keyword">if</span> (value != <span class="keyword">null</span> &amp;&amp; required) &#123;</span><br><span class="line">            <span class="comment">// 手机号校验规则</span></span><br><span class="line">            System.out.println(value);</span><br><span class="line">            String regexp = <span class="string">"^(((\\+\\d&#123;2&#125;-)?0\\d&#123;2,3&#125;-\\d&#123;7,8&#125;)|((\\+\\d&#123;2&#125;-)?(\\d&#123;2,3&#125;-)?([1][3,4,5,7,8][0-9]\\d&#123;8&#125;)))$"</span>;</span><br><span class="line">            <span class="keyword">boolean</span> matches = Pattern.matches(regexp, value);</span><br><span class="line">            System.out.println(matches);</span><br><span class="line">            <span class="keyword">return</span> matches;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023900.jpg" alt="image-20190203103753898"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-23904.jpg" alt="image-20190203103810510"></p>
-<hr>
-<h1 id="7统一异常处理"><a href="#7统一异常处理" class="headerlink" title="7统一异常处理"></a>7统一异常处理</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023907.jpg" alt="image-20190203104404035"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.Exception;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.miaosha.result.CodeMsg;</span><br><span class="line"><span class="keyword">import</span> com.imooc.miaosha.result.Result;</span><br><span class="line"><span class="keyword">import</span> org.springframework.validation.BindException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.validation.ObjectError;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ControllerAdvice;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义全局异常处理器 Advice</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="meta">@ResponseBody</span><span class="comment">//返回JSON数据</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobleExceptionHandler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(value = Exception.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Result&lt;String&gt; <span class="title">exceptionHandler</span><span class="params">(HttpServletRequest httpServletRequest, Exception e)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (e <span class="keyword">instanceof</span> BindException) &#123;</span><br><span class="line">            BindException ex = (BindException) e;</span><br><span class="line">           </span><br><span class="line">            List&lt;ObjectError&gt; allErrors = ex.getAllErrors();</span><br><span class="line">           </span><br><span class="line">            ObjectError objectError = allErrors.get(<span class="number">0</span>);</span><br><span class="line">           </span><br><span class="line">            String defaultMessage = objectError.getDefaultMessage();</span><br><span class="line">           </span><br><span class="line">            <span class="keyword">return</span> Result.error(CodeMsg.BINDD_ERROR.fillArgs(defaultMessage));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Result.error(CodeMsg.SERVER_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeMsg</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> code;</span><br><span class="line">   <span class="keyword">private</span> String msg;</span><br><span class="line">   <span class="comment">//通用异常</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> CodeMsg BINDD_ERROR = <span class="keyword">new</span> CodeMsg(<span class="number">50008</span>, <span class="string">"参数绑定异常 :%s"</span>);</span><br><span class="line">  <span class="comment">//⭐️ 不懂 不理解 查文档</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> CodeMsg <span class="title">fillArgs</span><span class="params">(Object... args)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> code = <span class="keyword">this</span>.code;</span><br><span class="line">       String message = String.format(<span class="keyword">this</span>.msg, args);</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> CodeMsg(code, message);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023909.jpg" alt="image-20190203111119493"></p>
-<h2 id="思考🤔-参数绑定异常：手机号码不正确–-–，—-哪来的"><a href="#思考🤔-参数绑定异常：手机号码不正确–-–，—-哪来的" class="headerlink" title="思考🤔 参数绑定异常：手机号码不正确– –，—              哪来的"></a>思考🤔 参数绑定异常：手机号码不正确– –，—              哪来的</h2><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023911.jpg" alt="image-20190203111341776"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023933.jpg" alt="image-20190203111444363"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023943.jpg" alt="image-20190203111547120"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023955.jpg" alt="image-20190203113041569"></p>
-<h2 id="Ajax-data的理解。-五角星⭐️"><a href="#Ajax-data的理解。-五角星⭐️" class="headerlink" title="Ajax data的理解。 五角星⭐️"></a>Ajax data的理解。 五角星⭐️</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">"/login/do_login"</span>,</span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        mobile: $(<span class="string">"#mobile"</span>).val(),</span><br><span class="line">        password: password</span><br><span class="line">    &#125;,</span><br><span class="line">    success: function (data) &#123;</span><br><span class="line">        layer.closeAll();</span><br><span class="line">        <span class="keyword">if</span> (data.code === <span class="number">0</span>) &#123;</span><br><span class="line">            layer.msg(<span class="string">"成功 加油Boy"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            layer.msg(data.msg);</span><br><span class="line">            layer.msg(data.data);</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(data);</span><br><span class="line">    &#125;,</span><br><span class="line">    error: function () &#123;</span><br><span class="line">        layer.closeAll();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023957.jpg" alt="image-20190203115740299"></p>
-<h3 id="这里面传入的-data-code-data-msg-data-data-应该就是注解-ResponseBody返回的JSON数"><a href="#这里面传入的-data-code-data-msg-data-data-应该就是注解-ResponseBody返回的JSON数" class="headerlink" title="这里面传入的 data.code data.msg data.data 应该就是注解@ResponseBody返回的JSON数"></a>这里面传入的 data.code data.msg data.data 应该就是注解@ResponseBody返回的JSON数</h3><h3 id="就是Conlse下Object的值-或者是全局异常-和统一异常返回响应的结果。-Return-语句返回的值"><a href="#就是Conlse下Object的值-或者是全局异常-和统一异常返回响应的结果。-Return-语句返回的值" class="headerlink" title="就是Conlse下Object的值 或者是全局异常 和统一异常返回响应的结果。 Return 语句返回的值"></a>就是Conlse下Object的值 或者是全局异常 和统一异常返回响应的结果。 Return 语句返回的值</h3><p>data.data的值不存在。 会报错。 layer.js:2 Uncaught TypeError: Cannot read property ‘parents’ of null </p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023959.jpg" alt="image-20190203132304123"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024000.jpg" alt="image-20190203120017487"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">ControllerAdvice用法解析</span><br><span class="line">简介</span><br><span class="line">　　通过<span class="meta">@ControllerAdvice</span>注解可以将对于控制器的全局配置放在同一个位置。</span><br><span class="line">　　注解了<span class="meta">@Controller</span>的类的方法可以使用<span class="meta">@ExceptionHandler</span>、<span class="meta">@InitBinder</span>、<span class="meta">@ModelAttribute</span>注解到方法上。</span><br><span class="line">　　<span class="meta">@ControllerAdvice</span>注解将作用在所有注解了<span class="meta">@RequestMapping</span>的控制器的方法上</span><br><span class="line">　　<span class="meta">@ExceptionHandler</span>：用于全局处理控制器里的异常。</span><br><span class="line"></span><br><span class="line">用法</span><br><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BusinessExceptionHandler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(value = Exception.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> JsonBackData <span class="title">exceptionHandler</span><span class="params">(HttpServletRequest request, Exception e)</span> </span>&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        JsonBackData back = <span class="keyword">new</span> JsonBackData();</span><br><span class="line">        <span class="keyword">if</span> (e <span class="keyword">instanceof</span> BusinessException) &#123;</span><br><span class="line">            BusinessException ex = (BusinessException) e;</span><br><span class="line">            back.setSuccess(<span class="keyword">false</span>);</span><br><span class="line">            back.setBackMsg(ex.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> back;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="8-全局异常处理"><a href="#8-全局异常处理" class="headerlink" title="8.全局异常处理"></a>8.全局异常处理</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">login</span><span class="params">(LoginVo loginVo)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (loginVo == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> GlobalException(CodeMsg.SERVER_ERROR);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.miaosha.Exception;</span><br><span class="line"><span class="keyword">import</span> com.imooc.miaosha.result.CodeMsg;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> CodeMsg cm;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GlobalException</span><span class="params">(CodeMsg cm)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(cm.toString());</span><br><span class="line">        <span class="keyword">this</span>.cm = cm;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CodeMsg <span class="title">getCm</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cm;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCm</span><span class="params">(CodeMsg cm)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cm = cm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobleExceptionHandler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(value = Exception.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Result&lt;String&gt; <span class="title">exceptionHandler</span><span class="params">(HttpServletRequest httpServletRequest, Exception e)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (e <span class="keyword">instanceof</span> GlobalException) &#123;</span><br><span class="line">            GlobalException ex = (GlobalException) e;</span><br><span class="line">            <span class="keyword">return</span> Result.error(ex.getCm());</span><br><span class="line">        &#125; </span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024002.jpg" alt="image-20190203114836279"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-024014.jpg" alt="image-20190203114852239"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fzt3ca7mbsj30nl04n0u8.jpg" alt="image-20190203114913217"></p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/开发遇到的问题/项目问题总结/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/01/开发遇到的问题/项目问题总结/" itemprop="url">项目开发常见问题总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-01T11:32:04+08:00">
-                2019-02-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/01/开发遇到的问题/项目问题总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/01/开发遇到的问题/项目问题总结/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-ResponseBody"><a href="#1-ResponseBody" class="headerlink" title="1. @ResponseBody"></a>1. @ResponseBody</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022955.jpg" alt="屏幕快照 2019-02-01 上午11.25.22"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22958.jpg" alt="image-20190201113400805"></p>
-<hr>
-<ol start="2">
-<li>在你的controller层对应的方法返回html路径及名称时，在前面多加了一个/ 。</li>
-</ol>
-<p>例如return “/index”，正式这个/导致报错的，解决：去掉返回前面的/即可，例如return “/index” 。</p>
-<ol start="3">
-<li>在使用springboot的过程中，如果使用thymeleaf作为模板文件，则要求HTML格式必须为严格的html5格式，必须有结束标签，否则会报错。</li>
-</ol>
-<p>解决办法如下：</p>
-<p>在application.yml中添加以下配置</p>
-<p>spring.thymeleaf.content-type: text/html<br>spring.thymeleaf.cache: false<br>spring.thymeleaf.mode: LEGACYHTML5</p>
-<p>再在pom.xml 添加以下依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt; </span><br><span class="line">&lt;groupId&gt;net.sourceforge.nekohtml&lt;/groupId&gt; </span><br><span class="line">&lt;artifactId&gt;nekohtml&lt;/artifactId&gt; </span><br><span class="line">&lt;version&gt;1.9.22&lt;/version&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>资源文件的路径被修改，如果你其他的请求都正常返回则可忽略这条。</li>
-</ol>
-<p>解决：在pom.xml文件的<build></build>中加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;resource&gt;</span><br><span class="line"> &lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">&lt;/resource&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="添加-ResponseBody注解-然后返回JSON格式。后端是无法查看的-要通过前端Google检查元素查看？"><a href="#添加-ResponseBody注解-然后返回JSON格式。后端是无法查看的-要通过前端Google检查元素查看？" class="headerlink" title="添加@ResponseBody注解 然后返回JSON格式。后端是无法查看的 要通过前端Google检查元素查看？"></a>添加@ResponseBody注解 然后返回JSON格式。后端是无法查看的 要通过前端Google检查元素查看？</h2><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022959.jpg" alt="image-20190201113602438"></p>
-<hr>
-<h3 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h3><h1 id="2-Redis-远程服务器-liux-腾讯云"><a href="#2-Redis-远程服务器-liux-腾讯云" class="headerlink" title="2 Redis 远程服务器 liux 腾讯云"></a>2 Redis 远程服务器 liux 腾讯云</h1><blockquote>
-<p> <a href="https://www.cnblogs.com/KKSJS/p/9622815.html" target="_blank" rel="noopener">https://www.cnblogs.com/KKSJS/p/9622815.html</a></p>
-</blockquote>
-<h1 id="阿里云部署Redis服务器远程连接问题"><a href="#阿里云部署Redis服务器远程连接问题" class="headerlink" title="阿里云部署Redis服务器远程连接问题"></a><a href="https://www.cnblogs.com/KKSJS/p/9622815.html" target="_blank" rel="noopener">阿里云部署Redis服务器远程连接问题</a></h1><p>昨天在阿里云免费领了一个月的云服务器，就着最近学的SpringBoot，准备做一个SpringBoot与Redis的整合。</p>
-<p>因为以前用的Redis都是安装在本地的，使用过程中没遇到什么大问题，可是一旦部署到真实的云服务器上就出现了一大堆问题，且听我慢慢道来。</p>
-<p>在安装Redis前，云服务器实例是完全纯净的。首先执行下面的命令下载并安装redis：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//下载</span><br><span class="line">wget http://download.redis.io/releases/redis-4.0.9.tar.gz</span><br><span class="line">//解压</span><br><span class="line">tar xzf redis-4.0.9.tar.gz</span><br><span class="line">//进入解压后的目录</span><br><span class="line">cd redis-4.0.9</span><br><span class="line">//安装到当前目录</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<p>如果make失败，一般是系统中还未安装gcc造成的，因为Redis是用C语言写成的，所以需要先通过<code>yum install gcc</code>安装C语言环境。</p>
-<p>安装Redis后，先别慌着启动，因为Redis对远程连接要求比较苛刻，具体到以下几点：</p>
-<p>Redis服务默认只让本机访问，因为现在Redis是在人家阿里云的服务器上，所以需要修改成让外网也能访问。主要是修改Redis的默认配置文件reidis.conf。</p>
-<ul>
-<li>注释掉bind 127.0.0.1这一行，这样可以使所有的ip访问redis</li>
-<li>修改 protected-mode，值改为no，生产环境下要改为yes</li>
-<li>为了Redis的安全，需要把#requirepass foobared去掉注释，foobared改为自己的密码，例如可以改为requirepass 123456</li>
-</ul>
-<p>经过以上几步后，理论上就可以通过外网访问到云服务器上的Redis了。如果现在去启动Redis的服务端，会发现Redis只能是前台启动，在这里可以通过修改redis.conf里的daemonize为yes让redis开启后台启动。</p>
-<p>因为redis采用的是单进程多线程的模式。当redis.conf中选项daemonize设置成yes时，代表开启守护进程模式。在该模式下，redis会在后台运行，并将进程pid号写入至redis.conf选项pidfile设置的文件中，此时redis将一直运行，除非手动kill该进程。</p>
-<p>在修改完配置文件后，我们进入redis-4.0.9的scr目录，执行以下命令启动Redis的服务端：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./redis-server ../redis.conf</span><br></pre></td></tr></table></figure>
-<p>这样Redis就在云服务器上以后台的方式启动了，接下来我在本地快速搭建了一个SpringBoot整合Redis的案例。在application.properties添加如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#设置redis主机ip</span><br><span class="line">spring.redis.host= #你的云服务器IP地址</span><br><span class="line">#连接redis服务的密码</span><br><span class="line">spring.redis.password= #刚刚在redis.conf中设置的密码</span><br></pre></td></tr></table></figure>
-<p>添加controller如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class TestRedis &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private StringRedisTemplate strTplRedis;</span><br><span class="line">    @GetMapping(&quot;/testredis&quot;)</span><br><span class="line">    public String testRedis()&#123;</span><br><span class="line">        strTplRedis.opsForValue().set(&quot;testkey&quot;, &quot;testvalue&quot;);</span><br><span class="line">        strTplRedis.opsForValue().get(&quot;testkey&quot;);</span><br><span class="line">        return &quot;success&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此时我们启动项目后，访问localhost:8080/testredis，出现如下错误：<br><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023001.png" alt="这里写图片描述"></p>
-<p>这里问题就来了，显示无法连接到Redis，此时配置文件里面该改到的都已经改了，后来我又想到应该是防火墙的问题，因为redis的端口是<code>6379</code>，服务器默认是不开启这个端口的，所以我执行下面命令关闭了防火墙：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service iptables stop</span><br></pre></td></tr></table></figure>
-<p>重新访问url，发现还是报同样的错……</p>
-<p>于是去请教大神，经过大神的一顿排查，最后告诉我应该是我服务器的安全组规则的问题。</p>
-<p>原来，新建的阿里云服务器实例，是默认不让外网访问的，一个实例属于一个安全组，这个安全组里一开始有阿里云为我们定义的规则，默认是不开放任何tcp端口的，具体的可以查看官方的介绍：<a href="https://help.aliyun.com/document_detail/25471.html" target="_blank" rel="noopener">添加安全组规则</a>。</p>
-<p>在修改好安全组规则后，再访问页面url，页面显示success，这下总算是将数据存进去了，使用Redis的桌面客户端也能远程连接到Redis，显示Redis里面的数据如下：<br><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023003.png" alt="这里写图片描述"></p>
-<p>回头看来，远程连接Redis的坑基本上是被我踩完了……</p>
-<hr>
-<p><img src="../../../../Users/apple/Library/Application%20Support/typora-user-images/image-20190205173607771.png" alt="image-20190205173607771"></p>
-<hr>
-<h1 id="3-加入maven依赖-CodeC-MessageToByteEncoder"><a href="#3-加入maven依赖-CodeC-MessageToByteEncoder" class="headerlink" title="3  加入maven依赖 CodeC/MessageToByteEncoder"></a>3  加入maven依赖 CodeC/MessageToByteEncoder</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023004.jpg" alt="屏幕快照 2019-02-05 下午4.06.15"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1841,7 +1740,7 @@ b.mothod1();
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">134</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1863,7 +1762,7 @@ b.mothod1();
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
