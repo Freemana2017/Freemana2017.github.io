@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="SpringBoot,">
 
 
 
@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="1、零基础快速入门SpringBoot2.0 (5节课)1、SpringBoot2.x课程全套介绍和高手系列知识点​    简介：介绍SpringBoot2.x课程大纲章节​        java基础，jdk环境，maven基础 2、SpringBoot2.x依赖环境和版本新特性说明简介：讲解新版本依赖环境和springboot2新特性概述 1、依赖版本jdk8以上, Springboot2.x">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot小D课堂">
 <meta property="og:url" content="http://yoursite.com/2018/12/22/Spring Boot/SpringBoot小D课堂/index.html">
@@ -87,7 +88,7 @@
 <meta property="og:description" content="1、零基础快速入门SpringBoot2.0 (5节课)1、SpringBoot2.x课程全套介绍和高手系列知识点​    简介：介绍SpringBoot2.x课程大纲章节​        java基础，jdk环境，maven基础 2、SpringBoot2.x依赖环境和版本新特性说明简介：讲解新版本依赖环境和springboot2新特性概述 1、依赖版本jdk8以上, Springboot2.x">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-021724.jpg">
-<meta property="og:updated_time" content="2019-04-29T03:08:27.705Z">
+<meta property="og:updated_time" content="2019-06-19T13:12:49.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot小D课堂">
 <meta name="twitter:description" content="1、零基础快速入门SpringBoot2.0 (5节课)1、SpringBoot2.x课程全套介绍和高手系列知识点​    简介：介绍SpringBoot2.x课程大纲章节​        java基础，jdk环境，maven基础 2、SpringBoot2.x依赖环境和版本新特性说明简介：讲解新版本依赖环境和springboot2新特性概述 1、依赖版本jdk8以上, Springboot2.x">
@@ -313,6 +314,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringBoot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1068,16 +1091,8 @@ https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-s
     Logger：日志记录器
     Appender：指定日志输出的目的地，目的地可以是控制台，文件
     Layout：日志布局 格式化日志信息的输出
-</code></pre><p>​<br>​    4、日志级别：DEBUG &lt; INFO &lt; WARN &lt; ERROR<br>​<br>​        ===========log4j示例===========<br>​         ### 设置###<br>​        log4j.rootLogger = debug,stdout,D,E<br>​<br>​        ### 输出信息到控制抬 ###<br>​        log4j.appender.stdout = org.apache.log4j.ConsoleAppender<br>​        log4j.appender.stdout.Target = System.out<br>​        log4j.appender.stdout.layout = org.apache.log4j.PatternLayout<br>​        log4j.appender.stdout.layout.ConversionPattern = [%-5p] %d{yyyy-MM-dd HH:mm:ss,SSS} method:%l%n%m%n<br>​    </p>
-<pre><code>    ### 输出DEBUG 级别以上的日志到=D://logs/error.log ###
-    log4j.appender.D = org.apache.log4j.DailyRollingFileAppender
-    log4j.appender.D.File = D://logs/log.log
-    log4j.appender.D.Append = true
-    log4j.appender.D.Threshold = DEBUG 
-    log4j.appender.D.layout = org.apache.log4j.PatternLayout
-    log4j.appender.D.layout.ConversionPattern = %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] - [ %p ]  %m%n
-
-    ### 输出ERROR 级别以上的日志到=D://logs/error.log ###
+</code></pre><p>​<br>​    4、日志级别：DEBUG &lt; INFO &lt; WARN &lt; ERROR<br>​<br>​        ===========log4j示例===========<br>​         ### 设置###<br>​        log4j.rootLogger = debug,stdout,D,E<br>​<br>​        ### 输出信息到控制抬 ###<br>​        log4j.appender.stdout = org.apache.log4j.ConsoleAppender<br>​        log4j.appender.stdout.Target = System.out<br>​        log4j.appender.stdout.layout = org.apache.log4j.PatternLayout<br>​        log4j.appender.stdout.layout.ConversionPattern = [%-5p] %d{yyyy-MM-dd HH:mm:ss,SSS} method:%l%n%m%n<br>​<br>​        ### 输出DEBUG 级别以上的日志到=D://logs/error.log ###<br>​        log4j.appender.D = org.apache.log4j.DailyRollingFileAppender<br>​        log4j.appender.D.File = D://logs/log.log<br>​        log4j.appender.D.Append = true<br>​        log4j.appender.D.Threshold = DEBUG<br>​        log4j.appender.D.layout = org.apache.log4j.PatternLayout<br>​        log4j.appender.D.layout.ConversionPattern = %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] - [ %p ]  %m%n<br>​    </p>
+<pre><code>    ### 输出ERROR 级别以上的日志到=D://logs/error.log ###
     log4j.appender.E = org.apache.log4j.DailyRollingFileAppender
     log4j.appender.E.File =E://logs/error.log 
     log4j.appender.E.Append = true
@@ -1371,10 +1386,8 @@ https://docs.spring.io/spring-data/elasticsearch/docs/3.0.6.RELEASE/reference/ht
     private String namesrvAddr;
 
     private  DefaultMQProducer producer ;
-</code></pre><p>​<br>​        public DefaultMQProducer getProducer(){<br>​            return this.producer;<br>​        }<br>​<br>​        @PostConstruct<br>​        public void defaultMQProducer() {<br>​            //生产者的组名<br>​            producer = new DefaultMQProducer(producerGroup);<br>​            //指定NameServer地址，多个地址以 ; 隔开<br>​            //如 producer.setNamesrvAddr(“192.168.100.141:9876;192.168.100.142:9876;192.168.100.149:9876”);<br>​            producer.setNamesrvAddr(namesrvAddr);<br>​            producer.setVipChannelEnabled(false);<br>​<br>​            try {<br>​                /*<em><br>​                 </em> Producer对象在使用之前必须要调用start初始化，只能初始化一次<br>​                 */<br>​                producer.start();<br>​<br>            } catch (Exception e) {<br>                e.printStackTrace();<br>            } </p>
-<pre><code>    // producer.shutdown();  一般在应用上下文，关闭的时候进行关闭，用上下文监听器
-
-}
+</code></pre><p>​<br>​        public DefaultMQProducer getProducer(){<br>​            return this.producer;<br>​        }<br>​<br>​        @PostConstruct<br>​        public void defaultMQProducer() {<br>​            //生产者的组名<br>​            producer = new DefaultMQProducer(producerGroup);<br>​            //指定NameServer地址，多个地址以 ; 隔开<br>​            //如 producer.setNamesrvAddr(“192.168.100.141:9876;192.168.100.142:9876;192.168.100.149:9876”);<br>​            producer.setNamesrvAddr(namesrvAddr);<br>​            producer.setVipChannelEnabled(false);<br>​<br>​            try {<br>​                /*<em><br>​                 </em> Producer对象在使用之前必须要调用start初始化，只能初始化一次<br>​                 */<br>​                producer.start();<br>​<br>​            } catch (Exception e) {<br>​                e.printStackTrace();<br>​            }<br>​<br>            // producer.shutdown();  一般在应用上下文，关闭的时候进行关闭，用上下文监听器</p>
+<pre><code>}
 </code></pre><p>9、Springboot2.x整合RocketMQ4.x实战下集<br>​    简介：Springboot2.x整合RocketMQ4.x实战，开发消费者代码，常见问题处理</p>
 <pre><code>1、创建消费者
 
@@ -1626,6 +1639,12 @@ export JAVA_HOME PATH CLASSPATH
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+          
+        </div>
+      
 
       
       
@@ -1747,7 +1766,7 @@ export JAVA_HOME PATH CLASSPATH
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
