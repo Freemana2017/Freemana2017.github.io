@@ -89,8 +89,8 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023621.jpg">
 <meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023622.jpg">
-<meta property="og:image" content="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023623.jpg">
-<meta property="og:updated_time" content="2019-04-29T03:08:30.163Z">
+<meta property="og:image" content="https://s1.51cto.com/images/blog/201711/23/22c2037fcdd4b0e9250f53bbe42d53ca.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:updated_time" content="2019-06-13T08:19:01.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
 <meta name="twitter:description" content="Linux SSH Mac1.下载 淘宝 用户名dongguakeji 密码dongguakeji2.mac远程访问SSH 不再sudoers文件中此事将被报告 （dongguakeji密码不能使用）–解决 使用root登陆分配权限   3.使用root登陆 远程SSH连接Linux centos7 使用root访问 关闭防火墙   11.你要改用iptables的话，需要安装iptables服务">
@@ -395,7 +395,12 @@
 <p><a href="https://blog.csdn.net/tuntun1120/article/details/65443757" target="_blank" rel="noopener">https://blog.csdn.net/tuntun1120/article/details/65443757</a> 虚拟机下CentOS7开启SSH连接</p>
 </blockquote>
 <p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023622.jpg" alt="image-20181130154156372"></p>
-<h4 id="4-切换网络模式选择-然后重新编辑"><a href="#4-切换网络模式选择-然后重新编辑" class="headerlink" title="4.切换网络模式选择 然后重新编辑"></a>4.切换网络模式选择 然后重新编辑</h4><h2 id="⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台"><a href="#⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台" class="headerlink" title="⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台"></a>⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台</h2><h2 id="然后重新编辑IP-变成下面这样"><a href="#然后重新编辑IP-变成下面这样" class="headerlink" title="然后重新编辑IP 变成下面这样"></a>然后重新编辑IP 变成下面这样</h2><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023623.jpg" alt="image-20181130154418731"></p>
+<h4 id="4-切换网络模式选择-然后重新编辑"><a href="#4-切换网络模式选择-然后重新编辑" class="headerlink" title="4.切换网络模式选择 然后重新编辑"></a>4.切换网络模式选择 然后重新编辑</h4><h2 id="⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台"><a href="#⭐️-虚拟主机–-gt-网络适配器——-gt-侨界模式—-gt-复制物理网络连接转台" class="headerlink" title="⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台"></a>⭐️ 虚拟主机–&gt;网络适配器——&gt;侨界模式—&gt;复制物理网络连接转台</h2><h2 id="然后重新编辑IP-变成下面这样"><a href="#然后重新编辑IP-变成下面这样" class="headerlink" title="然后重新编辑IP 变成下面这样"></a>然后重新编辑IP 变成下面这样</h2><p>Linux – ifconfig命令找不到对应的ip地址的解决办</p>
+<p>当发现linux ifconfig命令找不到对应的ip地址的时解决办法<br><img src="https://s1.51cto.com/images/blog/201711/23/22c2037fcdd4b0e9250f53bbe42d53ca.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt="Linux -- ifconfig命令找不到对应的ip地址的解决办法"></p>
+<p>网卡配置文件保存在：/etc/sysconfig/network-scripts/目录下， 将onboot修改为yes，然后重启网卡，才能启动，重启网卡命令：service network restart</p>
+<p>找到对应的网卡配置文件</p>
+<p>设置为启动时激活设备</p>
+<p>重启网卡image-20181130154418731](<a href="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023623.jpg" target="_blank" rel="noopener">http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023623.jpg</a>)</p>
 <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>1.先检查SSH 服务开没开</p>
 <p>2.检查22 端口的状态</p>
 <p>3.看网络互相通过ping看看是不是有64type的回应</p>
@@ -430,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/11/Docker/Docker上传云服务器/" rel="next" title="Docker上传到腾讯云服务器上">
-                <i class="fa fa-chevron-left"></i> Docker上传到腾讯云服务器上
+              <a href="/2018/11/11/Spring Boot/Spring Boot尚硅谷/" rel="next" title="SpringBoot尚硅谷 雷丰阳">
+                <i class="fa fa-chevron-left"></i> SpringBoot尚硅谷 雷丰阳
               </a>
             
           </div>
@@ -531,7 +536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">134</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -553,7 +558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
