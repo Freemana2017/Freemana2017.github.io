@@ -269,6 +269,501 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/Docker/Docker-web/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/08/Docker/Docker-web/" itemprop="url">docker-web</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T10:20:30+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/08/Docker/Docker-web/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/08/Docker/Docker-web/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p> 学习地址* <a href="https://www.imooc.com/video/14624（慕课网）-6⃣刘果国" target="_blank" rel="noopener">https://www.imooc.com/video/14624（慕课网）-6⃣刘果国</a></p>
+</blockquote>
+<p>#第一个 java web项目 （SpringBoot 项目打包成一个war包的方式）</p>
+<h3 id="一制作自己的景象"><a href="#一制作自己的景象" class="headerlink" title="一制作自己的景象"></a>一制作自己的景象</h3><ul>
+<li><p>Dockerfile</p>
+</li>
+<li><p>docker build</p>
+<hr>
+<ul>
+<li>首先需要一个war文件 拷贝在桌面上</li>
+</ul>
+<blockquote>
+<p>Docker images</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="1-建立一个Dockerfile"><a href="#1-建立一个Dockerfile" class="headerlink" title="1.建立一个Dockerfile"></a>1.建立一个Dockerfile</h5><blockquote>
+<p>vim Dockerfile</p>
+</blockquote>
+<h6 id="2-下载Tomcat镜像"><a href="#2-下载Tomcat镜像" class="headerlink" title="2. 下载Tomcat镜像"></a>2. 下载Tomcat镜像</h6><blockquote>
+<p>网易镜像中心 找Tomcat的镜像 <a href="https://c.163yun.com/hub#/m/home/" target="_blank" rel="noopener">https://c.163yun.com/hub#/m/home/</a></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22404.jpg" alt="image-20181108171728002"></p>
+</blockquote>
+<p>（包括JDK Tomcat）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull hub.c.163.com/library/tomcat:latest</span><br></pre></td></tr></table></figure>
+<p> <img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022405.jpg" alt="image-20181108172737831"></p>
+<p>站在巨人的肩上</p>
+<h5 id="3-编辑Dockerfile"><a href="#3-编辑Dockerfile" class="headerlink" title="3.编辑Dockerfile"></a>3.编辑Dockerfile</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在Mac终端中使用vim编辑文件步骤</span><br><span class="line">1.  cd   文件所在的文件夹路径  &lt;回車&gt;</span><br><span class="line">2. 輸入  vim 文件名 &lt;回車&gt;</span><br><span class="line">3. 按下 i 鍵來编辑文本文字</span><br><span class="line">4. 退出vim編輯器：</span><br><span class="line">     不保存并退出  &lt;ESC&gt;   :q!   &lt;回車&gt;</span><br><span class="line">     保存并退出     &lt;ESC&gt;   :wq   &lt;回車&gt;</span><br></pre></td></tr></table></figure>
+<p>from hub.c.163.com/library/tomcat</p>
+<p>MAINTAINER Freemana2017 <a href="mailto:1047629166@qq.com" target="_blank" rel="noopener">1047629166@qq.com</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/apple/Desktop/Dockerweb</span><br><span class="line">ls</span><br><span class="line">&gt; mv atcrodfunding3_ssm-0.0.1-SNAPSHOT.war atcrod.war</span><br><span class="line">mv atcrodfunding3_ssm-0.0.1-SNAPSHOT.war atcrod.war (用MV 重新命名一下)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>进入文件夹里面 编写Dockerfile</p>
+</li>
+<li><p>学会看镜像的说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">How to use this image.</span><br><span class="line"></span><br><span class="line">Run the default Tomcat server (CMD [\&quot;catalina.sh\&quot;, \&quot;run\&quot;]):</span><br><span class="line"></span><br><span class="line">$ docker run -it --rm tomcat:8.0</span><br><span class="line">You can test it by visiting http://container-ip:8080 in a browser or, if you need access outside the host, on port 8888:</span><br><span class="line"></span><br><span class="line">$ docker run -it --rm -p 8888:8080 tomcat:8.0</span><br><span class="line">You can then go to http://localhost:8888 or http://host-ip:8888 in a browser.</span><br><span class="line"></span><br><span class="line">The default Tomcat environment in the image for versions 7 and 8 is:</span><br><span class="line"></span><br><span class="line">⭐️CATALINA_BASE:   /usr/local/tomcat</span><br><span class="line">⭐️CATALINA_HOME:   /usr/local/tomcat</span><br><span class="line">CATALINA_TMPDIR: /usr/local/tomcat/temp</span><br><span class="line">JRE_HOME:        /usr</span><br><span class="line">CLASSPATH:       /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1。编写Dockerfile-文件–Dockerfile"><a href="#1。编写Dockerfile-文件–Dockerfile" class="headerlink" title="1。编写Dockerfile 文件–Dockerfile"></a>1。编写Dockerfile 文件–Dockerfile</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from hub.c.163.com/library/tomcat</span><br><span class="line"></span><br><span class="line">MAINTAINER Freemana2017 1047629166@qq.com</span><br><span class="line"></span><br><span class="line">COPY atcrod.war /usr/local/tomcat/webapps</span><br></pre></td></tr></table></figure>
+<h3 id="2-创建镜像-–docker-build"><a href="#2-创建镜像-–docker-build" class="headerlink" title="2.创建镜像 –docker build"></a>2.创建镜像 –docker build</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22408.jpg" alt="image-20181108174858497"></p>
+<h3 id="3-查看镜像–docker-images"><a href="#3-查看镜像–docker-images" class="headerlink" title="3.查看镜像–docker images"></a>3.查看镜像–docker images</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022408.jpg" alt="image-20181108174929561"></p>
+<h2 id="4-给镜像写名字-docker-build-t-atcrod-latest"><a href="#4-给镜像写名字-docker-build-t-atcrod-latest" class="headerlink" title="4.给镜像写名字 docker build -t atcrod:latest ."></a>4.给镜像写名字 docker build -t atcrod:latest .</h2><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022409.jpg" alt="image-20181108175158795"></p>
+<h3 id="5-再次查看镜像-docker-images"><a href="#5-再次查看镜像-docker-images" class="headerlink" title="5.再次查看镜像 docker images"></a>5.再次查看镜像 docker images</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022411.jpg" alt="image-20181108175309803"></p>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="二运行自己的容器"><a href="#二运行自己的容器" class="headerlink" title="###二运行自己的容器"></a>###二运行自己的容器</h1><h3 id="1-docker-run-d-p-8888-8080-atcrod"><a href="#1-docker-run-d-p-8888-8080-atcrod" class="headerlink" title="1.docker run -d -p 8888:8080 atcrod"></a>1.docker run -d -p 8888:8080 atcrod</h3><blockquote>
+<p>8888本机的端口号。8080Tomcat的端口号 去163.com查询 atcrod镜像的名字</p>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022413.jpg" alt="image-20181108175738036"></p>
+<h4 id="2-docker-ps"><a href="#2-docker-ps" class="headerlink" title="2.docker ps"></a>2.docker ps</h4><blockquote>
+<p>查看Tomcat的进程 检查容器是不是启动啦</p>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22416.jpg" alt="image-20181108175751244"></p>
+<h3 id="3-netstat-na-grep-8888"><a href="#3-netstat-na-grep-8888" class="headerlink" title="3.netstat -na|grep 8888"></a>3.netstat -na|grep 8888</h3><blockquote>
+<p>检查端口是不是存在了  输入localhost:8888测试Tomcat是否启动啦</p>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022418.jpg" alt="image-20181108180034419"></p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="⚠️-以上只是web项目在Docker中的部署项目"><a href="#⚠️-以上只是web项目在Docker中的部署项目" class="headerlink" title="⚠️ 以上只是web项目在Docker中的部署项目"></a>⚠️ 以上只是web项目在Docker中的部署项目</h1><h1 id="3-Docker-部署SpringBoot-web项目"><a href="#3-Docker-部署SpringBoot-web项目" class="headerlink" title="3.Docker 部署SpringBoot web项目"></a>3.Docker 部署SpringBoot web项目</h1><blockquote>
+<p>学习资源汇总</p>
+<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a></p>
+<p><a href="https://blog.csdn.net/weixin_39800144/article/details/79214978" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39800144/article/details/79214978</a></p>
+<p><a href="https://blog.csdn.net/weixin_39800144/article/details/79213276" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39800144/article/details/79213276</a></p>
+<p><a href="https://bingohuang.com/spring-boot-docker/" target="_blank" rel="noopener">https://bingohuang.com/spring-boot-docker/</a></p>
+</blockquote>
+<blockquote>
+<p>FROM java:8</p>
+<p>VOLUME /tmp</p>
+<p>COPY target/tran4spd-1.0-SNAPSHOT.jar resource.jar.   #这边放的是Docker部署的jar包的位置 绝对路径</p>
+<p>RUN bash -c “touch /resource.jar”</p>
+<p>EXPOSE 8080</p>
+<p>ENTRYPOINT [“java”,”-jar”,”resource.jar”]</p>
+<p># docker run -d -p 18080:8099 –name docker-resource leesia/resource:1.0</p>
+</blockquote>
+<p> 注意java-jar无法运行Tomcat要外置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;servlet-api&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.5&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>##文件路径不要用中文！！！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Docker/Docker-SpringBoot/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/Docker/Docker-SpringBoot/" itemprop="url">Docker SpringBoot</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T18:04:37+08:00">
+                2018-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringBoot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/07/Docker/Docker-SpringBoot/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/07/Docker/Docker-SpringBoot/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="DockerMachine应用"><a href="#DockerMachine应用" class="headerlink" title="DockerMachine应用"></a>DockerMachine应用</h2><h4 id="注意整个过程要等待一下"><a href="#注意整个过程要等待一下" class="headerlink" title="注意整个过程要等待一下"></a>注意整个过程要等待一下</h4><blockquote>
+<p>参考<a href="https://study.163.com/course/courseLearn.htm?courseId=1002892012#/learn/video?lessonId=1003309140&amp;courseId=1002892012" target="_blank" rel="noopener">https://study.163.com/course/courseLearn.htm?courseId=1002892012#/learn/video?lessonId=1003309140&amp;courseId=1002892012</a></p>
+<p>网易云课堂 动手玩Docker</p>
+</blockquote>
+<ul>
+<li>安装DockerMachine</li>
+<li>docker-machine ls    tcp://192.168.99.100:2376   name：cloudcomb</li>
+</ul>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022300.jpg" alt="image-20181107181833492"></p>
+<ul>
+<li><p>docker-machine create –driver virtualbox cloudcomb </p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022301.jpg" alt="image-20181107181903652"></p>
+</li>
+<li><p>Docker-machine env cloudcomb</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022303.jpg" alt="image-20181107182121568"></p>
+</li>
+</ul>
+<p>⚠️第四个变量eval说的是当前Dockermachine的名字是—cloudcomb</p>
+<ul>
+<li><p>eval $(docker-machine env cloudcomb) 拷贝放到底下</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022305.jpg" alt="image-20181107182325486"></p>
+</li>
+<li><p>使用网易蜂巢</p>
+</li>
+<li><p>Docker run hub.c163.com/library/busybox:latest echon hello world （unable。。这个过程要等待啊）⭐️</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022306.jpg" alt="image-20181107182746194"></p>
+</li>
+<li><p>docker-machine rm cloudcomb 删除docker-machine</p>
+</li>
+</ul>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022308.jpg" alt="image-20181107182909832"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022309.jpg" alt="image-20181107183004383"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022310.jpg" alt="image-20181107183018420"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022313.jpg" alt="image-20181107183034881"></p>
+<h1 id="SpringBoot整合Docker"><a href="#SpringBoot整合Docker" class="headerlink" title="SpringBoot整合Docker"></a>SpringBoot整合Docker</h1><blockquote>
+<p>Emmmm.等我有钱了 把Xnip去掉哈哈</p>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022315.jpg" alt="image-20181107183409783"></p>
+<ul>
+<li><p>下载源码<a href="https://github.com/bingohuang/spring-boot-docker" target="_blank" rel="noopener">https://github.com/bingohuang/spring-boot-docker</a></p>
+<blockquote>
+<p>Git 通过命令行下载文件 先cd一下指定一下下载的路径</p>
+</blockquote>
+</li>
+<li><p>导入项目到Idea 然后查看一下源码</p>
+</li>
+<li><p>运行一下项目（访问一下 测试一下）</p>
+<h2 id="Docker-SpringBoot部署项目"><a href="#Docker-SpringBoot部署项目" class="headerlink" title="Docker SpringBoot部署项目"></a>Docker SpringBoot部署项目</h2></li>
+</ul>
+<p>⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
+<h3 id="1-install项目"><a href="#1-install项目" class="headerlink" title="1.install项目"></a>1.install项目</h3><p>  <img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022316.jpg" alt="image-20181107185602118"></p>
+<blockquote>
+<p>找到这两个文件 放到桌面上</p>
+</blockquote>
+<h3 id="2-将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0-0-1-jar"><a href="#2-将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0-0-1-jar" class="headerlink" title="2.将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0.0.1.jar"></a>2.将这两个项目放到一个文件下，不知道为什么好像要把jar改名成gs-spring-boot-docker-0.0.1.jar</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022318.jpg" alt="image-20181107191351622"></p>
+<h3 id="3-cd到文件下-ls一下"><a href="#3-cd到文件下-ls一下" class="headerlink" title="3.cd到文件下 ls一下"></a>3.cd到文件下 ls一下</h3><h3 id="4-执行-˛docker-version"><a href="#4-执行-˛docker-version" class="headerlink" title="4.执行  ˛docker version"></a>4.执行  ˛docker version</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022320.jpg" alt="image-20181107191444666"></p>
+<h3 id="5-执行-docker-machine-env"><a href="#5-执行-docker-machine-env" class="headerlink" title="5.执行 docker-machine env"></a>5.执行 docker-machine env</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022322.jpg" alt="image-20181107191515590"></p>
+<h3 id="6-执行eval-docker-machine-env-（复制后面的第四条）"><a href="#6-执行eval-docker-machine-env-（复制后面的第四条）" class="headerlink" title="6.执行eval $(docker-machine env)（复制后面的第四条）"></a>6.执行eval $(docker-machine env)（复制后面的第四条）</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022325.jpg" alt="image-20181107191547911"></p>
+<p>tcp://192.168.99.100:2376192.168.99.100</p>
+<p> tcp://127.0.0.1:2376 tcp://127.0.0.1:2376</p>
+<p>###7.docker version（没有-）</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022326.jpg" alt="image-20181107191658043"></p>
+<h3 id="8-ls一下目录"><a href="#8-ls一下目录" class="headerlink" title="8.ls一下目录"></a>8.ls一下目录</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22329.jpg" alt="image-20181107191730046"></p>
+<h3 id="9-docker-build-t-cloudcomb-sun-1-0"><a href="#9-docker-build-t-cloudcomb-sun-1-0" class="headerlink" title="9.docker build -t cloudcomb/sun:1.0 ."></a>9.docker build -t cloudcomb/sun:1.0 .</h3><blockquote>
+<p> （桌面上要有jar包和dockerfilede 文件）</p>
+</blockquote>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181107191826890.png" alt="image-20181107191826890"></p>
+<blockquote>
+<p>此时报错 没有gs-spring-boot-docker.jar文件 其实ls的时候就应该是gs-spring-boot-docker.jar 这儿是个bug。</p>
+<p>解决办法 改jar包名 添加gs前缀</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docker.mirrors.ustc.edu.cn</span><br></pre></td></tr></table></figure>
+<h3 id="10。docker-build-t-cloudcomb-sun-1-0-（大佬说这一步是拉取镜像。用加速器-改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像"><a href="#10。docker-build-t-cloudcomb-sun-1-0-（大佬说这一步是拉取镜像。用加速器-改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像" class="headerlink" title="10。docker build -t cloudcomb/sun:1.0 .（大佬说这一步是拉取镜像。用加速器 改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像"></a>10。docker build -t cloudcomb/sun:1.0 .（大佬说这一步是拉取镜像。用加速器 改名后重新执行命令）我们可以用大佬网易云的Dokcer镜像</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022330.jpg" alt="image-20181107192039326"></p>
+<h3 id="11-docker-images-a"><a href="#11-docker-images-a" class="headerlink" title="11. docker images -a"></a>11. docker images -a</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022332.jpg" alt="image-20181107192154611"></p>
+<h3 id="12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0"><a href="#12-docker-run-p-1024-8080-t-cloudcomb-sun-1-0" class="headerlink" title="12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 ."></a>12.docker run -p 1024:8080 -t cloudcomb/sun:1.0 .</h3><blockquote>
+<p>注意 cloudcomb和前面的cloudcomb要一一对应</p>
+<p>1024 与8080是一一对应的关系</p>
+<p>Error: Unable to access jarfile /app.jar</p>
+<p>⭐️ ADD user-server-0.0.1-SNAPSHOT.jar app.jar 要和pom的<artifactid>user-server</artifactid></p>
+<p>保持名字一样，不然maven打出来的包，docker找不到。</p>
+<ul>
+<li>最终的结局办法 好像是将copy去掉了 注意看控制台打印的信息 兄dei</li>
+</ul>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022334.jpg" alt="image-20181107192857396"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022336.jpg" alt="image-20181107193127019"></p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022338.jpg" alt="image-20181107193051806"></p>
+<p>DockerFile：</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022340.jpg" alt="image-20181107193402453"></p>
+<blockquote>
+<p>Docker就是给一名字 gs-spring-bbot</p>
+</blockquote>
+<p>贴一个Dockerfilr。</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">FROM hub.c.163.com/xbingo/jdk8:latest</span><br><span class="line"></span><br><span class="line">from hub.c.163.com/library/tomcat</span><br><span class="line"></span><br><span class="line">MAINTAINER Freemana2017 1047629166@qq.com</span><br><span class="line"></span><br><span class="line">ADD  atcrodfunding3_ssm-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line"></span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line">COPY atcrod.war /usr/local/tomcat/webapps</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">#FROM openjdk:8-jdk-alpine</span><br><span class="line">#VOLUME /tmp</span><br><span class="line">#ADD  atcrodfunding3_ssm-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd=file:/dev/./urandom&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line">#</span><br><span class="line"> </span><br><span class="line">#FROM hub.c.163.com/xbingo/jdk8:latest</span><br><span class="line">#</span><br><span class="line">#ADD gs-spring-boot-docker-0.1.0.jar app.jar</span><br><span class="line">#</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">#这个 Dockerfile 文件很简单，构建 Jdk 基础环境，添加 Spring Boot Jar 到镜像中，简单解释一下:</span><br><span class="line">#</span><br><span class="line">#FROM ，表示使用 Jdk8 环境 为基础镜像，如果镜像不是本地的会从 DockerHub 进行下载</span><br><span class="line">#VOLUME ，VOLUME 指向了一个/tmp的目录，由于 Spring Boot 使用内置的Tomcat容器，Tomcat 默认使用/tmp作为工作目录。这个命令的效果是：</span><br><span class="line">#在宿主机的/var/lib/docker目录下创建一个临时文件并把它链接到容器中的/tmp目录</span><br><span class="line">#ADD ，拷贝文件并且重命名</span><br><span class="line">#ENTRYPOINT ，为了缩短 Tomcat 的启动时间，添加java.security.egd的系统属性指向/dev/urandom作为 ENTRYPOINT</span><br><span class="line">#这样 Spring Boot 项目添加 Docker 依赖就完成了。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p>Dockerfile 用的war要有Tomcat </p>
+<p>自己理解吧 多看一些视频笔记什么的 反正很难,,,</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022341.jpg" alt="image-20181107184402451"></p>
+<hr>
+<hr>
+<hr>
+<h1 id="以上的文件是从github上拉的-现在自己构建SpringBoot-jar的应用"><a href="#以上的文件是从github上拉的-现在自己构建SpringBoot-jar的应用" class="headerlink" title="以上的文件是从github上拉的 现在自己构建SpringBoot -jar的应用"></a>以上的文件是从github上拉的 现在自己构建SpringBoot -jar的应用</h1><blockquote>
+<p>通过群里的指导 估计jar打包和war打包区别不大吧</p>
+<p>下面通过SpringBoot构建Docker部署一下试试</p>
+<p><a href="https://waylau.com/docker-spring-boot/" target="_blank" rel="noopener">https://waylau.com/docker-spring-boot/</a></p>
+<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a></p>
+<p><a href="https://lw900925.github.io/docker/docker-springboot.html" target="_blank" rel="noopener">https://lw900925.github.io/docker/docker-springboot.html</a></p>
+<p><a href="https://www.tianmaying.com/tutorial/spring-boot-docker" target="_blank" rel="noopener">https://www.tianmaying.com/tutorial/spring-boot-docker</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://bingohuang.com/spring-boot-docker/" target="_blank" rel="noopener">https://bingohuang.com/spring-boot-docker/</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.imooc.com/search/?words=docker" target="_blank" rel="noopener">https://www.imooc.com/search/?words=docker</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://www.ityouknow.com/docker/2018/03/30/docker-machine.html" target="_blank" rel="noopener">http://www.ityouknow.com/docker/2018/03/30/docker-machine.html</a></p>
+<p><a href="https://spring.io/guides/gs/spring-boot-docker/" target="_blank" rel="noopener">https://spring.io/guides/gs/spring-boot-docker/</a></p>
+</blockquote>
+<h2 id="SpringBoot-Docker"><a href="#SpringBoot-Docker" class="headerlink" title="SpringBoot Docker"></a>SpringBoot Docker</h2><blockquote>
+<p><a href="https://lw900925.github.io/docker/docker-springboot.html" target="_blank" rel="noopener">https://lw900925.github.io/docker/docker-springboot.html</a></p>
+</blockquote>
+<p><a href="http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html</a> 主要环节</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022342.jpg" alt="image-20181110214317827"></p>
+<p><img src="/Users/apple/Library/Application Support/typora-user-images/image-20181115165826700.png" alt="image-20181115165826700"></p>
+<p>$ sudo docker tag [ImageId] ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]<br>$ sudo docker push ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]</p>
+<p>⭐️</p>
+<p> sudo docker tag 5fc4ede68fcd ccr.ccs.tencentyun.com/atcrod/latest</p>
+<p> sudo docker push ccr.ccs.tencentyun.com/atcrod/latest</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/Docker/Docker-Idea/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1449,7 +1944,7 @@
 <p>默认日期是按照/的方式；</p>
 <h3 id="7）、CRUD-员工修改"><a href="#7）、CRUD-员工修改" class="headerlink" title="7）、CRUD-员工修改"></a>7）、CRUD-员工修改</h3><p>修改添加二合一表单</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--需要区分是员工修改还是添加；--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">th:action</span>=<span class="string">"@&#123;/emp&#125;"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--发送put请求修改员工数据--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1、SpringMVC中配置HiddenHttpMethodFilter;（SpringBoot自动配置好的）</span></span><br><span class="line"><span class="comment">2、页面创建一个post表单</span></span><br><span class="line"><span class="comment">3、创建一个input项，name="_method";值就是我们指定的请求方式</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"_method"</span> <span class="attr">value</span>=<span class="string">"put"</span> <span class="attr">th:if</span>=<span class="string">"$&#123;emp!=null&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">th:if</span>=<span class="string">"$&#123;emp!=null&#125;"</span> <span class="attr">th:value</span>=<span class="string">"$&#123;emp.id&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>LastName<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"lastName"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"zhangsan"</span> <span class="attr">th:value</span>=<span class="string">"$&#123;emp!=null&#125;?$&#123;emp.lastName&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"zhangsan@atguigu.com"</span> <span class="attr">th:value</span>=<span class="string">"$&#123;emp!=null&#125;?$&#123;emp.email&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>Gender<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">th:checked</span>=<span class="string">"$&#123;emp!=null&#125;?$&#123;emp.gender==1&#125;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span>&gt;</span>男<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"0"</span> <span class="attr">th:checked</span>=<span class="string">"$&#123;emp!=null&#125;?$&#123;emp.gender==0&#125;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span>&gt;</span>女<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>department<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--提交的是部门的id--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"department.id"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">th:selected</span>=<span class="string">"$&#123;emp!=null&#125;?$&#123;dept.id == emp.department.id&#125;"</span> <span class="attr">th:value</span>=<span class="string">"$&#123;dept.id&#125;"</span> <span class="attr">th:each</span>=<span class="string">"dept:$&#123;depts&#125;"</span> <span class="attr">th:text</span>=<span class="string">"$&#123;dept.departmentName&#125;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>Birth<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"birth"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"zhangsan"</span> <span class="attr">th:value</span>=<span class="string">"$&#123;emp!=null&#125;?$&#123;#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp!=null&#125;?'修改':'添加'"</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="8）、CRUD-员工删除"><a href="#8）、CRUD-员工删除" class="headerlink" title="8）、CRUD-员工删除"></a>8）、CRUD-员工删除</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span>=<span class="string">"emp:$&#123;emps&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.id&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>[[$&#123;emp.lastName&#125;]]<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.email&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.gender&#125;==0?'女':'男'"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.department.departmentName&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-primary"</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/emp/&#125;+$&#123;emp.id&#125;"</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">th:attr</span>=<span class="string">"del_uri=@&#123;/emp/&#125;+$&#123;emp.id&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-danger deleteBtn"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    $(".deleteBtn").click(function()&#123;</span></span><br><span class="line"><span class="undefined">        //删除当前员工的</span></span><br><span class="line"><span class="undefined">        $("#deleteEmpForm").attr("action",$(this).attr("del_uri")).submit();</span></span><br><span class="line"><span class="undefined">        return false;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="8）、CRUD-员工删除"><a href="#8）、CRUD-员工删除" class="headerlink" title="8）、CRUD-员工删除"></a>8）、CRUD-员工删除</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span>=<span class="string">"emp:$&#123;emps&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.id&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>[[$&#123;emp.lastName&#125;]]<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.email&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.gender&#125;==0?'女':'男'"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;emp.department.departmentName&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-primary"</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/emp/&#125;+$&#123;emp.id&#125;"</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">th:attr</span>=<span class="string">"del_uri=@&#123;/emp/&#125;+$&#123;emp.id&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-danger deleteBtn"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    $(<span class="string">".deleteBtn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//删除当前员工的</span></span></span><br><span class="line"><span class="javascript">        $(<span class="string">"#deleteEmpForm"</span>).attr(<span class="string">"action"</span>,$(<span class="keyword">this</span>).attr(<span class="string">"del_uri"</span>)).submit();</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="7、错误处理机制"><a href="#7、错误处理机制" class="headerlink" title="7、错误处理机制"></a>7、错误处理机制</h2><h3 id="1）、SpringBoot默认的错误处理机制"><a href="#1）、SpringBoot默认的错误处理机制" class="headerlink" title="1）、SpringBoot默认的错误处理机制"></a>1）、SpringBoot默认的错误处理机制</h3><p>默认效果：</p>
 <p>​        1）、浏览器，返回一个默认的错误页面</p>
 <p><img src="images/搜狗截图20180226173408.png" alt=""></p>
@@ -1834,7 +2329,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">135</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1845,7 +2340,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1856,7 +2351,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
