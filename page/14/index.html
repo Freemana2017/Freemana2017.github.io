@@ -6,7 +6,7 @@
 
 
 <html class="theme-next mist use-motion" lang="">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -255,6 +255,218 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/开发遇到的问题/常见问题总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/09/开发遇到的问题/常见问题总结/" itemprop="url">常见问题总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T17:14:16+08:00">
+                2018-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/09/开发遇到的问题/常见问题总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/09/开发遇到的问题/常见问题总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>前端向后端传值：</p>
+<ul>
+<li><p>Button 和form</p>
+</li>
+<li><ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goUpdatePage</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"$&#123;pageContext.request.contextPath&#125;/user/editcontroller?id="</span> + id;</span><br><span class="line">&#125;      </span><br><span class="line"> &lt;button type=<span class="string">"button"</span> onclick=<span class="string">"goUpdatePage($&#123;user.id&#125;)"</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary btn-xs"</span>&gt;</span><br><span class="line">    &lt;i</span><br><span class="line">            <span class="class"><span class="keyword">class</span></span>=<span class="string">" glyphicon glyphicon-pencil"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>开发中service层 必须要写 @service注解</p>
+</li>
+<li><p>⚠️service中不要加@service。在service的实现serviceiml中加@service注解</p>
+</li>
+<li><p>开发的顺序 从前端传值到Controller 再到 service 再到serviceimpl 再到userdao 再到mybatis.xml再到数据库 数据库返回前端页面</p>
+</li>
+<li><p>引入mybatis 的多个mapper的配置文件 mapper.xml  Spring Boot 的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mybatis.mapper-locations=classpath:mybatis/mapper/*.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>###idea警告：Field injection is not recommended</p>
+</li>
+<li><p>####Springboot开发 Dao中UserDao RoleDao中要加 @Mapper注解</p>
+<p># </p>
+</li>
+<li><h1 id=""><a href="#" class="headerlink" title=""></a><img src="/Users/apple/Desktop/屏幕快照 2018-11-14 下午1.19.50.png" alt="屏幕快照 2018-11-14 下午1.19.50"></h1></li>
+<li><p>import和open项目是不一样的 出现上面的情况要import一下啊 兄ide</p>
+</li>
+<li><h3 id="Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’"><a href="#Caused-by-org-apache-ibatis-type-TypeException-Could-not-resolve-type-alias-‘BaseResultMap’" class="headerlink" title="Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’"></a>Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ‘BaseResultMap’</h3></li>
+<li><p>Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Ca</p>
+<blockquote>
+<p> 看到那个<strong>resultType</strong>了么，就是它惹的祸，这里把<strong>resultType</strong>改为<strong>resultMap</strong>就OK啦，重启tomcat，木有异常啦</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023014.jpg" alt="image-20181114135152950"></p>
+<blockquote>
+<p>跳转视图 用字符串哈 </p>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023015.jpg" alt="image-20181117115951176"></p>
+<p>开发中前端的img要放到和框架的同一目录及下面哈。兄die</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection connection = ConnectionUtils.getConnection();</span><br></pre></td></tr></table></figure>
+<p>用类.方法（）.var 可以直接返回该对象的返回对象</p>
+<p>Sting s=”test”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(s);===s.sout</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../Users/apple/Library/Application Support/typora-user-images/image-20190131103713601.png" alt="image-20190131103713601"></p>
+<hr>
+<h1 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023016.jpg" alt="image-20190209160806502"></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_34160679/article/details/80651027" target="_blank" rel="noopener">https://blog.csdn.net/qq_34160679/article/details/80651027</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc.url     = jdbc:mysql:/xxx:3306/zhongfubang?useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Asia/Shanghai</span><br></pre></td></tr></table></figure>
+<h1 id="Linux-无法使用命令"><a href="#Linux-无法使用命令" class="headerlink" title="Linux 无法使用命令"></a>Linux 无法使用命令</h1><h2 id="export-PATH-usr-local-sbin-usr-local-bin-sbin-bin-usr-sbin-usr-bin-root-bin"><a href="#export-PATH-usr-local-sbin-usr-local-bin-sbin-bin-usr-sbin-usr-bin-root-bin" class="headerlink" title="export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"></a>export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</h2><p>修改/etc/profile文件，配置maven环境变量时候出问题了，忘记加了 $PATH: 然后source /etc/profile 接下来就是 ll,ls,vim命令都用不了。。。害的我以为<a href="https://www.baidu.com/s?wd=xshell&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">xshell</a>我更新了呢，卸载重装了还是没用。</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023017.png" alt="img"></p>
+<p>解决办法如下图，执行这两条命令：</p>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-23020.jpg" alt="img"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span><br><span class="line"> </span><br><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<h1 id="SpringBoot-主类报错"><a href="#SpringBoot-主类报错" class="headerlink" title="SpringBoot 主类报错"></a>SpringBoot 主类报错</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-23022.jpg" alt="image-20190302154936111"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在idea中使用终端 然后使用mvn install命令。删掉有问题的jar包重新下载。 解决问题</span><br></pre></td></tr></table></figure>
+<h1 id="Idea相关"><a href="#Idea相关" class="headerlink" title="Idea相关"></a>Idea相关</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">装一个lombok插件才会有get set方法</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MybatisPluginCodes插件</span><br><span class="line">  findBy...</span><br><span class="line">  看文档 卸载其他相关插件</span><br><span class="line">  commond+1 创建SQl语句</span><br></pre></td></tr></table></figure>
+<h1 id="self4j-log4j的问题"><a href="#self4j-log4j的问题" class="headerlink" title="self4j log4j的问题"></a>self4j log4j的问题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation</span><br></pre></td></tr></table></figure>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023024.jpg" alt="image-20190313123221966"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;exclusions&gt;</span><br><span class="line">                &lt;exclusion&gt;</span><br><span class="line">                    &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;</span><br><span class="line">                &lt;/exclusion&gt;</span><br><span class="line">           &lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">---------------------</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Springboot-依赖冲突"><a href="#Springboot-依赖冲突" class="headerlink" title="Springboot 依赖冲突"></a>Springboot 依赖冲突</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023025.jpg" alt="image-20190313141644871"></p>
+<hr>
+<h2 id="Maven-logs遇到错误-重启Idea-或者关机重启电脑"><a href="#Maven-logs遇到错误-重启Idea-或者关机重启电脑" class="headerlink" title="Maven logs遇到错误 重启Idea 或者关机重启电脑"></a>Maven logs遇到错误 重启Idea 或者关机重启电脑</h2><hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023027.jpg" alt="image-20190315181918906"></p>
+<hr>
+<h1 id="SpringBoot-Mybatis-整合问题："><a href="#SpringBoot-Mybatis-整合问题：" class="headerlink" title="SpringBoot +Mybatis 整合问题："></a>SpringBoot +Mybatis 整合问题：</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023029.jpg" alt="image-20190315184317660"></p>
+<p>使用Yml 添加mapperxml</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023030.jpg" alt="image-20190315184344150"></h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/&#123;id&#125;&quot;)</span><br><span class="line"> @ResponseBody</span><br><span class="line"> public Mydb01 list(@PathVariable(&quot;id&quot;) Integer id) &#123;//@PathVariable(&quot;id&quot;)  id是不是一定要写</span><br><span class="line">     return userService.selectByPrimaryKey(id);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023032.jpg" alt="image-20190315184418672"></p>
+<hr>
+<h1 id="maven-pom-文件"><a href="#maven-pom-文件" class="headerlink" title="maven pom 文件"></a>maven pom 文件</h1><h1 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023034.jpg" alt="image-20190422100555253"></h1><hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023036.jpg" alt="image-20190422100619170"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023038.jpg" alt="image-20190422100653173"></p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2478,7 +2690,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">136</span>
+                  <span class="site-state-item-count">137</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

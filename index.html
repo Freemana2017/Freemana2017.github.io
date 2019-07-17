@@ -6,7 +6,7 @@
 
 
 <html class="theme-next mist use-motion" lang="">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -255,6 +255,162 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/01/Untitled/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/01/Untitled/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-01T07:57:42+08:00">
+                2019-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/01/Untitled/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/01/Untitled/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、<br>1.synchronized关键字锁定的是对象不是代码块,demo中锁的是object对象的实例（堆内存中）<br>2.锁定的对象有两种情况：①类的实例 ②类的字节码(.class)<br>3.关于线程安全：加synchronized关键字之后不一定能实现线程安全，具体还要看锁定的对象是否唯一。</p>
+<p>二、<br>1.synchronized(this)锁定的是当前类的实例,demo中锁定的是Demo02类的实例<br>2.此demo中如果Demo02类是单例的话可以保证在多线程访问时是线程安全的，<br>如果存在有多个Demo02的实例的话在多线程中不能保证线程安全，因为方法中的锁不唯一了。(堆内存中的地址不一样)</p>
+<p>三、<br>synchronized关键字修饰普通方法等同于synchronized(this)</p>
+<p>四、<br>1.synchronize关键字修饰静态方法锁定的是类的.class文件<br>2.静态方法中synchronize锁定代码块，锁定的对象不能是类的实例，只能是类的.class文件。<br>原理如同在静态方法中不能直接调用非静态方法<br>3.类的.class文件是唯一的，所以说synchronize修饰静态方法或者锁定的对象是类的.class文件的时候<br>在多线程中是可以实现线程安全的</p>
+<p>五、<br>1.run()方法没加synchronized关键字时，多个线程同时访问count，线程是不安全的<br>2.run()方法加上synchronized关键字后，锁定的是Demo05对象的实例，因为只创建了<br>一个Demo05的实例，多个线程访问时都要拿到Demo05的锁标记才能执行，在多个线程同时访问时也是线程安全的</p>
+<p>六、<br>1.执行可以知道，demo中虽然加上了synchronized关键字来修饰方法，但是线程是不安全的。为什么呢？？<br>分析一下：synchronized修饰的是普通方法，锁定的是Demo06实例，从Main方法中可以看到，在for循环中<br>创建了多个Demo06的实例，也就是说每个线程对应都拿到各自的锁标记，可以同时执行。<br>例子：<br>多人同时上厕所，厕所门只有一把锁的时候是一个人上完之后把钥匙(锁标记)给到下一个人才可以开门上厕所<br>如果厕所门的锁有多个钥匙的情况下，就是每个人都有锁的钥匙了，大家可以一起去打开门来上厕所。(归根结底还是堆内存上的地址)<br>demo中就如同厕所门的锁有多把钥匙(锁标记)，不能实现线程安全</p>
+<p>七、<br>同步方法和非同步方法是可以同时调用的</p>
+<p>八、<br>对业务写方法加锁，同时也要对业务读方法加锁，否则容易产生脏读问题</p>
+<p>九、<br>一个同步方法可以调用另一个同步方法，一个线程已经拥有某个对象的锁，<br>再次申请的时候仍然会得到该对象的锁<br>也就是说synchronized获得的锁是可重入的</p>
+<p>十、<br>一个同步方法可以调用另一个同步方法，一个线程已经拥有某个对象的锁，<br>再次申请的时候仍然会得到该对象的锁<br>也就是说synchronized获得的锁是可重入的（这里是继承中有可能发生的情形，子类调用父类的同步方法）</p>
+<p>十一、<br>程序在执行过程中，如果出现异常，默认情况锁会被释放</p>
+<p>十二、</p>
+<ul>
+<li>volatile 关键字，使一个变量在多个线程间可见</li>
+<li>A B线程都用到一个变量，java默认是A线程中保留一份copy，这样如果B线程修改了该变量，则A线程未必知道</li>
+<li>使用volatile关键字，会让所有线程都会读到变量的修改值<br>*</li>
+<li>在下面的代码中，running是存在于堆内存的t对象中</li>
+<li>当线程t1开始运行的时候，会把running值从内存中读到t1线程的工作区，在运行过程中直接使用这个copy，并不会每次都去</li>
+<li>读取堆内存，这样，当主线程修改running的值之后，t1线程感知不到，所以不会停止运行<br>*</li>
+<li>使用volatile，将会强制所有线程都去堆内存中读取running的值</li>
+</ul>
+<p>十三、<br>volatile并不能保证多个线程共同修改running变量时所带来的不一致问题，也就是说volatile不能替代synchronized</p>
+<p>十四、<br>对比上一个程序，可以用synchronized解决，synchronize可以保证可见性和原子性，volatile只能保证可见性</p>
+<p>十五、<br>解决同样的问题的更高效的方法，使用AtomXXX类<br>* AtomXXX类本身方法都是原子性的，但不能保证多个方法连续调用是原子性</p>
+<p>十六、<br>1.业务逻辑中只有下面这句需要sync，这时不应该给整个方法上锁<br>2.采用细粒度的锁，可以是线程争用时间变短，从而提高效率</p>
+<p>十七、<br>锁定某对象o，如果o的属性发生改变，不影响锁的使用<br>* 但是如果o变成另外一个对象，则锁定的对象发生改变<br>* 应该避免将锁定对象的引用变成另外一个对象</p>
+<p>十八、<br>不要以字符串常量作为锁定的对象</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1719,135 +1875,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/前端/Vue/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/28/前端/Vue/" itemprop="url">慕课网Vue</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-28T11:15:00+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/28/前端/Vue/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/28/前端/Vue/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="第一章-慕课网"><a href="#第一章-慕课网" class="headerlink" title="第一章 慕课网"></a>第一章 慕课网</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1900,7 +1927,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">136</span>
+                  <span class="site-state-item-count">137</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
