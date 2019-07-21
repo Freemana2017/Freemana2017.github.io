@@ -269,6 +269,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/" itemprop="url">两次MD5明文加密</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-31T15:27:15+08:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/31/技术栈/MD5明文加密/两次MD5明文加密/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022505.jpg" alt="image-20190131152823505"></p>
+<hr>
+<h1 id="1-依赖"><a href="#1-依赖" class="headerlink" title="1 .依赖"></a>1 .依赖</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/commons-codec/commons-codec --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-codec<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-codec<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">------------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-lang3<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.imooc.miaosha.utils;</span><br><span class="line"></span><br><span class="line">import org.apache.commons.codec.digest.DigestUtils;</span><br><span class="line"></span><br><span class="line">public class MD5Util &#123;</span><br><span class="line">    /*固定盐值*/</span><br><span class="line">    private static final String salt = &quot;1a2b3c4d&quot;;</span><br><span class="line"></span><br><span class="line">    //注意导包为codec中的DigestUtils类.codec.digest.DigestUtils;</span><br><span class="line">    public static String md5(String src) &#123;</span><br><span class="line">        //计算MD5摘要并以32个字符十六进制字符串的形式返回值。</span><br><span class="line">        return DigestUtils.md5Hex(src);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 第一次md5 ：</span><br><span class="line">     * 用于 通过输入的密码生成</span><br><span class="line">     * 传输的密码 ： 方法 通过固定盐值和明文密码之间的拼接在生成md5</span><br><span class="line">     */</span><br><span class="line">    public static String inputPassFormPass(String inputPass) &#123;</span><br><span class="line">        String str = &quot;&quot; + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(4);</span><br><span class="line">        return md5(str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 第二次md5 ：</span><br><span class="line">     */</span><br><span class="line">    public static String fromPassFormPass(String formpasss, String salt) &#123;</span><br><span class="line">        String str = &quot;&quot; + salt.charAt(0) + salt.charAt(2) + formpasss + salt.charAt(5) + salt.charAt(4);</span><br><span class="line">        return md5(str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //将密码封装到数据库中</span><br><span class="line">    public static String inputPassToDbPass(String input, String saltDB) &#123;</span><br><span class="line">        String s = inputPassFormPass(input);</span><br><span class="line">        String formPass = fromPassFormPass(s, saltDB);</span><br><span class="line">        return formPass;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[]) &#123;</span><br><span class="line">        //System.out.println(s);//d3b1294a61a07da9b49b6e22b2cbd7f9</span><br><span class="line">        //System.out.println(inputPassToDbPass(&quot;123456&quot;, &quot;1a2b3c4d&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/项目实战/java秒杀系统方案优化/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1370,6 +1503,7 @@ private Weekday(int value,String label){
 <p>我们一定要抓住enum的本质：</p>
 <p>它是一组常量的集合</p>
 <p>。所以很多限制都是为了确保“常量性”，比如在定义枚举类时，必须先定义enum，它的构造方法在定义enum实例结束后就不能使用。出了围绕常量性的限制之外，其他的语法与普通类无异，我们可以添加普通方法，可以覆盖父类方法等。在所有的特性中，最具特色的要数在enum中除了给enum类型添加方法之外，每个实例还可以有自己的方法，这样的方法叫做常量相关方法：对于同一个方法，不同的实例可以实现自己的行为。这样甚至有了多态性。实现常量相关的方法时，可以将一个方法实现成抽象方法，每个实例提供具体实现；也可以把方法实现成普通方法，每个实例根据需求，选择是否覆盖该方法，示例如下：</p>
+<hr>
 
           
         
@@ -2454,370 +2588,11 @@ private Weekday(int value,String label){
 <p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023456.jpg" alt="image-20190119164659921"></p>
 <hr>
 <h1 id="1-Coding"><a href="#1-Coding" class="headerlink" title="1 Coding"></a>1 Coding</h1><h3 id="1-1-高复用服务器响应对象的设计"><a href="#1-1-高复用服务器响应对象的设计" class="headerlink" title="1.1 高复用服务器响应对象的设计"></a>1.1 高复用服务器响应对象的设计</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在web开发中，后台开发与前端交互主要是通过json的方式，后台通过统一的返回样式，可以使前后端更好的交互，在一次项目中，我每次返回一个复杂对象的时候，都是用一个匿名对象序列化成json格式的数据返回前端，由于这个项目前后台都是我一个人完成，所以我能比较清楚返回的东西，但是如果是前后端分开进行开发或者前期是一个人开发，后期进行前后端离就会变得异常困难。</span><br><span class="line"> 因此，规范返回的格式显得很重要，于是乎我便封装了一个简单的高复可用的对象用于响应数据。具体思路如下：</span><br><span class="line">--------------------- </span><br><span class="line"> 原文：https://blog.csdn.net/x1032019725/article/details/77919079</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">设计思路：</span><br><span class="line">使用泛型让返回数据多样化，且可以让返回对象统一</span><br><span class="line">声明状态字段，表示服务响应状态</span><br><span class="line">声明描述字段，描述当前状态的原因</span><br><span class="line">声明泛型数据字段，用于返回多种类型的数据，实现高复用 </span><br><span class="line">主要代码如下：</span><br><span class="line">import org.codehaus.jackson.annotate.JsonIgnore;</span><br><span class="line">import org.codehaus.jackson.map.annotate.JsonSerialize;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by *** on 2017/8/16.</span><br><span class="line"> */</span><br><span class="line">@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)</span><br><span class="line">//项目使用的是Jackson包，添加该注解，保证json序列化的时候，不返回key-null这种类型的数据</span><br><span class="line">public class ServerResponse&lt;T&gt; implements Serializable &#123;</span><br><span class="line">    private int status;</span><br><span class="line">    private String msg;</span><br><span class="line">    private T data;</span><br><span class="line"></span><br><span class="line">    //私有化构造方法，通过响应状态来创建</span><br><span class="line">    private ServerResponse(int status)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,T data)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,String msg,T data)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,String msg)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line">@JsonIgnore</span><br><span class="line">//json序列化返回前端的时候，忽略该方法，不需要返回</span><br><span class="line">    public boolean isSuccess() &#123;</span><br><span class="line">       return this.status == ResponseCode.SUCCESS.getCode();</span><br><span class="line">    &#125;</span><br><span class="line">    //把字段封装成属性，开放get方法</span><br><span class="line">    public int getStatus()&#123;</span><br><span class="line">        return  status;</span><br><span class="line">    &#125;</span><br><span class="line">    public String getMsg()&#123;</span><br><span class="line">        return  msg;</span><br><span class="line">    &#125;</span><br><span class="line">    public T getData()&#123;</span><br><span class="line">        return data;</span><br><span class="line">    &#125;</span><br><span class="line">    //声明创建对象的静态方法，通过下面这些方法来调用私有构造方法，并且set状态</span><br><span class="line">    //状态被声明在枚举ResponseCode中</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccess()&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode());</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccessMessage(String msg)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),msg);</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccess(T data)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),data);</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccess(String msg,T data)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),msg,data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createByError()&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.ERROR.getCode(),ResponseCode.ERROR.getDesc());</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createByErrorMessage(String errorMessage)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.ERROR.getCode(),errorMessage);</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createByErrorCodeMessage(int errorCode,String errorMessage)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(errorCode,errorMessage);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">下面是ResponseCode的主要代码</span><br><span class="line"></span><br><span class="line">public enum ResponseCode &#123;</span><br><span class="line">    SUCCESS(0,&quot;SUCCESS&quot;),</span><br><span class="line">    ERROR(1,&quot;ERROR&quot;),</span><br><span class="line">    NEED_LOGIN(10,&quot;NEED_LOGIN&quot;),</span><br><span class="line">    ILLEGAL_ARGUMENT(2,&quot;ILLEGAL_ARGUMENT&quot;);</span><br><span class="line"></span><br><span class="line">    private final int code;</span><br><span class="line">    private final String desc;</span><br><span class="line"></span><br><span class="line">    ResponseCode(int code,String desc)&#123;</span><br><span class="line">        this.code = code;</span><br><span class="line">        this.desc = desc;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getCode()&#123;</span><br><span class="line">        return this.code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getDesc()&#123;</span><br><span class="line">        return this.desc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">总结：</span><br><span class="line">使用ServeResponse这个响应类去进行json序列化，然后响应前端，或者用于后台的各层之间进行交互，提高了代码的可读性，并且增加代码的重用。</span><br><span class="line">--------------------- </span><br><span class="line">作者：极_晓 </span><br><span class="line">来源：CSDN </span><br><span class="line">原文：https://blog.csdn.net/x1032019725/article/details/77919079 </span><br><span class="line">版权声明：本文为博主原创文章，转载请附上博文链接！</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">设计思路：</span><br><span class="line">使用泛型让返回数据多样化，且可以让返回对象统一</span><br><span class="line">声明状态字段，表示服务响应状态</span><br><span class="line">声明描述字段，描述当前状态的原因</span><br><span class="line">声明泛型数据字段，用于返回多种类型的数据，实现高复用 </span><br><span class="line">主要代码如下：</span><br><span class="line">import org.codehaus.jackson.annotate.JsonIgnore;</span><br><span class="line">import org.codehaus.jackson.map.annotate.JsonSerialize;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by *** on 2017/8/16.</span><br><span class="line"> */</span><br><span class="line">@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)</span><br><span class="line">//项目使用的是Jackson包，添加该注解，保证json序列化的时候，不返回key-null这种类型的数据</span><br><span class="line">public class ServerResponse&lt;T&gt; implements Serializable &#123;</span><br><span class="line">    private int status;</span><br><span class="line">    private String msg;</span><br><span class="line">    private T data;</span><br><span class="line"></span><br><span class="line">    //私有化构造方法，通过响应状态来创建</span><br><span class="line">    private ServerResponse(int status)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,T data)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,String msg,T data)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,String msg)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line">@JsonIgnore</span><br><span class="line">//json序列化返回前端的时候，忽略该方法，不需要返回</span><br><span class="line">    public boolean isSuccess() &#123;</span><br><span class="line">       return this.status == ResponseCode.SUCCESS.getCode();</span><br><span class="line">    &#125;</span><br><span class="line">    //把字段封装成属性，开放get方法</span><br><span class="line">    public int getStatus()&#123;</span><br><span class="line">        return  status;</span><br><span class="line">    &#125;</span><br><span class="line">    public String getMsg()&#123;</span><br><span class="line">        return  msg;</span><br><span class="line">    &#125;</span><br><span class="line">    public T getData()&#123;</span><br><span class="line">        return data;</span><br><span class="line">    &#125;</span><br><span class="line">    //声明创建对象的静态方法，通过下面这些方法来调用私有构造方法，并且set状态</span><br><span class="line">    //状态被声明在枚举ResponseCode中</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccess()&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode());</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccessMessage(String msg)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),msg);</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccess(T data)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),data);</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createBySuccess(String msg,T data)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),msg,data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createByError()&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.ERROR.getCode(),ResponseCode.ERROR.getDesc());</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createByErrorMessage(String errorMessage)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.ERROR.getCode(),errorMessage);</span><br><span class="line">    &#125;</span><br><span class="line">    public static &lt;T&gt; ServerResponse&lt;T&gt; createByErrorCodeMessage(int errorCode,String errorMessage)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(errorCode,errorMessage);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">下面是ResponseCode的主要代码</span><br><span class="line"></span><br><span class="line">public enum ResponseCode &#123;</span><br><span class="line">    SUCCESS(0,&quot;SUCCESS&quot;),</span><br><span class="line">    ERROR(1,&quot;ERROR&quot;),</span><br><span class="line">    NEED_LOGIN(10,&quot;NEED_LOGIN&quot;),</span><br><span class="line">    ILLEGAL_ARGUMENT(2,&quot;ILLEGAL_ARGUMENT&quot;);</span><br><span class="line"></span><br><span class="line">    private final int code;</span><br><span class="line">    private final String desc;</span><br><span class="line"></span><br><span class="line">    ResponseCode(int code,String desc)&#123;</span><br><span class="line">        this.code = code;</span><br><span class="line">        this.desc = desc;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getCode()&#123;</span><br><span class="line">        return this.code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getDesc()&#123;</span><br><span class="line">        return this.desc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">总结：</span><br><span class="line">使用ServeResponse这个响应类去进行json序列化，然后响应前端，或者用于后台的各层之间进行交互，提高了代码的可读性，并且增加代码的重用。</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">高复用服务响应对象的设计与使用</span><br><span class="line">一.什么是高复用服务响应对象？它有什么作用？</span><br><span class="line">　　1.这次项目中，为了实现前后端分离，设计了一个所有接口都使用，封装后台业务数据放回json数据给前端的对象，用于实现前后端的分离，开发效率有了明显的提高。 </span><br><span class="line"></span><br><span class="line">二.怎么使用？</span><br><span class="line">　　1.首先，要明确，这个对象要实现序列化接口。它主要封装了三个属性，泛型的返回数据，字符串类型的提示信息以及整型的状态码，以及四个私有的构造函数，需要注意的是，当T 的类型也就是数据类型是String类型时，好像会和下面的String msg重合，到底会调用哪一个呢？答案是，当T为String时，的确会调用第二个，这样会产生一个问题，就是当返回的数据就是String，如果这样就会用到msg的那个构造函数，传到信息那边去了。解决方法在后面，所以具体如下：//保证在序列化json时，如果为空的值，key也会消失，比如只要返回状态码时，msg和data就会忽略不返回</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">//保证在序列化json时，如果为空的值，key也会消失</span><br><span class="line">@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)</span><br><span class="line">public class ServerResponse&lt;T&gt; implements Serializable &#123;</span><br><span class="line">    private int status;</span><br><span class="line">    private String msg;</span><br><span class="line">    private T data;</span><br><span class="line"> </span><br><span class="line">    private ServerResponse(int status)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,String msg)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,String msg,T data)&#123;</span><br><span class="line">        this.status = status;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    private ServerResponse(int status,T data)&#123;</span><br><span class="line">        this.data = data;&#125;</span><br><span class="line">　</span><br><span class="line"></span><br><span class="line">2.成员变量的get方法，以及一个判断状态码或者说判断响应是否成功的方法，具体如下：</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">@JsonIgnore//在序列化时忽略</span><br><span class="line">    public boolean isSuccess()&#123;</span><br><span class="line">        return this.status==ResponseCode.SUCCESS.getCode();</span><br><span class="line">    &#125;</span><br><span class="line">    public int getStatus()&#123;</span><br><span class="line">        return status;</span><br><span class="line">    &#125;</span><br><span class="line">    public String getMsg()&#123;</span><br><span class="line">        return msg;</span><br><span class="line">    &#125;</span><br><span class="line">    public T getData()&#123;</span><br><span class="line">        return data;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">3.提供对外访问的七个构造方法，成功的有四个，失败的三个，具体如下：</span><br><span class="line"></span><br><span class="line">复制代码</span><br><span class="line">public static  &lt;T&gt; ServerResponse&lt;T&gt; creatBySuccess()&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode());</span><br><span class="line">    &#125;</span><br><span class="line">    public static  &lt;T&gt; ServerResponse&lt;T&gt; creatBySuccessMessage(String msg)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),msg);</span><br><span class="line">    &#125;</span><br><span class="line">    public static  &lt;T&gt; ServerResponse&lt;T&gt; creatBySuccess(T data)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),data);</span><br><span class="line">    &#125;</span><br><span class="line">　　//这个方法就解决了msg和String类型的数据冲突的问题</span><br><span class="line">    public static  &lt;T&gt; ServerResponse&lt;T&gt; creatBySuccess(String msg,T data)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.SUCCESS.getCode(),msg,data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static  &lt;T&gt; ServerResponse&lt;T&gt; creatByError()&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.ERROR.getCode(),ResponseCode.ERROR.getDesc());</span><br><span class="line">    &#125;</span><br><span class="line">    public static  &lt;T&gt; ServerResponse&lt;T&gt; creatByErrorMessage(String errorMessage)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(ResponseCode.ERROR.getCode(),errorMessage);</span><br><span class="line">    &#125;</span><br><span class="line">    public static  &lt;T&gt; ServerResponse&lt;T&gt; creatByErrorCodeMessage(int errorCode,String errorMessage)&#123;</span><br><span class="line">        return new ServerResponse&lt;T&gt;(errorCode,errorMessage);</span><br><span class="line">    &#125;</span><br><span class="line">复制代码</span><br><span class="line">三.总结</span><br><span class="line">　　这次的高复用服务响应对象的设计与使用涉及到泛型类，后端的数据的处理模式，枚举类的使用，以及前后端数据交互等知识，在后期使用Restlet Clint进行接口功能测试时更加直观地看到了这个对象的作用。</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p> <a href="https://blog.csdn.net/qq_27093465/article/details/52180865" target="_blank" rel="noopener">https://blog.csdn.net/qq_27093465/article/details/52180865</a></p>
 </blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/消息队列/Redis/Redis 尚硅谷/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/16/消息队列/Redis/Redis 尚硅谷/" itemprop="url">Redis 尚硅谷</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-16T10:52:44+08:00">
-                2019-01-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Redis/" itemprop="url" rel="index">
-                    <span itemprop="name">Redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/16/消息队列/Redis/Redis 尚硅谷/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/16/消息队列/Redis/Redis 尚硅谷/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-下载-⏬"><a href="#1-下载-⏬" class="headerlink" title="1 下载 ⏬"></a>1 下载 ⏬</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022509.jpg" alt="image-20190116111234768"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022510.jpg" alt="image-20190116111434390"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022512.jpg" alt="image-20190116111450969"></p>
-<hr>
-<blockquote>
-<p><a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a> 官网下载地址  </p>
-</blockquote>
-<h1 id="2-使用-HelloWord"><a href="#2-使用-HelloWord" class="headerlink" title="2 使用 HelloWord"></a>2 使用 HelloWord</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022513.jpg" alt="image-20190116111957381"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022514.jpg" alt="image-20190116112204011"><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022516.jpg" alt="image-20190116114039280"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022517.jpg" alt="image-20190116114058920"></p>
-<ul>
-<li><p>先cd 到redis （root）下面</p>
-</li>
-<li><p>然后ls 找到src 然后./redis-server</p>
-</li>
-<li><p>然后新开一个终端 然后ls 找到src ./redis-cli</p>
-</li>
-</ul>
-<hr>
-<h1 id="3-Redis-启动后杂项基础知识"><a href="#3-Redis-启动后杂项基础知识" class="headerlink" title="3 Redis_启动后杂项基础知识"></a>3 Redis_启动后杂项基础知识</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022520.jpg" alt="image-20190116115107235"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022522.jpg" alt="image-20190116115253074"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022523.jpg" alt="image-20190116115323933"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022524.jpg" alt="image-20190116154035177"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022526.jpg" alt="image-20190116154100829"></p>
-<hr>
-<h1 id="4-Redis的五大数据类型"><a href="#4-Redis的五大数据类型" class="headerlink" title="4 Redis的五大数据类型"></a>4 Redis的五大数据类型</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022527.jpg" alt="image-20190116154237555"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022528.jpg" alt="image-20190116154308276"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022529.jpg" alt="image-20190116154439211"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022533.jpg" alt="image-20190116154513266"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022538.jpg" alt="image-20190116154602073"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022539.jpg" alt="image-20190116154721676"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022547.jpg" alt="image-20190116154742190"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022549.jpg" alt="image-20190116154800486"></p>
-<hr>
-<h1 id="5-Redis-键-key"><a href="#5-Redis-键-key" class="headerlink" title="5.Redis 键 key"></a>5.Redis 键 key</h1><h4 id="1-keys-：列出所有key"><a href="#1-keys-：列出所有key" class="headerlink" title="1.keys * ：列出所有key"></a>1.keys * ：列出所有key</h4><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022552.jpg" alt="image-20190116155216250"></p>
-<hr>
-<h4 id="2-exists-key的名字-判断某个key是否存在"><a href="#2-exists-key的名字-判断某个key是否存在" class="headerlink" title="2.exists key的名字 判断某个key是否存在"></a>2.exists key的名字 判断某个key是否存在</h4><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022555.jpg" alt="image-20190116155311903"></p>
-<h4 id="3-move-key-db-—-gt-当前库就没有了-被移除了"><a href="#3-move-key-db-—-gt-当前库就没有了-被移除了" class="headerlink" title="3. move key db —&gt;当前库就没有了 被移除了"></a>3. move key db —&gt;当前库就没有了 被移除了</h4><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022556.jpg" alt="image-20190116155455537"></p>
-<h4 id="4-expire-key-秒钟-为给定的key设置过期时间"><a href="#4-expire-key-秒钟-为给定的key设置过期时间" class="headerlink" title="4.expire key 秒钟 为给定的key设置过期时间"></a>4.expire key 秒钟 为给定的key设置过期时间</h4><h4 id="5-ttl-key-查看还有多少秒过期-1表示永不过期-2表示已过期"><a href="#5-ttl-key-查看还有多少秒过期-1表示永不过期-2表示已过期" class="headerlink" title="5.ttl key 查看还有多少秒过期 -1表示永不过期 -2表示已过期"></a>5.ttl key 查看还有多少秒过期 -1表示永不过期 -2表示已过期</h4><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022559.jpg" alt="image-20190116155802870"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022601.jpg" alt="image-20190116155823825"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022602.jpg" alt="image-20190116155952844"></p>
-<hr>
-<h1 id="6-Redis-String-单值单value"><a href="#6-Redis-String-单值单value" class="headerlink" title="6.Redis String 单值单value"></a>6.Redis String 单值单value</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022605.jpg" alt="image-20190116160811577"></p>
-<hr>
-<ul>
-<li><p>1.get/set/del/append/strlen</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022606.jpg" alt="image-20190116161025420"></p>
-</li>
-</ul>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022607.jpg" alt="image-20190116161052479"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022608.jpg" alt="image-20190116161132427"></p>
-<ul>
-<li>Incr/decr/incrby/decrby一定是要数字才能加减</li>
-</ul>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022611.jpg" alt="image-20190116161310886"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022612.jpg" alt="image-20190116161343569"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022613.jpg" alt="image-20190116161412366"></p>
-<hr>
-<ul>
-<li><p>Get range/setrange</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022615.jpg" alt="image-20190116161950947"></p>
-</li>
-</ul>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022616.jpg" alt="image-20190116200156360"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022617.jpg" alt="image-20190116200517636"></p>
-<ul>
-<li>setex键秒值/setnx</li>
-<li><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022619.jpg" alt="image-20190116200832450"></li>
-</ul>
-<hr>
-<h1 id="7-Redis-List-单值-多value"><a href="#7-Redis-List-单值-多value" class="headerlink" title="7 Redis -List 单值 多value"></a>7 Redis -List 单值 多value</h1><h3 id="LPUSH-RPUSHLRANGE"><a href="#LPUSH-RPUSHLRANGE" class="headerlink" title="LPUSH  RPUSHLRANGE"></a>LPUSH  RPUSHLRANGE</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022621.jpg" alt="image-20190116201303513"></p>
-<hr>
-<h3 id="LPOP-RPOP-取出栈顶元素"><a href="#LPOP-RPOP-取出栈顶元素" class="headerlink" title="LPOP RPOP 取出栈顶元素"></a>LPOP RPOP 取出栈顶元素</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22622.jpg" alt="image-20190116201523442"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022624.jpg" alt="image-20190116201551927"></p>
-<hr>
-<h3 id="lindex-按照索引获得元素-从上到下"><a href="#lindex-按照索引获得元素-从上到下" class="headerlink" title="lindex 按照索引获得元素 从上到下"></a>lindex 按照索引获得元素 从上到下</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022626.jpg" alt="image-20190116201731640"></p>
-<h3 id="llen-长度"><a href="#llen-长度" class="headerlink" title="llen 长度"></a>llen 长度</h3><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022628.jpg" alt="image-20190116201756475"></p>
-<h3 id="lrem-key-删除N-个value"><a href="#lrem-key-删除N-个value" class="headerlink" title="lrem key 删除N 个value"></a>lrem key 删除N 个value</h3><ul>
-<li>删除2个 value=3的value</li>
-</ul>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022630.jpg" alt="image-20190116202931671"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022631.jpg" alt="image-20190116203059587"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22634.jpg" alt="image-20190116203354259"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022635.jpg" alt="image-20190116203402324"></p>
-<hr>
-<h1 id="8-Redis-set"><a href="#8-Redis-set" class="headerlink" title="8 Redis set"></a>8 Redis set</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022637.jpg" alt="image-20190116203520701"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22640.jpg" alt="image-20190116203836420"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022641.jpg" alt="image-20190116203948536"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022643.jpg" alt="image-20190116204239791"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022645.jpg" alt="image-20190116204308411"></p>
-<hr>
-<h1 id="9-Redis-Hash-重要-KV模式不变-但v是一个箭值对"><a href="#9-Redis-Hash-重要-KV模式不变-但v是一个箭值对" class="headerlink" title="9 Redis Hash 重要 KV模式不变 但v是一个箭值对"></a>9 Redis Hash 重要 KV模式不变 但v是一个箭值对</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022648.jpg" alt="image-20190116204442952"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022651.jpg" alt="image-20190116204758775"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022654.jpg" alt="image-20190116204839458"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022655.jpg" alt="image-20190116204917053"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022657.jpg" alt="image-20190116204927008"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022702.jpg" alt="image-20190116205009589"></p>
-<hr>
-<h1 id="10-Redis-Zset"><a href="#10-Redis-Zset" class="headerlink" title="10 Redis Zset"></a>10 Redis Zset</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022703.jpg" alt="image-20190116205214252"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022709.jpg" alt="image-20190116205239386"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022711.jpg" alt="image-20190116205302393"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22713.jpg" alt="image-20190116205339082"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022715.jpg" alt="image-20190116205447826"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022716.jpg" alt="image-20190116205557684"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022717.jpg" alt="image-20190116205619026"></p>
-<hr>
-<h1 id="11-Redis-配置文件介绍"><a href="#11-Redis-配置文件介绍" class="headerlink" title="11 Redis 配置文件介绍"></a>11 Redis 配置文件介绍</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022719.jpg" alt="image-20190116210024374"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022720.jpg" alt="image-20190117194135627"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022722.jpg" alt="image-20190117194234408"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022725.jpg" alt="image-20190117194349576"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022726.jpg" alt="image-20190117194528288"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022727.jpg" alt="image-20190117194833312"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022729.jpg" alt="image-20190117195424684"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022730.jpg" alt="image-20190117195838745"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022732.jpg" alt="image-20190117200617046"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22734.jpg" alt="image-20190117200652874"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022735.jpg" alt="image-20190117200707166"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022737.jpg" alt="image-20190117200747717"></p>
-<hr>
-<h1 id="12-Redis-持久化之RDB"><a href="#12-Redis-持久化之RDB" class="headerlink" title="12 Redis_持久化之RDB"></a>12 Redis_持久化之RDB</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022738.jpg" alt="image-20190117200918379"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022739.jpg" alt="image-20190117201020252"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022740.jpg" alt="image-20190117201127978"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022743.jpg" alt="image-20190117201359160"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022745.jpg" alt="image-20190117201431930"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022746.jpg" alt="image-20190117201445718"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022749.jpg" alt="image-20190117203105198"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022750.jpg" alt="image-20190117203121255"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22753.jpg" alt="image-20190117203406354"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022754.jpg" alt="image-20190117203424936"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022756.jpg" alt="image-20190117203739302"></p>
-<h1 id="13-Redis-持久化-之AOF"><a href="#13-Redis-持久化-之AOF" class="headerlink" title="13 Redis 持久化 之AOF"></a>13 Redis 持久化 之AOF</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022759.jpg" alt="image-20190117204137676"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022801.jpg" alt="image-20190118081214272"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022803.jpg" alt="image-20190118081644380"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022805.jpg" alt="image-20190118081938838"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022808.jpg" alt="image-20190118081954064"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022811.jpg" alt="image-20190118082323870"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022813.jpg" alt="image-20190118082348786"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022815.jpg" alt="image-20190118082532077"></p>
-<h1 id="14-Redis事务"><a href="#14-Redis事务" class="headerlink" title="14 Redis事务"></a>14 Redis事务</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022819.jpg" alt="image-20190118082749458"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022823.jpg" alt="image-20190118082856665"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022826.jpg" alt="image-20190118083003968"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022827.jpg" alt="image-20190118083016653"></p>
-<p> <img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022829.jpg" alt="image-20190118091922542"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022830.jpg" alt="image-20190118092440818"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022833.jpg" alt="image-20190118092452243"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022834.jpg" alt="image-20190118092959426"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22837.jpg" alt="image-20190118093033367"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022838.jpg" alt="image-20190118093047656"></p>
-<h1 id="15-Redies-消息订阅"><a href="#15-Redies-消息订阅" class="headerlink" title="15 Redies 消息订阅"></a>15 Redies 消息订阅</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22841.jpg" alt="image-20190118093426294"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022842.jpg" alt="image-20190118093442795"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022844.jpg" alt="image-20190118093507127"></p>
-<h1 id="16-Redis主从复制。读写分离-哨兵模式"><a href="#16-Redis主从复制。读写分离-哨兵模式" class="headerlink" title="16 Redis主从复制。读写分离 哨兵模式"></a>16 Redis主从复制。读写分离 哨兵模式</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022846.jpg" alt="image-20190118093743009"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022847.jpg" alt="image-20190118093801019"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22849.jpg" alt="image-20190118093932566"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022849.jpg" alt="image-20190118093951222"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022851.jpg" alt="image-20190118095750517"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022852.jpg" alt="image-20190118100236645"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022853.jpg" alt="image-20190118100555581"></p>
-<hr>
-<h1 id="17-JRedis"><a href="#17-JRedis" class="headerlink" title="17 JRedis"></a>17 JRedis</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022854.jpg" alt="image-20190118102202543"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022857.jpg" alt="image-20190118102630941"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022858.jpg" alt="image-20190118102800375"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-22901.jpg" alt="image-20190118102935092"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022903.jpg" alt="image-20190118155556204"></p>
-<hr>
-<ul>
-<li><p>JRedis Pool</p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022904.jpg" alt="image-20190118160201315"></p>
-</li>
-</ul>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-022906.jpg" alt="image-20190118160226469"></p>
 
           
         
@@ -2905,7 +2680,7 @@ private Weekday(int value,String label){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-count">138</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2916,7 +2691,7 @@ private Weekday(int value,String label){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2927,7 +2702,7 @@ private Weekday(int value,String label){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

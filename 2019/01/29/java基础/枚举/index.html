@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Freemana2017">
 <meta property="og:description" content="1.枚举用法一：常量在JDK1.5 之前，我们定义常量都是： public static final…. 。现在好了，有了枚举，可以把相关的常量分组到一个枚举类型里，而且枚举提供了比常量更多的方法。  Java代码  123public enum Color &amp;#123;    RED, GREEN, BLANK, YELLOW   &amp;#125;  用法三：向枚举中添加新方法如果打算自定义自己的方">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-29T03:08:27.870Z">
+<meta property="og:updated_time" content="2019-07-19T08:48:03.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="枚举">
 <meta name="twitter:description" content="1.枚举用法一：常量在JDK1.5 之前，我们定义常量都是： public static final…. 。现在好了，有了枚举，可以把相关的常量分组到一个枚举类型里，而且枚举提供了比常量更多的方法。  Java代码  123public enum Color &amp;#123;    RED, GREEN, BLANK, YELLOW   &amp;#125;  用法三：向枚举中添加新方法如果打算自定义自己的方">
@@ -436,6 +436,7 @@ private Weekday(int value,String label){
 <p>我们一定要抓住enum的本质：</p>
 <p>它是一组常量的集合</p>
 <p>。所以很多限制都是为了确保“常量性”，比如在定义枚举类时，必须先定义enum，它的构造方法在定义enum实例结束后就不能使用。出了围绕常量性的限制之外，其他的语法与普通类无异，我们可以添加普通方法，可以覆盖父类方法等。在所有的特性中，最具特色的要数在enum中除了给enum类型添加方法之外，每个实例还可以有自己的方法，这样的方法叫做常量相关方法：对于同一个方法，不同的实例可以实现自己的行为。这样甚至有了多态性。实现常量相关的方法时，可以将一个方法实现成抽象方法，每个实例提供具体实现；也可以把方法实现成普通方法，每个实例根据需求，选择是否覆盖该方法，示例如下：</p>
+<hr>
 
       
     </div>
@@ -567,7 +568,7 @@ private Weekday(int value,String label){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-count">138</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -578,7 +579,7 @@ private Weekday(int value,String label){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -589,7 +590,7 @@ private Weekday(int value,String label){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
