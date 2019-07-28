@@ -269,176 +269,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/其他/Hbase/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="袁海鹏">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freemana2017">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/08/其他/Hbase/" itemprop="url">Hbase</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-08T10:50:27+08:00">
-                2019-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hbase/" itemprop="url" rel="index">
-                    <span itemprop="name">Hbase</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/08/其他/Hbase/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/08/其他/Hbase/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-特征"><a href="#1-特征" class="headerlink" title="1 特征"></a>1 特征</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023039.jpg" alt="image-20190408112856244"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023041.jpg" alt="image-20190408113111363"></p>
-<hr>
-<h1 id="2-分布式集群搭建"><a href="#2-分布式集群搭建" class="headerlink" title="2 分布式集群搭建"></a>2 分布式集群搭建</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">[root@bogon ~]# ssh-keygen                                                              </span><br><span class="line">Generating public/private rsa key pair.                                                 </span><br><span class="line">Enter file in which to save the key (/root/.ssh/id_rsa):                                </span><br><span class="line">Created directory '/root/.ssh'.                                                         </span><br><span class="line">Enter passphrase (empty for no passphrase):                                             </span><br><span class="line">Enter same passphrase again:                                                            </span><br><span class="line">Your identification has been saved in /root/.ssh/id_rsa.                                </span><br><span class="line">Your public key has been saved in /root/.ssh/id_rsa.pub.                                </span><br><span class="line">The key fingerprint is:                                                                 </span><br><span class="line">SHA256:9cjANdBB5Uez1RUvOHpz1kbsQlWjmL4/eRNSauNZ8K4 root@bogon                           </span><br><span class="line">The key's randomart image is:                                                           </span><br><span class="line">+---[RSA 2048]----+                                                                     </span><br><span class="line">|        .+=o. ooX|                                                                     </span><br><span class="line">|       . ..ooo.*+|                                                                     </span><br><span class="line">|        o .o+.= +|                                                                     </span><br><span class="line">|         +.+ = * |                                                                     </span><br><span class="line">|        S +.+ O +|                                                                     </span><br><span class="line">|           ..O * |                                                                     </span><br><span class="line">|           .o B .|                                                                     </span><br><span class="line">|            .= + |                                                                     </span><br><span class="line">|             E+ .|                                                                     </span><br><span class="line">+----[SHA256]-----+                                                                     </span><br><span class="line">[root@bogon ~]#                                                                         </span><br><span class="line">[root@bogon ~]#                                                                         </span><br><span class="line">[root@bogon ~]#                                                                         </span><br><span class="line">[root@bogon ~]# cd</span><br><span class="line">[root@bogon ~]# cd .ssh</span><br><span class="line">[root@bogon .ssh]# ls</span><br><span class="line">id_rsa  id_rsa.pub</span><br><span class="line">[root@bogon .ssh]# cat id_rsa.pub &gt;&gt; authorized_keys                                    </span><br><span class="line">[root@bogon .ssh]# ls</span><br><span class="line">authorized_keys  id_rsa  id_rsa.pub</span><br><span class="line">[root@bogon .ssh]# chmod 600 authorized_keys    </span><br><span class="line">[root@bogon .ssh]# ssh localhost</span><br><span class="line">The authenticity of host 'localhost (::1)' can't be established.</span><br><span class="line">RSA key fingerprint is SHA256:92H28KhI3EPvAoTIblOfgpTzCQ8XoSNNMjATiN8DbEs.</span><br><span class="line">RSA key fingerprint is MD5:9f:0d:61:0c:9c:53:5f:c3:77:31:8b:27:36:24:a5:86.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added 'localhost' (RSA) to the list of known hosts.</span><br><span class="line">Last login: Mon Apr  8 01:04:07 2019 from 192.168.0.104</span><br><span class="line">[root@bogon ~]#</span><br></pre></td></tr></table></figure>
-<h1 id="3-HBase-基础架构"><a href="#3-HBase-基础架构" class="headerlink" title="3 HBase 基础架构"></a>3 HBase 基础架构</h1><hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023042.jpg" alt="image-20190409104704102"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023044.jpg" alt="image-20190409104832994"></p>
-<hr>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023049.jpg" alt="image-20190409104855989"></p>
-<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023051.jpg" alt="image-20190409104914219"></p>
-<hr>
-<h1 id="4-HBase-安装"><a href="#4-HBase-安装" class="headerlink" title="4 HBase 安装"></a>4 HBase 安装</h1><p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-023052.jpg" alt="image-20190410151547046"></p>
-<p>/root/hadoop-2.7.3/etc/hadoop       core-site.xml    hdfs-site.xml </p>
-<p>设置 ： java环境vim hbase-env.sh—————java_home=。/usr/java/jdk1.7.0_80/ </p>
-<p>./hbase shell ————————》 hbase命令行的设置</p>
-<p>status 查看Hbase的状态</p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/消息队列/Kafka/Kafka/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1835,6 +1665,174 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/工具类🔧/HttpClient/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="袁海鹏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fy0kf0oua7j30ow0ow3zs.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemana2017">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/15/工具类🔧/HttpClient/" itemprop="url">HttpClient</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T14:17:20+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具类/" itemprop="url" rel="index">
+                    <span itemprop="name">工具类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/15/工具类🔧/HttpClient/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/15/工具类🔧/HttpClient/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h1><h3 id="pom"><a href="#pom" class="headerlink" title="pom"></a>pom</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;httpclient&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;<span class="number">4.5</span>.<span class="number">1</span>&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"> <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="comment">// 用户名</span></span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="comment">// 密码</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="comment">// 姓名</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@SpringBootTest</span>(classes = HttpDemoApplication.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpDemoApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">httpGet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		User user = <span class="keyword">this</span>.restTemplate.getForObject(<span class="string">"http://localhost/hello"</span>, User.class);</span><br><span class="line">		System.out.println(user);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpTests</span> </span>&#123;</span><br><span class="line">    CloseableHttpClient httpClient;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        httpClient = HttpClients.createDefault();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testGet</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        HttpGet request = <span class="keyword">new</span> HttpGet(<span class="string">"http://www.baidu.com"</span>);</span><br><span class="line">        String response = <span class="keyword">this</span>.httpClient.execute(request, <span class="keyword">new</span> BasicResponseHandler());</span><br><span class="line">        System.out.println(response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPost</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        HttpGet request = <span class="keyword">new</span> HttpGet(<span class="string">"http://www.oschina.net/"</span>);</span><br><span class="line">        request.setHeader(<span class="string">"User-Agent"</span>,</span><br><span class="line">                <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"</span>);</span><br><span class="line">        String response = <span class="keyword">this</span>.httpClient.execute(request, <span class="keyword">new</span> BasicResponseHandler());</span><br><span class="line">        System.out.println(response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testGetPojo</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        HttpGet request = <span class="keyword">new</span> HttpGet(<span class="string">"http://localhost/hello"</span>);</span><br><span class="line">        String response = <span class="keyword">this</span>.httpClient.execute(request, <span class="keyword">new</span> BasicResponseHandler());</span><br><span class="line">        System.out.println(response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/375be5929bed" target="_blank" rel="noopener">https://www.jianshu.com/p/375be5929bed</a></p>
+</blockquote>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-021835.jpg" alt="image-20190315142433207"></p>
+<hr>
+<p><img src="http://ipic-freemana-1257703707.cos.ap-shanghai.myqcloud.com/2019-04-29-021837.jpg" alt="image-20190315142521530"></p>
+<p>—-</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/ITtangtang/p/3968093.html" target="_blank" rel="noopener">https://www.cnblogs.com/ITtangtang/p/3968093.html</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.cnblogs.com/bethunebtj/p/8493379.html" target="_blank" rel="noopener">https://www.cnblogs.com/bethunebtj/p/8493379.html</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1887,7 +1885,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">138</span>
+                  <span class="site-state-item-count">136</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
